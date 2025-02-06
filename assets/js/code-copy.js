@@ -1,6 +1,5 @@
-// Copy code to clipboard
-
-document
+document.addEventListener('DOMContentLoaded', function () {
+  document
     .querySelectorAll('pre.highlight')
     .forEach(function (pre) {
       var button = document.createElement('button');
@@ -9,8 +8,13 @@ document
       button.type = 'button';
       button.ariaLabel = 'Copy code to clipboard';
       button.innerText = copyText;
+      button.tabIndex = 1; // Add this line to make the button focusable with the keyboard
       button.addEventListener('click', function () {
-        var code = pre.querySelector('code').innerText.trim();
+        var code = pre.querySelector('code').innerText
+          .split('\n')
+          .filter(line => !line.trim().startsWith('#'))
+          .join('\n')
+          .trim();
         navigator.clipboard.writeText(code);
         button.innerText = 'Copied';
         setTimeout(function () {
@@ -18,4 +22,6 @@ document
         }, 4000);
       });
       pre.appendChild(button);
+      pre.classList.add('has-copy-button'); // Add a class to the pre element
     });
+});

@@ -2,18 +2,52 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
-      "title": "pages",
-      "path": "[[workspace]]/pages"
+      "title": "posts",
+      "previewPath": "/{{fm.type}}/{{year}}/{{month}}/{{day}}",
+      "path": "[[workspace]]/pages/_posts",
+      "contentTypes": [
+        "posts"
+      ]
+    },
+    {
+      "title": "quickstart",
+      "path": "[[workspace]]/pages/_quickstart"
+    },
+    {
+      "title": "notes",
+      "path": "[[workspace]]/pages/_notes"
+    },
+    {
+      "title": "about",
+      "path": "[[workspace]]/pages/_about"
+    },
+    {
+      "title": "docs",
+      "path": "[[workspace]]/pages/_docs"
+    },
+    {
+      "title": "quests",
+      "path": "[[workspace]]/pages/_quests"
     }
   ],
   "frontMatter.templates.enabled": true,
   "frontMatter.framework.id": "jekyll",
   "frontMatter.content.publicFolder": "assets",
+  "frontMatter.content.draftField": {
+    "name": "draft",
+    "type": "choice",
+    "choices": [
+      "draft",
+      "in progress",
+      "published"
+    ]
+  },
   "frontMatter.dashboard.openOnStart": true,
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
       "pageBundle": false,
+      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -40,7 +74,7 @@
         {
           "title": "Is in draft",
           "name": "draft",
-          "type": "boolean"
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -55,73 +89,12 @@
         {
           "title": "sub-title",
           "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
-          "title": "excerpt",
-          "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "snippet",
-          "name": "snippet",
-          "type": "image"
-        },
-        {
-          "title": "lastmod",
-          "name": "lastmod",
           "type": "datetime"
         },
         {
-          "title": "key",
-          "name": "key",
-          "type": "string"
-        },
-        {
-          "title": "index",
-          "name": "index",
-          "type": "number"
-        },
-        {
-          "title": "subcategory",
-          "name": "subcategory",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "Article",
-      "pageBundle": false,
-      "fields": [
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "sub-title",
-          "name": "sub-title",
-          "type": "string"
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
-        },
-        {
           "title": "excerpt",
           "name": "excerpt",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
+          "type": "datetime"
         },
         {
           "title": "snippet",
@@ -129,19 +102,20 @@
           "type": "datetime"
         },
         {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
+          "title": "author",
+          "name": "author",
+          "type": "string"
         },
         {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "draft",
-          "name": "draft",
+          "title": "layout",
+          "name": "layout",
           "type": "datetime"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "fields",
+          "fields": []
         },
         {
           "title": "lastmod",
@@ -149,12 +123,136 @@
           "type": "datetime"
         },
         {
-          "name": "type",
-          "type": "string",
-          "default": "Article",
-          "hidden": true
+          "title": "permalink",
+          "name": "permalink",
+          "type": "datetime"
+        },
+        {
+          "title": "attachments",
+          "name": "attachments",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.content.snippets": {
+    "Test Snippet": {
+      "description": "test",
+      "body": "echo \"hello World\"",
+      "fields": []
+    }
+  },
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.website.host": "https://it-journey.dev",
+  "frontMatter.git.enabled": false,
+  "frontMatter.data.types": [
+    {
+      "id": "navigation",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "The title of the page",
+            "type": "string"
+          },
+          "icon": {
+            "description": "Bootstrap icon",
+            "type": "string"
+          },
+          "url": {
+            "description": "The URL of the page",
+            "type": "string"
+          },
+          "sublinks": {
+            "description": "sublinks for the section",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "title",
+          "url"
+        ]
+      }
+    }
+  ],
+  "frontMatter.data.files": [
+    {
+      "id": "mainNav",
+      "title": "Main Navigation",
+      "file": "[[workspace]]/_data/navigation/main.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "type": "navigation"
+    },
+    {
+      "id": "aboutNav",
+      "title": "About Navigation",
+      "file": "[[workspace]]/_data/navigation/about.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "type": "navigation"
+    },
+    {
+      "id": "docsNav",
+      "title": "Docs Navigation",
+      "file": "[[workspace]]/_data/navigation/docs.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "type": "navigation"
+    },
+    {
+      "id": "homeNav",
+      "title": "Home Navigation",
+      "file": "[[workspace]]/_data/navigation/home.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "type": "navigation"
+    },
+    {
+      "id": "postsNav",
+      "title": "Posts Navigation",
+      "file": "[[workspace]]/_data/navigation/posts.yml",
+      "fileType": "yaml",
+      "labelField": "title",
+      "singleEntry": false,
+      "type": "navigation"
+    }
+  ],
+  "frontMatter.content.autoUpdateDate": true
 }

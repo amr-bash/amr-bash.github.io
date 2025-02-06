@@ -1,15 +1,16 @@
 ---
-title: Quick Start Index (~)
+title: Quick Start (~) Index
 author: null
-layout: collection
+layout: blog
 description: null
 permalink: /quickstart/
 sidebar:
-  nav: quickstart
-lastmod: 2022-06-04T17:33:43.747Z
+   nav: quickstart
+lastmod: 2024-06-06T03:11:33.251Z
 ---
 
-Here's an index of all the posts in the quick-start collection.
+
+Here's an index of all the quickstart documents in the collection.
 
 1. Master Setup
    1. [Machine](machine-setup.md)
@@ -28,5 +29,3 @@ Here's an index of all the posts in the quick-start collection.
    1. Google
    2. Azure
    3. AWS
-
-
