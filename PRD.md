@@ -1,3 +1,4 @@
+<!-- AUTO:BEGIN:metadata -->
 ---
 title: "PRD: IT-Journey – Open-Source IT Education Platform"
 description: "Product requirements for IT-Journey, an open-source educational platform with gamified quests, practical tutorials, and AI-enhanced learning"
@@ -9,6 +10,7 @@ auto_generated: true
 generator: prd-machine
 repository: https://github.com/bamr87/it-journey
 ---
+<!-- AUTO:END:metadata -->
 
 # IT-Journey
 
@@ -38,6 +40,7 @@ As a **learner / contributor / educator**, I want:
 - 🔄 Interactive terminal interface (`journey.sh`) for navigation
 - 🔜 Certification tracking and skill progression metrics
 
+<!-- AUTO:BEGIN:mvp_status -->
 ### Current Content Status
 
 | Source | Count | Status |
@@ -167,6 +170,8 @@ python3 scripts/validation/link-checker.py --scope website
 - **Large repos**: Initial clone may take time; use sparse checkout if needed
 - **Binary files**: Images/media should go in `assets/` only
 - **Frontmatter**: All content files require valid YAML frontmatter
+
+<!-- AUTO:BEGIN:edge_issues -->
 
 ### Recent Issues Detected
 
