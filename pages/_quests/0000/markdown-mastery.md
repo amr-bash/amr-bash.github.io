@@ -1,13 +1,11 @@
 ---
 title: 'Markdown Mastery: Content Formatting Fundamentals'
 author: IT-Journey Team
-description: Master Markdown syntax for creating rich documentation, blog posts, and
-  technical content with proper formatting, links, images, and code blocks.
-excerpt: Learn essential Markdown syntax to create beautifully formatted documentation
-  and technical content.
+description: Master Markdown syntax for creating rich documentation, blog posts, and technical content with proper formatting, links, images, and code blocks.
+excerpt: Learn essential Markdown syntax to create beautifully formatted documentation and technical content.
 preview: images/previews/markdown-mastery-content-formatting-fundamentals-d.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-12-20 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-20T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -19,7 +17,7 @@ quest_arc: Documentation Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
@@ -35,8 +33,7 @@ learning_paths:
   skill_trees:
   - Documentation
   - Content Creation
-skill_focus:
-- documentation
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -58,29 +55,33 @@ validation_criteria:
   - Understands Markdown syntax vs rendered output
   - Can structure a README with proper headings
 quest_mapping:
-  coordinates: [3, 2]
+  coordinates:
+  - 3
+  - 2
   region: Foundation
   realm: Development
   biome: Documentation
-permalink: /quests/level-0000-markdown-mastery/
+permalink: /quests/0000/markdown-mastery/
 categories:
 - Quests
 - Documentation
 - Beginner
 tags:
-- lvl-0000
+- '0000'
 - markdown
 - main_quest
 - documentation
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
-- markdown
-- main_quest
-- documentation
-- hands-on
-- gamified-learning
+  primary:
+  - '0000'
+  - markdown
+  - main_quest
+  secondary:
+  - documentation
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -95,6 +96,7 @@ rewards:
   unlocks_features:
   - README creation for projects
   - Blog post and quest authoring
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to Markdown Mastery — the quest that teaches you the universal language of technical documentation. Markdown is used everywhere: README files, blog posts, wikis, chat messages, and even this very quest you're reading. Once you master it, you'll be able to create beautifully formatted content with nothing but plain text.*
 
@@ -250,15 +252,15 @@ Use the `git commit` command to save changes.
 ```python
 def hello():
     print("Hello, World!")
-```
+```text
 
 ```bash
 echo "Hello from the terminal"
-```
+```text
 
 ```javascript
 console.log("Hello, JavaScript!");
-```
+```text
 ````
 
 The language identifier enables syntax highlighting — always include it!
@@ -404,3 +406,13 @@ Hidden content goes here. Supports **Markdown** inside!
 - [Dillinger — Online Markdown Editor](https://dillinger.io/)
 - [Markdown Tutorial — Interactive Practice](https://www.markdowntutorial.com/)
 - [VS Code Markdown Features](https://code.visualstudio.com/docs/languages/markdown)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

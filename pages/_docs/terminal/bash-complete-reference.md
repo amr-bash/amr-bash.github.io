@@ -1,53 +1,63 @@
 ---
-title: "The Complete BASH Reference: Commands, Functions, Snippets & Techniques"
-description: "Exhaustive reference guide covering every aspect of GNU Bash — built-in commands, parameter expansion, process control, scripting patterns, text processing, networking, and advanced techniques."
-date: 2026-02-21T14:34:24.000Z
-lastmod: 2026-02-20T00:00:00.000Z
-author: "IT-Journey Team"
+title: 'Complete BASH Reference: Commands & Techniques'
+description: Deep GNU Bash reference for built-ins, expansion, process control, scripting patterns, text processing, networking, and advanced techniques.
+date: '2026-02-21T14:34:24.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
+author: IT-Journey Team
 permalink: /docs/bash-complete-reference/
 tags:
-    - bash
-    - shell
-    - scripting
-    - command-line
-    - linux
-    - macos
-    - reference
-    - sysadmin
-    - automation
-    - devops
+- bash
+- shell
+- script
+- shell
+- linux
+- macos
+- reference-materials
+- system-admin
+- automation
+- devops
 categories:
-    - Documentation
-    - Terminal
-    - Reference
+- Documentation
+- System Administration
+- Guides
 keywords:
-    primary:
-        - bash commands
-        - bash scripting
-        - bash reference
-    secondary:
-        - shell scripting
-        - linux commands
-        - bash functions
-        - bash built-ins
-        - command line reference
-        - it-journey
-excerpt: "The definitive Bash reference — every built-in command, expansion, operator, scripting pattern, and real-world snippet you'll ever need."
-preview: "Complete Bash reference covering commands, scripting, text processing, process control, networking, and advanced techniques."
-difficulty: "🟡 Intermediate to Advanced"
-estimated_time: "60+ minutes to read"
+  primary:
+  - bash commands
+  - bash scripting
+  - bash reference
+  secondary:
+  - shell scripting
+  - linux commands
+  - bash functions
+  - bash built-ins
+  - command line reference
+  - it-journey
+excerpt: The definitive Bash reference — every built-in command, expansion, operator, scripting pattern, and real-world snippet you'll ever need.
+preview: Complete Bash reference covering commands, scripting, text processing, process control, networking, and advanced techniques.
+difficulty: 🟡 Intermediate to Advanced
+estimated_time: 60+ minutes to read
 draft: false
 ---
-
 # 🐚 The Complete BASH Reference
 
 > **Everything you need** to master GNU Bash — from basic commands to advanced scripting, process management, text processing, networking, and system administration.
 
 ## 🎮 Practical Application
 
-Want to put these commands into practice? Try these interactive quests:
-- **[Bashcrawl Quest: Terminal Adventure RPG](/quests/bashcrawl-terminal-adventure/)**: Learn basic navigation and file commands through a dungeon exploration game.
-- **[bashrun and Beyond](/quests/lvl_000/bash-run/)**: Build your own advanced terminal game using bash scripting.
+Want to put these commands into practice? Follow the [Terminal and Bash Learning Path](/docs/terminal/) and use Bashcrawl as your practice environment:
+
+- **[Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/)**: Practice `pwd`, `ls -F`, `cat`, and `cd` immediately in the browser.
+- **[Bashcrawl Quest: Terminal Adventure RPG](/quests/0000/bashcrawl/)**: Turn the online experience into a guided quest checklist.
+- **[Bashcrawl Repository](https://github.com/bamr87/bashcrawl/)**: Study the current full game with TUI, classic, native, tutorial, agent, and static web modes.
+- **[bashrun and Beyond](/quests/0000/side-quests/bash-run/)**: Extend the local Bashcrawl project with new rooms and scripts.
+
+| Bashcrawl Command | Reference Area to Review |
+|-------------------|--------------------------|
+| `pwd`, `cd` | Navigation and directory built-ins |
+| `ls -F` | Commands, options, aliases, and file type signals |
+| `cat`, `less`, `head`, `tail` | Text viewing and stream processing |
+| `grep` | Pattern matching and pipelines |
+| `./treasure`, `./main.sh` | Executable scripts, permissions, arguments, and exit codes |
 
 ---
 
@@ -4615,9 +4625,15 @@ atrm job_number                  # Remove job
 - [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
 
 ### Related IT-Journey Quests
+- [Terminal and Bash Learning Path](/docs/terminal/)
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/)
+- [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/)
 - [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/)
-- [Terminal Fundamentals Quest](/quests/level-0000-terminal-fundamentals/)
-- [Git Basics Quest](/quests/level-0000-git-basics/)
+- [Terminal Fundamentals Quest](/quests/0000/terminal-fundamentals/)
+- [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/)
+- [Bash-run Extension Quest](/quests/0000/side-quests/bash-run/)
+- [Bash Scripting Mastery](/quests/0010/bash-scripting/)
+- [Git Basics Quest](/quests/0000/git-basics/)
 
 ### `man` and `help`
 ```bash
@@ -4629,7 +4645,7 @@ info bash                    # GNU info pages
 
 ---
 
-*Pro tip: Bookmark this page and combine it with the [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) for maximum command line productivity!*
+*Pro tip: Bookmark this page and combine it with the [Terminal and Bash Learning Path](/docs/terminal/) plus the [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) for maximum command line productivity!*
 
 ---
 

@@ -1,22 +1,19 @@
 ---
 title: 'Docker Containerization Mastery: Level 0101 (5) Quest'
 author: Quest Master IT-Journey Team
-description: Master Docker containerization to build, deploy, and manage applications
-  in isolated, portable environments with practical hands-on projects
-excerpt: Learn to containerize applications and manage Docker environments for consistent,
-  scalable deployments
+description: Master Docker containerization to build, deploy, and manage applications in isolated, portable environments with practical hands-on projects
+excerpt: Learn to containerize applications and manage Docker environments for consistent, scalable deployments
 snippet: Master the art of digital containerization and unlock deployment freedom
 preview: images/previews/docker-containerization-mastery-level-0101-5-quest.png
-date: 2025-09-28T14:23:01.000Z
-lastmod: 2025-09-28 18:49:08.719000+00:00
+date: '2025-09-28T14:23:01.000Z'
+lastmod: '2025-09-28T18:49:08.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
 primary_technology: docker
 quest_type: main_quest
 quest_series: DevOps Fundamentals
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
 - Basic command-line interface knowledge
@@ -27,25 +24,27 @@ validation_criteria:
 - Build multi-container applications using Docker Compose
 - Implement Docker security best practices and optimization techniques
 - Deploy containerized applications to cloud platforms
-permalink: /quests/level-0101-docker-mastery/
+permalink: /quests/0101/docker-mastery/
 categories:
 - Quests
 - Devops
 - Medium
 tags:
-- lvl-0101
+- '0101'
 - docker
 - tool-mastery
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
-- docker
-- tool-mastery
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - docker
+  - tool-mastery
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -66,6 +65,9 @@ related_quests:
   parallel:
   - 'Level 0101: Linux System Administration'
   - 'Level 0100: Web Server Configuration'
+redirect_from:
+- /quests/0101/docker-mastery-example/
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **Docker Containerization Mastery: Level 0101 (5) Quest** - an epic 🟡 Medium journey that will transform your docker mastery. This quest will guide you through tool-mastery adventures in devops, preparing you for the next level of your IT journey.*
 
@@ -304,3 +306,12 @@ Your newfound docker powers open several paths:
 ---
 
 *May your code compile without errors, your deployments be swift and stable, and your learning journey be filled with discovery and joy! Ready for your next adventure? Check the [Quest Map](/quests/) for your next challenge!* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

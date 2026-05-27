@@ -1,39 +1,38 @@
 ---
-title: "Theme Architecture & Liquid Templating"
+title: Theme Architecture & Liquid Templating
 author: bamr87
 description: Understand how the zer0-mistakes theme builds pages — layouts, includes, Liquid templating, data files, and the Jekyll build pipeline.
-excerpt: "Explore the zer0-mistakes theme's layout hierarchy, includes, Liquid templating, and YAML data files — and how Jekyll assembles your pages."
+excerpt: Explore the zer0-mistakes theme's layout hierarchy, includes, Liquid templating, and YAML data files — and how Jekyll assembles your pages.
 permalink: /quickstart/theme-architecture/
 categories:
-  - quickstart
+- quickstart
 slug: theme-architecture
-lastmod: 2026-04-02T03:14:50.920Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 30-40 minutes
 prerequisites:
-  - Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
-  - Site configuration complete (see [Site Configuration](/quickstart/site-configuration/))
+- Jekyll installed (see [Jekyll Setup](/quickstart/jekyll/))
+- Site configuration complete (see [Site Configuration](/quickstart/site-configuration/))
 tags:
-  - jekyll
-  - liquid
-  - layouts
-  - includes
-  - theme
+- jekyll
+- liquid
+- layouts
+- includes
+- theme
 keywords:
   primary:
-    - jekyll theme architecture
-    - liquid templating
-    - jekyll layouts
+  - jekyll theme architecture
+  - liquid templating
+  - jekyll layouts
   secondary:
-    - includes
-    - data files
-    - zer0-mistakes theme
+  - includes
+  - data files
+  - zer0-mistakes theme
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 7** of the [Quick Start](/quickstart/) — how the zer0-mistakes theme assembles pages from layouts, includes, Liquid templates, and data files.
 
 ---
@@ -76,8 +75,9 @@ title: "My Blog Post"
 | `root` | Base HTML shell — `<head>`, `<body>`, scripts, stylesheets | Everything (parent of other layouts) |
 | `default` | Standard page with header, footer, and sidebar | General pages, docs, notes |
 | `article` | Blog post layout with date, author, tags, reading time | Posts |
-| `quest` | Quest layout with level badge, XP, achievements, prerequisites | Quests |
-| `quest-collection` | Groups quests by tier in a filterable grid | Quest index pages |
+| `quest` | Local layout (`_layouts/quest.html`) — header, sticky sidebar, prerequisites, rewards, network graph | Quests |
+| `quest-collection` | Local layout — groups `site.quests` by tier in a filterable grid with tier-progress bars | Level hub READMEs (`/quests/XXXX/`) |
+| `quest-hub` | Local layout — overworld dashboard with per-tier progress bars and live learner stats | `/quests/home/` and `/quests/` |
 | `journals` | Journal/notebook layout for dated entries | Notebooks |
 | `javascript` | Layout for JS-heavy interactive pages | Special pages |
 
@@ -114,11 +114,24 @@ _includes/
 │   ├── achievement_wall.html    # Achievement badge display
 │   └── stats_panel.html         # Activity statistics panel
 ├── content_statistics/          # Site-wide content stats
-├── quest-card.html              # Individual quest display card
+├── content/
+│   ├── quest-graph.html         # Mermaid quest dependency flowchart
+│   └── quest-backlinks.html     # "Referenced by" reverse links
+├── quest-card.html              # Single quest card (level hub grids)
 ├── quest-filters.html           # Quest filtering controls
-├── quest-stats.html             # Quest completion statistics
-└── quest_grid.html              # Quest grid layout
+├── quest-stats.html             # Quest collection stats panel
+└── quest/                       # Quest UI library used by _layouts/quest.html
+    ├── quest-header.html        # Title + badges (level, difficulty, type, time)
+    ├── quest-nav.html           # Breadcrumb + prev/next trail
+    ├── quest-prerequisites.html # Required + recommended deps with lock states
+    ├── quest-rewards.html       # Badges, XP, skills unlocked
+    ├── quest-progress.html      # localStorage-backed progress widget
+    ├── quest-sidebar.html       # Composes nav + progress + prereqs
+    ├── tier-progress-bar.html   # Per-level/tier completion bar
+    └── quest-path-tracker.html  # Ordered learning-path tracker
 ```
+
+Quest layouts are paired with `assets/css/quest-system.css` (visual styles) and `assets/js/quest-progress.js` (client-side progress in `localStorage`). The progress JS also exposes `window.QuestProgress.exportProgress()` for portfolio backups.
 
 ### Passing Variables to Includes
 
@@ -276,6 +289,6 @@ Add them to `_layouts/` or `_includes/` in your project. They're automatically a
 | Style your site with skins and CSS | [Styling & Navigation](/quickstart/styling-navigation/) |
 | Run the site locally | [Local Development](/quickstart/local-development/) |
 
-> **IT-Journey Quests:** [Liquid Templating](/quests/frontend/liquid-templating/) · [Jekyll Fundamentals](/quests/frontend/jekyll-fundamentals/)
+> **IT-Journey Quests:** [Liquid Templating](/quests/0100/frontend/liquid-templating/) · [Jekyll Fundamentals](/quests/0100/frontend/jekyll-fundamentals/)
 >
 > **External Docs:** [Jekyll Layouts](https://jekyllrb.com/docs/layouts/) · [Jekyll Includes](https://jekyllrb.com/docs/includes/) · [Liquid Reference](https://shopify.github.io/liquid/) · [Jekyll Data Files](https://jekyllrb.com/docs/datafiles/)

@@ -1,36 +1,70 @@
 ---
 title: Dockering Jekyll with Bootstrap 5
 author: GPT and bamr87
-description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and
-  JavaScript in the Frontend Forests. This guide will navigate you through the enchanted
-  woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create
-  an enchanting website.
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
-  in the Frontend Forests. This guide will navigate you through the enchanted woods,
-  ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting
-  website.
+description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
 preview: images/previews/dockering-jekyll-with-bootstrap-5.png
-date: 2024-05-28T15:23:32.000Z
-lastmod: 2024-05-28 04:11:52.774000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T04:11:52.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: General
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Foundations
+skill_focus: fullstack
 learning_style: hands-on
-permalink: /quests/frontend-docker/
+permalink: /quests/0100/frontend-docker/
 keywords:
-- dockering
-- jekyll
-- with
-- bootstrap
-- '5'
+  primary:
+  - dockering
+  - jekyll
+  secondary:
+  - with
+  - bootstrap
+  - '5'
 fmContentType: quest
 draft: true
+quest_line: Frontend Containers Series
+quest_arc: Docker on the web
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
+layout: quest
+categories:
+- Quests
+- Fullstack
+- Medium
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 Journey through the Frontend Forests to use Docker on a macOS system for building our Jekyll site with Bootstrap 5. This way, you won't have to worry about installing Ruby or other dependencies directly on your system.
 
 ### Step 1: Set Up Your Environment
@@ -178,3 +212,12 @@ docker-compose up
 Visit `http://localhost:4000` to see your Jekyll site in action!
 
 And there you have it! Your Docker-powered Jekyll site with Bootstrap 5 is up and running. If you need any more help, feel free to ask. Happy coding! 🌟
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

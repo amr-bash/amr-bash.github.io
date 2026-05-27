@@ -1,14 +1,11 @@
 ---
 title: 'Jekyll Plugins: Essential Extensions for Powerful Static Sites'
 author: IT-Journey Team
-description: Master Jekyll plugins to extend your site's functionality. Learn to install,
-  configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination
-  for GitHub Pages compatibility.
-excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps,
-  and custom functionality
+description: Master Jekyll plugins to extend your site's functionality. Learn to install, configure, and create custom plugins including SEO tags, sitemaps, feeds, and pagination for GitHub Pages compatibility.
+excerpt: Extend your Jekyll site with essential plugins for SEO, feeds, sitemaps, and custom functionality
 preview: images/previews/jekyll-plugins-extending-site-functionality-descri.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:00:15+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:00:15.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 60-75 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -62,13 +58,13 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0011-jekyll-plugins/
+permalink: /quests/0011/jekyll-plugins/
 categories:
 - Quests
 - Backend
 - Medium
 tags:
-- lvl-0011
+- '0011'
 - jekyll
 - ruby
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0011
-- jekyll
-- ruby
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - jekyll
+  - ruby
+  secondary:
+  - main_quest
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -113,7 +112,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -491,3 +490,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

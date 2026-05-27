@@ -1,13 +1,11 @@
 ---
 title: 'Terminal Fundamentals: Command Line Navigation Quest'
 author: IT-Journey Team
-description: Master essential command line skills including navigation, file management,
-  and basic shell commands across macOS, Linux, and Windows terminals.
-excerpt: Learn essential command line skills for navigating and managing files in
-  any operating system.
+description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
+excerpt: Learn essential command line skills for navigating and managing files in any operating system.
 preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-12-20 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -19,7 +17,9 @@ quest_arc: Terminal Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests: []
-  unlocks_quests: []
+  unlocks_quests:
+  - /quests/0000/bashcrawl/
+  - /quests/0010/bash-scripting/
 quest_relationships:
   parent_quest: null
   child_quests: []
@@ -35,8 +35,7 @@ learning_paths:
   - Terminal Navigation
   - File Management
   - Shell Basics
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -59,29 +58,33 @@ validation_criteria:
   - Understands the difference between absolute and relative paths
   - Can explain what standard input, output, and error are
 quest_mapping:
-  coordinates: [2, 1]
+  coordinates:
+  - 2
+  - 1
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0000-terminal-fundamentals/
+permalink: /quests/0000/terminal-fundamentals/
 categories:
 - Quests
 - DevOps
 - Beginner
 tags:
-- lvl-0000
+- '0000'
 - bash
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
-- bash
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0000'
+  - bash
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -97,6 +100,7 @@ rewards:
   unlocks_features:
   - Foundation for all scripting and development quests
   - Confident terminal usage across platforms
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 
@@ -362,6 +366,20 @@ find . -mtime -1
 
 ---
 
+## 🎮 Practice Path: Enter Bashcrawl
+
+Once you can use `pwd`, `ls`, `cd`, and `cat`, reinforce those skills in [Bashcrawl Web](https://bamr87.github.io/bashcrawl/). The browser game gives you a safe terminal-inspired dungeon where:
+
+- `pwd` reveals your current room
+- `ls -F` shows directories, files, and executable encounters
+- `cat scroll` reads the lesson in each chamber
+- `cd cellar` moves you deeper into the adventure
+- `F1` opens in-game documentation when you need a hint
+
+After your first online run, continue with the [Bashcrawl Terminal Adventure Quest](/quests/0000/bashcrawl/) for the full quest checklist and then [Bash Scripting Mastery](/quests/0010/bash-scripting/) when you are ready to automate.
+
+---
+
 ## 🎮 Mastery Challenges
 
 ### 🟢 Novice Challenge: Directory Explorer
@@ -402,3 +420,15 @@ find . -mtime -1
 - [ExplainShell — Visualize Shell Commands](https://explainshell.com/)
 - [The Art of Command Line (GitHub)](https://github.com/jlevy/the-art-of-command-line)
 - [tldr pages — Simplified Man Pages](https://tldr.sh/)
+- [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) - Browser-based terminal dungeon for practicing the commands in this quest
+- [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Full local game, scripts, docs, and contribution path
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

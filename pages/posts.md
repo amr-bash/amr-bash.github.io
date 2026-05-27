@@ -1,30 +1,35 @@
 ---
-title: Blog Posts
+title: 'IT-Journey Blog Posts: Tutorials and Learning Articles'
 author: Amr
-description: Comprehensive collection of educational blog posts covering web development, DevOps, system administration, AI & machine learning, and emerging technologies — documenting the learning journey from zero to hero.
+description: Educational blog posts covering web development, DevOps, system administration, AI & ML, and emerging tech — documenting the IT journey from zero to hero.
 excerpt: A complete index of posts documenting this journey, organized into categories, journal entries, and articles
-date: 2025-12-17T19:56:57.000Z
-lastmod: 2026-04-01T00:00:00.000Z
+date: '2025-12-17T19:56:57.000Z'
+lastmod: '2026-04-25T00:00:00.000Z'
 version: 2.0.0
 draft: false
 sidebar:
   nav: searchCats
 categories:
-  - posts
-  - index
+- posts
+- index
 tags:
-  - journey
-  - guides
-  - articles
-  - documentation
-  - ai-development
-  - web-development
-  - devops
-  - system-administration
+- journey
+- guides
+- articles
+- documentation
+- ai-development
+- web-development
+- devops
+- system-administration
 section: Home
 permalink: /posts/
+keywords:
+- blog posts
+- tutorials
+- devops
+- web development
+- it journey
 ---
-
 # IT-Journey Blog Posts
 
 Practical tutorials, deep-dive technical articles, AI-assisted development chronicles, and professional insights organized into 10 categories for progressive learning. Each post documents a real step in the journey from zero to hero.
@@ -117,6 +122,8 @@ Practical tutorials, deep-dive technical articles, AI-assisted development chron
 ### Shell Scripting & Bash
 
 - [**Bash Scripting**](programming/bash-scripting.md) - Comprehensive scripting guide
+- [**Enhancing Bashcrawl Cellar Scroll**](learning/2025-08-01-enhancing-bashcrawl-cellar-scroll-educational-content.md) - Turning Bashcrawl command practice into richer terminal education
+- [**Terminal Bash for Finance and Accounting**](business/2026-02-23-terminal-bash-finance-accounting.md) - Practical Bash automation for spreadsheet-heavy workflows
 - [**AI-Powered Modular Shell Script Refactoring**](programming/2025-07-05-ai-powered-modular-refactoring-shell-scripts.md) - Advanced architecture patterns
 
 ### Python Programming

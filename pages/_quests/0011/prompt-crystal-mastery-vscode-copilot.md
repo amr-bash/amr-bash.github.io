@@ -1,16 +1,12 @@
 ---
 title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of prompt engineering to unlock the full power
-  of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured
-  patterns that transform AI assistance from hit-or-miss to precision tools.
-excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding
-  precision-crafted prompts that unlock consistent, high-quality AI assistance in
-  your development workflow
+description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
+excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
 snippet: Your prompts are code—version them, test them, perfect them
 preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
-date: 2025-11-26T22:17:42.000Z
-lastmod: 2025-11-27 05:11:44.573000+00:00
+date: '2025-11-26T22:17:42.000Z'
+lastmod: '2025-11-27T05:11:44.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
@@ -24,7 +20,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/level-0010-prompt-engineering-mastery/
+  parent_quest: /quests/0010/prompt-engineering-mastery/
   child_quests: []
   parallel_quests: []
   sequel_quests: []
@@ -41,8 +37,7 @@ learning_paths:
   - Prompt Engineering
   - VS Code Mastery
   - Developer Productivity
-skill_focus:
-- ai-development
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -79,14 +74,14 @@ quest_mapping:
   region: Foundation
   realm: AI-Enhanced
   biome: Development Tools
-permalink: /quests/level-0011-prompt-crystal-vscode-copilot/
+permalink: /quests/0011/prompt-crystal-vscode-copilot/
 categories:
 - Quests
 - AI-Development
 - Tool-Mastery
 - Medium
 tags:
-- lvl-0011
+- '0011'
 - prompt-engineering
 - vscode-copilot
 - ai-development
@@ -94,13 +89,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0011
-- prompt-engineering
-- vscode-copilot
-- ai-development
-- tool-mastery
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - prompt-engineering
+  - vscode-copilot
+  secondary:
+  - ai-development
+  - tool-mastery
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -121,6 +118,9 @@ rewards:
   - Access to advanced AI agent development quests
   - Ability to create team-wide prompt standards
   - Foundation for MCP server prompt patterns
+redirect_from:
+- /quests/0011/prompt-crystal-mastery-vscode-copilot/
+layout: quest
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
@@ -315,7 +315,7 @@ A prompt is the instruction you provide to an AI model. It combines context, tas
 
 The difference between vague and structured prompts is dramatic:
 
-```
+```javascript
 Vague ←─────────────────────────────────→ Precise
 "Help me code"          "Generate a Python function that validates 
                          email addresses using regex, handles edge 
@@ -326,7 +326,7 @@ Vague ←───────────────────────�
 ### 💻 Code Example: Unstructured vs. Structured Prompts
 
 **❌ The Unforged Crystal (Vague Prompt)**:
-```
+```javascript
 Write a function to validate email
 ```
 
@@ -456,7 +456,7 @@ Choose your prompt technique based on task complexity:
 **The Direct Command**: Task is common, instructions are clear, no special format needed.
 
 **Template**:
-```
+```text
 [CLEAR INSTRUCTION] + [CONTEXT] + [OUTPUT REQUIREMENT]
 ```
 
@@ -683,7 +683,7 @@ Create `.github/copilot-instructions.md` to give Copilot persistent, project-wid
 VS Code Copilot provides powerful context-gathering tools:
 
 **Using `@workspace` for Codebase Context**:
-```
+```text
 @workspace How is authentication handled in this project?
 
 @workspace What patterns are used for API error handling?
@@ -692,7 +692,7 @@ VS Code Copilot provides powerful context-gathering tools:
 ```
 
 **Using `#file` for Specific File Context**:
-```
+```text
 #file:src/auth/login.ts Review this for security vulnerabilities
 
 #file:package.json What dependencies could be updated?
@@ -701,7 +701,7 @@ VS Code Copilot provides powerful context-gathering tools:
 ```
 
 **Using `#selection` for Highlighted Code**:
-```
+```javascript
 #selection Refactor this to use async/await instead of callbacks
 
 #selection Add comprehensive error handling to this function
@@ -855,7 +855,7 @@ Only report issues at {{ inputs.severity_threshold }} level or higher.
 
 Organize your prompts for discoverability and reuse:
 
-```
+```text
 .github/prompts/
 ├── README.md                    # Catalog and usage guide
 ├── code-review.prompt.md        # Security and quality review
@@ -1006,7 +1006,7 @@ Before proceeding to Chapter 5, ensure you can:
 
 ### 🔄 The PDCA Prompt Development Cycle
 
-```
+```text
 ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
 │  PLAN   │───▶│   DO    │───▶│  CHECK  │───▶│   ACT   │
 │         │    │         │    │         │    │         │
@@ -1068,12 +1068,12 @@ Document your PDCA cycles:
 ### 💻 Iteration in Action
 
 **Version 1** (Score: 3/10):
-```
+```javascript
 Write a function to parse dates
 ```
 
 **Version 2** (Score: 6/10):
-```
+```javascript
 Write a Python function that parses date strings into datetime objects.
 Handle multiple formats. Include error handling.
 ```
@@ -1333,7 +1333,7 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 | `.github/instructions/prompts.instructions.md` | Kaizen-integrated prompt engineering guide |
 | `.github/instructions/posts.instructions.md` | Post creation standards |
 | `.github/prompts/` | Example prompt templates |
-| [Prompt Engineering Quest](/quests/level-0010-prompt-engineering-mastery/) | Prerequisite fundamentals |
+| [Prompt Engineering Quest](/quests/0010/prompt-engineering-mastery/) | Prerequisite fundamentals |
 
 ### 💬 Community Support
 
@@ -1440,3 +1440,12 @@ After completing this quest, update:
 *This quest was created following IT-Journey quest standards and the Write-Quest protocol. Found an issue or have an improvement? [Open an issue](https://github.com/bamr87/it-journey/issues) or contribute directly!*
 
 **Write-Quest oath fulfilled**: *"No quest leaves the forge unfinished."* ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

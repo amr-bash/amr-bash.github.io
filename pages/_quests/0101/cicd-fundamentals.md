@@ -1,14 +1,11 @@
 ---
 title: 'CI/CD Fundamentals: Continuous Integration and Continuous Deployment Essentials'
 author: IT-Journey Team
-description: Master the fundamentals of CI/CD pipelines including automated builds,
-  testing, and deployment. Learn to implement continuous integration and deployment
-  workflows.
-excerpt: Learn the core concepts and practices of continuous integration and continuous
-  deployment for automated software delivery
+description: Master the fundamentals of CI/CD pipelines including automated builds, testing, and deployment. Learn to implement continuous integration and deployment workflows.
+excerpt: Learn the core concepts and practices of continuous integration and continuous deployment for automated software delivery
 preview: images/previews/ci-cd-fundamentals-continuous-integration-quest-ti.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:05:18+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:05:18.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 75-90 minutes
@@ -23,9 +20,20 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0101/side-quests/jekyll-quest-tracking/
+  - /quests/0101/artifact-management/
+  - /quests/0101/github-actions-basics/
+  - /quests/0101/testing-integration/
+  - /quests/0101/environment-management/
+  - /quests/0101/docker-mastery/
+  - /quests/0101/deployment-pipelines/
+  - /quests/0101/latex-cv-forging/
+  - /quests/0101/secrets-management/
+  - /quests/0101/workflow-optimization/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/0110/database-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -35,8 +43,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -62,25 +69,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-cicd-fundamentals/
+permalink: /quests/0101/cicd-fundamentals/
 categories:
 - Quests
 - DevOps
 - Medium
 tags:
-- lvl-0101
+- '0101'
 - cicd
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
-- cicd
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - cicd
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -93,6 +102,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -111,7 +121,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -489,3 +499,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Database Fundamentals: Data Storage and Retrieval]]
+**Related quests:** [[Jekyll Quest Tracking: Building Dynamic Collection Layouts]] · [[Artifact Management: Build Output Storage and Dependency Caching]] · [[GitHub Actions Basics: Workflow Automation for Modern DevOps]] · [[Testing Integration: Automated Quality Assurance in CI/CD Pipelines]] · [[Environment Management: Dev, Staging, and Production Configuration]] · [[Docker Containerization Mastery: Level 0101 (5) Quest]] · [[Deployment Pipelines: Production Release Automation Strategies]] · [[Forging the La(zy)TeX CV: Binary Level 0101 (5) Quest]] · [[Secrets Management: Secure Configuration and Credential Handling]] · [[Workflow Optimization: Caching Strategies and Pipeline Parallelization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

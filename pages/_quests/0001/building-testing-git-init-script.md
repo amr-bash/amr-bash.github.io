@@ -1,24 +1,20 @@
 ---
 title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
 author: IT-Journey Team
-description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive
-  and headless repo initializer with programmatic scaffolding.
-excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable
-  in both interactive and headless modes.
+description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding.
+excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable in both interactive and headless modes.
 preview: images/previews/building-testing-the-git-init-script-headless-inte.png
-date: 2025-11-13T23:38:22.000Z
-lastmod: 2025-11-13 10:30:00+00:00
+date: '2025-11-13T23:38:22.000Z'
+lastmod: '2025-11-13T10:30:00.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-75 minutes
 primary_technology: shell-scripting
 quest_type: main_quest
 quest_series: Level 0001 Quest Line
-skill_focus:
-- Quests
-- Development
+skill_focus: fullstack
 learning_style: hands-on
-permalink: /quests/level-0001-git-init-testing/
+permalink: /quests/0001/git-init-testing/
 categories:
 - Quests
 - Development
@@ -28,13 +24,42 @@ tags:
 - automation
 - bash
 keywords:
-- shell-scripting
-- testing
-- automation
-- bash
+  primary:
+  - shell-scripting
+  - testing
+  secondary:
+  - automation
+  - bash
 fmContentType: quest
 comments: true
 sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
+redirect_from:
+- /quests/0001/building-testing-git-init-script/
+quest_line: Git Mastery Series
+quest_arc: Tooling fundamentals
+prerequisites:
+  knowledge_requirements: []
+  system_requirements: []
+quest_dependencies:
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
+quest_relationships:
+  parent_quest: null
+  child_quests: []
+  parallel_quests: []
+  sequel_quests: []
+learning_paths:
+  primary_paths: []
+  character_classes: []
+rewards:
+  badges: []
+  progression_points: 0
+  skills_unlocked: []
+validation_criteria:
+  completion_requirements: []
+  skill_demonstrations: []
+layout: quest
 ---
 ## The Challenge: Safe automation without surprises
 
@@ -106,6 +131,16 @@ bash scripts/git_init.sh --headless -n test-quest-sample --no-push --gitignore p
 
 ```bash
 # install bats-core
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 brew install bats-core
 bats tests/bats
 ```
@@ -136,3 +171,12 @@ shellcheck scripts/git_init.sh
 Complete this quest to prove you can safely add features to a script and make it testable in automation.
 
 Good luck! 🛠️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

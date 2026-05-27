@@ -5,44 +5,42 @@ description: Unlock the power of automation with GitHub Actions! Streamline your
 excerpt: null
 snippet: null
 preview: images/previews/understanding-action-triggers-in-depth.png
-date: 2025-04-18T13:43:43.000Z
-lastmod: 2026-03-20T22:23:36.683Z
-level: "0010"
+date: '2025-04-18T13:43:43.000Z'
+lastmod: '2026-03-20T22:23:36.000Z'
+level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: automation
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-  - Automation
-  - CI/CD
-  - Development
-  - GitHub Actions
-  - Programming
+skill_focus: devops
 learning_style: hands-on
-permalink: /quests/level-0010-action-triggers/
+permalink: /quests/0010/action-triggers/
 categories:
-  - Automation
-  - CI/CD
-  - Development
-  - GitHub Actions
-  - Programming
+- Automation
+- CI/CD
+- Development
+- GitHub Actions
+- Programming
 tags:
-  - automation
-  - CI/CD
-  - GitHub Actions
-  - workflows
-  - YAML
+- automation
+- CI/CD
+- GitHub Actions
+- workflows
+- YAML
 keywords:
+  primary:
   - automation
   - CI/CD
+  secondary:
   - GitHub Actions
   - workflows
   - YAML
 fmContentType: quest
 comments: false
-attachments: ""
+attachments: ''
 sub-title: null
+layout: quest
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 
@@ -80,7 +78,7 @@ Oh child of continuous delivery, **anything**:
 **⚙️ Your First Magic Scroll: The CI/CD Pipeline**
 --------------------------------------------------
 
-```
+```markdown
 # .github/workflows/main.yml
 name: CI/CD Pipeline
 
@@ -166,3 +164,12 @@ Here are some magical event triggers:
 With GitHub Actions, you don't just code---you **orchestrate an automated kingdom** of checks, releases, and deploys. All you need is a bit of YAML and a dream. 💫
 
 Shall we proceed to the final mystical chapter: **AI-Assisted Automation**? Because now we start teaching the machines to do even more for us... Shall I open that tome?
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

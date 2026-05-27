@@ -1,38 +1,36 @@
 ---
-
-title: "Level 1111: Leadership & Innovation"
+title: 'Level 1111: Leadership & Innovation'
 description: Achieve mastery in technical leadership, community building, and driving innovation to shape the future of technology
 preview: images/previews/level-1111-leadership-innovation.png
-level: "1111"
+permalink: /quests/1111/
+layout: quest-collection
+level: '1111'
+categories:
+- quests
+- '1111'
+- legend-tier
+- leadership
+- innovation
 level_decimal: 15
 tier: Legend
 tier_emoji: 👑
 theme: Realm Shaper
 xp_range: 10000+
-permalink: /quests/1111/
-date: 2025-11-30T22:12:13.000Z
-lastmod: 2025-12-01T04:36:39.408Z
-categories:
-  - quests
-  - level-1111
-  - legend-tier
-  - leadership
-  - innovation
+date: '2025-11-30T22:12:13.000Z'
+lastmod: '2025-12-01T04:36:39.000Z'
 tags:
-  - leadership
-  - innovation
-  - mentorship
-  - open-source
-  - community
-  - architecture
-  - career
+- leadership
+- innovation
+- mentorship
+- open-source
+- community
+- architecture
+- career
 toc: true
 toc_sticky: true
 sidebar:
   nav: quests
-
 ---
-
 # 👑 Level 1111: Leadership & Innovation
 
 *Congratulations, legendary hero! You have ascended to the highest realm—the domain of Realm Shapers. Here, you will transcend individual mastery to lead teams, build communities, drive innovation, and leave a lasting impact on the technology landscape.*
@@ -142,7 +140,7 @@ Unlike previous levels focused on technical tools, this level emphasizes soft sk
 
 ## 📈 Leadership Progression
 
-```
+```text
 Individual Contributor → Tech Lead → Staff Engineer → Principal Engineer
                               │                            │
                               ├── Engineering Manager ─────┤
@@ -203,13 +201,13 @@ To achieve Legendary Status, you must:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Architecture Reviews: Leading Technical Design Discussions](/quests/level-1111-architecture-reviews/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Building Technical Communities: Growing Developer Ecosystems](/quests/level-1111-building-technical-communities/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/level-1111-career-advancement/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Innovation and R&D: Driving Technical Innovation](/quests/level-1111-innovation-rnd/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
-| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/level-1111-mentorship-programs/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Open Source Contribution: Leading and Maintaining Projects](/quests/level-1111-open-source-contribution/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
-| [Tech Speaking and Writing: Building Your Technical Brand](/quests/level-1111-tech-speaking-writing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
-| [Technical Leadership: Building High-Performance Engineering Teams](/quests/level-1111-technical-leadership/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Architecture Reviews: Leading Technical Design Discussions](/quests/1111/architecture-reviews/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Building Technical Communities: Growing Developer Ecosystems](/quests/1111/building-technical-communities/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Career Advancement Strategies: Growing from Engineer to Leader](/quests/1111/career-advancement/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Innovation and R&D: Driving Technical Innovation](/quests/1111/innovation-rnd/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
+| [Mentorship Programs: Developing and Growing Engineering Talent](/quests/1111/mentorship-programs/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Open Source Contribution: Leading and Maintaining Projects](/quests/1111/open-source-contribution/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
+| [Tech Speaking and Writing: Building Your Technical Brand](/quests/1111/tech-speaking-writing/) | 🔴 Hard | 4-5 hours | main_quest | 🔮 Placeholder |
+| [Technical Leadership: Building High-Performance Engineering Teams](/quests/1111/technical-leadership/) | ⚔️ Epic | 6-8 hours | main_quest | 🔮 Placeholder |
 
 

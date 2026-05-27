@@ -1,14 +1,11 @@
 ---
 title: 'Custom Domains for GitHub Pages: Professional Website Setup Guide'
 author: IT-Journey Team
-description: Configure custom domains for GitHub Pages sites. Learn DNS setup, CNAME
-  configuration, SSL certificates, and subdomain management to give your Jekyll site
-  a professional web address.
-excerpt: Transform your GitHub Pages site with a custom domain, SSL, and professional
-  DNS configuration
+description: Configure custom domains for GitHub Pages sites. Learn DNS setup, CNAME configuration, SSL certificates, and subdomain management to give your Jekyll site a professional web address.
+excerpt: Transform your GitHub Pages site with a custom domain, SSL, and professional DNS configuration
 preview: images/previews/custom-domains-professional-site-setup-descriptive.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:00:31+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:00:31.000Z'
 level: '0011'
 difficulty: 🟡 Medium
 estimated_time: 30-45 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -62,13 +58,13 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0011-custom-domains/
+permalink: /quests/0011/custom-domains/
 categories:
 - Quests
 - DevOps
 - Medium
 tags:
-- lvl-0011
+- '0011'
 - github-pages
 - dns
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0011
-- github-pages
-- dns
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0011'
+  - github-pages
+  - dns
+  secondary:
+  - main_quest
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -113,7 +112,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -491,3 +490,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,11 +1,11 @@
 ---
 title: 'Oh-My-Zsh Terminal Enchantment: Shell Enhancement Magic'
-description: Transform your terminal into a powerful, visually enhanced development
-  environment with Oh-My-Zsh themes and plugins
-date: 2025-10-04T15:25:33.000Z
+layout: quest
+description: Transform your terminal into a powerful, visually enhanced development environment with Oh-My-Zsh themes and plugins
+date: '2025-10-04T15:25:33.000Z'
 preview: images/previews/oh-my-zsh-terminal-enchantment-shell-enhancement-m.png
 tags:
-- lvl-0010
+- '0010'
 - terminal-enhancement
 - oh-my-zsh
 - shell-customization
@@ -17,20 +17,23 @@ categories:
 - Side-Quests
 - Terminal-Enhancement
 sub-title: 'Level 0010 (2) Side Quest: Terminal Enhancement and Customization'
-excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved productivity
-  and visual appeal
+excerpt: Enhance your terminal mastery with Oh-My-Zsh framework for improved productivity and visual appeal
 snippet: Transform your terminal from tool to weapon with Oh-My-Zsh magic
 author: Quest Master IT-Journey Team
 keywords:
-- lvl-0010
-- terminal-enhancement
-- oh-my-zsh
-- shell-customization
-- productivity-tools
-- themes
-- plugins
-lastmod: 2025-10-03 12:30:00+00:00
-permalink: /quests/oh-my-zsh-terminal-enchantment/
+  primary:
+  - '0010'
+  - terminal-enhancement
+  - oh-my-zsh
+  secondary:
+  - shell-customization
+  - productivity-tools
+  - themes
+  - plugins
+lastmod: '2025-10-03T12:30:00.000Z'
+permalink: /quests/codex/oh-my-zsh-terminal-enchantment/
+redirect_from:
+- /quests/oh-my-zsh-terminal-enchantment/
 attachments: ''
 comments: true
 difficulty: 🟡 Medium
@@ -44,7 +47,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/level-0001-terminal-navigation-mastery/
+  parent_quest: /quests/0001/terminal-navigation-mastery/
   parallel_quests: []
   sequel_quests: []
 learning_paths:
@@ -99,11 +102,9 @@ rewards:
   - Custom plugin development capabilities
 level: '0010'
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 *Welcome, terminal navigator, to the Oh-My-Zsh Terminal Enchantment side quest! Having mastered the fundamental arts of command-line navigation, you're now ready to transform your terminal from a simple tool into a powerful, visually enhanced development weapon.*
 
@@ -273,3 +274,12 @@ Success in this side quest unlocks:
 
 **Side Quest Completed: Oh-My-Zsh Terminal Enchantment** ⚔️✨  
 *Your enhanced terminal powers await your next adventure!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -5,7 +5,7 @@ layout: default
 author: IT-Journey Team
 permalink: /roadmap/
 backlink: /
-lastmod: 2025-12-19T00:00:00.000Z
+lastmod: 2026-04-25T00:00:00.000Z
 draft: false
 toc: true
 toc_sticky: true
@@ -136,6 +136,9 @@ Where learning becomes an adventure through Posts and Quests - 46+ gamified lear
 | [OS Selection](/quests/0000/os-selection/) | Platform Choice | 🟢 Easy | All |
 | [VS Code Mastery](/quests/0000/vscode-mastery-quest/) | IDE Configuration | 🟡 Medium | All |
 | [Terminal Fundamentals](/quests/0000/terminal-fundamentals/) | Command Line Basics | 🟢 Easy | All |
+| [Bashcrawl Online](https://bamr87.github.io/bashcrawl/) | Browser Terminal Practice | 🟢 Easy | All |
+| [Bashcrawl Adventure](/quests/0000/bashcrawl/) | Terminal Game Quest | 🟢 Easy | All |
+| [Bash-run Extension Lab](/quests/0000/side-quests/bash-run/) | Local Bash Project Extension | 🟡 Medium | All |
 | [Markdown Mastery](/quests/0000/markdown-mastery/) | Documentation | 🟢 Easy | All |
 | [Git Basics](/quests/0000/git-basics/) | Version Control | 🟢 Easy | All |
 

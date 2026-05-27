@@ -1,12 +1,11 @@
 ---
 title: 'Kubernetes Fundamentals: Container Orchestration Essentials'
 author: IT-Journey Team
-description: Master Kubernetes fundamentals including cluster architecture, kubectl
-  commands, pods, services, and core concepts for container orchestration at scale.
+description: Master Kubernetes fundamentals including cluster architecture, kubectl commands, pods, services, and core concepts for container orchestration at scale.
 excerpt: Learn Kubernetes fundamentals for container orchestration and cluster management
 preview: images/previews/kubernetes-fundamentals-container-orchestration-de.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:41:32+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:41:32.000Z'
 level: '1001'
 difficulty: 🔴 Hard
 estimated_time: 120-150 minutes
@@ -21,9 +20,13 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1001/k8s-services-networking/
+  - /quests/1001/k8s-pods-workloads/
+  - /quests/1001/k8s-config-secrets/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1010/monitoring-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -33,8 +36,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- cloud-engineering
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -60,25 +62,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1001-kubernetes-fundamentals/
+permalink: /quests/1001/kubernetes-fundamentals/
 categories:
 - Quests
 - Cloud-Engineering
 - Hard
 tags:
-- lvl-1001
+- '1001'
 - kubernetes
 - main_quest
 - cloud-engineering
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1001
-- kubernetes
-- main_quest
-- cloud-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '1001'
+  - kubernetes
+  - main_quest
+  secondary:
+  - cloud-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +95,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -109,7 +114,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -487,3 +492,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Monitoring Fundamentals: Master Metrics, Logs & Traces for Observability]]
+**Related quests:** [[Kubernetes Services and Networking: Ingress and DNS Configuration]] · [[Kubernetes Pods and Workloads: Deployments and StatefulSets]] · [[Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

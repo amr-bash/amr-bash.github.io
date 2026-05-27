@@ -5,8 +5,8 @@ description: Master the foundational concepts that power the digital world
 excerpt: Learn the core principles of IT infrastructure, networking, and computing
 snippet: null
 preview: images/previews/it-fundamentals.png
-date: 2023-11-25T14:12:43.000Z
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
@@ -18,15 +18,15 @@ quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests:
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/os-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/os-selection/
   parallel_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/0000/begin-your-it-journey/
 learning_paths:
   primary_paths:
   - Software Development
@@ -42,10 +42,7 @@ learning_paths:
   - Computer Architecture
   - Networking Basics
   - Operating System Concepts
-skill_focus:
-- fundamentals
-- it-basics
-- lvl-0000
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -78,20 +75,23 @@ rewards:
   unlocks_features:
   - Access to OS Selection quest
   - Foundation for all technical quests
-permalink: /quests/lvl_000/it-fundamentals/
+permalink: /quests/0000/it-fundamentals/
 categories: []
 tags:
 - fundamentals
 - it-basics
-- lvl-0000
+- '0000'
 keywords:
-- fundamentals
-- it-basics
-- lvl-0000
+  primary:
+  - fundamentals
+  secondary:
+  - it-basics
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: fundamentals
+layout: quest
 ---
 *Welcome, aspiring IT adventurer! Before you can cast powerful spells or build grand digital fortresses, you must understand the fundamental building blocks of the IT realm. This quest covers the essential skills every technology professional needs — from organizing files to understanding networks and cloud computing.*
 
@@ -205,3 +205,16 @@ These exercises are your first steps. As you complete each one, you'll build a s
 - [Docker Getting Started Guide](https://docs.docker.com/get-started/)
 - [Git Official Documentation](https://git-scm.com/doc)
 - [VirtualBox User Manual](https://www.virtualbox.org/manual/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Unlocks:** [[OS Selection]]
+**Sequel quests:** [[OS Selection]]
+**Parallel quests:** [[Begin your IT Journey]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

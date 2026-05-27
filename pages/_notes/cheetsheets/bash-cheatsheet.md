@@ -1,41 +1,43 @@
 ---
-title: Bash Cheatsheet
+title: 'Bash Cheatsheet: Essential Commands & Scripts'
 author: bamr87
-description: Essential bash commands and scripting techniques for system administration and automation
+description: Essential bash commands and scripting techniques for system administration and automation, including variables, functions, and control flow patterns.
 excerpt: Quick reference for bash shell commands, scripting patterns, and Linux system administration
 categories:
-  - notes
-  - cheatsheets
-  - shell
+- notes
+- cheatsheets
+- shell
 tags:
-  - bash
-  - linux
-  - script
-  - shell
-  - cheatsheet
-  - reference
+- bash
+- linux
+- script
+- shell
+- cheatsheet
+- reference
 keywords:
-  - Variables
-  - Functions
-  - Interpolation
-  - Brace expansions
-  - Loops
-  - Conditional execution
-  - Command substitution
+- Variables
+- Functions
+- Interpolation
+- Brace expansions
+- Loops
+- Conditional execution
+- Command substitution
 slug: /shell/
-lastmod: 2024-05-14T15:14:49.051Z
+lastmod: '2026-04-25T19:27:00.000Z'
 draft: false
 related_quests:
-  - /quests/bashcrawl-terminal-adventure/
-  - /quests/lvl_000/bash-run/
-date: 2021-12-28T13:35:40.000Z
-
+- /quests/0000/bashcrawl/
+- /quests/0000/side-quests/bash-run/
+date: '2021-12-28T13:35:40.000Z'
 ---
-
 [![hackmd-github-sync-badge](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg/badge)](https://hackmd.io/mCoifzaSQLOH_18DCH1IQg)
 
+## Practice Routes
 
-test
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) - Practice `pwd`, `ls`, `cd`, `cat`, history, and completion in a safe browser dungeon.
+- [Bashcrawl Repository](https://github.com/bamr87/bashcrawl/) - Study a real Bash-powered learning game and extend it locally.
+- [Terminal and Bash Learning Path](/docs/terminal/) - Follow the full path from command basics to Bash scripting.
+- [Complete BASH Reference](/docs/bash-complete-reference/) - Use when you need deeper detail than a cheatsheet can hold.
 
 Getting started
 {: .cols-3 }

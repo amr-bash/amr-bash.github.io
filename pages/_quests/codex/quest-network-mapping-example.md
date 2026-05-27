@@ -1,9 +1,9 @@
 ---
 title: 'Quest Network Mapping: Comprehensive Learning Path Visualization'
-description: Demonstration of the enhanced quest hierarchy system with complete mapping
-  examples and mermaid diagrams
+layout: quest
+description: Demonstration of the enhanced quest hierarchy system with complete mapping examples and mermaid diagrams
 preview: images/previews/quest-network-mapping-comprehensive-learning-path-.png
-date: 2025-10-04T15:25:33.000Z
+date: '2025-10-04T15:25:33.000Z'
 categories:
 - Documentation
 - Quest-System
@@ -13,24 +13,24 @@ tags:
 - learning-paths
 - hierarchy-system
 - mermaid-diagrams
-permalink: /quests/level-codex/quest-network-mapping-example/
+permalink: /quests/codex/quest-network-mapping-example/
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
 keywords:
-- quest-mapping
-- learning-paths
-- hierarchy-system
-- mermaid-diagrams
+  primary:
+  - quest-mapping
+  - learning-paths
+  secondary:
+  - hierarchy-system
+  - mermaid-diagrams
 author: IT-Journey Team
 quest_series: Codex Reference
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 # Quest Network Mapping Examples
 
@@ -685,3 +685,12 @@ const networkIssues = questEngine.validateQuestNetwork();
 ---
 
 This comprehensive example demonstrates how the enhanced quest hierarchy system creates a sophisticated, interconnected learning ecosystem that guides learners through structured progression while maintaining flexibility for different learning styles and goals. The combination of clear quest types, dependency mapping, and visual network diagrams transforms the IT-Journey platform into a truly gamified educational adventure.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

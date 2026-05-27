@@ -1,43 +1,55 @@
 ---
 title: Frontend Docker - level 000
 author: GPT and bamr87
-description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap
-  5 in the Frontend Forests.
+description: Verify Docker installation on macOS for building Jekyll sites with Bootstrap 5 in the Frontend Forests.
 preview: images/previews/frontend-docker-level-000.png
-date: 2024-05-28T15:23:32.000Z
-lastmod: 2024-05-28 02:28:31.950000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T02:28:31.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: level-000
+primary_technology: docker
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- level-000
-- frontend
-- docker
-- macos
-- jekyll
-- bootstrap
+skill_focus: devops
 learning_style: hands-on
-permalink: /quests/level-0100/lvl-000-frontend-docker/
+permalink: /quests/0100/frontend-docker-000/
 tags:
-- level-000
+- 0
 - frontend
 - docker
 - macos
 - jekyll
 - bootstrap
 keywords:
-- level-000
-- frontend
-- docker
-- macos
-- jekyll
-- bootstrap
+  primary:
+  - 0
+  - frontend
+  - docker
+  secondary:
+  - macos
+  - jekyll
+  - bootstrap
 fmContentType: quest
 draft: true
+redirect_from:
+- /quests/0100/frontend-docker-level-000/
+layout: quest
+categories:
+- Quests
+- Devops
+- Medium
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 ## Intro
 
 As you begin your journey through the Frontend Forests, imagine Docker Desktop as your magical backpack. It's filled with everything you need to build, deploy, and run your mystical projects. The Terminal is your enchanted wand, allowing you to cast spells (commands) to interact with Docker spirits. By verifying the Docker installation, you ensure that your backpack and wand are in perfect condition, ready to assist you on your quest.
@@ -94,3 +106,12 @@ As you begin your journey through the Frontend Forests, imagine Docker Desktop a
 ### Conclusion
 
 With Level 000 completed, you're now equipped with the knowledge and tools to venture further into the forest. Each step we take from here will build upon this solid foundation, guiding you deeper into the enchanted realms of Jekyll and Bootstrap.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

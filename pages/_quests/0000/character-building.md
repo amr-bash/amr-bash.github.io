@@ -1,15 +1,12 @@
 ---
 title: 'Character Building: Forge Your IT Identity and Development Environment'
 author: IT-Journey Team
-description: Shape your digital persona and choose the tools, technologies, and specializations
-  that will define your IT journey from novice to hero
-excerpt: Begin your transformation from IT novice to digital hero by building your
-  character profile, choosing your specialization path, and configuring your ideal
-  development environment
+description: Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero
+excerpt: Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment
 snippet: Every hero needs an origin story - craft yours with intention and purpose
 preview: images/previews/character-building-forge-your-it-identity-and-deve.png
-date: 2023-11-25T14:12:43.000Z
-lastmod: 2025-11-30 05:46:59.330000+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -20,17 +17,17 @@ quest_line: Foundation Path
 quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   recommended_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/0000/begin-your-it-journey/
   unlocks_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/character-selection/
+  - /quests/0000/os-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/lvl_000/character-selection/
-  - /quests/lvl_000/os-selection/
+  - /quests/0000/character-selection/
+  - /quests/0000/os-selection/
   parallel_quests: []
 learning_paths:
   primary_paths:
@@ -48,10 +45,7 @@ learning_paths:
   - Career Planning
   - Development Environment
   - Self-Assessment
-skill_focus:
-- Quests
-- Init-World
-- Career-Development
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -88,7 +82,7 @@ rewards:
   unlocks_features:
   - Access to specialization-specific quests
   - Development environment configured
-permalink: /quests/character-building/
+permalink: /quests/0000/character-building/
 categories:
 - Quests
 - Init-World
@@ -100,15 +94,17 @@ tags:
 - specialization
 - it-career
 - init-world
-- lvl-001
+- 1
 keywords:
-- character-building
-- career-planning
-- development-environment
-- specialization
-- it-career
-- init-world
-- lvl-001
+  primary:
+  - character-building
+  - career-planning
+  - development-environment
+  secondary:
+  - specialization
+  - it-career
+  - init-world
+  - 1
 fmContentType: quest
 draft: false
 sub-title: 'Level 001 Quest: Defining Your Digital Identity'
@@ -120,6 +116,7 @@ related_quests:
 - character-selection.md - Choose Your IT Specialization
 - os-selection.md - Operating System Selection Guide
 slug: character-building
+layout: quest
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 
@@ -530,3 +527,16 @@ A wise approach indeed! Building your character in the IT realm means equipping 
 **Action Step**: Dedicate a specific time for learning and practicing new skills.
 
 By preparing your environment and tools, you're setting the stage for a successful journey in IT. Each tool and skill you acquire is like adding a new spell to your spellbook, making you more prepared for the challenges ahead. Happy adventuring! 🧙‍♂️💻🔮
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Recommended:** [[Begin your IT Journey]]
+**Unlocks:** [[Character Selection]] · [[OS Selection]]
+**Sequel quests:** [[Character Selection]] · [[OS Selection]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

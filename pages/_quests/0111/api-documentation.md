@@ -1,13 +1,11 @@
 ---
 title: 'API Documentation: OpenAPI Specification and Developer Experience'
 author: IT-Journey Team
-description: Create excellent API documentation with OpenAPI/Swagger. Learn specification
-  writing, interactive docs, SDK generation, and developer portal best practices.
-excerpt: Create comprehensive API documentation with OpenAPI specification and developer
-  portals
+description: Create excellent API documentation with OpenAPI/Swagger. Learn specification writing, interactive docs, SDK generation, and developer portal best practices.
+excerpt: Create comprehensive API documentation with OpenAPI specification and developer portals
 preview: images/previews/api-documentation-openapi-quest-title-developer-ex.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:09:31+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:09:31.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 60-75 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -61,25 +58,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0111-api-documentation/
+permalink: /quests/0111/api-documentation/
 categories:
 - Quests
 - Backend
 - Hard
 tags:
-- lvl-0111
+- '0111'
 - openapi
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0111
-- openapi
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - openapi
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -110,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -488,3 +488,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

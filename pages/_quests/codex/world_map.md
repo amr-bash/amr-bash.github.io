@@ -1,10 +1,10 @@
 ---
 title: '🗺️ World Map: Navigation Guide to the IT-Journey Realm'
-description: Your comprehensive guide to navigating the IT-Journey platform - quests,
-  documentation, tutorials, and learning paths.
-preview: images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
-date: 2024-05-28T15:23:32.000Z
-lastmod: 2025-07-23 03:53:06.678000+00:00
+layout: default
+description: Your comprehensive guide to navigating the IT-Journey platform - quests, documentation, tutorials, and learning paths.
+preview: /images/previews/world-map-navigation-guide-to-the-it-journey-realm.png
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2025-07-23T03:53:06.000Z'
 draft: false
 tags:
 - navigation
@@ -23,11 +23,13 @@ difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
 keywords:
-- navigation
-- site-map
-- world-map
-- it-journey
-- learning-paths
+  primary:
+  - navigation
+  - site-map
+  secondary:
+  - world-map
+  - it-journey
+  - learning-paths
 author: IT-Journey Team
 quest_series: Codex Reference
 primary_technology: reference
@@ -79,7 +81,7 @@ graph TD
 | Territory | Path | Description |
 |-----------|------|-------------|
 | **🔧 Master Setup** | `/quickstart/machine-setup/` | Essential development environment configuration |
-| **🛠️ Zer0-Mistakes Foundation** | `/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/` | Core setup and fundamental tools |
+| **🛠️ Zer0-Mistakes Foundation** | `/quests/0010/epic-quest-zer0-to-her0-cmstyle/` | Core setup and fundamental tools |
 | **⚡ Essential Tools Arsenal** | `/quickstart/` | Critical software and utilities |
 | **👣 First Steps Ceremony** | `/quickstart/first-steps/` | Gentle introductions for newcomers |
 
@@ -87,7 +89,7 @@ graph TD
 
 - [Machine Setup Guide](/quickstart/machine-setup/) - Configure your development fortress
 - [Essential Tools](/quickstart/) - Arm yourself with the right weapons
-- [Zer0-Mistakes Starter](/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/) - Foundation principles and practices
+- [Zer0-Mistakes Starter](/quests/0010/epic-quest-zer0-to-her0-cmstyle/) - Foundation principles and practices
 
 ## ⚔️ Journey Domain - The Epic Quest Realm
 
@@ -150,58 +152,58 @@ graph TD
 
 #### 🏰 Init World - Character Creation & Foundation
 
-**Location:** `/quests/init_world/`  
+**Location:** `/quests/0000/` (Init World)  
 **Purpose:** Begin your journey and establish your digital identity
 
 | Quest | Difficulty | Description |
 |-------|------------|-------------|
-| [Begin Your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
-| [Character Building](/quests/character-building/) | 🌱 n00b | Forge Your Identity |
-| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
-| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | Choose Your Destiny |
-| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | Pick Your Realm |
+| [Begin Your IT Journey](/quests/0000/begin-your-it-journey/) | 🌱 n00b | The Hero's Call |
+| [Character Building](/quests/0000/character-building/) | 🌱 n00b | Forge Your Identity |
+| [IT Fundamentals](/quests/0000/it-fundamentals/) | 🌱 n00b | Learn the Ancient Arts |
+| [Character Selection](/quests/0000/character-selection/) | 🟢 Easy | Choose Your Destiny |
+| [OS Selection](/quests/0000/os-selection/) | 🟢 Easy | Pick Your Realm |
 
 **Platform-Specific Quests:**
 
-- [Hello n00b](/quests/init_world/hello-noob/) - Your first steps into the digital realm
-- [Hello Windows](/quests/hello-windows/) - Mastering the Microsoft Kingdom
-- [Hello macOS](/quests/hello-macos/) - Conquering the Apple Empire
-- [Hello Linux](/quests/hello-linux/linux-fundamentals/) - Taming the Penguin's Domain
-- [Hello Cloud](/quests/hello-cloud/) - Ascending to the Digital Heavens
+- [Hello n00b](/quests/0000/hello-noob/) - Your first steps into the digital realm
+- [Hello Windows](/quests/0000/hello-windows/) - Mastering the Microsoft Kingdom
+- [Hello macOS](/quests/0000/hello-macos/) - Conquering the Apple Empire
+- [Hello Linux](/quests/0000/linux-fundamentals/) - Taming the Penguin's Domain
+- [Hello Cloud](/quests/0000/hello-cloud/) - Ascending to the Digital Heavens
 
 #### ⚡ Level Progression System
 
-**Level 000 - Apprentice Trials** (`/quests/lvl_000/`)  
+**Level 000 - Apprentice Trials** (`/quests/0000/`)  
 Basic scripting and automation magic
 
-- [Bash Fundamentals](/quests/lvl_000/bash-run/) - Learn the Terminal Incantations
+- [Bash Fundamentals](/quests/0000/side-quests/bash-run/) - Learn the Terminal Incantations
 - `bash_crawl.sh` - Your First Automation Spell
 - `calculator.sh` - Mathematical Magic Basics
 - `profile.sh` - Customize Your Digital Presence
 
-**Level 001 - Journeyman Challenges** (`/quests/lvl_001/`)  
+**Level 001 - Journeyman Challenges** (`/quests/0001/`)  
 Web technologies and advanced scripting
 
-- [Personal Site Creation](/quests/level-0001/personal-site/) - Build Your Digital Castle
+- [Personal Site Creation](/quests/0001/side-quests/personal-site/) - Build Your Digital Castle
 - `js-examples.js` - JavaScript Spell Components
 - `js_testing.js` - Test Your Magical Constructs
 - `python.py` - Pythonic Sorcery Basics
 
-**Level 010 - Master Tier Quests** (`/quests/lvl_0010/`)  
+**Level 010 - Master Tier Quests** (`/quests/0010/`)  
 Complex application development
 
 - Bookstore Application (planned) - Craft a Complete Magical Marketplace
 
-#### 🎨 Frontend Mastery Path (`/quests/frontend/`)
+#### 🎨 Frontend Mastery Path (`/quests/0100/frontend/`)
 
 Become a master of user interfaces and digital aesthetics
 
-- [Frontend Fundamentals](/quests/frontend/) - The Art of Digital Presentation
-- [Frontend Docker Adventures](/quests/frontend-docker/) - Containerized UI Magic
-- [Frontend Level Progression](/quests/level-0100-frontend-levels/) - Structured Learning Path
-- [Level 000 Frontend](/quests/level-0100/frontend-docker-level-000/) - Beginner Container Magic
-- [Level 001 Frontend](/quests/level-0100/frontend-docker-level-001/) - Intermediate UI Sorcery
-- [Level 010 Frontend](/quests/level-0100/frontend-docker-level-010/) - Advanced Interface Wizardry
+- [Frontend Fundamentals](/quests/0100/frontend/) - The Art of Digital Presentation
+- [Frontend Docker Adventures](/quests/0100/frontend-docker/) - Containerized UI Magic
+- [Frontend Level Progression](/quests/0100/frontend-levels/) - Structured Learning Path
+- [Level 000 Frontend](/quests/0100/frontend-docker-000/) - Beginner Container Magic
+- [Level 001 Frontend](/quests/0100/001-frontend-docker/) - Intermediate UI Sorcery
+- [Level 010 Frontend](/quests/0100/010-frontend-docker/) - Advanced Interface Wizardry
 
 #### 📚 Quest Codex (`/quests/codex/`)
 
@@ -212,13 +214,13 @@ Reference materials and navigation aids
 
 #### 🕰️ Recent Quest Chronicles (2025)
 
-- [Django & Git Mastery](/quests/level-0010-django-and-git/) - Web Framework Sorcery
-- [Action Triggers](/quests/level-0010-action-triggers/) - Automation Spell Casting
-- [Branches & Pull Requests](/quests/level-0010-branches-and-pull-requests/) - Version Control Mastery
-- [Change Log Chronicles](/quests/level-0010-change-logs/) - Document Your Journey
-- [Clean Commit Commitments](/quests/level-0010-commitments-to-clean-commits/) - Perfect Your Git Ritual
-- [AI Automation Revolution](/quests/level-0010-revolutionizing-work-with-ai-automation/) - Summon AI Familiars
-- [Sourcery Code Methods](/quests/level-0100-source-control-sorcery/) - Advanced Coding Incantations
+- [Django & Git Mastery](/quests/0010/django-and-git/) - Web Framework Sorcery
+- [Action Triggers](/quests/0010/action-triggers/) - Automation Spell Casting
+- [Branches & Pull Requests](/quests/0010/branches-and-pull-requests/) - Version Control Mastery
+- [Change Log Chronicles](/quests/0010/change-logs/) - Document Your Journey
+- [Clean Commit Commitments](/quests/0010/commitments-to-clean-commits/) - Perfect Your Git Ritual
+- [AI Automation Revolution](/quests/0010/revolutionizing-work-with-ai-automation/) - Summon AI Familiars
+- [Sourcery Code Methods](/quests/0100/source-control-sorcery/) - Advanced Coding Incantations
 
 ## 📚 Library Domain - The Sacred Repository of Knowledge
 
@@ -344,16 +346,16 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 
 ### 🎯 For Complete Beginners
 
-1. **Start Here:** [Hello n00b Quest](/quests/init_world/hello-noob/)
+1. **Start Here:** [Hello n00b Quest](/quests/0000/hello-noob/)
 2. **Setup Environment:** [Machine Setup Guide](/quickstart/machine-setup/)
-3. **Choose Platform:** [OS Selection Quest](/quests/lvl_000/os-selection/)
-4. **Begin Journey:** [Character Creation](/quests/character-building/)
+3. **Choose Platform:** [OS Selection Quest](/quests/0000/os-selection/)
+4. **Begin Journey:** [Character Creation](/quests/0000/character-building/)
 
 ### ⚡ For Experienced Developers
 
 1. **Skill Assessment:** [Browse Quest Levels](/quests/#level-progression-system)
-2. **Specialization:** [Choose Frontend](/quests/frontend/) or [Backend Path](/quests/lvl_001/)
-3. **Advanced Challenges:** [Level 010 Quests](/quests/lvl_0010/)
+2. **Specialization:** [Choose Frontend](/quests/0100/frontend/) or [Backend Path](/quests/0001/)
+3. **Advanced Challenges:** [Level 010 Quests](/quests/0010/)
 4. **Contribute Content:** [Contributing Guide](/about/contributing/)
 
 ### 🔧 For System Administrators
@@ -392,3 +394,12 @@ Site navigation is managed through YAML files in `_data/navigation/`:
 - ⚔️ = Epic (expert-level challenges)
 
 *May your code compile, your deployments succeed, and your documentation actually match your implementation!* ⚡✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

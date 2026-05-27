@@ -1,16 +1,15 @@
 ---
 title: OS Selection
 author: IT-Journey Team
-description: Choose your operating system and understand the unique strengths of Windows,
-  macOS, and Linux for your IT journey
+description: Choose your operating system and understand the unique strengths of Windows, macOS, and Linux for your IT journey
 excerpt: Selecting the right operating system is a crucial first step in your IT adventure
 preview: images/previews/os-selection.png
-date: 2023-11-25T14:12:43.000Z
-lastmod: 2025-11-30 05:46:59.328000+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: lvl-0000
+primary_technology: operating-system
 quest_type: main_quest
 quest_series: Level 0000 Quest Line
 quest_line: Foundation Path
@@ -18,19 +17,19 @@ quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
-  - /quests/hello-linux/linux-fundamentals/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
   parallel_quests:
-  - /quests/lvl_000/character-selection/
+  - /quests/0000/character-selection/
 learning_paths:
   primary_paths:
   - Software Development
@@ -43,9 +42,7 @@ learning_paths:
   skill_trees:
   - Operating Systems
   - Platform Selection
-skill_focus:
-- Quests
-- Init-World
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -78,21 +75,24 @@ rewards:
   unlocks_features:
   - Access to platform-specific Hello quests
   - Foundation for development environment setup
-permalink: /quests/lvl_000/os-selection/
+permalink: /quests/0000/os-selection/
 categories:
 - Quests
 - Init-World
 tags:
-- lvl-0000
+- '0000'
 - operating-systems
 - beginner
 keywords:
-- lvl-0000
-- operating-systems
-- beginner
+  primary:
+  - '0000'
+  secondary:
+  - operating-systems
+  - beginner
 fmContentType: quest
 draft: false
 slug: os-selection
+layout: quest
 ---
 *Welcome to the Realm Selection Chamber, brave adventurer! Choosing the right operating system is like selecting the right wand in the wizarding world — it's a deeply personal choice that shapes every spell you cast on your IT journey.*
 
@@ -182,3 +182,16 @@ Your choice of OS will lay the foundation for your IT journey. Each has its stre
 - [WSL — Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install)
 - [Homebrew — macOS Package Manager](https://brew.sh/)
 - [DistroWatch — Compare Linux Distributions](https://distrowatch.com/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[IT Fundamentals]]
+**Unlocks:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
+**Sequel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
+**Parallel quests:** [[Character Selection]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

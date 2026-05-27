@@ -1,8 +1,9 @@
 ---
 title: Phase 3 Complete
+layout: default
 description: Reference - Phase 3 completion notes.
 author: IT-Journey Team
-date: 2025-11-29T22:51:57.000Z
+date: '2025-11-29T22:51:57.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
@@ -17,6 +18,9 @@ keywords:
 - documentation
 - quests
 fmContentType: documentation
+categories:
+- Quests
+- Documentation
 ---
 # Phase 3 Complete: Journeyman Tier Quests Generated ✅
 
@@ -341,7 +345,7 @@ fmContentType: documentation
 
 All quest files created in respective level directories:
 
-```
+```text
 pages/_quests/
 ├── 0100/
 │   ├── container-fundamentals.md ✨ NEW

@@ -1,16 +1,12 @@
 ---
-title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and
-  Conquer AI Realms'
+title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms'
 author: IT-Journey Team
-description: Embark on an epic journey to master GitHub Pages, the hidden gem of web
-  publishing, and learn to capture and immortalize AI conversations using Jekyll and
-  VS Code
-excerpt: Transform your GitHub repositories into powerful websites and learn to preserve
-  AI conversations forever
+description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
+excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
 snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
 preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
-date: 2025-11-15T16:34:42.000Z
-lastmod: 2025-11-15 03:52:35.140000+00:00
+date: '2025-11-15T16:34:42.000Z'
+lastmod: '2025-11-15T03:52:35.000Z'
 level: '0011'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
@@ -24,7 +20,7 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
-  parent_quest: /quests/hello-noob/
+  parent_quest: /quests/0000/hello-noob/
   child_quests: []
   parallel_quests: []
   sequel_quests: []
@@ -40,10 +36,7 @@ learning_paths:
   - Web Publishing
   - Version Control
   - Static Site Generation
-skill_focus:
-- Quests
-- Development
-- AI
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -75,7 +68,7 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-permalink: /quests/level-0011-github-pages-hidden-gem/
+permalink: /quests/0011/github-pages-hidden-gem/
 categories:
 - Quests
 - Development
@@ -90,14 +83,16 @@ tags:
 - version-control
 - markdown
 keywords:
-- github-pages
-- jekyll
-- ai-capture
-- vs-code
-- web-publishing
-- static-sites
-- version-control
-- markdown
+  primary:
+  - github-pages
+  - jekyll
+  - ai-capture
+  - vs-code
+  secondary:
+  - web-publishing
+  - static-sites
+  - version-control
+  - markdown
 fmContentType: quest
 comments: true
 attachments: ''
@@ -115,8 +110,19 @@ rewards:
   unlocks_features:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
+layout: quest
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 *[Opening paragraph that sets the fantasy context using RPG metaphors and adventuring language. This should immediately immerse the learner in the quest narrative while clearly explaining the real-world technical value.]*
 
@@ -495,3 +501,12 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 - [Jekyll Showcase](https://jekyllrb.com/showcase/) - Real Jekyll sites
 - [GitHub Pages Examples](https://github.com/collections/github-pages-examples) - Sample repositories
 - [AI Conversation Archives](https://github.com/search?q=ai+conversation+jekyll) - Inspiration for AI content sites
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

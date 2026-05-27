@@ -1,25 +1,19 @@
 ---
 title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
 author: Quest Master IT-Journey Team
-description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts,
-  respect rate limits, and turn raw filings into usable insights with Python and AI
-  assistance.
-excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured,
-  analyzable datasets.
+description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
+excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured, analyzable datasets.
 snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
 preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
-date: 2025-08-21T22:00:59.000Z
-lastmod: 2025-08-20 04:37:39.870000+00:00
+date: '2025-08-21T22:00:59.000Z'
+lastmod: '2025-08-20T04:37:39.000Z'
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-180 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Data Realm Conquests
-skill_focus:
-- Quests
-- Development
-- Intermediate
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - Python 3.10+ and pip/venv (or language of choice)
@@ -32,13 +26,13 @@ validation_criteria:
 - Call frames API for one period and compare at least 2 entities
 - Respect rate limits (no 429s in final run) and implement basic backoff
 - Write a short readme summarizing findings
-permalink: /quests/level-1100-conquer-king-edgar/
+permalink: /quests/1100/conquer-king-edgar/
 categories:
 - Quests
 - Development
 - Intermediate
 tags:
-- lvl-1100
+- '1100'
 - python
 - api
 - sec-edgar
@@ -47,14 +41,16 @@ tags:
 - project-based
 - gamified-learning
 keywords:
-- lvl-1100
-- python
-- api
-- sec-edgar
-- xbrl
-- data-engineering
-- project-based
-- gamified-learning
+  primary:
+  - '1100'
+  - python
+  - api
+  - sec-edgar
+  secondary:
+  - xbrl
+  - data-engineering
+  - project-based
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -69,6 +65,9 @@ related_quests:
 - 'Level 1010: JSON Alchemy – From Chaos to Tables'
 - 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
 - 'Level 10001: Data Vis – Charts and Dashboards'
+redirect_from:
+- /quests/1100/edgar/
+layout: quest
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 
@@ -417,3 +416,12 @@ graph TD
 
 🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically,
 comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

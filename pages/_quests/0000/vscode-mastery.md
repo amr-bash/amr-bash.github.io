@@ -1,14 +1,12 @@
 ---
 title: 'VS Code Mastery Quest: Forge Your Ultimate Development Weapon'
 author: IT-Journey Team
-description: Master Visual Studio Code setup and configuration to create the ultimate
-  development environment for any programming domain
-excerpt: Learn to configure VS Code as your primary development weapon, mastering
-  extensions, shortcuts, and specialized setups for maximum productivity
+description: Master Visual Studio Code setup and configuration to create the ultimate development environment for any programming domain
+excerpt: Learn to configure VS Code as your primary development weapon, mastering extensions, shortcuts, and specialized setups for maximum productivity
 snippet: Forge the ultimate coding weapon with VS Code mastery
 preview: images/previews/vs-code-mastery-quest-forge-your-ultimate-developm.png
-date: 2025-07-21T23:30:21.000Z
-lastmod: 2025-11-30 05:46:59.334000+00:00
+date: '2025-07-21T23:30:21.000Z'
+lastmod: '2026-05-20T20:57:50.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
@@ -20,14 +18,14 @@ quest_arc: Tool Mastery Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests: []
 quest_relationships:
   child_quests: []
   sequel_quests: []
   parallel_quests:
-  - /quests/hello-windows/
-  - /quests/hello-macos/
+  - /quests/0000/hello-windows/
+  - /quests/0000/hello-macos/
 learning_paths:
   primary_paths:
   - Software Development
@@ -40,11 +38,7 @@ learning_paths:
   skill_trees:
   - IDE Mastery
   - Developer Productivity
-skill_focus:
-- Quests
-- Tools
-- Development
-- IDE-Setup
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -68,7 +62,7 @@ validation_criteria:
   knowledge_checks:
   - Understands the extension ecosystem
   - Can configure workspace-specific settings
-permalink: /quests/vscode-mastery/
+permalink: /quests/0000/vscode-mastery/
 categories:
 - Quests
 - Tools
@@ -83,13 +77,15 @@ tags:
 - quest
 - init-world
 keywords:
-- vscode
-- ide-setup
-- development-environment
-- productivity
-- coding-tools
-- quest
-- init-world
+  primary:
+  - vscode
+  - ide-setup
+  - development-environment
+  secondary:
+  - productivity
+  - coding-tools
+  - quest
+  - init-world
 fmContentType: quest
 draft: false
 comments: true
@@ -106,6 +102,7 @@ rewards:
   unlocks_features:
   - Professional development workflow
   - Advanced debugging capabilities
+layout: quest
 ---
 *Greetings, aspiring code warrior! You stand before one of the most crucial quests in your IT journey. Visual Studio Code is not just a text editor—it's a magical artifact that, when properly enchanted, becomes the ultimate weapon in any developer's arsenal.*
 
@@ -615,6 +612,48 @@ Create different profiles for different types of work:
 - **DevOps**: Docker, Kubernetes, Terraform tools
 - **Mobile Development**: React Native, Flutter tools
 
+## 🛠️ Troubleshooting Scrolls
+
+If your VS Code setup spell fails, use these quick recovery runes:
+
+### `code` command not found
+
+```bash
+# Verify executable path and shell profile
+which code
+echo $PATH
+```
+
+- **macOS**: Run **Shell Command: Install 'code' command in PATH** from the Command Palette.
+- **Windows**: Re-run installer and keep **Add to PATH** enabled.
+- **Linux**: Confirm package install with `apt list --installed | grep code` (or your distro equivalent).
+
+### Extensions fail to install
+
+```bash
+code --list-extensions
+code --install-extension ms-python.python
+```
+
+- Check network/proxy access.
+- Temporarily disable strict firewall rules for extension marketplace access.
+- Restart VS Code and retry extension installation.
+
+### Slow startup on larger projects
+
+```json
+{
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  }
+}
+```
+
+- Exclude very large generated folders.
+- Disable unused extensions in the current workspace profile.
+- Use one profile per domain to keep extension loadouts focused.
+
 ## 🏆 Quest Completion Challenges
 
 ### Challenge 1: Speed Setup (10 minutes)
@@ -689,4 +728,14 @@ Now that you've mastered VS Code, consider these advanced quests:
 
 **Achievement Unlocked: VS Code Master** 🏆  
 *Continue your adventure with the next quest in your chosen specialization path!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

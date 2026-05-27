@@ -1,14 +1,11 @@
 ---
 title: 'Data Quality Engineering: Testing, Validation & Monitoring Frameworks'
 author: IT-Journey Team
-description: Implement data quality frameworks with Great Expectations and dbt tests.
-  Learn data profiling, validation rules, anomaly detection, and quality monitoring
-  for data pipelines.
-excerpt: Build data quality frameworks with Great Expectations, validation rules,
-  and anomaly detection
+description: Implement data quality frameworks with Great Expectations and dbt tests. Learn data profiling, validation rules, anomaly detection, and quality monitoring for data pipelines.
+excerpt: Build data quality frameworks with Great Expectations, validation rules, and anomaly detection
 preview: images/previews/data-quality-engineering-descriptive-subtitle.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1100'
 difficulty: 🔴 Hard
 estimated_time: 3-4 hours
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- data-engineering
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -62,13 +58,13 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1100-data-quality/
+permalink: /quests/1100/data-quality/
 categories:
 - Quests
 - Data-Engineering
 - Hard
 tags:
-- lvl-1100
+- '1100'
 - python
 - data-quality
 - main_quest
@@ -76,13 +72,15 @@ tags:
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1100
-- python
-- data-quality
-- main_quest
-- data-engineering
-- hands-on
-- gamified-learning
+  primary:
+  - '1100'
+  - python
+  - data-quality
+  secondary:
+  - main_quest
+  - data-engineering
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -95,6 +93,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -113,7 +112,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -491,3 +490,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,47 +1,45 @@
 ---
-title: "Fixing GitHub Actions Link Checker: KeyError 'details' Resolution"
+title: 'Fixing GitHub Actions Link Checker: KeyError ''details'' Resolution'
 description: Debugging and resolving a Python KeyError in GitHub Actions workflow that analyzes link check results from Lychee link checker
-date: 2025-09-30T16:56:38.000Z
-preview: Learn how to fix KeyError issues in automated link checking workflows and implement defensive programming patterns
+date: '2025-09-30T16:56:38.000Z'
+preview: /images/favicon_gpt_computer_retro.png
 tags:
-    - github-actions
-    - debugging
-    - python
-    - link-checking
-    - error-handling
-    - ai-assisted-development
+- github-actions
+- debugging
+- python
+- link-checking
+- error-handling
+- ai-assisted-development
 categories:
-    - Development
-    - Debugging
-sub-title: "From Error to Excellence: Defensive Programming in CI/CD Workflows"
+- Development
+- Debugging
+sub-title: 'From Error to Excellence: Defensive Programming in CI/CD Workflows'
 excerpt: Resolved a critical KeyError in link checking automation through defensive programming and better error handling
 snippet: When automation fails, defensive programming saves the day
 author: IT-Journey Team
 keywords:
-    primary:
-        - github actions debugging
-        - python keyerror fix
-    secondary:
-        - lychee link checker
-        - defensive programming
-        - ci cd error handling
-lastmod: 2025-09-30T22:47:41.812Z
+- github actions debugging
+- python keyerror fix
+- lychee link checker
+- defensive programming
+- ci cd error handling
+lastmod: '2025-09-30T22:47:41.000Z'
 permalink: /fixing-github-actions-link-checker-keyerror/
-attachments: ""
+attachments: ''
 comments: true
 ai_content_hints:
-    - Focus on practical debugging steps
-    - Emphasize defensive programming principles
-    - Include before/after code examples
-    - Connect to broader CI/CD best practices
+- Focus on practical debugging steps
+- Emphasize defensive programming principles
+- Include before/after code examples
+- Connect to broader CI/CD best practices
 technical_requirements:
-    - GitHub Actions experience
-    - Python basic knowledge
-    - Understanding of JSON data structures
+- GitHub Actions experience
+- Python basic knowledge
+- Understanding of JSON data structures
 difficulty_level: intermediate
 estimated_reading_time: 8 minutes
+draft: false
 ---
-
 ## The Challenge: KeyError Crashes Link Checking Automation
 
 During routine maintenance of the IT-Journey automated link checking system, we encountered a critical failure in our GitHub Actions workflow. The error was clear but puzzling:
@@ -75,6 +73,7 @@ The workflow uses Lychee link checker to scan all markdown files in the IT-Journ
 ### Problem: Rigid Data Structure Assumptions
 
 **Before (Problematic Code):**
+
 ```python
 # Convert error map to individual result format
 for file_path, errors in error_map.items():
@@ -88,6 +87,7 @@ for file_path, errors in error_map.items():
 ```
 
 This code assumed:
+
 - `error['status']` always exists
 - `error['status']` is always a dictionary
 - `error['status']['details']` always exists
@@ -95,6 +95,7 @@ This code assumed:
 ### Solution: Defensive Programming Approach
 
 **After (Robust Code):**
+
 ```python
 # Convert error map to individual result format
 for file_path, errors in error_map.items():
@@ -124,6 +125,7 @@ for file_path, errors in error_map.items():
 We also improved the success map handling to be more defensive:
 
 **Before:**
+
 ```python
 for success in successes:
     results.append({
@@ -134,6 +136,7 @@ for success in successes:
 ```
 
 **After:**
+
 ```python
 for success in successes:
     # Handle both object and string URL formats
@@ -209,6 +212,7 @@ This fix demonstrates how external tools (like Lychee) can change their output f
 ### Enhanced Error Handling
 
 This fix opens paths for further improvements:
+
 - JSON schema validation for Lychee outputs
 - Structured error reporting with categories
 - Better integration testing for external tools
@@ -224,6 +228,7 @@ This fix opens paths for further improvements:
 ### Integration with IT-Journey Ecosystem
 
 This defensive programming approach will be applied to:
+
 - Other GitHub Actions workflows
 - External API integrations
 - Data processing pipelines

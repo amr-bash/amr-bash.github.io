@@ -1,27 +1,21 @@
 ---
 title: Revolutionizing Work with AI Automation
 author: IT-Journey Team
-description: Discover how AI automation can transform your workflow, enhancing code
-  reviews, documentation, and PR summaries for a smarter coding experience.
+description: Discover how AI automation can transform your workflow, enhancing code reviews, documentation, and PR summaries for a smarter coding experience.
 excerpt: null
 snippet: null
 preview: images/previews/revolutionizing-work-with-ai-automation.png
-date: 2025-04-18T13:43:43.000Z
-lastmod: 2025-04-18 19:43:43.298000+00:00
+date: '2025-04-18T13:43:43.000Z'
+lastmod: '2025-04-18T19:43:43.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: AI Automation
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-- AI Automation
-- Development
-- IT Consulting
-- Programming
-- Project Management
+skill_focus: devops
 learning_style: hands-on
-permalink: /quests/level-0010-revolutionizing-work-with-ai-automation/
+permalink: /quests/0010/revolutionizing-work-with-ai-automation/
 categories:
 - AI Automation
 - Development
@@ -35,15 +29,18 @@ tags:
 - GitHub Copilot
 - OpenAI API
 keywords:
-- AI Automation
-- Best Practices
-- Code Review
-- GitHub Copilot
-- OpenAI API
+  primary:
+  - AI Automation
+  - Best Practices
+  secondary:
+  - Code Review
+  - GitHub Copilot
+  - OpenAI API
 fmContentType: quest
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 **Ah, the final frontier... the arcane fusion of human cleverness and artificial intelligence.** You've set up branches, written perfect commits, documented your journey, and summoned automation spells---but now it's time to meet your **AI familiars**.
 
@@ -108,7 +105,7 @@ They just read the summary and say, "Approved, noble wizard."
 **🧙‍♂️ Pseudo Workflow: PR Summary with OpenAI**
 -------------------------------------------------
 
-```
+```bash
 name: AI PR Summarizer
 
 on:
@@ -160,3 +157,12 @@ jobs:
 And there you have it. You are now a **Cloud Dev Wizard of the 5th Circle**: branches organized, commits pristine, docs divine, workflows humming, and AI at your side. 🌩️
 
 Need a final summary scroll of your complete best practice workflow? Or perhaps a retro pixelated magical poster to hang above your CI pipeline? Say the word, and we'll conjure it.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

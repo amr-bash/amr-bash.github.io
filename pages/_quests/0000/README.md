@@ -1,17 +1,15 @@
 ---
-
 title: Level 0000 - Foundation & Init World
 description: Your starting point in the IT-Journey. Character creation, OS selection, terminal basics, and first steps into the digital realm
 preview: images/previews/level-0000-foundation-init-world.png
-permalink: /quests/level-0000/
-lastmod: 2025-12-20T00:00:00.000Z
-
-level: 0000
-categories: quests
-date: 2025-11-29T16:46:02.000Z
-
+permalink: /quests/0000/
+layout: quest-collection
+level: '0000'
+categories:
+- quests
+lastmod: '2026-05-20T20:57:50.000Z'
+date: '2025-11-29T16:46:02.000Z'
 ---
-
 # Level 0000: Foundation & Init World
 
 *Welcome, brave adventurer! You stand at the threshold of your IT journey. Level 0000 is where every legend begins—where n00bs transform into aspiring wizards through character creation, realm selection, and mastering the fundamental incantations of the digital world.*
@@ -22,6 +20,7 @@ Level 0000 quests focus on:
 - **Character Creation** - Establishing your digital identity and choosing your path
 - **OS Selection** - Picking your primary operating system realm (Windows, macOS, Linux, Cloud)
 - **Terminal Mastery** - Learning command-line fundamentals and navigation
+- **Bashcrawl Practice** - Reinforcing commands through the online terminal dungeon and local extension labs
 - **Development Environment** - Setting up your first tools and configurations
 - **Community Entry** - Creating accounts and joining the guild
 
@@ -29,21 +28,22 @@ Level 0000 quests focus on:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Character Building: Forge Your IT Identity and Development Environment](/quests/character-building/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
-| [Hello Cloud: First Steps into the Sky Realm](/quests/hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
-| [Linux Fundamentals](/quests/hello-linux/linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
-| [Hello macOS: Setting Up the Apple Kingdom](/quests/hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [Hello Windows: Mastering the Windows Development Environment](/quests/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [Hello n00b: Your First Steps into the IT Journey](/quests/init_world/hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
-| [Git Basics: Version Control Introduction](/quests/level-0000-git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
-| [Markdown Mastery: Content Formatting Fundamentals](/quests/level-0000-markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [Terminal Fundamentals: Command Line Navigation Quest](/quests/level-0000-terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
-| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/lvl_000/bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
-| [Begin your IT Journey](/quests/lvl_000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [Character Selection](/quests/lvl_000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
-| [IT Fundamentals](/quests/lvl_000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
-| [OS Selection](/quests/lvl_000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
-| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | ✅ Complete |
+| [Character Building: Forge Your IT Identity and Development Environment](/quests/0000/character-building/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
+| [Hello Cloud: First Steps into the Sky Realm](/quests/0000/hello-cloud/) | ⚔️ Epic | 120-180 minutes | main_quest | ✅ Complete |
+| [Linux Fundamentals](/quests/0000/linux-fundamentals/) | 🟡 Medium | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello macOS: Setting Up the Apple Kingdom](/quests/0000/hello-macos/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [Hello Windows: Mastering the Windows Development Environment](/quests/0000/hello-windows/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Hello n00b: Your First Steps into the IT Journey](/quests/0000/hello-noob/) | 🟢 Easy | 15-30 minutes | main_quest | ✅ Complete |
+| [Git Basics: Version Control Introduction](/quests/0000/git-basics/) | 🟢 Easy | 60-75 minutes | main_quest | ✅ Complete |
+| [Markdown Mastery: Content Formatting Fundamentals](/quests/0000/markdown-mastery/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Terminal Fundamentals: Command Line Navigation Quest](/quests/0000/terminal-fundamentals/) | 🟢 Easy | 45-60 minutes | main_quest | ✅ Complete |
+| [Bashcrawl Terminal Adventure](/quests/0000/bashcrawl/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [bashrun and Beyond: Building an Advanced Terminal Game](/quests/0000/side-quests/bash-run/) | 🟡 Medium | 90-120 minutes | side_quest | ✅ Complete |
+| [Begin your IT Journey](/quests/0000/begin-your-it-journey/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [Character Selection](/quests/0000/character-selection/) | 🟢 Easy | 20-30 minutes | main_quest | ✅ Complete |
+| [IT Fundamentals](/quests/0000/it-fundamentals/) | 🟢 Easy | 60-90 minutes | main_quest | ✅ Complete |
+| [OS Selection](/quests/0000/os-selection/) | 🟢 Easy | 30-45 minutes | main_quest | ✅ Complete |
+| [VS Code Mastery Quest: Forge Your Ultimate Development Weapon](/quests/0000/vscode-mastery/) | 🟢 Easy | 45 minutes | main_quest | ✅ Complete |
 
 
 ### 🌱 Character Creation & Identity
@@ -138,7 +138,7 @@ Choose your primary operating system realm. Understand the strengths of each pla
 
 ### 💻 Platform-Specific Onboarding
 
-#### [Hello Windows](hello-win/hello-win.md)
+#### [Hello Windows](hello-win.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 60-90 minutes
 
 Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customization.
@@ -153,7 +153,7 @@ Master the Windows Empire with PowerShell, WinGet, and Windows Terminal customiz
 
 ---
 
-#### [Hello macOS](hello-mac/hello-mac.md)
+#### [Hello macOS](hello-mac.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
@@ -168,7 +168,7 @@ Conquer the Apple Kingdom with Homebrew, iTerm2, and Xcode command-line tools.
 
 ---
 
-#### [Hello Linux](hello-linux/linux-fundamentals.md)
+#### [Hello Linux](linux-fundamentals.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🔴 Hard | **Estimated Time**: 90-120 minutes
 
 Tame the Penguin's Domain with Bash mastery, package managers, and system configuration.
@@ -183,7 +183,7 @@ Tame the Penguin's Domain with Bash mastery, package managers, and system config
 
 ---
 
-#### [Hello Cloud](hello-cloud/hello-cloud.md)
+#### [Hello Cloud](hello-cloud.md)
 **Quest Type**: Main 🏰 | **Difficulty**: ⚔️ Epic | **Estimated Time**: 120-180 minutes
 
 Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundamentals.
@@ -210,6 +210,21 @@ Master the command line — the most powerful interface in any IT hero's arsenal
 - Command history and search (grep, find)
 
 **Prerequisites:** Basic computer operation
+
+---
+
+#### [Bashcrawl Terminal Adventure](bashcrawl/)
+**Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
+
+Practice terminal commands in the [online Bashcrawl dungeon](https://bamr87.github.io/bashcrawl/) before installing anything locally. This quest turns `pwd`, `ls -F`, `cat`, and `cd` into an adventure path.
+
+**Skills You'll Master:**
+- Safe no-install terminal practice
+- Directory navigation in a game world
+- Reading scrolls and command output
+- Moving from browser practice to local Bash workflows
+
+**Prerequisites:** Basic terminal curiosity; [Terminal Fundamentals](terminal-fundamentals.md) recommended
 
 ---
 
@@ -243,7 +258,7 @@ Learn the universal language of technical documentation. Markdown is used in REA
 
 ---
 
-#### [VS Code Mastery Quest](vscode-mastery.md)
+#### [VS Code Mastery Quest](/quests/0000/vscode-mastery/)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 60-90 minutes
 
 Forge your ultimate development weapon. Master VS Code setup, extensions, and productivity features.
@@ -258,18 +273,18 @@ Forge your ultimate development weapon. Master VS Code setup, extensions, and pr
 
 ---
 
-#### [Bash Fundamentals](bash-run.md)
-**Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 90-120 minutes
+#### [Bash-run Extension Lab](bash-run.md)
+**Quest Type**: Side ⚔️ | **Difficulty**: 🟡 Medium | **Estimated Time**: 90-120 minutes
 
-Learn the terminal incantations that power Unix-like systems. Master Bash scripting basics.
+Clone the current [Bashcrawl repository](https://github.com/bamr87/bashcrawl/) and extend a real terminal learning game with new rooms, scrolls, and helper scripts.
 
 **Skills You'll Master:**
-- Bash command syntax
+- Bash project structure
 - Script creation and execution
-- Variables and control flow
-- File manipulation
+- Variables, functions, and control flow
+- Game-state and room-extension patterns
 
-**Prerequisites:** Terminal access, [Hello Linux](hello-linux/linux-fundamentals.md) or [Hello macOS](hello-mac/hello-mac.md)
+**Prerequisites:** [Bashcrawl Terminal Adventure](bashcrawl/) and [Terminal Fundamentals](terminal-fundamentals.md)
 
 ---
 
@@ -284,7 +299,7 @@ Learn terminal commands through an interactive text adventure game. Navigate dun
 - File management (cp, mv, rm)
 - Command-line gaming fun!
 
-**Prerequisites:** Basic terminal access
+**Prerequisites:** Basic terminal access or a browser for [Bashcrawl Web](https://bamr87.github.io/bashcrawl/)
 
 ### 📜 Script Examples
 
@@ -315,19 +330,21 @@ See the [tools collection](../tools/README.md) for beginner tool guides and gett
 4. [OS Selection](os-selection.md) - Choose your platform
 5. Platform-specific Hello quest
 6. [Terminal Fundamentals](terminal-fundamentals.md) - Command line basics
-7. [Git Basics](git-basics.md) - Version control
-8. [Markdown Mastery](markdown-mastery.md) - Documentation formatting
+7. [Bashcrawl Adventure](bashcrawl/) - Practice commands in the browser dungeon
+8. [Git Basics](git-basics.md) - Version control
+9. [Markdown Mastery](markdown-mastery.md) - Documentation formatting
 
 ### For Those with Some Experience
 1. [Character Selection](character-selection.md) - Confirm your specialization
 2. Platform-specific Hello quest
-3. [VS Code Mastery Quest](vscode-mastery.md) - Set up your IDE
+3. [VS Code Mastery Quest](/quests/0000/vscode-mastery/) - Set up your IDE
 4. [Terminal Fundamentals](terminal-fundamentals.md) - Solidify CLI skills
-5. [Git Basics](git-basics.md) - Version control workflow
-6. [Bash Fundamentals](bash-run.md) - Advanced terminal proficiency
+5. [Bashcrawl Adventure](bashcrawl/) - Reinforce commands through play
+6. [Git Basics](git-basics.md) - Version control workflow
+7. [Bash-run Extension Lab](bash-run.md) - Extend a real Bash learning game
 
 ### For Quick Setup
-1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](vscode-mastery.md) → [Terminal Fundamentals](terminal-fundamentals.md) → [Git Basics](git-basics.md)
+1. [Hello n00b](hello-noob.md) → Platform Hello quest → [VS Code Mastery Quest](/quests/0000/vscode-mastery/) → [Terminal Fundamentals](terminal-fundamentals.md) → [Bashcrawl Adventure](bashcrawl/) → [Git Basics](git-basics.md)
 
 ## Quest Dependencies & Progression
 
@@ -346,9 +363,10 @@ graph TD
     H --> K
     I --> K
     K --> N[🖥️ Terminal Fundamentals]
-    N --> O[📝 Git Basics]
+    N --> Q[🎮 Bashcrawl Adventure]
+    Q --> O[📝 Git Basics]
     N --> P[📄 Markdown Mastery]
-    N --> L[📝 Bash Fundamentals]
+    Q --> L[📝 Bash-run Extension Lab]
     O --> M[Level 0001 Quests]
     P --> M
     L --> M

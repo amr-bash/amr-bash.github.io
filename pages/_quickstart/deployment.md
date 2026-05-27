@@ -1,38 +1,37 @@
 ---
-title: "Deployment to GitHub Pages and Azure"
+title: Deployment to GitHub Pages and Azure
 author: bamr87
 description: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or any static hosting provider — with custom domain configuration.
-excerpt: "Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or a custom hosting provider, with optional custom domain configuration."
+excerpt: Deploy your Jekyll site to GitHub Pages, Azure Static Web Apps, or a custom hosting provider, with optional custom domain configuration.
 permalink: /quickstart/deployment/
 categories:
-  - quickstart
+- quickstart
 slug: deployment
-lastmod: 2026-04-02T03:14:50.958Z
+lastmod: '2026-04-02T03:14:50.000Z'
 draft: false
-date: 2026-04-01T00:00:00.000Z
+date: '2026-04-01T00:00:00.000Z'
 difficulty: 🟡 Medium
 estimatedTime: 20-30 minutes
 prerequisites:
-  - Site builds locally (see [Local Development](/quickstart/local-development/))
-  - GitHub repository set up (see [GitHub Setup](/quickstart/github/))
+- Site builds locally (see [Local Development](/quickstart/local-development/))
+- GitHub repository set up (see [GitHub Setup](/quickstart/github/))
 tags:
-  - deployment
-  - github-pages
-  - azure
-  - hosting
+- deployment
+- github-pages
+- azure
+- hosting
 keywords:
   primary:
-    - jekyll deployment
-    - github pages
-    - azure static web apps
+  - jekyll deployment
+  - github pages
+  - azure static web apps
   secondary:
-    - custom domain
-    - CNAME
-    - static hosting
+  - custom domain
+  - CNAME
+  - static hosting
 sidebar:
   nav: quickstart
 ---
-
 This guide covers **Phase 12** of the [Quick Start](/quickstart/) — deploying your Jekyll site to GitHub Pages, Azure, or any static hosting provider.
 
 ---
@@ -187,6 +186,6 @@ The `JEKYLL_ENV` variable controls environment-specific behavior:
 | Set up CI/CD for automated deployment | [CI/CD & Automation](/quickstart/cicd-automation/) |
 | Optimize for SEO, performance, and accessibility | [Optimization & Maintenance](/quickstart/optimization-maintenance/) |
 
-> **IT-Journey Quests:** [GitHub Pages Basics](/quests/frontend/github-pages-basics/) · [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) · [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/)
+> **IT-Journey Quests:** [GitHub Pages Basics](/quests/0100/frontend/github-pages-basics/) · [Azure Ascension](/quests/azure-ascension-jekyll-deployment-quest/) · [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/)
 >
 > **External Docs:** [GitHub Pages Docs](https://docs.github.com/en/pages) · [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/) · [Jekyll Deployment](https://jekyllrb.com/docs/deployment/)

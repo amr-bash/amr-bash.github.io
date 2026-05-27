@@ -2,7 +2,7 @@
 title: 'Azure Ascension: Deploying Jekyll to the Cloud Kingdom'
 description: Deploy the IT-Journey Jekyll site to Azure Static Web Apps with a clean CI/CD pipeline and safe secrets handling.
 author: IT-Journey Team
-date: 2025-07-05T12:12:17.000Z
+date: '2025-07-05T12:12:17.000Z'
 lastmod: 2026-01-14
 level: '1001'
 difficulty: 🔴 Hard
@@ -10,13 +10,9 @@ estimated_time: 90-120 minutes
 primary_technology: Azure Static Web Apps
 quest_type: main_quest
 quest_series: Cloud Deployment Quests
-skill_focus:
-- cloud-deployment
-- ci-cd
-- static-sites
-- azure
+skill_focus: devops
 learning_style: hands-on
-permalink: /quests/azure-ascension-jekyll-deployment/
+permalink: /quests/1000/azure-ascension-jekyll-deployment/
 categories:
 - Quests
 - Cloud
@@ -28,13 +24,16 @@ tags:
 - static-web-apps
 - ci-cd
 keywords:
-- azure
-- jekyll
-- static-web-apps
-- deployment
-- ci-cd
+  primary:
+  - azure
+  - jekyll
+  secondary:
+  - static-web-apps
+  - deployment
+  - ci-cd
 fmContentType: quest
 draft: false
+layout: quest
 ---
 *Rise, cloud wanderer! This quest guides you through deploying the IT-Journey Jekyll site to Azure Static Web Apps, wiring up CI/CD, and verifying a clean production build.*
 
@@ -105,3 +104,12 @@ Follow the prompts for Azure authentication and GitHub workflow setup.
 - [GitHub Pages Portal](0001/github-pages-portal.md)
 - [Jekyll Fundamentals](0001/jekyll-fundamentals.md)
 - [Link to the Future: Hyperlink Checking](1010/link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

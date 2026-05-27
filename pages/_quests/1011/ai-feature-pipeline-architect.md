@@ -1,24 +1,19 @@
 ---
 title: 'AI Feature Pipeline Architect: DevSecOps Mastery Quest'
 author: Quest Master AI-Pipeline Team
-description: Master the art of building AI-orchestrated feature pipelines from user
-  request to deployment, combining DevSecOps practices with intelligent automation
-excerpt: Transform feature requests into deployed applications using AI-assisted DevSecOps
-  pipelines with dual-format artifacts for both humans and AI agents
+description: Master the art of building AI-orchestrated feature pipelines from user request to deployment, combining DevSecOps practices with intelligent automation
+excerpt: Transform feature requests into deployed applications using AI-assisted DevSecOps pipelines with dual-format artifacts for both humans and AI agents
 snippet: From idea to deployment - let AI magic guide your development journey
 preview: images/previews/ai-feature-pipeline-architect-devsecops-mastery-qu.png
-date: 2022-02-27T12:00:00.000Z
-lastmod: 2025-09-29 14:28:35.904000+00:00
+date: '2022-02-27T12:00:00.000Z'
+lastmod: '2025-09-29T14:28:35.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 240-360 minutes
-primary_technology: lvl-1011
+primary_technology: 1011
 quest_type: main_quest
 quest_series: AI-Enhanced Development Mastery Path
-skill_focus:
-- Quests
-- DevOps-Engineering
-- AI-Integration
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
 - Understanding of basic DevOps concepts and CI/CD pipelines
@@ -32,25 +27,27 @@ validation_criteria:
 - Deploy a feature from request to production using AI assistance
 - Demonstrate multi-agent system coordination
 - Document the entire pipeline with architectural decision records
-permalink: /quests/level-1011-ai-feature-pipeline-architect/
+permalink: /quests/1011/ai-feature-pipeline-architect/
 categories:
 - Quests
 - DevOps-Engineering
 - AI-Integration
 tags:
-- lvl-1011
+- '1011'
 - ai-orchestration
 - devops-mastery
 - pipeline-automation
 - feature-development
 - gamified-learning
 keywords:
-- lvl-1011
-- ai-orchestration
-- devops-mastery
-- pipeline-automation
-- feature-development
-- gamified-learning
+  primary:
+  - '1011'
+  - ai-orchestration
+  - devops-mastery
+  secondary:
+  - pipeline-automation
+  - feature-development
+  - gamified-learning
 fmContentType: quest
 draft: draft
 comments: true
@@ -66,6 +63,7 @@ related_quests:
 - 'Level 1100: API Design and Integration - Service communication patterns'
 - 'Level 1101: Testing Methodologies - Quality assurance foundations'
 - 'Level 10010: DevOps and Infrastructure Automation - Advanced deployment strategies'
+layout: quest
 ---
 *Greetings, master architect! Welcome to the **AI Feature Pipeline Architect Quest** - an epic journey that will transform you into a wizard of AI-orchestrated development pipelines. This quest will guide you through building intelligent systems that seamlessly convert user ideas into deployed applications, preparing you for the future of software engineering where AI and human creativity work in perfect harmony.*
 
@@ -566,3 +564,12 @@ Your newfound AI orchestration powers open several exciting paths:
 *May your pipelines flow smoothly, your AI agents collaborate harmoniously, and your features deploy flawlessly! You've mastered the art of AI-orchestrated development - now go forth and build the future of software engineering!* ⚔️✨🤖
 
 **Ready for your next epic adventure?** Check the [Quest Map](/quests/) for advanced AI and DevOps challenges, or dive into specialized tracks like MLOps, Cloud Architecture, or AI Safety!
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,13 +1,11 @@
 ---
 title: 'Advanced Markdown: Tables, Footnotes & Extended Syntax'
 author: IT-Journey Team
-description: Master advanced Markdown features beyond basics. Learn tables, footnotes,
-  task lists, and GitHub-flavored extensions. Documentation and content creation tutorial.
-excerpt: Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored
-  extensions.
+description: Master advanced Markdown features beyond basics. Learn tables, footnotes, task lists, and GitHub-flavored extensions. Documentation and content creation tutorial.
+excerpt: Level up your Markdown with tables, footnotes, task lists, and GitHub-flavored extensions.
 preview: images/previews/advanced-markdown-tables-footnotes-quest-title-ext.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-12-19 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-12-19T00:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
@@ -34,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- documentation
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -61,14 +58,14 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0010-advanced-markdown/
+permalink: /quests/0010/advanced-markdown/
 categories:
 - Quests
 - Documentation
 - Markdown
 - Intermediate
 tags:
-- lvl-0010
+- '0010'
 - markdown
 - github-markdown
 - documentation
@@ -77,14 +74,16 @@ tags:
 - hands-on
 - intermediate
 keywords:
-- lvl-0010
-- markdown
-- github-markdown
-- documentation
-- tables
-- main_quest
-- hands-on
-- intermediate
+  primary:
+  - '0010'
+  - markdown
+  - github-markdown
+  - documentation
+  secondary:
+  - tables
+  - main_quest
+  - hands-on
+  - intermediate
 fmContentType: quest
 draft: true
 comments: true
@@ -97,6 +96,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -115,7 +115,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -493,3 +493,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

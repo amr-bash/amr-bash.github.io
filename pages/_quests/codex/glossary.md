@@ -1,9 +1,10 @@
 ---
 title: 'Glossary '
+layout: quest
 author: IT-Journey Team
 excerpt: null
 description: 'Reference: Glossary .'
-preview: images/previews/glossary.png
+preview: /images/previews/glossary.png
 snippet: null
 categories:
 - notes
@@ -11,22 +12,22 @@ tags:
 - notes
 meta: null
 draft: true
-lastmod: &id001 2023-11-25 11:31:20.728000+00:00
-permalink: /quests/level-codex/glossary/
+lastmod: '2023-11-25T11:31:20.000Z'
+permalink: /quests/codex/glossary/
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: Variable
 quest_type: side_quest
 keywords:
-- notes
-date: 2023-11-25T14:12:43.000Z
+  primary:
+  - notes
+  secondary: []
+date: '2023-11-25T14:12:43.000Z'
 quest_series: Codex Reference
 primary_technology: reference
-skill_focus:
-- codex
-- reference
+skill_focus: fullstack
 learning_style: reading
-fmContentType: codex
+fmContentType: quest
 ---
 Enterprise
 
@@ -78,4 +79,12 @@ Map - System arch
 Languages
 
 Worlds - OS
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

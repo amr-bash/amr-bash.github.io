@@ -1,19 +1,16 @@
 ---
 title: 'Forging the Stats Portal: Data Analytics Quest'
 author: Quest Master IT-Journey Team
-description: Build a comprehensive statistics page that reveals the hidden metrics
-  of your Jekyll site, displaying real-time content analytics with Bootstrap-powered
-  visualizations
-excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create
-  a dynamic statistics portal
+description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
+excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
 snippet: Transform raw site data into compelling visual insights
 preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
-date: 2025-10-09T18:25:11.000Z
-lastmod: 2025-10-08 18:10:29.972000+00:00
+date: '2025-10-09T18:25:11.000Z'
+lastmod: '2025-10-08T18:10:29.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-primary_technology: lvl-0001
+primary_technology: 1
 quest_type: main_quest
 quest_series: Jekyll Site Building
 quest_line: Development Mastery
@@ -36,10 +33,7 @@ learning_paths:
   - Jekyll Development
   - Data Visualization
   - Frontend Design
-skill_focus:
-- Quests
-- Development
-- Data-Analytics
+skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -74,13 +68,13 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Web
-permalink: /quests/stating-the-stats/
+permalink: /quests/0001/stating-the-stats/
 categories:
 - Quests
 - Development
 - Data-Analytics
 tags:
-- lvl-0001
+- '0001'
 - jekyll
 - data-analytics
 - liquid-templating
@@ -89,14 +83,16 @@ tags:
 - data-visualization
 - yaml-data-files
 keywords:
-- lvl-0001
-- jekyll
-- data-analytics
-- liquid-templating
-- bootstrap
-- site-statistics
-- data-visualization
-- yaml-data-files
+  primary:
+  - '0001'
+  - jekyll
+  - data-analytics
+  - liquid-templating
+  secondary:
+  - bootstrap
+  - site-statistics
+  - data-visualization
+  - yaml-data-files
 fmContentType: quest
 comments: true
 attachments: ''
@@ -113,6 +109,7 @@ rewards:
   unlocks_features:
   - Access to advanced analytics quest line
   - Data-driven site optimization capabilities
+layout: quest
 ---
 *In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 
@@ -211,7 +208,7 @@ Jekyll provides powerful data management capabilities through YAML files stored 
 - **Maintainability**: Easy to update and version control
 
 **Jekyll Data Flow:**
-```
+```text
 Site Content (Posts/Pages) 
     ↓
 Jekyll Build Process
@@ -443,7 +440,7 @@ ruby scripts/generation/generate_statistics.rb
 ```
 
 **Expected Output:**
-```
+```text
 ✅ Statistics generated successfully!
    Total posts: 76
    Output: /path/to/it-journey/_data/content_statistics.yml
@@ -1040,7 +1037,7 @@ Your completed Stats Portal must demonstrate:
 ### Common Issues and Solutions
 
 **Issue: Statistics file not found**
-```
+```yaml
 Error: undefined method `[]' for nil:NilClass
 ```
 **Solution**: 
@@ -1049,7 +1046,7 @@ Error: undefined method `[]' for nil:NilClass
 - Check file permissions (should be readable)
 
 **Issue: Numbers don't match expected values**
-```
+```text
 Shows 0 posts but I have posts
 ```
 **Solution**:
@@ -1059,7 +1056,7 @@ Shows 0 posts but I have posts
 - Run script with debugging: `ruby -d scripts/generation/generate_statistics.rb`
 
 **Issue: Page styling broken**
-```
+```text
 Bootstrap classes not applying
 ```
 **Solution**:
@@ -1069,7 +1066,7 @@ Bootstrap classes not applying
 - Clear browser cache and rebuild site
 
 **Issue: Liquid syntax errors**
-```
+```text
 Liquid Exception: undefined method
 ```
 **Solution**:
@@ -1085,3 +1082,12 @@ Liquid Exception: undefined method
 **Quest Status**: ✅ **COMPLETE**
 
 *Share your Stats Portal with the IT-Journey community and inspire others to build data-driven experiences!*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

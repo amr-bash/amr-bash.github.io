@@ -1,13 +1,11 @@
 ---
 title: 'REST Principles: RESTful API Design Best Practices'
 author: IT-Journey Team
-description: Learn REST architectural principles for designing clean, scalable APIs.
-  Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
-excerpt: Design clean, scalable RESTful APIs following architectural principles and
-  best practices
+description: Learn REST architectural principles for designing clean, scalable APIs. Master resource naming, HTTP verbs, statelessness, HATEOAS, and RESTful design patterns.
+excerpt: Design clean, scalable RESTful APIs following architectural principles and best practices
 preview: images/previews/rest-principles-restful-api-design-descriptive-sub.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:08:54+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:08:54.000Z'
 level: '0111'
 difficulty: 🔴 Hard
 estimated_time: 75-90 minutes
@@ -22,9 +20,16 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/0111/api-authentication/
+  - /quests/0111/api-documentation/
+  - /quests/0111/api-versioning/
+  - /quests/0111/rate-limiting/
+  - /quests/0111/api-fundamentals/
+  - /quests/0111/error-handling/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1000/cloud-computing-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -34,8 +39,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- backend
+skill_focus: backend
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -61,25 +65,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0111-rest-principles/
+permalink: /quests/0111/rest-principles/
 categories:
 - Quests
 - Backend
 - Hard
 tags:
-- lvl-0111
+- '0111'
 - rest
 - main_quest
 - backend
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0111
-- rest
-- main_quest
-- backend
-- hands-on
-- gamified-learning
+  primary:
+  - '0111'
+  - rest
+  - main_quest
+  secondary:
+  - backend
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +98,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -110,7 +117,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -488,3 +495,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0111 (7) - API Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Cloud Computing Fundamentals: IaaS, PaaS, and SaaS Explained]]
+**Related quests:** [[API Authentication: OAuth, JWT, and API Keys Implementation]] · [[API Documentation: OpenAPI Specification and Developer Experience]] · [[API Versioning: Managing API Evolution and Backwards Compatibility]] · [[Rate Limiting: API Traffic Control and Throttling Strategies]] · [[API Fundamentals: Building Web Services and HTTP APIs]] · [[Error Handling: API Response Patterns and HTTP Status Codes]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

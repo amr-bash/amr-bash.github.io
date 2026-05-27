@@ -1,14 +1,11 @@
 ---
 title: 'Secrets Management: Secure Configuration and Credential Handling'
 author: IT-Journey Team
-description: Learn secure secrets management for CI/CD pipelines. Handle API keys,
-  passwords, tokens, and sensitive configuration using vault systems and environment
-  variables.
-excerpt: Implement secure secrets management practices for protecting sensitive credentials
-  in your pipelines
+description: Learn secure secrets management for CI/CD pipelines. Handle API keys, passwords, tokens, and sensitive configuration using vault systems and environment variables.
+excerpt: Implement secure secrets management practices for protecting sensitive credentials in your pipelines
 preview: images/previews/secrets-management-secure-configuration-handling-d.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:05:46+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:05:46.000Z'
 level: '0101'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
@@ -35,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -62,25 +58,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-0101-secrets-management/
+permalink: /quests/0101/secrets-management/
 categories:
 - Quests
 - DevOps
 - Medium
 tags:
-- lvl-0101
+- '0101'
 - security
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0101
-- security
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0101'
+  - security
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -93,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -111,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -489,3 +488,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0101 - Advanced Docker & DevOps]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

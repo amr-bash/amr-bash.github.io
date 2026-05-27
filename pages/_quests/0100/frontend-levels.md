@@ -1,37 +1,47 @@
 ---
 title: Frontend Forests Levels
 author: GPT and bamr87
-description: This guide will navigate you through the enchanted woods, ensuring you
-  leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
-excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript
-  in the Frontend Forests
+description: This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests
 snippet: null
 preview: /images/frontend-forests.png
-date: 2024-05-28T15:23:32.000Z
-lastmod: 2024-05-28 04:13:59.660000+00:00
+date: '2024-05-28T15:23:32.000Z'
+lastmod: '2024-05-28T04:13:59.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: General
 quest_type: main_quest
 quest_series: Level 0100 Quest Line
-skill_focus:
-- Foundations
+skill_focus: fullstack
 learning_style: hands-on
-permalink: /quests/level-0100-frontend-levels/
+permalink: /quests/0100/frontend-levels/
 categories: []
 tags: []
 keywords:
-- frontend
-- forests
-- levels
+  primary:
+  - frontend
+  secondary:
+  - forests
+  - levels
 fmContentType: quest
 draft: draft
 attachments: ''
 sub-title: null
 slug: frontend-forests-levels
 type: default
+layout: quest
 ---
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+
 Absolutely! Let's structure our adventure with binary-coded levels, making our journey both organized and fun. Each level will have specific tasks and goals to help you progress step by step. Here’s our quest map in binary-coded levels:
 
 ### Level 000: Initial Setup
@@ -215,3 +225,12 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
 2. **Visit `http://localhost:4000` in Your Browser:**
 
 Congratulations! You've reached the end of our binary-coded adventure, and your Docker-powered Jekyll site with Bootstrap 5 is up and running. If you need any more help or want to explore more features, feel free to ask. Happy coding! 🌟
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

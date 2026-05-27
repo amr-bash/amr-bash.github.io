@@ -1,39 +1,36 @@
 ---
-title: "Docker for Beginners: Complete Tutorial to Get Started with Containers"
-description: "Learn Docker from scratch with this beginner-friendly tutorial. Understand containers, images, and basic commands with hands-on examples. Perfect for developers new to containerization."
-date: 2025-12-20T10:05:28.000Z
-lastmod: 2025-12-20T00:00:00.000Z
-author: "IT-Journey Team"
+title: 'Docker for Beginners: Complete Tutorial to Get Started with Containers'
+description: Learn Docker from scratch with this beginner-friendly tutorial. Understand containers, images, and basic commands with hands-on examples. Perfect for
+date: '2025-12-20T10:05:28.000Z'
+lastmod: '2025-12-20T00:00:00.000Z'
+author: IT-Journey Team
 permalink: /posts/docker-beginners-tutorial/
 tags:
-    - docker
-    - containers
-    - devops
-    - tutorial
-    - beginner
-    - development
+- docker
+- containers
+- devops
+- tutorial
+- beginner
+- development
 categories:
-    - DevOps
-    - Tutorials
-    - Beginner
+- DevOps
+- Tutorials
+- Beginner
 keywords:
-    primary:
-        - docker tutorial
-        - docker for beginners
-        - learn docker
-    secondary:
-        - docker containers
-        - docker images
-        - docker commands
-        - containerization
-        - it-journey
-excerpt: "Master Docker basics in 30 minutes with this beginner-friendly tutorial. Learn containers, images, and essential commands to start your containerization journey."
-preview: "Complete Docker tutorial for beginners - learn containers, images, and commands step by step"
-difficulty: "🟢 Easy"
-estimated_time: "30 minutes"
+- docker tutorial
+- docker for beginners
+- learn docker
+- docker containers
+- docker images
+- docker commands
+- containerization
+- it-journey
+excerpt: Master Docker basics in 30 minutes with this beginner-friendly tutorial. Learn containers, images, and essential commands to start your containerization journey.
+preview: /images/previews/docker-for-beginners-complete-tutorial-to-get-star.png
+difficulty: 🟢 Easy
+estimated_time: 30 minutes
 draft: false
 ---
-
 # 🐳 Docker for Beginners: Complete Tutorial
 
 > **Learn Docker from scratch** with this hands-on tutorial designed for complete beginners. In 30 minutes, you'll understand containers, images, and essential commands.
@@ -56,7 +53,7 @@ draft: false
 
 **Docker** is a tool that makes it easy to create, deploy, and run applications in **containers**.
 
-### Think of it like this:
+### Think of it like this
 
 | Without Docker | With Docker |
 |---------------|-------------|
@@ -122,6 +119,7 @@ docker --version
 ```
 
 You should see something like:
+
 ```
 Docker version 24.0.6, build ed223bc
 ```
@@ -139,6 +137,7 @@ docker run hello-world
 ```
 
 **What happens:**
+
 1. Docker looks for the `hello-world` image locally
 2. Doesn't find it, downloads from Docker Hub
 3. Creates a container from the image
@@ -146,6 +145,7 @@ docker run hello-world
 5. Container prints a message and exits
 
 **Output:**
+
 ```
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -163,6 +163,7 @@ docker run -it ubuntu bash
 ```
 
 **Flags explained:**
+
 - `-i` = Interactive (keep STDIN open)
 - `-t` = Allocate a terminal
 - `ubuntu` = The image name
@@ -190,11 +191,12 @@ docker run -d -p 8080:80 nginx
 ```
 
 **Flags explained:**
+
 - `-d` = Detached (run in background)
 - `-p 8080:80` = Map port 8080 on your machine to port 80 in container
 
 **Test it:**
-Open http://localhost:8080 in your browser
+Open <http://localhost:8080> in your browser
 
 You should see "Welcome to nginx!"
 
@@ -205,6 +207,7 @@ You should see "Welcome to nginx!"
 ### What is an Image?
 
 An **image** is a read-only template for creating containers. Think of it like:
+
 - A **class** in programming (image) vs. an **object** (container)
 - A **recipe** (image) vs. a **cooked meal** (container)
 
@@ -240,6 +243,7 @@ docker images
 ```
 
 Output:
+
 ```
 REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 nginx        latest    a6bd71f48f68   2 weeks ago    187MB
@@ -296,6 +300,7 @@ docker run -v $(pwd):/app -w /app python:3.11 python hello.py
 ```
 
 **Flags explained:**
+
 - `-v $(pwd):/app` = Mount current directory to /app in container
 - `-w /app` = Set working directory to /app
 
@@ -366,9 +371,9 @@ Ready to level up? Continue your Docker journey:
 
 ### Related Quests
 
-- [Container Fundamentals Quest](/quests/level-0100-container-fundamentals/) - Deep dive into Docker
-- [Docker Compose Orchestration](/quests/level-0100-docker-compose-orchestration/) - Multi-container apps
-- [Frontend Docker Quest](/quests/level-0100/lvl-000-frontend-docker/) - Docker for web development
+- [Container Fundamentals Quest](/quests/0100/container-fundamentals/) - Deep dive into Docker
+- [Docker Compose Orchestration](/quests/0100/docker-compose-orchestration/) - Multi-container apps
+- [Frontend Docker Quest](/quests/0100/frontend-docker-lvl-000/) - Docker for web development
 
 ---
 
@@ -381,6 +386,7 @@ Ready to level up? Continue your Docker journey:
 ### "Permission denied"
 
 **Linux Solution**:
+
 ```bash
 sudo usermod -aG docker $USER
 # Then log out and back in
@@ -389,13 +395,14 @@ sudo usermod -aG docker $USER
 ### "Port already in use"
 
 **Solution**: Use a different port:
+
 ```bash
 docker run -p 8081:80 nginx  # Use 8081 instead of 8080
 ```
 
 ---
 
-## 🎉 Congratulations!
+## 🎉 Congratulations
 
 You've learned the Docker basics! You can now:
 
@@ -409,4 +416,4 @@ You've learned the Docker basics! You can now:
 
 **Last Updated**: December 2025 | **Author**: IT-Journey Team
 
-*Found this helpful? Check out our [Docker Mastery Quest Series](/quests/level-0100-container-fundamentals/) for advanced topics! 🚀*
+*Found this helpful? Check out our [Docker Mastery Quest Series](/quests/0100/container-fundamentals/) for advanced topics! 🚀*

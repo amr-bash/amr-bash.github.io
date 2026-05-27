@@ -1,34 +1,33 @@
 ---
-title: Learning Resources Library
+title: IT-Journey Learning Resources Library
 author: Amr Abdel Eissa
 permalink: /docs/
-description: Reference documentation and learning resources for tools and technologies used in IT-Journey
-excerpt: "Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey."
+description: Reference documentation and learning resources covering terminal, Bash scripting, Jekyll, Liquid templating, and development tools for IT-Journey.
+excerpt: Reference documentation and learning resources covering terminal, Bash, Jekyll, Liquid, and development tools used in IT-Journey.
 categories:
-  - docs
-  - home
+- docs
+- home
 tags:
-  - docs
-  - reference
-  - learning-resources
-  - jekyll
-  - terminal
+- docs
+- reference
+- learning-resources
+- jekyll
+- terminal
 sidebar:
   nav: docs
 toc_sticky: true
-date: 2021-12-03T09:05:06.000Z
-lastmod: 2026-04-02T03:24:28.792Z
+date: '2021-12-03T09:05:06.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
 draft: false
 keywords:
   primary:
-    - learning resources
-    - documentation
+  - learning resources
+  - documentation
   secondary:
-    - terminal reference
-    - jekyll docs
-    - bash guide
+  - terminal reference
+  - jekyll docs
+  - bash guide
 ---
-
 # Learning Resources Library
 
 Reference documentation and educational resources for the tools and technologies powering IT-Journey. Browse by topic below, or use the sidebar to navigate directly to a specific technology.
@@ -44,11 +43,11 @@ Reference documentation and educational resources for the tools and technologies
 > **Note for Contributors:** If you're looking for technical documentation about the IT-Journey repository structure, contribution workflows, or development setup, see the **Developer Documentation** in the repository root (`/docs/` directory on GitHub).
 
 ### Quick Links for Developers
-- [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md)
-- [Jekyll Implementation](../../docs/architecture/JEKYLL_IMPLEMENTATION.md)
-- [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
-- [Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)
-- [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md)
+- [Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)
+- [Jekyll Implementation](https://github.com/bamr87/it-journey/blob/main/docs/architecture/JEKYLL_IMPLEMENTATION.md)
+- [Development Environment Setup](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+- [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/docs/CONTRIBUTING_DEVELOPER.md)
+- [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)
 
 ## Available Documentation
 
@@ -57,8 +56,10 @@ Reference documentation and educational resources for the tools and technologies
 Command-line reference and productivity guides for working effectively in the terminal.
 
 **Topics:**
+- [Terminal and Bash Learning Path](/docs/terminal/) - Complete path connecting Bashcrawl, terminal basics, cheatsheets, references, and scripting quests
 - [Terminal Shortcuts Cheat Sheet](/docs/terminal-shortcuts-cheat-sheet/) - Keyboard shortcuts for macOS, Linux, and Windows
 - [Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive GNU Bash reference: built-ins, scripting, text processing, and advanced techniques
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) - Browser-based terminal dungeon for no-install command practice
 
 ### Jekyll
 
@@ -68,10 +69,27 @@ The IT-Journey platform is built with Jekyll, a static site generator. The Jekyl
 - [Jekyll Overview](jekyll/) - Jekyll as used in IT-Journey
 - [Configuration Options](jekyll/jekyll-config.md) - Jekyll configuration reference
 - [Frontmatter CMS](jekyll/jekyll-frontmatter-cms.md) - Using frontmatter as a CMS
-- [Frontmatter Preview Configuration](jekyll/jekyll-frontmatter-preview-configuration.md) - Configure VS Code preview with permalinks
+- [Frontmatter Preview Configuration](frontmatter-preview-solution.md) - Configure VS Code preview with permalinks
 - [Liquid Templating](jekyll/jekyll-liquid.md) - Liquid template language
 - [Mermaid Diagrams](jekyll/jekyll-diagram-with-mermaid.md) - Creating diagrams
 - [Math Symbols](jekyll/jekyll-math-symbols-with-mathjax.md) - Mathematical notation
+
+### Obsidian
+
+Obsidian-style links help connect notes, docs, quests, and posts into a lightweight learning graph powered by the `zer0-mistakes` theme.
+
+**Topics:**
+- [Obsidian Knowledge Graph](/docs/obsidian/) - How IT-Journey uses theme-owned wiki links and graph views
+- [Obsidian Graph View](/docs/obsidian/graph/) - Interactive map of linked content across the site
+
+### Wargames (External)
+
+Security challenges aggregated from the [OverTheWire](https://overthewire.org/wargames/) community project. Learn and practice security concepts through gamified challenges.
+
+**Topics:**
+- [Wargames Overview](/docs/wargames/) - Introduction, game list, and how to get started
+
+> This section is populated by the [docs aggregation pipeline](/it-journey/scripts/docs-aggregator/). Run `bash scripts/docs-aggregator/aggregate_docs.sh` to update.
 
 ### Future Documentation Areas
 
@@ -143,7 +161,7 @@ To add documentation for a new tool or technology:
    touch pages/_docs/new-tool/getting-started.md
    ```
 
-4. **Follow Standards** - Use [Frontmatter Standards](../../docs/standards/FRONTMATTER_STANDARDS.md)
+4. **Follow Standards** - Use [Frontmatter Standards](https://github.com/bamr87/it-journey/blob/main/docs/standards/FRONTMATTER_STANDARDS.md)
 
 5. **Update Navigation** - Add to `_data/navigation/docs.yml`
 
@@ -155,13 +173,23 @@ To add documentation for a new tool or technology:
 - **Keep It Current** - Update when technologies change
 - **Be Educational** - Write for learners, not just reference
 
-See [Content Guidelines](../../docs/standards/CONTENT_GUIDELINES.md) for detailed writing standards.
+See [Content Guidelines](https://github.com/bamr87/it-journey/blob/main/docs/standards/CONTENT_GUIDELINES.md) for detailed writing standards.
 
 ## Documentation Sources
 
-### Git Submodules (Future)
+### Git Submodules & Aggregation
 
-The goal is to integrate official documentation from tool repositories using Git submodules:
+The documentation library supports two approaches for integrating external content:
+
+**Docs Aggregation Pipeline** (Active):
+```bash
+# Aggregate external documentation into _docs
+bash scripts/docs-aggregator/aggregate_docs.sh
+```
+
+The aggregation pipeline clones external repos, extracts documentation, transforms it to Jekyll-compatible format with it-journey frontmatter, and places it under `pages/_docs/`. See [docs-aggregator README](../../scripts/docs-aggregator/README.md) for details and how to add new sources.
+
+**Git Submodules** (Future alternative):
 
 ```bash
 # Example: Adding Jekyll official docs
@@ -207,7 +235,7 @@ IT-Journey is built with:
 - **OpenAI GPT-4** - AI-powered analysis
 - **Giscus** - Comments via GitHub Discussions
 
-For detailed information, see [Jekyll Implementation](../../docs/architecture/JEKYLL_IMPLEMENTATION.md).
+For detailed information, see [Jekyll Implementation](https://github.com/bamr87/it-journey/blob/main/docs/architecture/JEKYLL_IMPLEMENTATION.md).
 
 ## Getting Help
 
@@ -217,9 +245,9 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 - Start discussion in GitHub Discussions
 
 ### Questions About Contributing
-- See [Contributing Guide](../../docs/CONTRIBUTING_DEVELOPER.md)
-- Check [Development Environment Setup](../../docs/setup/DEVELOPMENT_ENVIRONMENT.md)
-- Review [Repository Structure](../../docs/architecture/REPOSITORY_STRUCTURE.md)
+- See [Contributing Guide](https://github.com/bamr87/it-journey/blob/main/docs/CONTRIBUTING_DEVELOPER.md)
+- Check [Development Environment Setup](https://github.com/bamr87/it-journey/blob/main/docs/setup/DEVELOPMENT_ENVIRONMENT.md)
+- Review [Repository Structure](https://github.com/bamr87/it-journey/blob/main/docs/architecture/REPOSITORY_STRUCTURE.md)
 
 ## Additional Resources
 
@@ -230,7 +258,7 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 | [📘 Quick Start Guide](/quickstart/) | Step-by-step setup — machine config, Jekyll, GitHub, VS Code, deployment, CI/CD |
 | [🏰 Quest Map](/quests/home/) | 144 gamified quests across 16 binary levels — from terminal basics to system architecture |
 | [📝 Notes](/notes/) | Working notes, code snippets, and quick references from development |
-| [📰 Blog Posts](/posts/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
+| [📰 Blog Posts](/news/) | Tutorials, AI development chronicles, and technical write-ups across 10 categories |
 
 ### External Resources
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
@@ -243,4 +271,4 @@ For detailed information, see [Jekyll Implementation](../../docs/architecture/JE
 **Last Updated:** 2025-10-13  
 **Version:** 2.0.0
 
-*The Learning Resources Library is part of the IT-Journey project. For technical developer documentation, see the [`/docs/` directory](../../docs/).*
+*The Learning Resources Library is part of the IT-Journey project. For technical developer documentation, see the [`/docs/` directory](https://github.com/bamr87/it-journey/tree/main/docs/).*

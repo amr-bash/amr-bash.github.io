@@ -1,27 +1,21 @@
 ---
 title: 'Epic Quest: Zer0-to-Her0 CMStyle'
 author: IT-Journey Team
-description: Discover how one nerd transformed from zero to hero by building an AI-powered
-  open source CMS using VS Code and Jekyll. Join the epic journey!
+description: Discover how one nerd transformed from zero to hero by building an AI-powered open source CMS using VS Code and Jekyll. Join the epic journey!
 excerpt: null
 snippet: null
 preview: images/previews/epic-quest-zer0-to-her0-cmstyle.png
-date: 2025-08-24T18:46:40.000Z
-lastmod: 2025-08-25 00:46:40.810000+00:00
+date: '2025-08-24T18:46:40.000Z'
+lastmod: '2025-08-25T00:46:40.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-60 minutes
 primary_technology: ai-integration
 quest_type: epic_quest
 quest_series: Tools Collection
-skill_focus:
-- AI/ML
-- CMS
-- Development
-- Open Source
-- Quests
+skill_focus: fullstack
 learning_style: hands-on
-permalink: /quests/level-0010-epic-quest-zer0-to-her0-cmstyle/
+permalink: /quests/0010/epic-quest-zer0-to-her0-cmstyle/
 categories:
 - AI/ML
 - CMS
@@ -35,16 +29,19 @@ tags:
 - open-source
 - vscode
 keywords:
-- ai-integration
-- cms
-- gamified-learning
-- open-source
-- vscode
+  primary:
+  - ai-integration
+  - cms
+  secondary:
+  - gamified-learning
+  - open-source
+  - vscode
 fmContentType: quest
 draft: draft
 comments: false
 attachments: ''
 sub-title: null
+layout: quest
 ---
 # Zer0 to Her0: How One Nerd Built an Open Source CMS Out of VS Code and Integrated AI to Do All the Heavy Lifting
 
@@ -91,3 +88,12 @@ Inspired by this tale? Here's a structured, high-level roadmap to transform from
 - Tools to Prioritize: VS Code (daily driver), GitHub (collaboration hub), Jekyll/Docker (building blocks), AI extensions (efficiency boosters).
 
 By following this path, you'll not only master tools but build advanced apps that solve real problems. The digital world awaits—grab your keyboard and start forking your future.
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

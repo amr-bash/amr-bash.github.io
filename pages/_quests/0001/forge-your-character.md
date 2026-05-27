@@ -1,92 +1,92 @@
 ---
-title: "Forge Your Character: Crafting Your Contributor Identity"
+title: 'Forge Your Character: Crafting Your Contributor Identity'
 author: Quest Master IT-Journey Team
 keywords:
-    - contributor profile
-    - character sheet
-    - git stats
-    - RPG
-    - open source
+  primary:
+  - contributor profile
+  - character sheet
+  secondary:
+  - git stats
+  - RPG
+  - open source
 description: Create your contributor character profile with RPG-style stats, badges, and class identity — powered by your git history
 excerpt: Step into the Guild Hall and forge your identity. Every adventurer needs a character sheet before embarking on their journey.
 snippet: The Guild Master beckons new adventurers to forge their identity in the Hall of Contributors
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.226Z
-level: "0001"
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
+level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-60 minutes
 primary_technology: git
 quest_type: main_quest
-skill_focus:
-    - devops
-    - frontend
+skill_focus: devops
 learning_style: hands-on
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act I: Arrival at the Guild"
+quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/forge-your-character/
+permalink: /quests/0001/forge-your-character/
 categories:
-    - Quests
-    - Community
-    - Getting Started
+- Quests
+- Community
+- Getting Started
 tags:
-    - lvl-0001
-    - contributor
-    - profile
-    - git
-    - yaml
-    - jekyll
-    - gamified-learning
-    - hands-on
-    - character-creation
+- '0001'
+- contributor
+- profile
+- git
+- yaml
+- jekyll
+- gamified-learning
+- hands-on
+- character-creation
 prerequisites:
-    knowledge_requirements:
-        - Basic Git knowledge (clone, add, commit, push)
-        - Familiarity with Markdown
-        - A GitHub account
-    system_requirements:
-        - Git installed locally
-        - Text editor or IDE
-        - Ruby 3.2+ (for local stats generation)
+  knowledge_requirements:
+  - Basic Git knowledge (clone, add, commit, push)
+  - Familiarity with Markdown
+  - A GitHub account
+  system_requirements:
+  - Git installed locally
+  - Text editor or IDE
+  - Ruby 3.2+ (for local stats generation)
 quest_dependencies:
-    required_quests: []
-    recommended_quests:
-        - /quests/level-0001-terminal-mastery/
-        - /quests/level-0001-git-workflow-mastery/
-    unlocks_quests:
-        - /quests/side-quest-avatar-forge/
-        - /quests/side-quest-badge-collector/
-        - /quests/side-quest-stats-dashboard/
+  required_quests: []
+  recommended_quests:
+  - /quests/0001/terminal-mastery/
+  - /quests/0001/git-workflow-mastery/
+  unlocks_quests:
+  - /quests/0001/side-quests/avatar-forge/
+  - /quests/0001/side-quests/badge-collector/
+  - /quests/0010/side-quests/stats-dashboard/
 learning_paths:
-    primary_paths:
-        - Community Contributor
-        - Open Source Developer
-    character_classes:
-        - 🧙 Wizard
-        - ⚔️ Warrior
-        - 🏹 Ranger
-        - 🗡️ Rogue
-        - 💚 Healer
-        - 🎵 Bard
-        - 🛡️ Paladin
-    skill_trees:
-        - Community & Collaboration
-        - Git & Version Control
+  primary_paths:
+  - Community Contributor
+  - Open Source Developer
+  character_classes:
+  - 🧙 Wizard
+  - ⚔️ Warrior
+  - 🏹 Ranger
+  - 🗡️ Rogue
+  - 💚 Healer
+  - 🎵 Bard
+  - 🛡️ Paladin
+  skill_trees:
+  - Community & Collaboration
+  - Git & Version Control
 rewards:
-    badges:
-        - 🏆 Guild Member — Officially joined the Guild of Contributors
-    progression_points: 200
+  badges:
+  - 🏆 Guild Member — Officially joined the Guild of Contributors
+  progression_points: 200
 validation_criteria:
-    completion_requirements:
-        - Contributor data file exists in _data/contributors/
-        - Contributor profile page exists in pages/_about/contribute/contributors/
-        - Character sheet renders on your profile page
-        - Stats generator runs without errors for your username
+  completion_requirements:
+  - Contributor data file exists in _data/contributors/
+  - Contributor profile page exists in pages/_about/contribute/contributors/
+  - Character sheet renders on your profile page
+  - Stats generator runs without errors for your username
+layout: quest
 ---
-
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 
 > *"Every legend begins with a name, a class, and a story yet to be written."*
@@ -350,11 +350,11 @@ Your character sheet has room to grow. Unlock these side quests:
 
 | Side Quest | Level | Difficulty | Reward |
 |-----------|-------|------------|--------|
-| [Avatar Forge](/quests/side-quest-avatar-forge/) | 0001 | 🟢 Easy | Custom avatar on your profile |
-| [Badge Collector](/quests/side-quest-badge-collector/) | 0001 | 🟡 Medium | Pinned badges showcase |
-| [Stats Dashboard](/quests/side-quest-stats-dashboard/) | 0010 | 🟡 Medium | Enhanced stats visualization |
-| [Contribution Calendar](/quests/side-quest-contribution-calendar/) | 0010 | 🟡 Medium | Activity heatmap |
-| [Profile Themes](/quests/side-quest-profile-themes/) | 0100 | 🔴 Hard | Custom CSS themes |
+| [Avatar Forge](/quests/0001/side-quests/avatar-forge/) | 0001 | 🟢 Easy | Custom avatar on your profile |
+| [Badge Collector](/quests/0001/side-quests/badge-collector/) | 0001 | 🟡 Medium | Pinned badges showcase |
+| [Stats Dashboard](/quests/0010/side-quests/stats-dashboard/) | 0010 | 🟡 Medium | Enhanced stats visualization |
+| [Contribution Calendar](/quests/0010/side-quests/contribution-calendar/) | 0010 | 🟡 Medium | Activity heatmap |
+| [Profile Themes](/quests/0100/side-quests/profile-themes/) | 0100 | 🔴 Hard | Custom CSS themes |
 
 ### XP Formula
 
@@ -375,3 +375,14 @@ Your level is calculated from total XP:
 
 > *"Your name is now inscribed in the Guild's ledger. Go forth and contribute, adventurer — the realm of IT awaits your deeds."*
 > — The Guild Master
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Terminal Mastery: Conquering the Command-Line Realm]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]]
+**Unlocks:** [[Avatar Forge: Crafting Your Digital Portrait]] · [[Badge Collector: Showcasing Your Achievements]] · [[Stats Dashboard: Enhancing Your Data Visualization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

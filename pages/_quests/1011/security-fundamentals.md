@@ -1,13 +1,11 @@
 ---
 title: 'Security Fundamentals: CIA Triad and Defense in Depth Strategies'
 author: IT-Journey Team
-description: Master information security fundamentals including the CIA triad, defense
-  in depth, security controls, risk management, and foundational security concepts.
-excerpt: Learn foundational security concepts including CIA triad, defense in depth,
-  and risk management
+description: Master information security fundamentals including the CIA triad, defense in depth, security controls, risk management, and foundational security concepts.
+excerpt: Learn foundational security concepts including CIA triad, defense in depth, and risk management
 preview: images/previews/security-fundamentals-cia-triad-quest-title-defens.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:44:36+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:44:36.000Z'
 level: '1011'
 difficulty: 🔴 Hard
 estimated_time: 90-120 minutes
@@ -22,9 +20,15 @@ quest_dependencies:
   unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1011/secure-coding/
+  - /quests/1011/threat-modeling/
+  - /quests/1011/penetration-testing/
+  - /quests/1011/ai-feature-pipeline-architect/
+  - /quests/1011/compliance-standards/
   parallel_quests: []
-  sequel_quests: []
+  sequel_quests:
+  - /quests/1100/mastering-version-control-workflows/
 learning_paths:
   primary_paths:
   - Software Development
@@ -34,8 +38,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- security
+skill_focus: security
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -61,25 +64,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1011-security-fundamentals/
+permalink: /quests/1011/security-fundamentals/
 categories:
 - Quests
 - Security
 - Hard
 tags:
-- lvl-1011
+- '1011'
 - security
 - main_quest
 - security
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1011
-- security
-- main_quest
-- security
-- hands-on
-- gamified-learning
+  primary:
+  - '1011'
+  - security
+  - main_quest
+  secondary:
+  - security
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -92,6 +97,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -110,7 +116,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -488,3 +494,14 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1011 - Feature Development]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Sequel quests:** [[Mastering Version Control Workflows: The Grand Merge Ritual]]
+**Related quests:** [[Secure Coding Practices: OWASP Top 10 Vulnerability Prevention]] · [[Threat Modeling: STRIDE Framework and Attack Trees Analysis]] · [[Penetration Testing: Tools and Ethical Hacking Methodologies]] · [[AI Feature Pipeline Architect: DevSecOps Mastery Quest]] · [[Compliance Standards: SOC 2, GDPR, and HIPAA Requirements]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

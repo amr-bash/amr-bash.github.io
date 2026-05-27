@@ -1,16 +1,15 @@
 ---
 title: Jekyll Documentation
 permalink: /docs/jekyll/
-redirect_from:
-  - /docs/jekyll/home/
-  - /docs/jekyll/quickstart/
-  - /docs/jekyll/extras/
-lastmod: 2025-10-13T00:00:00.000Z
+lastmod: '2025-10-13T00:00:00.000Z'
 description: Jekyll documentation specific to IT-Journey implementation
-date: 2021-11-09T17:30:29.000Z
-
+date: '2021-11-09T17:30:29.000Z'
+draft: false
+keywords:
+- jekyll
+- documentation
+author: bamr87
 ---
-
 # Jekyll in IT-Journey
 
 This section contains Jekyll documentation specific to how IT-Journey implements and uses Jekyll as its static site generator.

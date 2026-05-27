@@ -1,136 +1,127 @@
 ---
-title: "Mastering Version Control Workflows: The Grand Merge Ritual"
+title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
 author: IT-Journey Team
-description: "Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project."
+description: Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project.
 excerpt: null
 snippet: null
 preview: images/previews/mastering-version-control-workflows.png
-date: 2026-03-21T00:00:00.000Z
-lastmod: 2026-03-21T00:00:00.000Z
-level: "1100"
-difficulty: "🔴 Hard"
+date: '2026-03-21T00:00:00.000Z'
+lastmod: '2026-03-21T00:00:00.000Z'
+level: '1100'
+difficulty: 🔴 Hard
 estimated_time: 4-6 hours
 primary_technology: git
 quest_type: main_quest
 quest_series: Tools Collection
-skill_focus:
-  - DevOps
-  - Git
-  - Version Control
-  - CI/CD
-  - Collaboration
+skill_focus: devops
 learning_style: project-based
-permalink: /quests/level-1100-mastering-version-control-workflows/
+permalink: /quests/1100/mastering-version-control-workflows/
 categories:
-  - DevOps
-  - Git
-  - Version Control
-  - CI/CD
-  - Collaboration
+- DevOps
+- Git
+- Version Control
+- CI/CD
+- Collaboration
 tags:
-  - lvl-1100
-  - git
-  - semantic-versioning
-  - github-actions
-  - pull-requests
-  - branch-strategy
-  - release-management
-  - conventional-commits
+- '1100'
+- git
+- semantic-versioning
+- github-actions
+- pull-requests
+- branch-strategy
+- release-management
+- conventional-commits
 keywords:
   primary:
-    - git workflows
-    - semantic versioning
-    - release management
+  - git workflows
+  - semantic versioning
+  - release management
   secondary:
-    - branch strategy
-    - pull request orchestration
-    - CI/CD pipelines
-    - conventional commits
-layout: article
+  - branch strategy
+  - pull request orchestration
+  - CI/CD pipelines
+  - conventional commits
+layout: quest
 fmContentType: quest
 comments: false
-attachments: ""
-sub-title: "Level 1100 (12) Quest: Main Quest - Advanced Git Mastery"
-
-quest_type: main_quest
-quest_line: "Development Mastery"
-quest_series: "Tools Collection"
-quest_arc: "Version Control Mastery"
-
+attachments: ''
+sub-title: 'Level 1100 (12) Quest: Main Quest - Advanced Git Mastery'
+quest_line: Development Mastery
+quest_arc: Version Control Mastery
 quest_dependencies:
   required_quests:
-    - "/quests/level-0010-branches-and-pull-requests/"
-    - "/quests/level-0010-commitments-to-clean-commits/"
+  - /quests/0010/branches-and-pull-requests/
+  - /quests/0010/commitments-to-clean-commits/
   recommended_quests:
-    - "/quests/level-0010-change-logs/"
-    - "/quests/level-0010-action-triggers/"
-  unlocks_quests:
-    - "/quests/level-1110-cicd-pipeline-mastery/"
-
+  - /quests/0010/change-logs/
+  - /quests/0010/action-triggers/
+  unlocks_quests: []
 quest_relationships:
   parent_quest: null
-  child_quests: []
+  child_quests:
+  - /quests/1100/data-warehousing/
+  - /quests/1100/stream-processing/
+  - /quests/1100/data-quality/
+  - /quests/1100/sec-edgar-siege/
+  - /quests/1100/apache-spark/
+  - /quests/1100/conquer-king-edgar/
+  - /quests/1100/etl-pipeline-design/
+  - /quests/1100/temple-of-templates/
   parallel_quests:
-    - "/quests/level-0010-action-triggers/"
+  - /quests/0010/action-triggers/
   sequel_quests:
-    - "/quests/level-1110-cicd-pipeline-mastery/"
-
+  - /quests/1101/ml-fundamentals/
 learning_paths:
   primary_paths:
-    - "Software Development"
-    - "DevOps Engineering"
+  - Software Development
+  - DevOps Engineering
   character_classes:
-    - "💻 Software Developer"
-    - "🏗️ System Engineer"
+  - 💻 Software Developer
+  - 🏗️ System Engineer
   skill_trees:
-    - "Version Control"
-    - "Release Management"
-    - "CI/CD Automation"
-
+  - Version Control
+  - Release Management
+  - CI/CD Automation
 prerequisites:
   knowledge_requirements:
-    - "Solid understanding of branches and pull requests"
-    - "Comfortable writing conventional commit messages"
-    - "Familiarity with GitHub interface and CLI"
+  - Solid understanding of branches and pull requests
+  - Comfortable writing conventional commit messages
+  - Familiarity with GitHub interface and CLI
   system_requirements:
-    - "Git 2.30+ installed"
-    - "GitHub account with repository access"
-    - "GitHub CLI (gh) installed"
+  - Git 2.30+ installed
+  - GitHub account with repository access
+  - GitHub CLI (gh) installed
   skill_level_indicators:
-    - "Can create branches, make commits, and open basic PRs"
-    - "Understands the difference between merge, rebase, and squash"
-
+  - Can create branches, make commits, and open basic PRs
+  - Understands the difference between merge, rebase, and squash
 rewards:
   badges:
-    - "🏆 Grand Architect of the Merge Ritual"
-    - "⚡ Release Sorcerer"
+  - 🏆 Grand Architect of the Merge Ritual
+  - ⚡ Release Sorcerer
   skills_unlocked:
-    - "🛠️ Semantic Versioning Mastery"
-    - "🎯 Multi-PR Orchestration"
+  - 🛠️ Semantic Versioning Mastery
+  - 🎯 Multi-PR Orchestration
   progression_points: 300
   unlocks_features:
-    - "Access to CI/CD pipeline mastery quests"
-    - "Eligibility for open-source maintainer role"
-
+  - Access to CI/CD pipeline mastery quests
+  - Eligibility for open-source maintainer role
 validation_criteria:
   completion_requirements:
-    - "Successfully orchestrate a multi-branch workflow with dependent PRs"
-    - "Tag a release using semantic versioning from a changelog"
-    - "Write PR descriptions that pass the council's review standards"
+  - Successfully orchestrate a multi-branch workflow with dependent PRs
+  - Tag a release using semantic versioning from a changelog
+  - Write PR descriptions that pass the council's review standards
   skill_demonstrations:
-    - "Resolve a merge conflict between competing feature branches"
-    - "Automate changelog generation from conventional commits"
+  - Resolve a merge conflict between competing feature branches
+  - Automate changelog generation from conventional commits
   knowledge_checks:
-    - "Explain when to use feature, bugfix, hotfix, and refactor branches"
-    - "Describe the SemVer implications of each commit type"
-
+  - Explain when to use feature, bugfix, hotfix, and refactor branches
+  - Describe the SemVer implications of each commit type
 quest_mapping:
-  coordinates: "[6, 4]"
-  region: "Intermediate"
-  realm: "Development"
-  biome: "Version Control"
+  coordinates: '[6, 4]'
+  region: Intermediate
+  realm: Development
+  biome: Version Control
 ---
-
 *Greetings, battle-hardened code warrior! You have survived the introductory enchantments of branching and the clean-commit oath. But the realm of version control runs far deeper than a single `git push`. Today you face the Grand Merge Ritual — a trial reserved for those who would command entire release kingdoms, orchestrate fleets of pull requests, and bend the timeline of code to their will.*
 
 *In this quest you will study **real pull requests** from an active open-source repository and learn the advanced arts of semantic versioning, branch orchestration, automated changelogs, and CI/CD-driven releases. The spells you forge here are the same ones used by maintainers of the world's most critical software.*
@@ -167,8 +158,8 @@ You'll know you've truly mastered this quest when you can:
 ## 🗺️ Quest Prerequisites
 
 ### 📋 Knowledge Requirements
-- [ ] Completed [Branches and Pull Requests quest](/quests/level-0010-branches-and-pull-requests/)
-- [ ] Completed [Commitments to Clean Commits quest](/quests/level-0010-commitments-to-clean-commits/)
+- [ ] Completed [Branches and Pull Requests quest](/quests/0010/branches-and-pull-requests/)
+- [ ] Completed [Commitments to Clean Commits quest](/quests/0010/commitments-to-clean-commits/)
 - [ ] Comfortable with `git log`, `git diff`, and `git stash`
 
 ### 🛠️ System Requirements
@@ -899,3 +890,17 @@ Apply everything you've learned to the actual IT-Journey repository:
 - [Stack Overflow — Git tag](https://stackoverflow.com/questions/tagged/git) — Q&A archive
 
 *Go forth, architect. The branches await your command, the versions await your decree, and the changelog shall record your legend for all time.* ⚔️
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Mastering Branches and Pull Requests for Developers]] · [[Commitments to clean commits]]
+**Recommended:** [[Change Logs]] · [[Understanding Action Triggers in Depth]]
+**Sequel quests:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
+**Parallel quests:** [[Understanding Action Triggers in Depth]]
+**Related quests:** [[Data Warehousing: Design Star Schema & Build Modern Analytics Architecture]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] · [[The Siege of King EDGAR: Storming the SEC Data Castle]] · [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle]] · [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] · [[The Temple of Templates: Binary Abstractions and Reusable Realms]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

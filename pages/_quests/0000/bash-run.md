@@ -1,13 +1,13 @@
 ---
-title: "bashcrawl and Beyond: Extending a Terminal Dungeon Adventure"
+title: 'bashcrawl and Beyond: Extending a Terminal Dungeon Adventure'
 author: IT-Journey Team
 description: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
 excerpt: Starting with bashcrawl as a base and building upon it is a great way to learn advanced shell scripting. bashcrawl uses directories as rooms, text files as scrolls, and executable scripts as interactive items — a brilliant architecture for learning and expanding.
 snippet: Transform basic shell commands into an interactive gaming experience
 preview: images/previews/bashrun-and-beyond-building-an-advanced-terminal-g.png
-date: 2024-05-29T10:39:06.000Z
-lastmod: 2026-03-21T20:13:00.576Z
-level: "0000"
+date: '2024-05-29T10:39:06.000Z'
+lastmod: '2026-04-25T19:27:00.000Z'
+level: '0000'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
 primary_technology: bash
@@ -16,87 +16,89 @@ quest_series: Level 000 - Foundation Skills
 quest_line: Foundation Path
 quest_arc: Terminal Mastery Arc
 quest_dependencies:
-    required_quests:
-        - /quests/bashcrawl-terminal-adventure/
-        - /quests/hello-linux/linux-fundamentals/
-    recommended_quests:
-        - /quests/level-0000-terminal-fundamentals/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0000/bashcrawl/
+  - /quests/0000/linux-fundamentals/
+  recommended_quests:
+  - /quests/0000/terminal-fundamentals/
+  unlocks_quests: []
 quest_relationships:
-    child_quests: []
-    sequel_quests: []
-    parallel_quests: []
+  child_quests: []
+  sequel_quests: []
+  parallel_quests: []
 learning_paths:
-    primary_paths:
-        - Software Development
-        - System Administration
-    character_classes:
-        - 💻 Software Developer
-        - 🏗️ System Engineer
-    skill_trees:
-        - Terminal Mastery
-        - Shell Scripting
-skill_focus:
-    - Quests
-    - Terminal
-    - Level-000
+  primary_paths:
+  - Software Development
+  - System Administration
+  character_classes:
+  - 💻 Software Developer
+  - 🏗️ System Engineer
+  skill_trees:
+  - Terminal Mastery
+  - Shell Scripting
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
-    knowledge_requirements:
-        - Basic bash command knowledge
-        - Terminal navigation skills
-        - Text editor familiarity (nano, vim, or VS Code)
-    system_requirements:
-        - Unix/Linux terminal (or WSL on Windows)
-        - Bash shell installed
-    skill_level_indicators:
-        - Comfortable running commands in the terminal
-        - Can create and edit files from the command line
+  knowledge_requirements:
+  - Basic bash command knowledge
+  - Terminal navigation skills
+  - Text editor familiarity (nano, vim, or VS Code)
+  system_requirements:
+  - Unix/Linux terminal (or WSL on Windows)
+  - Bash shell installed
+  skill_level_indicators:
+  - Comfortable running commands in the terminal
+  - Can create and edit files from the command line
 validation_criteria:
-    - Add a new room with a scroll and interactive treasure to bashcrawl
-    - Create a hidden room mechanic using dot-prefixed directories
-    - Demonstrate understanding of bashcrawl patterns (env vars, executables, shared functions)
-permalink: /quests/lvl_000/bash-run/
+- Add a new room with a scroll and interactive treasure to bashcrawl
+- Create a hidden room mechanic using dot-prefixed directories
+- Demonstrate understanding of bashcrawl patterns (env vars, executables, shared functions)
+permalink: /quests/0000/side-quests/bash-run/
 categories:
-    - Quests
-    - Terminal
-    - Level-000
+- Quests
+- Terminal
+- Level-000
 tags:
-    - bash
-    - terminal
-    - game-development
-    - shell-scripting
-    - lvl-000
+- bash
+- terminal
+- game-development
+- shell-scripting
+- 0
 keywords:
-    - bash
-    - terminal
-    - game-development
-    - shell-scripting
-    - lvl-000
+  primary:
+  - bash
+  - terminal
+  secondary:
+  - game-development
+  - shell-scripting
+  - 0
 fmContentType: quest
 draft: false
-sub-title: "Level 000 Quest: Extending bashcrawl's Terminal Dungeon"
+sub-title: 'Level 000 Quest: Extending bashcrawl''s Terminal Dungeon'
 rewards:
-    badges:
-        - 🏆 Bash Scripting Badge
-        - ⚡ Advanced Terminal Skills
-    skills_unlocked:
-        - 🛠️ Game Development Foundation
-        - 🎯 Shell Programming Mastery
-    progression_points: 100
-    unlocks_features:
-        - Advanced scripting quest access
-        - Terminal automation capabilities
+  badges:
+  - 🏆 Bash Scripting Badge
+  - ⚡ Advanced Terminal Skills
+  skills_unlocked:
+  - 🛠️ Game Development Foundation
+  - 🎯 Shell Programming Mastery
+  progression_points: 100
+  unlocks_features:
+  - Advanced scripting quest access
+  - Terminal automation capabilities
 related_quests:
-    - bashcrawl/README.md - Terminal Adventure RPG
-    - hello-noob.md - Beginner's IT Journey
+- bashcrawl/README.md - Terminal Adventure RPG
+- hello-noob.md - Beginner's IT Journey
+layout: quest
 ---
 *Greetings, aspiring script mage! In this side quest, you will study how [bashcrawl](https://github.com/bamr87/bashcrawl) is built and then extend it with new rooms, encounters, and game mechanics. bashcrawl is an elegant dungeon crawler that uses the file system itself as the game world — directories are rooms, text files are scrolls, and executable scripts are interactive items. By the end, you will have forged your own additions to this adventure.*
+
+*If you have not played yet, begin with the no-install web version at [Bashcrawl Web](https://bamr87.github.io/bashcrawl/). Treat the browser game as your first scouting run, then clone the repository when you are ready to read and modify the actual Bash scripts.*
 
 ## 🎯 Quest Objectives
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **Clone and explore the bashcrawl repository** — Understand how directories, scrolls, and executables form the game
+- [ ] **Play online, then clone and explore the bashcrawl repository** — Understand how directories, scrolls, and executables form the game
 - [ ] **Add a new room with a scroll and treasure** — Extend the dungeon with your own content
 - [ ] **Create an interactive encounter script** — Build an executable item using `read`, `case`, and environment variables
 - [ ] **Implement a hidden room mechanic** — Use dot-prefixed directories to create discoverable secrets
@@ -139,13 +141,19 @@ Here's a step-by-step guide to understanding bashcrawl's design and building upo
 
 ### Step 1: Setting Up bashcrawl
 
-1. **Clone the Repository:**
+1. **Scout the Dungeon Online:**
+
+    Open [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) and complete the first objectives with `pwd`, `ls -F`, `cat scroll`, and `cd cellar`. This gives you the player experience before you inspect the code.
+
+2. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/bamr87/bashcrawl.git
    cd bashcrawl
    ```
 
-2. **Run the Setup and Start Playing:**
+3. **Run the Setup and Start Playing Locally:**
+
    ```bash
    ./setup.sh       # One-time setup: sets permissions, creates game state
    ./main.sh        # Launch the game (multiple modes available)
@@ -153,7 +161,18 @@ Here's a step-by-step guide to understanding bashcrawl's design and building upo
 
    > **Tip**: Before modifying anything, play through the game first! Navigate with `cd`, read scrolls with `cat scroll`, and run items with `./treasure`. Understanding the player experience is essential before extending it.
 
-3. **Understand the Architecture:**
+4. **Choose the Right Mode for Your Work:**
+
+    | Goal | Command |
+    |------|---------|
+    | Beginner-safe local play | `./main.sh --interactive` |
+    | Pure Bash fallback | `./main.sh --classic` |
+    | Traditional filesystem adventure | `./main.sh --native` |
+    | Guided onboarding | `./main.sh --tutorial` |
+    | AI/headless playtesting | `./main.sh --agent` |
+    | Run one command for tests | `./main.sh --command "pwd"` |
+
+5. **Understand the Architecture:**
 
    The game world lives inside the `entrance/` directory. Each subdirectory is a room:
 
@@ -518,6 +537,16 @@ cat lib/state.sh
 cat .bashcrawl_save.json
 ```
 
+### Step 7: Extension Workflow Checklist
+
+Before opening a pull request or sharing your mod, verify your addition like a maintainer:
+
+- [ ] Play the room in [Bashcrawl Web](https://bamr87.github.io/bashcrawl/) or local TUI to compare the learner experience
+- [ ] Run `./setup.sh --verify` after changing executable files or permissions
+- [ ] Run `./main.sh --classic` and navigate to your new room without errors
+- [ ] Keep generated web data in sync with the Bashcrawl repo workflow (`make web-build`, then `make web-test`)
+- [ ] Document the command your room teaches and where it fits in the skill progression
+
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
@@ -536,7 +565,19 @@ cat .bashcrawl_save.json
 
 - [The Spellbook: Bash Cheatsheet](/shell/) - Quick reference for essential commands and scripting techniques.
 - [The Grand Grimoire: Complete BASH Reference](/docs/bash-complete-reference/) - Exhaustive guide covering every aspect of GNU Bash.
+- [Play Bashcrawl Online](https://bamr87.github.io/bashcrawl/) — No-install first playthrough with local browser saves
 - [bashcrawl on GitHub](https://github.com/bamr87/bashcrawl) — The game repository this quest is based on
 - [Bash Reference Manual (GNU)](https://www.gnu.org/software/bash/manual/bash.html)
 - [Advanced Bash-Scripting Guide (TLDP)](https://tldp.org/LDP/abs/html/)
 - [ShellCheck — Shell script linter](https://www.shellcheck.net/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Linux Fundamentals]]
+**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

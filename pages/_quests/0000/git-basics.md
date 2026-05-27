@@ -1,13 +1,11 @@
 ---
 title: 'Git Basics: Version Control Introduction'
 author: IT-Journey Team
-description: Learn Git fundamentals including repositories, commits, branches, and
-  basic workflow for tracking code changes and collaborating with developers.
-excerpt: Master Git fundamentals to track changes, manage versions, and collaborate
-  effectively with teams.
+description: Learn Git fundamentals including repositories, commits, branches, and basic workflow for tracking code changes and collaborating with developers.
+excerpt: Master Git fundamentals to track changes, manage versions, and collaborate effectively with teams.
 preview: images/previews/git-basics-version-control-introduction-descriptiv.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2026-02-14 00:00:00+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2026-02-14T00:00:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 60-75 minutes
@@ -18,7 +16,7 @@ quest_line: Init World
 quest_arc: Version Control Arc
 quest_dependencies:
   required_quests:
-  - /quests/level-0000-terminal-fundamentals/
+  - /quests/0000/terminal-fundamentals/
   recommended_quests: []
   unlocks_quests: []
 quest_relationships:
@@ -35,8 +33,7 @@ learning_paths:
   skill_trees:
   - Version Control
   - Collaboration Tools
-skill_focus:
-- devops
+skill_focus: devops
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -59,29 +56,33 @@ validation_criteria:
   - Understands staging area vs working directory
   - Can resolve a basic merge conflict
 quest_mapping:
-  coordinates: [3, 1]
+  coordinates:
+  - 3
+  - 1
   region: Foundation
   realm: Development
   biome: Version Control
-permalink: /quests/level-0000-git-basics/
+permalink: /quests/0000/git-basics/
 categories:
 - Quests
 - DevOps
 - Beginner
 tags:
-- lvl-0000
+- '0000'
 - git
 - main_quest
 - devops
 - hands-on
 - gamified-learning
 keywords:
-- lvl-0000
-- git
-- main_quest
-- devops
-- hands-on
-- gamified-learning
+  primary:
+  - '0000'
+  - git
+  - main_quest
+  secondary:
+  - devops
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: false
 comments: true
@@ -96,6 +97,7 @@ rewards:
   unlocks_features:
   - Collaborative development workflows
   - Code review via pull requests
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to the Git Basics quest — where you'll learn the version control system that powers nearly every software project on the planet. Git lets you track changes, collaborate with others, and fearlessly experiment with code knowing you can always roll back. This is the single most important tool in any developer's inventory.*
 
@@ -898,3 +900,13 @@ Before claiming your reward, you should be able to answer:
 - [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials) — Beginner to advanced guides
 - [Git Cheat Sheet (GitHub)](https://education.github.com/git-cheat-sheet-education.pdf) — Printable command reference
 - [Conventional Commits](https://www.conventionalcommits.org/) — Commit message standard
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Terminal Fundamentals: Command Line Navigation Quest]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

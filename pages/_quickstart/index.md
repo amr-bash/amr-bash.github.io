@@ -1,32 +1,31 @@
 ---
-title: "Quick Start: Build a Jekyll Site from Scratch"
+title: 'Quick Start: Build a Jekyll Site from Scratch'
 author: bamr87
-description: End-to-end guide to establishing a development environment, implementing the zer0-mistakes Jekyll theme, and building a CMS-powered site like it-journey.dev — from first install to full deployment.
-excerpt: "Step-by-step guide to building a Jekyll site with the zer0-mistakes theme — from machine setup to deployment, CI/CD, and optimization."
+description: End-to-end guide to setting up a development environment, implementing the zer0-mistakes theme, and building a Jekyll site from first install to deployment.
+excerpt: Step-by-step guide to building a Jekyll site with the zer0-mistakes theme — from machine setup to deployment, CI/CD, and optimization.
 permalink: /quickstart/
 categories:
-  - quickstart
+- quickstart
 tags:
-  - quickstart
-  - jekyll
-  - getting-started
-  - zer0-mistakes
-  - github-pages
+- quickstart
+- jekyll
+- getting-started
+- zer0-mistakes
+- github-pages
 sidebar:
   nav: quickstart
-lastmod: 2026-04-02T03:24:28.768Z
-date: 2021-12-05T18:52:20.000Z
+lastmod: '2026-04-25T19:27:00.000Z'
+date: '2021-12-05T18:52:20.000Z'
 draft: false
 keywords:
   primary:
-    - quickstart guide
-    - jekyll setup
+  - quickstart guide
+  - jekyll setup
   secondary:
-    - zer0-mistakes theme
-    - github pages
-    - front matter cms
+  - zer0-mistakes theme
+  - github pages
+  - front matter cms
 ---
-
 This guide walks you through everything you need to build, configure, and maintain a Jekyll site like [it-journey.dev](https://it-journey.dev) — from installing your first tool to deploying a fully themed, CMS-powered site with CI/CD automation. We're using the [zer0-mistakes](https://github.com/bamr87/zer0-mistakes) theme, [VS Code](https://code.visualstudio.com/) as the editor, [Front Matter CMS](https://frontmatter.codes/) for content management, and [GitHub Pages](https://pages.github.com/) for free hosting.
 
 Every section builds on the one before it. If you already have some tools installed, skip ahead. Each phase links to a dedicated deep-dive guide with full details, examples, and troubleshooting.
@@ -312,9 +311,9 @@ The IT-Journey quest system uses binary level codes. Here's the full progression
 
 | Level | Tier | Focus Area | Example Quests |
 |-------|------|-----------|----------------|
-| `0000` | Foundation | OS setup, terminal, Git, Markdown, VS Code | [Begin Your IT Journey](/quests/init_world/begin-your-it-journey/), [Terminal Fundamentals](/quests/init_world/terminal-fundamentals/) |
-| `0001` | Beginner | GitHub Pages, Jekyll, YAML, Liquid | [Jekyll Fundamentals](/quests/frontend/jekyll-fundamentals/), [YAML Configuration](/quests/frontend/yaml-configuration/) |
-| `0010` | Intermediate | JavaScript, CSS, Bootstrap, Bash scripting | [JavaScript Fundamentals](/quests/intermediate/javascript-fundamentals/), [Bash Scripting](/quests/intermediate/bash-scripting/) |
+| `0000` | Foundation | OS setup, terminal, Git, Markdown, VS Code | [Begin Your IT Journey](/quests/0000/begin-your-it-journey/), [Terminal Fundamentals](/quests/0000/terminal-fundamentals/), [Bashcrawl Online](https://bamr87.github.io/bashcrawl/) |
+| `0001` | Beginner | GitHub Pages, Jekyll, YAML, Liquid | [Jekyll Fundamentals](/quests/0100/frontend/jekyll-fundamentals/), [YAML Configuration](/quests/0100/frontend/yaml-configuration/) |
+| `0010` | Intermediate | JavaScript, CSS, Bootstrap, Bash scripting | [JavaScript Fundamentals](/quests/0010/javascript-fundamentals/), [Bash Scripting](/quests/0010/bash-scripting/) |
 | `0011` | Advanced | Git workflows, Jekyll plugins, SEO, analytics | [Advanced Git Workflows](/quests/advanced/advanced-git-workflows/), [SEO Optimization](/quests/advanced/seo-optimization/) |
 | `0100` | Containers | Docker, Docker Compose, frontend containers | [Container Fundamentals](/quests/containers/container-fundamentals/), [Docker Compose](/quests/containers/docker-compose-orchestration/) |
 | `0101` | CI/CD | GitHub Actions, deployment pipelines, secrets | [CI/CD Fundamentals](/quests/cicd/cicd-fundamentals/), [GitHub Actions Basics](/quests/cicd/github-actions-basics/) |
@@ -339,8 +338,8 @@ Now that you can build and deploy a Jekyll site, explore the rest of IT-Journey:
 
 | Collection | What It Is | Start Here |
 |------------|-----------|------------|
-| [🏰 Quest Map](/quests/home/) | Gamified learning adventures across 16 binary levels (0000–1111) — from terminal basics to system architecture. Track XP, unlock tiers, and follow character-class paths. | [Hello n00b](/quests/init_world/hello-noob/) | 
-| [📚 Docs Library](/docs/) | Reference documentation for the tools powering IT-Journey — terminal shortcuts, Bash reference, Jekyll configuration, Liquid templating, Mermaid diagrams, and MathJax. | [Terminal Shortcuts](/docs/terminal-shortcuts-cheat-sheet/) |
+| [🏰 Quest Map](/quests/home/) | Gamified learning adventures across 16 binary levels (0000–1111) — from terminal basics to system architecture. Track XP, unlock tiers, and follow character-class paths. | [Hello n00b](/quests/0000/hello-noob/) | 
+| [📚 Docs Library](/docs/) | Reference documentation for the tools powering IT-Journey — terminal learning path, shortcuts, Bash reference, Jekyll configuration, Liquid templating, Mermaid diagrams, and MathJax. | [Terminal and Bash Learning Path](/docs/terminal/) |
 | [📝 Notes](/notes/) | Working notes, code snippets, and quick references collected during development — PowerShell, Linux, macOS tips, and more. | [Notes Index](/notes/) |
 | [📰 Blog Posts](/posts/) | Tutorials, AI-assisted development chronicles, and technical write-ups organized across 10 categories — from web development to DevOps to data analytics. | [Posts Index](/posts/) |
 | [🏠 Site Home](/home/) | The main IT-Journey hub with links to every section of the platform. | [Home](/home/) |

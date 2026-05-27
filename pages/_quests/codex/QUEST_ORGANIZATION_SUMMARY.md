@@ -1,8 +1,9 @@
 ---
 title: Quest Organization Summary
+layout: default
 description: Reference - quest organization summary and structure notes.
 author: IT-Journey Team
-date: 2025-10-04T15:52:00.000Z
+date: '2025-10-04T15:52:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 10-20 minutes
@@ -14,9 +15,14 @@ learning_style: reading
 quest_series: Quest Documentation
 permalink: /quests/codex/quest-organization-summary/
 keywords:
-- documentation
-- quests
+  primary:
+  - documentation
+  secondary:
+  - quests
 fmContentType: codex
+categories:
+- Quests
+- Documentation
 ---
 # Quest Organization Enhancement Summary
 

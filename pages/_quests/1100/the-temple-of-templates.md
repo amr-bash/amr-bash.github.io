@@ -1,25 +1,19 @@
 ---
 title: 'The Temple of Templates: Binary Abstractions and Reusable Realms'
 author: Quest Master
-description: Embark on a fantasy-themed quest to master software templates and reusable
-  architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety,
-  inheritance, and composition patterns to forge scalable, maintainable systems.
-excerpt: Master the sacred art of templates to build elegant, reusable systems across
-  languages.
+description: Embark on a fantasy-themed quest to master software templates and reusable architectures across C++, HTML/Jinja, and React. Learn abstraction, type-safety, inheritance, and composition patterns to forge scalable, maintainable systems.
+excerpt: Master the sacred art of templates to build elegant, reusable systems across languages.
 snippet: Blueprints in stone, patterns in code—reuse is the path through the labyrinth.
 preview: images/previews/the-temple-of-templates-binary-abstractions-and-re.png
-date: 2025-08-24T18:46:40.000Z
-lastmod: 2025-08-25 00:43:51.189000+00:00
+date: '2025-08-24T18:46:40.000Z'
+lastmod: '2025-08-25T00:43:51.000Z'
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: lvl-1100
+primary_technology: 1100
 quest_type: main_quest
 quest_series: Binary Function Crafting
-skill_focus:
-- Quests
-- Development
-- Intermediate
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - Basic programming (variables, functions, modules)
@@ -29,25 +23,27 @@ validation_criteria:
 - Implements one working template per stack (C++ or Jinja or React)—two for bonus
 - Explains abstraction benefits and trade-offs
 - Publishes a small repo or gist with README and examples
-permalink: /quests/level-1100-temple-of-templates/
+permalink: /quests/1100/temple-of-templates/
 categories:
 - Quests
 - Development
 - Intermediate
 tags:
-- lvl-1100
+- '1100'
 - templates
 - design-patterns
 - software-architecture
 - reusable-components
 - hands-on
 keywords:
-- lvl-1100
-- templates
-- design-patterns
-- software-architecture
-- reusable-components
-- hands-on
+  primary:
+  - '1100'
+  - templates
+  - design-patterns
+  secondary:
+  - software-architecture
+  - reusable-components
+  - hands-on
 fmContentType: quest
 comments: true
 attachments: ''
@@ -61,6 +57,9 @@ related_quests:
 - 'Level 0011: Programming Foundations'
 - 'Level 0100: Version Control with Git'
 - 'Level 1111: Testing and Verification Rites'
+redirect_from:
+- /quests/1100/the-temple-of-templates/
+layout: quest
 ---
 ## 🧙‍♂️ Epic Introduction
 
@@ -440,3 +439,12 @@ Before you depart the temple, ensure you can explain:
 - When to stop abstracting—what is “good enough” for today
 
 May your blueprints be clear, your APIs stable, and your sanctums extensible. 🏛️💡
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1100 - Data & Templates]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,80 +1,81 @@
 ---
-title: "Contribution Calendar: Mapping Your Journey Through Time"
+title: 'Contribution Calendar: Mapping Your Journey Through Time'
 author: Quest Master IT-Journey Team
 keywords:
-    - contribution calendar
-    - heatmap
-    - CSS grid
-    - data visualization
+  primary:
+  - contribution calendar
+  - heatmap
+  secondary:
+  - CSS grid
+  - data visualization
 description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
 excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
 snippet: Time is the truest measure of an adventurer's resolve
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.256Z
-level: "0010"
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
+level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 45-60 minutes
 primary_technology: css
 quest_type: side_quest
-skill_focus:
-    - frontend
+skill_focus: frontend
 learning_style: project-based
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act II: Mastering the Craft"
+quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-contribution-calendar/
+permalink: /quests/0010/side-quests/contribution-calendar/
 categories:
-    - Quests
-    - Community
-    - Frontend
+- Quests
+- Community
+- Frontend
 tags:
-    - lvl-0010
-    - contributor
-    - calendar
-    - heatmap
-    - css-grid
-    - liquid
-    - gamified-learning
-    - project-based
+- '0010'
+- contributor
+- calendar
+- heatmap
+- css-grid
+- liquid
+- gamified-learning
+- project-based
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - CSS Grid basics
-        - Jekyll Liquid template syntax
-    system_requirements:
-        - Text editor or IDE
-        - Local Jekyll development environment
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - CSS Grid basics
+  - Jekyll Liquid template syntax
+  system_requirements:
+  - Text editor or IDE
+  - Local Jekyll development environment
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-stats-dashboard/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0010/side-quests/stats-dashboard/
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Frontend Developer
-        - Community Contributor
-    character_classes:
-        - 🧙 Wizard
-        - 🏹 Ranger
-    skill_trees:
-        - Frontend Development
-        - CSS Layout
+  primary_paths:
+  - Frontend Developer
+  - Community Contributor
+  character_classes:
+  - 🧙 Wizard
+  - 🏹 Ranger
+  skill_trees:
+  - Frontend Development
+  - CSS Layout
 rewards:
-    badges:
-        - 📆 Timekeeper — Contribution calendar displayed on character sheet
-    progression_points: 100
+  badges:
+  - 📆 Timekeeper — Contribution calendar displayed on character sheet
+  progression_points: 100
 validation_criteria:
-    completion_requirements:
-        - Calendar heatmap include created
-        - 52 weeks of data render as colored cells
-        - Color intensity reflects commit count
-        - Calendar is responsive
+  completion_requirements:
+  - Calendar heatmap include created
+  - 52 weeks of data render as colored cells
+  - Color intensity reflects commit count
+  - Calendar is responsive
+layout: quest
 ---
-
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 
 > *"The calendar does not lie. Each square is a day — each shade, a measure of your will."*
@@ -242,3 +243,14 @@ Once your contribution calendar renders on your profile, you've earned the **Tim
 ---
 
 > *"The passage of time reveals all. Your dedication is now written in light."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Stats Dashboard: Enhancing Your Data Visualization]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

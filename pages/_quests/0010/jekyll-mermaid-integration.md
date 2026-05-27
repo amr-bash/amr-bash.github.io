@@ -1,24 +1,19 @@
 ---
 title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js
-  into any Jekyll static site, creating beautiful, interactive diagrams that bring
-  your documentation to life.
-excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js
-  integration, conditional loading, and comprehensive documentation
-snippet: Master the art of diagrammatic magic and bring your Jekyll documentation
-  to life
+description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
+excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
+snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
 preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
-date: 2025-10-04T15:25:33.000Z
-lastmod: 2025-01-27 15:00:00+00:00
+date: '2025-10-04T15:25:33.000Z'
+lastmod: '2025-01-27T15:00:00.000Z'
 level: '0010'
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
 quest_type: main_quest
 quest_series: Jekyll Mastery
-skill_focus:
-- Frontend Development
+skill_focus: frontend
 learning_style: Hands-on Implementation
 prerequisites:
 - Basic Jekyll site setup and configuration
@@ -34,7 +29,7 @@ validation_criteria:
 - Responsive design works across devices
 - Dark mode compatibility confirmed
 - Documentation is comprehensive and accurate
-permalink: /quests/level-0010-jekyll-mermaid-integration/
+permalink: /quests/0010/jekyll-mermaid-integration/
 categories:
 - Quests
 - Jekyll
@@ -49,14 +44,16 @@ tags:
 - javascript
 - cdn
 keywords:
-- jekyll
-- mermaid
-- diagrams
-- frontend
-- integration
-- documentation
-- javascript
-- cdn
+  primary:
+  - jekyll
+  - mermaid
+  - diagrams
+  - frontend
+  secondary:
+  - integration
+  - documentation
+  - javascript
+  - cdn
 fmContentType: quest
 draft: false
 comments: true
@@ -76,8 +73,19 @@ related_quests:
   parallel:
   - action-triggers
   - change-logs
+layout: quest
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
+
+## 🎯 Quest Objectives
+
+By the end of this quest, you will be able to:
+
+- [ ] Understand the core concepts introduced in this quest
+- [ ] Complete the hands-on exercises and verify the results
+- [ ] Apply what you learned to a follow-up scenario of your own design
+
+> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 ## 🎯 Quest Overview
 
@@ -505,7 +513,7 @@ Then add diagrams using HTML divs:
 graph TD
     A[Start] --> B[End]
 </div>
-```
+```bash
 
 ## Supported Diagram Types
 
@@ -1032,3 +1040,12 @@ May your diagrams be clear, your documentation be comprehensive, and your Jekyll
 ---
 
 *This quest is based on a real implementation that successfully integrated Mermaid v10 into the Zer0-Mistakes Jekyll theme, achieving 100% GitHub Pages compatibility while maintaining optimal performance. The implementation has been battle-tested in production and serves as the foundation for this comprehensive learning experience.*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

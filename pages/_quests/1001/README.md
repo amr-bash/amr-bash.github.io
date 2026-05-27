@@ -1,31 +1,28 @@
 ---
-
 title: Level 1001 (9) - Kubernetes Orchestration
 description: Command the container orchestration platform that powers enterprise-scale deployments
 preview: images/previews/level-1001-kubernetes.png
 permalink: /quests/1001/
+layout: quest-collection
+level: '1001'
 categories:
-  - Quests
-  - Level-1001
-  - Container-Orchestration
+- Quests
+- Level-1001
+- Container-Orchestration
 tags:
-  - lvl-1001
-  - kubernetes
-  - k8s
-  - containers
-  - orchestration
-  - devops
-  - quest-collection
+- '1001'
+- kubernetes
+- k8s
+- containers
+- orchestration
+- devops
+- quest-collection
 lastmod: 2025-12-20
 toc: true
 toc_sticky: true
 draft: false
-
-level: 1001
-date: 2025-12-20T20:02:51.000Z
-
+date: '2025-12-20T20:02:51.000Z'
 ---
-
 # Level 1001 (9) - Kubernetes Orchestration
 
 *Beyond the realm of single containers lies a vast federation of pods, services, and deployments. Welcome to the Kubernetes Dominion—where container orchestration transforms chaos into harmony and applications scale to meet the demands of millions. Here, Expert-tier adventurers learn to command the most powerful orchestration platform in the realm.*
@@ -184,10 +181,10 @@ Upon completing all main quests:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Azure Ascension: Deploying Jekyll to the Cloud Kingdom](/quests/azure-ascension-jekyll-deployment/) | 🔴 Hard | 90-120 minutes | main_quest | ✅ Complete |
-| [Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices](/quests/level-1001-k8s-config-secrets/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [Kubernetes Pods and Workloads: Deployments and StatefulSets](/quests/level-1001-k8s-pods-workloads/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Kubernetes Services and Networking: Ingress and DNS Configuration](/quests/level-1001-k8s-services-networking/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Kubernetes Fundamentals: Container Orchestration Essentials](/quests/level-1001-kubernetes-fundamentals/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
+| [Azure Ascension: Deploying Jekyll to the Cloud Kingdom](/quests/1000/azure-ascension-jekyll-deployment/) | 🔴 Hard | 90-120 minutes | main_quest | ✅ Complete |
+| [Kubernetes ConfigMaps and Secrets: Configuration Management Best Practices](/quests/1001/k8s-config-secrets/) | 🔴 Hard | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [Kubernetes Pods and Workloads: Deployments and StatefulSets](/quests/1001/k8s-pods-workloads/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Kubernetes Services and Networking: Ingress and DNS Configuration](/quests/1001/k8s-services-networking/) | 🔴 Hard | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Kubernetes Fundamentals: Container Orchestration Essentials](/quests/1001/kubernetes-fundamentals/) | 🔴 Hard | 120-150 minutes | main_quest | 🔮 Placeholder |
 
 

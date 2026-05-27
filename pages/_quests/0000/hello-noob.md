@@ -1,19 +1,16 @@
 ---
 title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
-description: The perfect starting quest for absolute beginners. Learn to create a
-  GitHub account, fork repositories, and take your first steps into the world of collaborative
-  development
-excerpt: Begin your epic adventure in the world of IT with your very first quest -
-  setting up GitHub and joining the community
+description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
+excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
 snippet: Every expert was once a beginner - every hero was once a n00b
 preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
-date: 2022-06-05T13:48:57.000Z
-lastmod: 2025-11-30 05:46:59.323000+00:00
+date: '2022-06-05T13:48:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 15-30 minutes
-primary_technology: lvl-0000
+primary_technology: github
 quest_type: main_quest
 quest_series: Character Creation Journey
 quest_line: Foundation Path
@@ -43,10 +40,7 @@ learning_paths:
   - Version Control Fundamentals
   - Community Participation
   - Open Source Contribution
-skill_focus:
-- Quests
-- Init-World
-- Beginner
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -73,29 +67,33 @@ validation_criteria:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
 quest_mapping:
-  coordinates: [0, 0]
+  coordinates:
+  - 0
+  - 0
   region: Entry
   realm: Community
   biome: GitHub
-permalink: /quests/init_world/hello-noob/
+permalink: /quests/0000/hello-noob/
 categories:
 - Quests
 - Init-World
 - Beginner
 tags:
-- lvl-0000
+- '0000'
 - github
 - git
 - beginner
 - init-world
 - community-entry
 keywords:
-- lvl-0000
-- github
-- git
-- beginner
-- init-world
-- community-entry
+  primary:
+  - '0000'
+  - github
+  - git
+  secondary:
+  - beginner
+  - init-world
+  - community-entry
 fmContentType: quest
 draft: false
 sub-title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
@@ -111,6 +109,7 @@ rewards:
   - Access to all Foundation Path quests
   - Ability to participate in community discussions
   - Foundation for version control learning
+layout: quest
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 
@@ -388,4 +387,13 @@ Your GitHub account opens up incredible possibilities:
 
 *Welcome to the community, fellow adventurer! Your journey from n00b to hero starts here. Every line of code you'll write, every problem you'll solve, and every project you'll build begins with this first step you've just taken.*
 
-**Ready for your next adventure? Your quest network awaits!** ⚔️✨  
+**Ready for your next adventure? Your quest network awaits!** ⚔️✨
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

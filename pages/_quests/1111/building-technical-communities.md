@@ -1,12 +1,11 @@
 ---
 title: 'Building Technical Communities: Growing Developer Ecosystems'
 author: IT-Journey Team
-description: Build and grow technical communities around your projects. Learn community
-  management, developer relations, event organization, and engagement strategies.
+description: Build and grow technical communities around your projects. Learn community management, developer relations, event organization, and engagement strategies.
 excerpt: Build thriving technical communities and developer ecosystems
 preview: images/previews/building-technical-communities-descriptive-subtitl.png
-date: 2025-11-29T22:51:57.000Z
-lastmod: 2025-11-30 05:46:59.315000+00:00
+date: '2025-11-29T22:51:57.000Z'
+lastmod: '2025-11-30T05:46:59.000Z'
 level: '1111'
 difficulty: 🔴 Hard
 estimated_time: 5-6 hours
@@ -33,8 +32,7 @@ learning_paths:
   skill_trees:
   - '[Primary Skill Tree]'
   - '[Secondary Skill Tree]'
-skill_focus:
-- community
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -60,25 +58,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Terminal
-permalink: /quests/level-1111-building-technical-communities/
+permalink: /quests/1111/building-technical-communities/
 categories:
 - Quests
 - Community
 - Hard
 tags:
-- lvl-1111
+- '1111'
 - community
 - main_quest
 - community
 - hands-on
 - gamified-learning
 keywords:
-- lvl-1111
-- community
-- main_quest
-- community
-- hands-on
-- gamified-learning
+  primary:
+  - '1111'
+  - community
+  - main_quest
+  secondary:
+  - community
+  - hands-on
+  - gamified-learning
 fmContentType: quest
 draft: true
 comments: true
@@ -91,6 +91,7 @@ rewards:
   progression_points: 50
   unlocks_features:
   - '[Feature or capability unlocked]'
+layout: quest
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -109,7 +110,7 @@ graph TB
     subgraph "Current Quest Chain"
         PreReq1[📍 Prerequisite Quest 1]
         PreReq2[📍 Prerequisite Quest 2]
-        Current[🎯 THIS QUEST<br/>[Quest Name]]
+        Current[🎯 THIS QUEST<br/>Quest Name]
         Side1[⭐ Side Quest 1]
         Side2[⭐ Side Quest 2]
         Next1[🔜 Unlocked Quest 1]
@@ -487,3 +488,12 @@ Before marking this quest as complete, ensure you've:
 **Quest Status**: 🔮 Placeholder (Content to be developed)  
 **Last Updated**: 2025-11-29  
 **Version**: 1.0.0
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 1111: Leadership & Innovation]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

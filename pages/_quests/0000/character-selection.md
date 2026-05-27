@@ -2,12 +2,11 @@
 title: Character Selection
 author: IT-Journey Team
 description: Choose your character class and begin your specialized IT journey
-excerpt: Select from six unique character classes, each with distinct skills and career
-  paths
+excerpt: Select from six unique character classes, each with distinct skills and career paths
 snippet: null
 preview: images/previews/character-selection.png
-date: 2023-11-25T14:12:43.000Z
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 20-30 minutes
@@ -19,15 +18,15 @@ quest_arc: Character Creation Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/lvl_000/begin-your-it-journey/
+  - /quests/0000/begin-your-it-journey/
   unlocks_quests:
-  - /quests/character-building/
+  - /quests/0000/character-building/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/character-building/
+  - /quests/0000/character-building/
   parallel_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -44,10 +43,7 @@ learning_paths:
   skill_trees:
   - Career Planning
   - Self-Assessment
-skill_focus:
-- character-selection
-- career-paths
-- lvl-0000
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -81,20 +77,23 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Specialization-specific quest recommendations
-permalink: /quests/lvl_000/character-selection/
+permalink: /quests/0000/character-selection/
 categories: []
 tags:
 - character-selection
 - career-paths
-- lvl-0000
+- '0000'
 keywords:
-- character-selection
-- career-paths
-- lvl-0000
+  primary:
+  - character-selection
+  secondary:
+  - career-paths
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: character-selection
+layout: quest
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 
@@ -196,3 +195,16 @@ Remember, these roles often intersect and overlap, and it's common to switch rol
 - [Bureau of Labor Statistics — Computer and IT Occupations](https://www.bls.gov/ooh/computer-and-information-technology/)
 - [GitHub — Explore Open Source Projects](https://github.com/explore)
 - [Stack Overflow Developer Survey](https://survey.stackoverflow.co/)
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Begin your IT Journey]]
+**Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]]
+**Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]]
+**Parallel quests:** [[IT Fundamentals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

@@ -1,76 +1,76 @@
 ---
-title: "Badge Collector: Showcasing Your Achievements"
+title: 'Badge Collector: Showcasing Your Achievements'
 author: Quest Master IT-Journey Team
 keywords:
-    - badges
-    - achievements
-    - gamification
-    - contributor profile
+  primary:
+  - badges
+  - achievements
+  secondary:
+  - gamification
+  - contributor profile
 description: Learn how badges are earned and pin your proudest achievements to your character profile
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
 snippet: Every achievement tells a story. Pin the ones that matter most.
-date: 2026-03-20T00:00:00.000Z
-lastmod: 2026-03-21T15:12:32.239Z
-level: "0001"
+date: '2026-03-20T00:00:00.000Z'
+lastmod: '2026-03-21T15:12:32.000Z'
+level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 30-45 minutes
 primary_technology: yaml
 quest_type: side_quest
-skill_focus:
-    - devops
-    - frontend
+skill_focus: devops
 learning_style: hands-on
-quest_series: "Contributor Path: Identity & Recognition"
+quest_series: 'Contributor Path: Identity & Recognition'
 quest_line: Contributor Chronicles
-quest_arc: "Act I: Arrival at the Guild"
+quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/side-quest-badge-collector/
+permalink: /quests/0001/side-quests/badge-collector/
 categories:
-    - Quests
-    - Community
-    - Customization
+- Quests
+- Community
+- Customization
 tags:
-    - lvl-0001
-    - contributor
-    - badges
-    - achievements
-    - yaml
-    - gamified-learning
-    - hands-on
+- '0001'
+- contributor
+- badges
+- achievements
+- yaml
+- gamified-learning
+- hands-on
 prerequisites:
-    knowledge_requirements:
-        - Completed Forge Your Character quest
-        - At least one earned achievement badge
-        - Basic YAML editing skills
-    system_requirements:
-        - Text editor or IDE
+  knowledge_requirements:
+  - Completed Forge Your Character quest
+  - At least one earned achievement badge
+  - Basic YAML editing skills
+  system_requirements:
+  - Text editor or IDE
 quest_dependencies:
-    required_quests:
-        - /quests/forge-your-character/
-    recommended_quests:
-        - /quests/side-quest-avatar-forge/
-    unlocks_quests: []
+  required_quests:
+  - /quests/0001/forge-your-character/
+  recommended_quests:
+  - /quests/0001/side-quests/avatar-forge/
+  unlocks_quests: []
 learning_paths:
-    primary_paths:
-        - Community Contributor
-    character_classes:
-        - ⚔️ Warrior
-        - 🛡️ Paladin
-    skill_trees:
-        - Community & Collaboration
+  primary_paths:
+  - Community Contributor
+  character_classes:
+  - ⚔️ Warrior
+  - 🛡️ Paladin
+  skill_trees:
+  - Community & Collaboration
 rewards:
-    badges:
-        - 🏅 Badge Collector — Curated a pinned badge showcase
-    progression_points: 75
+  badges:
+  - 🏅 Badge Collector — Curated a pinned badge showcase
+  progression_points: 75
 validation_criteria:
-    completion_requirements:
-        - badges_pinned array has 1-3 valid badge IDs
-        - Pinned badges display in the Featured section
-        - Understand how achievement thresholds work
+  completion_requirements:
+  - badges_pinned array has 1-3 valid badge IDs
+  - Pinned badges display in the Featured section
+  - Understand how achievement thresholds work
+layout: quest
 ---
-
 # 🏅 Badge Collector: Showcasing Your Achievements
 
 > *"Deeds in the dark matter not. Display your triumphs for all to see."*
@@ -108,7 +108,7 @@ Badges are **auto-earned** by the stats generator when you hit contribution mile
 
 The stats generator (`scripts/generation/generate_contributor_stats.rb`) checks thresholds after counting your contributions:
 
-```
+```text
 commits >= 1          → first_blood
 commits >= 100        → centurion
 commits >= 1000       → thousand_cuts
@@ -188,3 +188,14 @@ Once you've pinned at least one badge to your Featured section, you've earned th
 ---
 
 > *"A well-curated trophy wall speaks louder than a thousand commits."*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
+**Recommended:** [[Avatar Forge: Crafting Your Digital Portrait]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

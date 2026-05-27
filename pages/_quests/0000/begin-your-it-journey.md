@@ -5,8 +5,8 @@ description: Take your first steps into the world of information technology
 excerpt: Start your adventure with the essential skills and mindset for IT success
 snippet: null
 preview: images/previews/begin-your-it-journey.png
-date: 2023-11-25T14:12:43.000Z
-lastmod: 2025-11-29 21:40:00+00:00
+date: '2023-11-25T14:12:43.000Z'
+lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -18,16 +18,16 @@ quest_arc: Digital Awakening Arc
 quest_dependencies:
   required_quests: []
   recommended_quests:
-  - /quests/init_world/hello-noob/
+  - /quests/0000/hello-noob/
   unlocks_quests:
-  - /quests/character-building/
-  - /quests/lvl_000/character-selection/
+  - /quests/0000/character-building/
+  - /quests/0000/character-selection/
 quest_relationships:
   child_quests: []
   sequel_quests:
-  - /quests/character-building/
+  - /quests/0000/character-building/
   parallel_quests:
-  - /quests/lvl_000/it-fundamentals/
+  - /quests/0000/it-fundamentals/
 learning_paths:
   primary_paths:
   - Software Development
@@ -42,10 +42,7 @@ learning_paths:
   skill_trees:
   - Career Planning
   - IT Fundamentals
-skill_focus:
-- getting-started
-- beginner
-- lvl-0000
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -78,20 +75,23 @@ rewards:
   unlocks_features:
   - Access to Character Building quest
   - Access to specialization selection
-permalink: /quests/lvl_000/begin-your-it-journey/
+permalink: /quests/0000/begin-your-it-journey/
 categories: []
 tags:
 - getting-started
 - beginner
-- lvl-0000
+- '0000'
 keywords:
-- getting-started
-- beginner
-- lvl-0000
+  primary:
+  - getting-started
+  secondary:
+  - beginner
+  - '0000'
 fmContentType: quest
 draft: false
 meta: null
 slug: journey
+layout: quest
 ---
 *Welcome, brave newcomer, to the threshold of the IT realm! Every legendary wizard, architect, and guardian began exactly where you stand now — with curiosity as their compass and determination as their shield. This quest will illuminate the vast landscape of Information Technology and help you chart your first steps.*
 
@@ -182,3 +182,16 @@ Ah, a systems builder! Crafting robust and efficient systems is akin to construc
 - [Harvard CS50 — Introduction to Computer Science](https://cs50.harvard.edu/)
 
 Remember, becoming a master system builder is a journey of continuous learning and practice. Each challenge you encounter is a puzzle to be solved, adding to your expertise and wisdom. Happy building! 🏰💾🔧
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0000 - Foundation & Init World]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]]
+**Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]] · [[Character Selection]]
+**Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]]
+**Parallel quests:** [[IT Fundamentals]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

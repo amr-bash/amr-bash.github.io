@@ -1,19 +1,16 @@
 ---
 title: 'Kaizen Quest: The Path of Continuous Improvement in Software Alchemy'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of Kaizen - continuous improvement - and transform
-  your software development practices through incremental refinement, waste elimination,
-  and perpetual evolution
-excerpt: Embark on an epic journey to master Kaizen principles and forge a culture
-  of continuous improvement in software development
+description: Master the ancient art of Kaizen - continuous improvement - and transform your software development practices through incremental refinement, waste elimination, and perpetual evolution
+excerpt: Embark on an epic journey to master Kaizen principles and forge a culture of continuous improvement in software development
 snippet: Small steps, infinite progress - the way of the Code Alchemist
 preview: images/previews/kaizen-quest-the-path-of-continuous-improvement-in.png
-date: 2025-11-02T18:34:05.000Z
-lastmod: 2025-11-02 22:13:30.306000+00:00
+date: '2025-11-02T18:34:05.000Z'
+lastmod: '2025-11-02T22:13:30.000Z'
 level: '0001'
 difficulty: 🟡 Medium
 estimated_time: 90-120 minutes
-primary_technology: lvl-0001
+primary_technology: 1
 quest_type: main_quest
 quest_series: Process Mastery Path
 quest_line: Foundation Path
@@ -39,10 +36,7 @@ learning_paths:
   - Process Improvement
   - Team Culture
   - Lean Practices
-skill_focus:
-- Quests
-- Process-Improvement
-- Team-Development
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
   knowledge_requirements:
@@ -72,25 +66,27 @@ quest_mapping:
   region: Foundation
   realm: Development
   biome: Process
-permalink: /quests/level-0001-kaizen-continuous-improvement/
+permalink: /quests/0001/kaizen-continuous-improvement/
 categories:
 - Quests
 - Process-Improvement
 - Team-Development
 tags:
-- lvl-0001
+- '0001'
 - kaizen
 - continuous-improvement
 - lean-development
 - process-optimization
 - team-culture
 keywords:
-- lvl-0001
-- kaizen
-- continuous-improvement
-- lean-development
-- process-optimization
-- team-culture
+  primary:
+  - '0001'
+  - kaizen
+  - continuous-improvement
+  secondary:
+  - lean-development
+  - process-optimization
+  - team-culture
 fmContentType: quest
 comments: true
 sub-title: 'Level 0001 (1) Quest: Process Improvement and Team Culture Mastery'
@@ -108,6 +104,9 @@ rewards:
   unlocks_features:
   - Access to advanced Lean Software Development quests
   - Team leadership and culture transformation paths
+redirect_from:
+- /quests/0001/kaizen/
+layout: quest
 ---
 *In the ancient forges of the Digital Kingdom, where lines of code shimmer like molten steel and bugs lurk in shadowy caverns like dragons, a legendary call echoes across the realm. You, the valiant Code Alchemist—a master of algorithms and architect of systems—have been summoned by the High Council of Efficiency. The realm faces a dire threat: **stagnation**, the foul blight that turns innovative projects into bloated monoliths of inefficiency, riddled with waste and rework.*
 
@@ -1283,3 +1282,12 @@ A successful improvement will:
 ---
 
 *By consistently using this Kaizen-based prompt structure, you create a partnership with AI that embodies continuous improvement: systematic, measurable, and always advancing toward excellence.*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 001 - Journeyman Challenges]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+

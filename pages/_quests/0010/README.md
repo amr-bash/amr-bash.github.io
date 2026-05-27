@@ -1,17 +1,15 @@
 ---
-
 title: Level 0010 - Terminal Enhancement & Shell Mastery
 description: Enhance your terminal experience with Oh My Zsh, Nerd Fonts, and advanced shell customization
 preview: images/previews/level-0010-terminal-enhancement-shell-mastery.png
-permalink: /quests/level-0010/
-lastmod: 2026-02-14T00:00:00.000Z
-
-level: 0010
-categories: quests
-date: 2025-11-29T16:46:02.000Z
-
+permalink: /quests/0010/
+layout: quest-collection
+level: '0010'
+categories:
+- quests
+lastmod: '2026-04-25T19:27:00.000Z'
+date: '2025-11-29T16:46:02.000Z'
 ---
-
 # Level 0010: Terminal Enhancement & Shell Mastery
 
 *Having conquered the basic incantations, you now seek to augment your terminal with powerful enchantments. Level 0010 transforms your command line from a simple tool into a beautifully customized powerhouse that enhances your productivity and delights the eye.*
@@ -22,31 +20,32 @@ Level 0010 quests focus on:
 - **Shell Framework Mastery** - Oh My Zsh and plugin ecosystems
 - **Visual Enhancements** - Nerd Fonts, themes, and prompt customization
 - **Terminal Configuration** - Advanced shell scripting and optimization
+- **Project-Based Bash Practice** - Study Bashcrawl locally and extend a working terminal learning game
 - **Developer Productivity** - Tools and workflows for efficient development
 
 ## Available Quests
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](../README.mdlevel-0010-bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](../README.mdlevel-0010-oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
-| [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](../README.mdlevel-0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
-| [Understanding Action Triggers in Depth](/quests/level-0010-action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Advanced Markdown: Tables, Footnotes & Extended Syntax](/quests/level-0010-advanced-markdown/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
-| [Bootstrap Framework: Build Responsive Sites Fast](/quests/level-0010-bootstrap-framework/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Mastering Branches and Pull Requests for Developers](/quests/level-0010-branches-and-pull-requests/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Change Logs](/quests/level-0010-change-logs/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Commitments to clean commits](/quests/level-0010-commitments-to-clean-commits/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [CSS Styling Basics: Selectors, Layout & Responsive Design](/quests/level-0010-css-styling-basics/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
-| [Setting up Django and Git](/quests/level-0010-django-and-git/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Epic Quest: Zer0-to-Her0 CMStyle](/quests/level-0010-epic-quest-zer0-to-her0-cmstyle/) | 🟢 Easy | 30-60 minutes | epic_quest | 🔮 Placeholder |
-| [JavaScript Fundamentals: DOM Manipulation & Events](/quests/level-0010-javascript-fundamentals/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
-| [planting seeds](/quests/level-0010-planting-seeds/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Forging the Prompt Crystal: Master AI Communication](/quests/level-0010-prompt-engineering-mastery/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
-| [Recursive Realms: Testing Infinite Loops with AI](/quests/level-0010-recursive-realms-testing/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
-| [Revolutionizing Work with AI Automation](/quests/level-0010-revolutionizing-work-with-ai-automation/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
-| [Terminal Artificer: Forging the Glass Interface](/quests/level-0010-terminal-artificer/) | 🟢 Easy | 30-45 minutes | side_quest | 🔮 Placeholder |
-| [Nerd Font Enchantment: Terminal Icon Mastery](/quests/side-quest-nerd-font-enchantment/) | 🟢 Easy | 20-30 minutes | side_quest | 🔮 Placeholder |
+| [Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest](/quests/0010/bash-scripting/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Terminal Enchantment: Oh-My-Zsh Mastery related_quests:](/quests/0010/oh-my-zsh-mastery/) | 🟡 Medium | 45-90 minutes | main_quest | 🔮 Placeholder |
+| [The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest](/quests/0010/jekyll-mermaid-integration-quest/) | 🟡 Medium | 2-3 hours | main_quest | ✅ Complete |
+| [Understanding Action Triggers in Depth](/quests/0010/action-triggers/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Advanced Markdown: Tables, Footnotes & Extended Syntax](/quests/0010/advanced-markdown/) | 🟡 Medium | 45-60 minutes | main_quest | 🔮 Placeholder |
+| [Bootstrap Framework: Build Responsive Sites Fast](/quests/0010/bootstrap-framework/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Mastering Branches and Pull Requests for Developers](/quests/0010/branches-and-pull-requests/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Change Logs](/quests/0010/change-logs/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Commitments to clean commits](/quests/0010/commitments-to-clean-commits/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [CSS Styling Basics: Selectors, Layout & Responsive Design](/quests/0010/css-styling-basics/) | 🟡 Medium | 60-75 minutes | main_quest | 🔮 Placeholder |
+| [Setting up Django and Git](/quests/0010/django-and-git/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Epic Quest: Zer0-to-Her0 CMStyle](/quests/0010/epic-quest-zer0-to-her0-cmstyle/) | 🟢 Easy | 30-60 minutes | epic_quest | 🔮 Placeholder |
+| [JavaScript Fundamentals: DOM Manipulation & Events](/quests/0010/javascript-fundamentals/) | 🟡 Medium | 75-90 minutes | main_quest | 🔮 Placeholder |
+| [planting seeds](/quests/0010/planting-seeds/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Forging the Prompt Crystal: Master AI Communication](/quests/0010/prompt-engineering-mastery/) | 🟡 Medium | 90-120 minutes | main_quest | 🔮 Placeholder |
+| [Recursive Realms: Testing Infinite Loops with AI](/quests/0010/recursive-realms-testing/) | 🟡 Medium | 90-120 minutes | main_quest | ✅ Complete |
+| [Revolutionizing Work with AI Automation](/quests/0010/revolutionizing-work-with-ai-automation/) | 🟢 Easy | 30-60 minutes | main_quest | 🔮 Placeholder |
+| [Terminal Artificer: Forging the Glass Interface](/quests/0010/side-quests/terminal-artificer/) | 🟢 Easy | 30-45 minutes | side_quest | 🔮 Placeholder |
+| [Nerd Font Enchantment: Terminal Icon Mastery](/quests/0010/side-quests/nerd-font-enchantment/) | 🟢 Easy | 20-30 minutes | side_quest | 🔮 Placeholder |
 
 
 ### ✨ Terminal Customization
@@ -99,15 +98,16 @@ Master the art of terminal-based frontend development workflows. Build, test, an
 #### [Bash Scripting Mastery](bash-scripting.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟡 Medium | **Estimated Time**: 90-120 minutes
 
-Advance beyond basic commands to write powerful, reusable Bash scripts. Learn control flow, error handling, and best practices.
+Advance beyond basic commands to write powerful, reusable Bash scripts. Use Bashcrawl as a capstone project for studying launchers, setup checks, state, and testable command workflows.
 
 **Skills You'll Master:**
 - Advanced Bash scripting patterns
 - Error handling and exit codes
 - Script parameterization and validation
 - Cross-platform compatibility
+- Bashcrawl extension and local project analysis
 
-**Prerequisites:** [Bash Fundamentals](../0000/bash-run.md)
+**Prerequisites:** [Terminal Fundamentals](../0000/terminal-fundamentals.md), [Bashcrawl Adventure](../0000/bashcrawl/), and [Bash-run Extension Lab](../0000/bash-run.md)
 
 ---
 

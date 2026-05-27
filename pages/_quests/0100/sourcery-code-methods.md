@@ -1,24 +1,19 @@
 ---
 title: 'Quest: Mastering the Ancient Arts of Source Control Sorcery'
 author: Quest Master IT-Journey
-description: Master the mystical powers of Git and GitHub workflows to become a legendary
-  code guardian and collaboration wizard in the digital realm
-excerpt: Transform from coding apprentice to git wizard by mastering the ancient arts
-  of version control, branch sorcery, and collaborative development magic
+description: Master the mystical powers of Git and GitHub workflows to become a legendary code guardian and collaboration wizard in the digital realm
+excerpt: Transform from coding apprentice to git wizard by mastering the ancient arts of version control, branch sorcery, and collaborative development magic
 snippet: Every line of code tells a story - learn to chronicle your digital adventures
 preview: images/previews/quest-mastering-the-ancient-arts-of-source-control.png
-date: 2025-07-28T23:34:51.000Z
-lastmod: 2025-07-29 05:15:57.715000+00:00
+date: '2025-07-28T23:34:51.000Z'
+lastmod: '2025-07-29T05:15:57.000Z'
 level: '0100'
 difficulty: 🟡 Medium
 estimated_time: 120-180 minutes
-primary_technology: lvl-0100
+primary_technology: 64
 quest_type: main_quest
 quest_series: Foundation Development Skills
-skill_focus:
-- Quests
-- Development-Fundamentals
-- Tool-Mastery
+skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
 - Basic command line familiarity
@@ -30,25 +25,27 @@ validation_criteria:
 - Create professional pull request with proper documentation
 - Implement automated GitHub Actions workflow
 - Execute complete feature development cycle using best practices
-permalink: /quests/level-0100-source-control-sorcery/
+permalink: /quests/0100/source-control-sorcery/
 categories:
 - Quests
 - Development-Fundamentals
 - Tool-Mastery
 tags:
-- lvl-0100
+- '0100'
 - git
 - github
 - version-control
 - collaboration
 - workflow-mastery
 keywords:
-- lvl-0100
-- git
-- github
-- version-control
-- collaboration
-- workflow-mastery
+  primary:
+  - '0100'
+  - git
+  - github
+  secondary:
+  - version-control
+  - collaboration
+  - workflow-mastery
 fmContentType: quest
 comments: true
 attachments: ''
@@ -62,6 +59,9 @@ related_quests:
 - Terminal Mastery Quest (Level 0001)
 - Development Environment Setup (Level 0101)
 - Code Quality Guardian Quest (Level 0110)
+redirect_from:
+- /quests/0100/sourcery-code-methods/
+layout: quest
 ---
 *In the mystical realm of software development, there exists an ancient and powerful magic known as Source Control Sorcery. Long ago, master developers discovered the secrets of tracking every change, branching through parallel dimensions of code, and collaborating across vast digital territories without losing a single line of their precious creations. Today, you shall learn to wield these legendary powers, transforming from a simple code scribe into a true guardian of digital history.*
 
@@ -202,7 +202,7 @@ git push -u origin main
 ```
 
 **Expected Output**:
-```
+```text
 Initialized empty Git repository in /path/to/my-first-quest/.git/
 [main (root-commit) abc1234] feat: Add initial quest README
  1 file changed, 1 insertion(+)
@@ -555,3 +555,12 @@ jobs:
 *Remember: Every commit tells a story, every branch opens new possibilities, and every merge brings the community closer together. Use your newfound powers wisely, mentor other aspiring developers, and continue to expand your mastery of the ever-evolving arts of software development sorcery.*
 
 *May your repositories always be organized, your merges conflict-free, and your automation workflows forever reliable! 🚀✨*
+
+## 🕸️ Knowledge Graph
+
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+
+**Level hub:** [[Level 0100 - Frontend Development & Docker]]
+**Overworld:** [[🏰 Overworld - Master Quest Map]]
+**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+
