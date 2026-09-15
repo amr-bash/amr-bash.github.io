@@ -1,8 +1,11 @@
 name: Update Contributor Profiles
 
 on:
-  push:
-    branches: [main]
+  # Contributor stats are derived from the GitHub API and barely move between
+  # individual commits, so a per-push run was almost pure waste (one API sweep
+  # per merge to main). Refresh weekly instead, with on-demand dispatch.
+  schedule:
+    - cron: '0 5 * * 1'  # Every Monday at 5 AM UTC
   workflow_dispatch:
     inputs:
       username:
@@ -12,15 +15,21 @@ on:
         type: string
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   update-contributor-stats:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,10 +52,12 @@ jobs:
 
       - name: Generate contributor stats
         if: steps.check.outputs.contributor_count != '0'
+        env:
+          INPUT_USERNAME: ${{ github.event.inputs.username }}
         run: |
           chmod +x scripts/generation/generate_contributor_stats.sh
-          if [ -n "${{ github.event.inputs.username }}" ]; then
-            bash scripts/generation/generate_contributor_stats.sh --username "${{ github.event.inputs.username }}"
+          if [ -n "$INPUT_USERNAME" ]; then
+            bash scripts/generation/generate_contributor_stats.sh --username "$INPUT_USERNAME"
           else
             bash scripts/generation/generate_contributor_stats.sh --all
           fi

@@ -1,10 +1,9 @@
 ---
-title: Character Selection
+title: 'Character Selection: Choose Your IT Class'
 author: IT-Journey Team
-description: Choose your character class and begin your specialized IT journey
+description: 'Explore eight RPG-styled IT character classes, from Developer to DevOps Engineer, and choose the specialization and learning path that fits you.'
 excerpt: Select from six unique character classes, each with distinct skills and career paths
-snippet: null
-preview: images/previews/character-selection.png
+preview: images/previews/character-selection.webp
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-29T21:40:00.000Z'
 level: '0000'
@@ -19,30 +18,9 @@ quest_dependencies:
   required_quests: []
   recommended_quests:
   - /quests/0000/begin-your-it-journey/
+  - /quests/0000/it-fundamentals/
   unlocks_quests:
   - /quests/0000/character-building/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/character-building/
-  parallel_quests:
-  - /quests/0000/it-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Cybersecurity
-  - Cloud Engineering
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - ☁️ Cloud Engineer
-  skill_trees:
-  - Career Planning
-  - Self-Assessment
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -91,9 +69,11 @@ keywords:
   - '0000'
 fmContentType: quest
 draft: false
-meta: null
 slug: character-selection
 layout: quest
+environment:
+  os:
+  - cloud
 ---
 *Welcome to the Character Selection chamber, brave adventurer! Just as every RPG hero must choose their class before venturing into the world, you must select your IT specialization to focus your training and skills. Each character class offers a unique path through the digital realm.*
 
@@ -198,13 +178,7 @@ Remember, these roles often intersect and overlap, and it's common to switch rol
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Begin your IT Journey]]
-**Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]]
-**Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]]
-**Parallel quests:** [[IT Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Begin your IT Journey]] **Unlocks:** [[Character Building: Forge Your IT Identity and Development Environment]] **Sequel quests:** [[Character Building: Forge Your IT Identity and Development Environment]] **Parallel quests:** [[IT Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

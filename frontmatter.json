@@ -2,14 +2,6 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
-      "title": "posts",
-      "previewPath": "/preview/pages/_posts/{{pathToken.relPath}}/",
-      "path": "[[workspace]]/pages/_posts",
-      "contentTypes": [
-        "default"
-      ]
-    },
-    {
       "title": "quickstart",
       "path": "[[workspace]]/pages/_quickstart",
       "filePrefix": "",
@@ -144,6 +136,42 @@
           "description": "Custom URL path for this page (e.g., /my-custom-url/)"
         },
         {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": [
+            "ai-machine-learning",
+            "business",
+            "creative-experimental",
+            "culture-society",
+            "data-analytics",
+            "devops",
+            "devops-news-muse",
+            "docs",
+            "learning",
+            "programming",
+            "system-administration",
+            "technology",
+            "tools-environment",
+            "trends-ideas",
+            "web-development"
+          ],
+          "description": "Optional. Which _data/brand/sections guide governs this content's voice. Defaults to the folder/collection; set explicitly to override (e.g. devops-news-muse for a short-form muse)."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": [
+            "practitioner-chronicle",
+            "concept-essay",
+            "muse-opinion",
+            "quest-fantasy",
+            "reference"
+          ],
+          "description": "Optional override of the section guide's voice profile (see _data/brand/voice.yml). Normally omitted."
+        },
+        {
           "title": "attachments",
           "name": "attachments",
           "type": "string"
@@ -231,59 +259,28 @@
         {
           "title": "Estimated Time",
           "name": "estimated_time",
-          "type": "choice",
-          "choices": [
-            "15-30 minutes",
-            "30-60 minutes",
-            "60-90 minutes",
-            "90-120 minutes",
-            "2-3 hours",
-            "3-4 hours",
-            "4+ hours (multi-session)"
-          ],
+          "type": "string",
           "default": "30-60 minutes",
-          "description": "Expected time to complete the quest"
+          "description": "Expected time to complete, format 'N-M minutes' or 'N-M hours' (e.g. '45-60 minutes', '2-3 hours')"
         },
         {
           "title": "Primary Technology",
           "name": "primary_technology",
-          "type": "choice",
-          "choices": [
-            "python",
-            "javascript",
-            "docker",
-            "git",
-            "linux",
-            "bash",
-            "html-css",
-            "sql",
-            "aws",
-            "azure",
-            "kubernetes",
-            "react",
-            "nodejs",
-            "java",
-            "c-sharp",
-            "go",
-            "rust",
-            "terraform",
-            "ansible"
-          ],
-          "description": "Main technology or tool focus of the quest"
+          "type": "string",
+          "description": "Main technology/tool focus as a lowercase slug (e.g. python, docker, github-copilot, jekyll)"
         },
         {
           "title": "Quest Type",
           "name": "quest_type",
           "type": "choice",
           "choices": [
-            "tool-mastery",
-            "language-learning",
-            "project-building",
-            "concept-exploration",
-            "integration-challenge",
-            "troubleshooting"
+            "main_quest",
+            "side_quest",
+            "epic_quest",
+            "bonus_quest"
           ],
-          "description": "Type of learning experience"
+          "default": "main_quest",
+          "description": "Playable quest type (drives permalink + icon). Non-quest pages use fmContentType instead."
         },
         {
           "title": "Skill Focus",
@@ -295,11 +292,10 @@
             "fullstack",
             "devops",
             "security",
-            "data-science",
-            "mobile",
+            "data-engineering",
             "cloud",
             "infrastructure",
-            "testing"
+            "ai-ml"
           ],
           "description": "Primary skill area being developed"
         },
@@ -448,6 +444,20 @@
           "title": "Is in draft",
           "name": "draft",
           "type": "draft"
+        },
+        {
+          "title": "Section guide (brand)",
+          "name": "section_guide",
+          "type": "choice",
+          "choices": ["quest"],
+          "description": "Optional brand pointer. Quests resolve to the 'quest' voice guide by default; set only to override."
+        },
+        {
+          "title": "Voice profile (brand)",
+          "name": "voice_profile",
+          "type": "choice",
+          "choices": ["quest-fantasy", "practitioner-chronicle", "concept-essay", "muse-opinion", "reference"],
+          "description": "Optional override of the quest voice profile (see _data/brand/voice.yml). Normally omitted."
         }
       ]
     }
@@ -725,15 +735,6 @@
       "id": "homeNav",
       "title": "Home Navigation",
       "file": "[[workspace]]/_data/navigation/home.yml",
-      "fileType": "yaml",
-      "labelField": "title",
-      "singleEntry": false,
-      "type": "navigation"
-    },
-    {
-      "id": "postsNav",
-      "title": "Posts Navigation",
-      "file": "[[workspace]]/_data/navigation/posts.yml",
       "fileType": "yaml",
       "labelField": "title",
       "singleEntry": false,

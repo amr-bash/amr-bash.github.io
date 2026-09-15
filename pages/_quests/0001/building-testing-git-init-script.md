@@ -1,9 +1,9 @@
 ---
-title: 'Building & Testing the Git Init Script: Headless, Interactive, Scaffolding'
+title: 'Building & Testing the Git Init Shell Script'
 author: IT-Journey Team
 description: Hands-on quest to build, extend, and test `git_init.sh` — an interactive and headless repo initializer with programmatic scaffolding.
 excerpt: Add features, scaffolding, and tests to `git_init.sh` so it is safe and testable in both interactive and headless modes.
-preview: images/previews/building-testing-the-git-init-script-headless-inte.png
+preview: images/previews/building-testing-the-git-init-script-headless-inte.webp
 date: '2025-11-13T23:38:22.000Z'
 lastmod: '2025-11-13T10:30:00.000Z'
 level: '0001'
@@ -32,7 +32,6 @@ keywords:
   - bash
 fmContentType: quest
 comments: true
-sub-title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
 redirect_from:
 - /quests/0001/building-testing-git-init-script/
 quest_line: Git Mastery Series
@@ -44,14 +43,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -60,22 +51,129 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+sub_title: 'Level 0001 (1) Quest: Shell Script Unit & Integration Testing'
+draft: false
 ---
 ## The Challenge: Safe automation without surprises
 
-You have a powerful repository initializer — `scripts/git_init.sh` — that supports interactive prompts and programmatic `--headless` invocations. This quest will guide you through validating the script's behavior, adding tests, and ensuring it behaves well in CI.
+You have a repository initializer — `scripts/git_init.sh` — that supports interactive prompts and programmatic `--headless` invocations. This quest will guide you through validating the script's behavior, adding tests, and ensuring it behaves well in CI.
 
 Why this matters:
 - Scripts are often used in automation and CI; they must behave predictably and be testable.
 - Headless behavior must be non-destructive and reliable; interactive commands can't be used in CI loops.
 - Creating files via programmatic scaffolding must be done with a clear contract and test coverage.
 
-## Objectives
+## 🎯 Quest Objectives
 
-- Verify script syntax with `bash -n` and lint with `shellcheck`.
-- Add Bats tests to confirm `--headless` operations do not push.
-- Ensure easy to run `--no-push` for local tests.
-- Add CI step instructions for running tests.
+By the end of this quest, you will be able to:
+
+- [ ] Verify script syntax with `bash -n` and lint with `shellcheck`.
+- [ ] Add Bats tests to confirm `--headless` operations do not push.
+- [ ] Ensure it is easy to run `--no-push` for local tests.
+- [ ] Add CI step instructions for running tests.
+
+## The Script
+
+Save the following as `scripts/git_init.sh` in a fresh local project directory (not inside a clone of the IT-Journey repo) before you do anything else — every step below assumes this file already exists and is executable.
+
+```bash
+#!/usr/bin/env bash
+# git_init.sh — interactive and headless repository initializer.
+#
+# Interactive:  ./git_init.sh
+# Headless:     ./git_init.sh --headless -n <name> [--no-push] \
+#                 [--gitignore <lang1,lang2,...>] [--scaffold <lang>] [--dry-run]
+set -euo pipefail
+
+HEADLESS=false
+NO_PUSH=false
+DRY_RUN=false
+NAME=""
+GITIGNORE_LANGS=""
+SCAFFOLD_LANG=""
+BASE_DIR="${GIT_INIT_BASE_DIR:-$HOME/github}"
+
+usage() {
+  cat <<'USAGE'
+Usage: git_init.sh [--headless] -n <name> [--no-push] [--gitignore <langs>] [--scaffold <lang>] [--dry-run]
+USAGE
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --headless) HEADLESS=true; shift ;;
+    -n|--name) NAME="$2"; shift 2 ;;
+    --no-push) NO_PUSH=true; shift ;;
+    --gitignore) GITIGNORE_LANGS="$2"; shift 2 ;;
+    --scaffold) SCAFFOLD_LANG="$2"; shift 2 ;;
+    --dry-run) DRY_RUN=true; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "Unknown argument: $1" >&2; usage; exit 1 ;;
+  esac
+done
+
+if [[ -z "$NAME" ]]; then
+  if [[ "$HEADLESS" == true ]]; then
+    echo "error: --headless requires -n <name>" >&2
+    exit 1
+  fi
+  read -rp "Repository name: " NAME
+fi
+
+REPO_DIR="$BASE_DIR/$NAME"
+
+echo "Initializing repository '$NAME' at $REPO_DIR"
+
+if [[ "$DRY_RUN" == true ]]; then
+  echo "[dry-run] mkdir -p $REPO_DIR"
+  echo "[dry-run] git -C $REPO_DIR init"
+else
+  mkdir -p "$REPO_DIR"
+  git -C "$REPO_DIR" init -q
+fi
+
+if [[ -n "$GITIGNORE_LANGS" ]]; then
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "[dry-run] write .gitignore for: $GITIGNORE_LANGS"
+  else
+    IFS=',' read -ra LANGS <<< "$GITIGNORE_LANGS"
+    : > "$REPO_DIR/.gitignore"
+    for lang in "${LANGS[@]}"; do
+      echo "# --- $lang ---" >> "$REPO_DIR/.gitignore"
+    done
+  fi
+fi
+
+if [[ -n "$SCAFFOLD_LANG" ]]; then
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "[dry-run] mkdir -p $REPO_DIR/src $REPO_DIR/tests"
+  else
+    mkdir -p "$REPO_DIR/src" "$REPO_DIR/tests"
+  fi
+fi
+
+if [[ "$DRY_RUN" == true ]]; then
+  echo "[dry-run] git -C $REPO_DIR add -A && git -C $REPO_DIR commit -m 'chore: initial commit'"
+else
+  git -C "$REPO_DIR" add -A
+  git -C "$REPO_DIR" -c user.email="quest@it-journey.dev" -c user.name="IT-Journey Quest" \
+    commit -q -m "chore: initial commit" --allow-empty
+fi
+
+if [[ "$NO_PUSH" == true || "$DRY_RUN" == true ]]; then
+  echo "Skipping push (--no-push or --dry-run)."
+else
+  echo "Push step intentionally left for you to wire up to your own remote."
+fi
+
+echo "Done."
+```
+
+Make it executable once before running anything below:
+
+```bash
+chmod +x scripts/git_init.sh
+```
 
 ## Tests and Tools
 
@@ -99,7 +197,7 @@ teardown() {
 }
 
 @test "headless mode creates a repo and does not push" {
-  run bash /path/to/scripts/git_init.sh --headless -n sample-test --no-push
+  run bash "$BATS_TEST_DIRNAME/../../scripts/git_init.sh" --headless -n sample-test --no-push
   [ "$status" -eq 0 ]
   [ -d "$HOME/github/sample-test/.git" ]
 }
@@ -107,13 +205,24 @@ teardown() {
 
 ### ShellCheck linting
 
-Install with `brew install shellcheck` on macOS and run `shellcheck scripts/git_init.sh`.
+Install with `brew install shellcheck` on macOS, or `sudo apt-get install -y shellcheck` on Linux (Ubuntu / GitHub Actions runners), then run `shellcheck scripts/git_init.sh`.
 
 ### Syntax check
 
 Use `bash -n scripts/git_init.sh` to detect syntax issues early.
 
 ## Try it locally
+
+> **Get the script first.** Every command below expects `scripts/git_init.sh` to
+> exist in your working directory and be executable. Create the project directory,
+> save the script from [The Script](#the-script) above into it, and make it
+> executable:
+>
+> ```bash
+> mkdir -p ~/quest-git-init && cd ~/quest-git-init
+> # save the script above as scripts/git_init.sh here, then:
+> mkdir -p scripts && chmod +x scripts/git_init.sh
+> ```
 
 1. Syntax check
 
@@ -130,25 +239,22 @@ bash scripts/git_init.sh --headless -n test-quest-sample --no-push --gitignore p
 3. Run Bats tests
 
 ```bash
-# install bats-core
-
-## 🎯 Quest Objectives
-
-By the end of this quest, you will be able to:
-
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
-
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
+# install bats-core (macOS)
 brew install bats-core
+# install bats-core (Linux / Ubuntu, e.g. GitHub Actions runners)
+sudo apt-get update && sudo apt-get install -y bats
+
 bats tests/bats
 ```
 
 4. Run ShellCheck
 
 ```bash
+# macOS
 brew install shellcheck
+# Linux / Ubuntu (e.g. GitHub Actions runners)
+sudo apt-get install -y shellcheck
+
 shellcheck scripts/git_init.sh
 ```
 
@@ -159,7 +265,7 @@ shellcheck scripts/git_init.sh
 - `bats tests/bats/test_headless.bats` returns pass for headless creation
 - `--gitignore` creates a `.gitignore` file when requested
 - `--scaffold python` creates `src` and `tests`
- - `--dry-run` prints operations and does not create files or push
+- `--dry-run` prints operations and does not create files or push
 
 ## Next Steps (Optional)
 
@@ -174,9 +280,7 @@ Good luck! 🛠️
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

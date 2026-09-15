@@ -8,9 +8,8 @@ keywords:
   secondary:
   - contributor
   - customization
-description: Design and integrate a custom avatar for your contributor character profile
+description: 'Replace your default identicon by sourcing or creating a custom avatar, hosting the image, and wiring it into your contributor data file to brand your profile.'
 excerpt: Visit the Portrait Studio and commission a visual identity worthy of your class.
-snippet: The Portrait Artist awaits — every hero deserves a face
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -26,7 +25,7 @@ quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0001/side-quests/avatar-forge/
+permalink: /quests/0001/avatar-forge/
 categories:
 - Quests
 - Community
@@ -51,15 +50,6 @@ quest_dependencies:
   - /quests/0001/forge-your-character/
   recommended_quests: []
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  character_classes:
-  - 🎵 Bard
-  - 💚 Healer
-  skill_trees:
-  - Community & Collaboration
-  - Frontend Basics
 rewards:
   badges:
   - 🎨 Portrait Artist — Custom avatar displayed on character sheet
@@ -70,6 +60,8 @@ validation_criteria:
   - Avatar renders on character sheet
   - Image is appropriate and accessible (has alt text context)
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/avatar-forge/
 ---
 # 🎨 Avatar Forge: Crafting Your Digital Portrait
 
@@ -105,7 +97,7 @@ Options for sourcing an avatar:
 
 ### Step 2: Update Your Data File
 
-Edit `_data/contributors/YOUR_USERNAME.yml`:
+Edit `_data/contributors/YOUR_USERNAME.yml` — add or update only the `avatar:` key inside the existing `profile:` block, so you don't overwrite any other profile fields already there:
 
 ```yaml
 profile:
@@ -125,14 +117,16 @@ If adding the image to the repo:
 
 ```bash
 mkdir -p assets/images/contributors
-cp /path/to/your/avatar.png assets/images/contributors/YOUR_USERNAME.png
+cp <PATH_TO_YOUR_AVATAR> assets/images/contributors/YOUR_USERNAME.png
+# Replace <PATH_TO_YOUR_AVATAR> with the real path to your image file, e.g. ~/Downloads/avatar.png
 ```
 
 ### Step 4: Verify
 
-Build the site and check your profile page:
+Build the site and check your profile page. This assumes the site repo is already cloned and bundled from the prerequisite **Forge Your Character** quest — run `bundle install` first if you haven't yet:
 
 ```bash
+bundle install
 bundle exec jekyll serve
 # Visit http://localhost:4000/contributors/YOUR_USERNAME/
 ```
@@ -140,7 +134,7 @@ bundle exec jekyll serve
 Your avatar should appear in the circular frame at the top of your character card.
 
 - [ ] Avatar displays correctly
-- [ ] Fallback still works if image fails to load
+- [ ] Fallback still works if image fails to load — test by temporarily pointing `avatar:` at a broken URL and confirming the GitHub identicon (or a default placeholder) still renders instead of a blank/broken image
 
 ## 🏆 Reward: Portrait Artist Badge 🎨
 
@@ -152,10 +146,7 @@ Once your avatar is live, you've earned the **Portrait Artist** badge (+50 XP).
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

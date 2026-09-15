@@ -1,9 +1,11 @@
 ---
 title: 'Level 1101: Machine Learning & AI'
-description: Master the fundamentals of machine learning, neural networks, and artificial intelligence to build intelligent systems
-preview: images/previews/level-1101-machine-learning-ai.png
+author: IT-Journey Team
+description: 'Master machine learning, neural networks, deep learning, NLP, and computer vision, then deploy models to production with MLOps and ethical AI.'
+preview: images/previews/level-1101-machine-learning-ai.webp
 permalink: /quests/1101/
 layout: quest-collection
+local_graph: false
 level: '1101'
 categories:
 - quests
@@ -11,11 +13,6 @@ categories:
 - master-tier
 - machine-learning
 - ai
-level_decimal: 13
-tier: Master
-tier_emoji: ⚡
-theme: Digital Intelligence
-xp_range: 7000-8500
 date: '2025-11-30T22:12:13.000Z'
 lastmod: '2025-12-01T04:36:39.000Z'
 tags:
@@ -30,6 +27,8 @@ toc: true
 toc_sticky: true
 sidebar:
   nav: quests
+draft: false
+mermaid: true
 ---
 # ⚡ Level 1101: Machine Learning & AI
 
@@ -173,7 +172,7 @@ To advance to Level 1110 (Architecture & Design), you must:
 
 | Quest | Difficulty | Time | Type | Status |
 |-------|------------|------|------|--------|
-| [AI Ethics and Responsible AI: Bias Detection, Fairness & Governance](/quests/1101/side-quests/ai-ethics/) | 🟡 Medium | 2-3 hours | side_quest | 🔮 Placeholder |
+| AI Ethics and Responsible AI: Bias Detection, Fairness & Governance | 🟡 Medium | 2-3 hours | side_quest | 🔮 Placeholder |
 | [Computer Vision Mastery: Image Classification, Object Detection & Segmentation](/quests/1101/computer-vision/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
 | [Deep Learning Frameworks: PyTorch vs TensorFlow Comparison & Implementation](/quests/1101/deep-learning-frameworks/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |
 | [Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn](/quests/1101/ml-fundamentals/) | 🔴 Hard | 5-6 hours | main_quest | 🔮 Placeholder |

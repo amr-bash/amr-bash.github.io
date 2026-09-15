@@ -1,9 +1,10 @@
 ---
 title: Level 1000 (8) - Cloud Computing Fundamentals
-description: Ascend to the clouds and master the infrastructure that powers global-scale applications
+description: 'Ascend to the cloud and master AWS core services, IaaS, PaaS, and SaaS models, plus Infrastructure as Code with Terraform and CloudFormation.'
 preview: images/previews/level-1000-cloud-computing.png
 permalink: /quests/1000/
 layout: quest-collection
+local_graph: false
 level: '1000'
 categories:
 - Quests
@@ -22,6 +23,8 @@ toc: true
 toc_sticky: true
 draft: false
 date: '2025-12-20T20:02:51.000Z'
+author: IT-Journey Team
+mermaid: true
 ---
 # Level 1000 (8) - Cloud Computing Fundamentals
 

@@ -11,7 +11,6 @@ keywords:
   - open source
 description: Create your contributor character profile with RPG-style stats, badges, and class identity — powered by your git history
 excerpt: Step into the Guild Hall and forge your identity. Every adventurer needs a character sheet before embarking on their journey.
-snippet: The Guild Master beckons new adventurers to forge their identity in the Hall of Contributors
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -57,24 +56,9 @@ quest_dependencies:
   - /quests/0001/terminal-mastery/
   - /quests/0001/git-workflow-mastery/
   unlocks_quests:
-  - /quests/0001/side-quests/avatar-forge/
-  - /quests/0001/side-quests/badge-collector/
-  - /quests/0010/side-quests/stats-dashboard/
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  - Open Source Developer
-  character_classes:
-  - 🧙 Wizard
-  - ⚔️ Warrior
-  - 🏹 Ranger
-  - 🗡️ Rogue
-  - 💚 Healer
-  - 🎵 Bard
-  - 🛡️ Paladin
-  skill_trees:
-  - Community & Collaboration
-  - Git & Version Control
+  - /quests/0001/avatar-forge/
+  - /quests/0001/badge-collector/
+  - /quests/0010/stats-dashboard/
 rewards:
   badges:
   - 🏆 Guild Member — Officially joined the Guild of Contributors
@@ -86,6 +70,7 @@ validation_criteria:
   - Character sheet renders on your profile page
   - Stats generator runs without errors for your username
 layout: quest
+mermaid: true
 ---
 # ⚔️ Forge Your Character: Crafting Your Contributor Identity
 
@@ -161,33 +146,34 @@ Open the file in your editor and fill in your details:
 # ═══════════════════════════════════════════
 profile:
   display_name: "Your Display Name"
-  class: Wizard          # Choose: Wizard, Warrior, Ranger, Rogue, Healer, Bard, Paladin
   avatar: ""             # URL to avatar image (leave blank for GitHub default)
+  class: Wizard          # Choose: Wizard, Warrior, Ranger, Rogue, Healer, Bard, Paladin
+  title: "Your Title or Role"
   bio: "A brief description of your quest in IT."
   location: ""
-  joined: "2026-03-20"
+  motto: ""
   banner_color: "#6c3fc5" # Hex color for your profile banner
   links:
     github: "https://github.com/YOUR_USERNAME"
-    website: ""
     twitter: ""
-  badges_pinned: []      # Pin up to 3 badge IDs here after earning them
+    linkedin: ""
+    website: ""
+  badges_pinned: []      # Pin up to 5 achievement IDs here after earning them
 
 # ═══════════════════════════════════════════
 # 🤖 AUTO-GENERATED — Do not edit below
 # ═══════════════════════════════════════════
 stats:
-  commits: 0
-  prs_merged: 0
-  quests_authored: 0
-  posts_authored: 0
+  total_commits: 0
+  total_prs_merged: 0
+  total_quests_authored: 0
+  total_posts_authored: 0
   lines_added: 0
   lines_removed: 0
+  first_contribution_date: null
+  latest_contribution_date: null
   active_days: 0
-  current_streak: 0
-  longest_streak: 0
-  first_commit: null
-  latest_commit: null
+  streak_days: 0
   top_languages: []
   top_categories: []
   contribution_calendar: []
@@ -196,9 +182,10 @@ achievements: []
 
 level:
   xp: 0
-  current_level: 0
-  tier: Apprentice
-  next_level_xp: 100
+  current_level: "0000"
+  tier: "Apprentice"
+  xp_to_next_level: 100
+  progress_percent: 0
 ```
 
 ### 🎭 Choosing Your Class
@@ -243,9 +230,9 @@ permalink: /contributors/YOUR_USERNAME/
 lastmod: 2026-03-20T00:00:00.000Z
 ---
 
-{% raw %}<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">{% endraw %}
+<link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
-{% raw %}{% include contributor/character_sheet.html username="YOUR_USERNAME" %}{% endraw %}
+{% include contributor/character_sheet.html username="YOUR_USERNAME" %}
 
 ---
 
@@ -292,9 +279,10 @@ cat _data/contributors/YOUR_USERNAME.yml
 
 ## ✅ Step 5: Verify Your Character Sheet
 
-Build the Jekyll site locally to see your profile:
+Build the Jekyll site locally to see your profile. If this is your first time running the site, install the Ruby gems first:
 
 ```bash
+bundle install
 bundle exec jekyll serve
 ```
 
@@ -378,11 +366,7 @@ Your level is calculated from total XP:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Terminal Mastery: Conquering the Command-Line Realm]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]]
-**Unlocks:** [[Avatar Forge: Crafting Your Digital Portrait]] · [[Badge Collector: Showcasing Your Achievements]] · [[Stats Dashboard: Enhancing Your Data Visualization]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Terminal Mastery: Conquering the Command-Line Realm]] · [[Git Workflow Mastery: Branches, Merging & Team Collaboration]] **Unlocks:** [[Avatar Forge: Crafting Your Digital Portrait]] · [[Badge Collector: Showcasing Your Achievements]] · [[Stats Dashboard: Enhancing Your Data Visualization]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -1,10 +1,8 @@
 ---
-title: Change Logs
+title: 'Level 0010: Changelogs & the Chronicles of Code'
 author: IT-Journey Team
-description: Quest covering Change Logs.
-excerpt: null
-snippet: null
-preview: /svg/penrose-gpt-vs-human.png
+description: 'Master the Grand Book of CHANGELOG.md, semantic versioning, and automated release notes with Release Drafter as you document your code realm.'
+preview: /svg/penrose-gpt-vs-human.webp
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:43:43.000Z'
 level: '0010'
@@ -25,9 +23,8 @@ keywords:
   - logs
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Aye aye, knowledge crusader!** You've survived the trials of Pull Request Prose and the sacred rites of Atomic Commits. Now, it's time to master the **Arcane Arts of Documentation & the Grand Book of CHANGELOGS.**
 
@@ -128,9 +125,7 @@ Ready to step into the high tower of **Automation & GitHub Actions** next? The m
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -3,14 +3,13 @@ title: 'Terminal Mastery: Conquering the Command-Line Realm'
 author: Quest Master IT-Journey Team
 description: Master terminal navigation and command-line tools to unlock developer productivity and system control powers in this hands-on quest
 excerpt: Transform from terminal novice to command-line champion through hands-on practice with essential shell commands and navigation techniques
-snippet: Where code meets the metal, heroes are forged in the fire of the command line
-preview: images/previews/terminal-mastery-conquering-the-command-line-realm.png
+preview: images/previews/terminal-mastery-conquering-the-command-line-realm.webp
 date: '2025-07-28T23:34:51.000Z'
 lastmod: '2025-09-27T19:59:13.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 45-90 minutes
-primary_technology: 1
+primary_technology: bash
 quest_type: main_quest
 quest_series: 'Foundation Path: Digital Literacy Mastery'
 skill_focus: fullstack
@@ -53,18 +52,23 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
-sub-title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
 rewards:
 - 🏆 Terminal Navigator Badge
 - ⚡ 10x Developer Productivity Boost
 - 🛠️ Command-Line Mastery Foundation
 - 🎯 Advanced Developer Toolkit Access
-related_quests:
-- 'Level 0000: Digital Awakening - Computer Fundamentals'
-- 'Level 0010: File System Sorcery - Directory Navigation'
-- 'Level 0011: Version Control Magic - Git Fundamentals'
 layout: quest
+sub_title: 'Level 0001 (1) Quest: Command-Line Interface Mastery'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to the Terminal Mastery Quest - an epic journey that will transform you from a mere point-and-click peasant into a command-line champion. This quest will guide you through the ancient arts of terminal navigation, file manipulation, and system command sorcery, preparing you for advanced development adventures.*
 
@@ -72,7 +76,7 @@ layout: quest
 
 ### 🌟 The Legend Behind This Quest
 
-*In the early days of computing, before graphical interfaces cast their spell upon the masses, there existed a realm where true wizards wielded power through cryptic incantations typed into mystical black screens. The Terminal - gateway to the heart of every computer system - remains the fastest, most powerful way to communicate with your digital realm.*
+*In the early days of computing, before graphical interfaces cast their spell upon the masses, there existed a realm where true wizards wielded power through cryptic incantations typed into mystical black screens. The Terminal - gateway to the heart of every computer system - remains the fastest, most direct way to communicate with your digital realm.*
 
 *Modern developers who master the terminal gain supernatural productivity, able to accomplish in seconds what takes GUI users minutes. They navigate vast codebases with lightning speed, automate repetitive tasks through script sorcery, and debug systems with surgical precision. The terminal is not just a tool - it's a direct line to the soul of your machine.*
 
@@ -89,7 +93,7 @@ By the time you complete this epic journey, you will have mastered:
 
 ### Secondary Objectives (Bonus Achievements)
 
-- [ ] **Command Chaining Sorcery** - Combine multiple commands into powerful pipelines
+- [ ] **Command Chaining Sorcery** - Combine multiple commands into pipelines that pass one command's output to the next
 - [ ] **Environment Customization** - Personalize your terminal for maximum efficiency
 - [ ] **Automation Foundations** - Create your first shell scripts for task automation
 
@@ -137,7 +141,7 @@ echo $SHELL  # Should show /bin/zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-*macOS provides an excellent Unix-like environment with the familiar Terminal app. The default zsh shell includes powerful features like auto-completion and syntax highlighting.*
+*macOS provides an excellent Unix-like environment with the familiar Terminal app. The default zsh shell includes features like auto-completion and syntax highlighting.*
 
 ### 🪟 Windows Empire Path
 
@@ -167,7 +171,7 @@ sudo apt update && sudo apt upgrade
 sudo dnf update
 ```
 
-*Linux provides the most authentic terminal experience, with powerful shells and extensive command-line tools available through package managers.*
+*Linux provides the most authentic terminal experience, with configurable shells and extensive command-line tools available through package managers.*
 
 ### ☁️ Cloud Realms Path
 
@@ -329,10 +333,12 @@ cd ../Documents            # Go up one level, then into Documents
 ```bash
 # Create directories for organized learning
 mkdir terminal-practice
-mkdir -p projects/web-dev/my-first-site    # -p creates parent directories too
 
 # Navigate into your new workspace
 cd terminal-practice
+
+# Create your projects tree inside the workspace (later chapters copy/search this)
+mkdir -p projects/web-dev/my-first-site    # -p creates parent directories too
 
 # Create multiple directories at once
 mkdir docs scripts tests
@@ -391,6 +397,9 @@ EOF
 **Step 2: Copying and Moving with Precision**
 
 ```bash
+# Set up the targets these examples copy/move into
+mkdir -p backups styles backup && touch important-file.txt
+
 # Copy files (cp command)
 cp quest-log.md quest-backup.md          # Copy single file
 cp *.js scripts/                         # Copy all JavaScript files to scripts folder
@@ -408,6 +417,9 @@ cp -i important-file.txt backup/         # -i prompts before overwriting
 **Step 3: Strategic File Removal**
 
 ```bash
+# Set up sample files these examples remove/move
+mkdir -p ~/.trash && touch temp-file.txt session.tmp unwanted-file.txt
+
 # Remove files (DANGER ZONE - be careful!)
 rm temp-file.txt                         # Remove single file
 rm -i *.tmp                              # Remove with confirmation (-i)
@@ -415,7 +427,7 @@ rm -rf old-project/                      # Remove directory and contents (-rf)
 
 # Safer alternatives
 mv unwanted-file.txt ~/.trash/           # Move to trash instead of deleting
-ls *.log | head -5 | xargs rm           # Remove only first 5 log files
+ls *.log 2>/dev/null | head -5 | xargs -r rm   # Remove only first 5 log files (-r skips if none exist)
 
 # Create a safety alias (add to ~/.zshrc or ~/.bashrc)
 alias rm='rm -i'                        # Always prompt before deleting
@@ -464,8 +476,15 @@ wc -l *.txt                             # Just line counts for all text files
 **Step 2: Searching and Filtering Magic**
 
 ```bash
+# Set up sample files these search examples look through
+echo "function greet() { return 'hi'; }" > projects/app.js
+printf "info: start\nerror: disk failure\n" > logfile.txt
+echo "app.js" > file-list.txt
+printf "error: disk full\nwarning: low memory\n" > logs.txt
+printf "INFO start\nERROR disk failure\n" > app.log   # for the *.log pipeline example in Step 3
+
 # Find patterns in files using grep
-grep "terminal" learning-notes.txt       # Find lines containing "terminal"
+grep -i "terminal" learning-notes.txt    # Find lines containing "terminal" (case-insensitive, matches "Terminal")
 grep -i "COMMAND" *.txt                  # Case-insensitive search (-i)
 grep -r "function" projects/             # Recursive search in directory
 grep -n "error" logfile.txt              # Show line numbers (-n)
@@ -628,7 +647,7 @@ Create a terminal-based system monitoring solution:
 - [ ] **File Operations**: Create, copy, move, and delete files with confidence
 - [ ] **Text Processing**: Search, filter, and manipulate text content efficiently
 - [ ] **Process Management**: Monitor system processes and resource usage
-- [ ] **Command Chaining**: Combine multiple commands into powerful workflows
+- [ ] **Command Chaining**: Combine multiple commands into workflows that complete a task in a single line
 
 ### Knowledge Gained
 
@@ -655,7 +674,7 @@ Create a terminal-based system monitoring solution:
 
 ## 🎉 Congratulations, Terminal Champion!
 
-*You have successfully completed the Terminal Mastery Quest! Your journey through the command-line realm has equipped you with powerful skills that will serve you throughout your entire IT career. You now possess the ability to navigate any Unix-like system with confidence, manipulate files with precision, and automate repetitive tasks through script sorcery.*
+*You have successfully completed the Terminal Mastery Quest! Your journey through the command-line realm has equipped you with command-line skills that will serve you throughout your entire IT career. You now possess the ability to navigate any Unix-like system with confidence, manipulate files with precision, and automate repetitive tasks through script sorcery.*
 
 ### 🌟 What's Next?
 
@@ -687,9 +706,7 @@ Your newfound terminal powers open several exciting paths:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

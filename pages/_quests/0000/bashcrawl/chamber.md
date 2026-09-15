@@ -38,13 +38,11 @@ keywords:
   - shell scripting math
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/armoury/
+  - /quests/0000/armoury/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Use let, expr, and $(( )) to compute values
 - Assign arithmetic results to variables
@@ -52,17 +50,23 @@ validation_criteria:
 - Unlock the path to the Rift
 prerequisites:
 - Complete the Armoury side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Stone Key Fragment
 - Bash arithmetic mastery
 excerpt: Defeat the stone statue by using let, expr, and arithmetic expansion to solve Bash math challenges and unlock the Rift.
 draft: false
-permalink: /quests/0000/side-quests/chamber/
+permalink: /quests/0000/chamber/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/chamber/
 ---
 *A massive stone statue dominates the Chamber, its eyes glowing with arithmetic runes. It will not yield to a sword. Only correct calculations can break the enchantment — and wrong answers deal damage.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Chamber" %}
 
 ## 🎯 Quest Objectives
 
@@ -72,7 +76,7 @@ layout: quest
 - [ ] Run `./statue` to trigger and win the boss encounter
 - [ ] Collect the Chamber's treasure and unlock the Rift path
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Armoury side-quest](/quests/0000/side-quests/armoury/) complete
 - Sword in inventory (from armoury `./sword`)
@@ -130,11 +134,11 @@ echo $vault_code     # 11
 
 ### Step 3 — Compute your specific answer
 
-Replace the example numbers with the values from YOUR runes:
+Substitute the values from YOUR runes for the two example numbers below (the `3` and `4` are placeholders — swap in the door and exit counts you found):
 
 ```bash
-# Template:
-answer=$(( doors_in_cellar * exits_in_entrance + 7 ))
+# Template — replace 3 and 4 with the counts from YOUR runes:
+answer=$(( 3 * 4 + 7 ))     # 19 in this example
 echo "My answer is: $answer"
 ```
 
@@ -157,6 +161,8 @@ cat chest
 inventory
 ```
 
+> **Note:** `inventory` is a bashcrawl game command (provided by the dungeon), not a standard Unix command — it shows what you've picked up on your crawl.
+
 The stone key fragment is part of the multi-piece key that opens the Rift.
 
 ## 💡 Arithmetic Gotchas
@@ -164,9 +170,15 @@ The stone key fragment is part of the multi-piece key that opens the Rift.
 | Problem | Cause | Fix |
 |---------|-------|-----|
 | `expr 4 * 1` → error | `*` glob-expanded | Escape: `expr 4 \* 1` |
-| `let "x=5/2"` → `2` | Integer division | Use `bc` for floats: `echo "5/2" \| bc -l` |
+| `let "x=5/2"` → `2` | Integer division | Use `bc` for floats (see below) |
 | Variable not set | Missing `$` | Use `echo $var`, not `echo var` |
 | Wrong answer, took damage | Calculation error | Recalculate carefully before `./statue` |
+
+Bash arithmetic is integer-only. For floating-point division, pipe the expression to `bc -l`:
+
+```bash
+echo "5/2" | bc -l     # 2.50000000000000000000
+```
 
 ## ✅ Validation
 
@@ -188,6 +200,8 @@ Continue exploring:
 
 ---
 
+{% include bashcrawl-play-local.html %}
+
 ## 📚 External Resources
 
 Continue your terminal adventure with these resources:
@@ -204,12 +218,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Armoury: File Permissions and Script Execution]]
-**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Armoury: File Permissions and Script Execution]] **Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

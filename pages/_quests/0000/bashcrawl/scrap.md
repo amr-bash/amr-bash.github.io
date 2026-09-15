@@ -38,13 +38,11 @@ keywords:
   - terminal shortcuts
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Create a symbolic link with ln -s
 - Verify the symlink with ls -l
@@ -53,17 +51,23 @@ validation_criteria:
 - Collect the portal crystal
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Portal Crystal
 - Symbolic links mastery
 excerpt: Build and inspect symbolic-link portals with ln -s, ls -l, and readlink to traverse the Scrap Heap and recover the portal crystal.
 draft: false
-permalink: /quests/0000/side-quests/scrap/
+permalink: /quests/0000/scrap/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/scrap/
 ---
 *The Scrap Heap is a wasteland of discarded objects — broken swords, empty potion bottles, shattered mirrors. But hidden among the junk are portal mirrors, and learning `ln -s` lets you build instant teleportation.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Scrap Heap" %}
 
 ## 🎯 Quest Objectives
 
@@ -74,7 +78,7 @@ layout: quest
 - [ ] Use the scrap's portal symlinks to shortcut navigation
 - [ ] Collect the portal crystal
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls -F`, `ls -l`, and `cd`
@@ -89,6 +93,8 @@ layout: quest
 | `readlink link_name` | Print the target of a symlink |
 | `readlink -f link_name` | Print the fully-resolved absolute path |
 | `realpath path` | Same as `readlink -f` (more modern) |
+
+> **Note:** `readlink -f` and `realpath` are GNU-only — they ship with Linux but not with stock macOS. macOS adventurers may need to install GNU coreutils (e.g. `brew install coreutils`, then `greadlink`/`grealpath`) to wield them.
 
 ### Hard Link vs Symbolic Link
 
@@ -108,10 +114,10 @@ ls -F
 # broken_sword  empty_bottle  portal_mirror@  scrap_pile/  crystal_hint
 
 ls -l portal_mirror
-# lrwxrwxrwx  1 user group  12 Jan 01  portal_mirror -> /vault/lab
+# lrwxrwxrwx  1 user group  10 Jan 01  portal_mirror -> /vault/lab
 ```
 
-`portal_mirror` is already a symlink — it points to the vault's lab. You can `cd portal_mirror` and you will land directly in the lab.
+`portal_mirror` is already a symlink — the bashcrawl game pre-creates it for you, so there's no need to build it yourself. It points to the vault's lab, so you can `cd portal_mirror` and you will land directly in the lab.
 
 ### Step 2 — Navigate via the existing portal
 
@@ -138,7 +144,8 @@ cat crystal_hint
 ```bash
 ln -s ../../ENTRANCE quick_entrance
 ls -l quick_entrance
-# lrwxrwxrwx  1 user group  20 Jan 01  quick_entrance -> ../../ENTRANCE
+# lrwxrwxrwx  1 user group  14 Jan 01  quick_entrance -> ../../ENTRANCE
+# (a symlink's size is the length of its target path — "../../ENTRANCE" is 14 characters)
 
 ls -F quick_entrance/
 # scroll  cellar/          ← entrance contents, via symlink
@@ -156,8 +163,12 @@ readlink -f quick_entrance
 
 ### Step 6 — Collect the crystal
 
+Building your `quick_entrance` portal and stepping through it is what earns the portal crystal — the act of creating and using the symlink is the puzzle. Then check your haul with `inventory`, a bashcrawl game command (not a standard Unix tool) that lists the treasures you've gathered:
+
 ```bash
-cat crystal_hint
+cd quick_entrance    # step through the portal you built
+pwd                  # now inside ENTRANCE, reached via your symlink
+cd -                 # return to the scrap heap
 inventory
 # portal crystal ✓
 ```
@@ -169,9 +180,9 @@ inventory
 | Symlink shows broken (red in terminal) | Target path does not exist | Check relative path with `readlink` |
 | `ln -s` with no arguments | Wrong order | Syntax: `ln -s TARGET LINK_NAME` |
 | `cd symlink` goes somewhere unexpected | Relative path off | Use absolute path or `readlink -f` |
-| Cannot delete directory via symlink | Symlink vs directory | `rm symlink` removes the link; `rm -r` removes the target |
+| Cannot delete directory via symlink | Symlink vs directory | `rm symlink` removes the link; `rm -r symlink/` (trailing slash) follows the link and deletes the target's contents |
 
-> **Danger:** `rm -r symlink_to_dir` may behave unexpectedly depending on your shell version. Prefer `unlink symlink_name` to safely remove only the link.
+> **Danger:** `rm -r symlink_to_dir` (no trailing slash) removes only the symlink itself, leaving the target untouched. But add a trailing slash — `rm -r symlink_to_dir/` — and `rm` follows the link into the target directory and wipes out its contents. The slash is the difference between deleting a shortcut and deleting what it points at. Prefer `unlink symlink_name` to safely remove only the link.
 
 ## ✅ Validation
 
@@ -187,6 +198,8 @@ inventory
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 
@@ -204,12 +217,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

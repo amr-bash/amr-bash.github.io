@@ -1,14 +1,25 @@
 ---
 title: Level 1110 - Quality Assurance
-description: Advanced testing patterns, error handling, and robust application development
-preview: images/previews/level-1110-quality-assurance.png
+description: 'Master quality assurance through advanced error handling, edge-case testing, debugging, and quality metrics to build robust, reliable applications.'
+preview: images/previews/level-1110-quality-assurance.webp
 permalink: /quests/1110/
 layout: quest-collection
+local_graph: false
 level: '1110'
 categories:
 - quests
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '1110'
+- master
+- architecture
+- design
+- patterns
+mermaid: true
 ---
 # Level 1110: Quality Assurance
 
@@ -56,7 +67,7 @@ Master the art of hunting down and handling 404 errors. Learn to create user-fri
 ### For Quality Engineers
 1. [404 Hunting Quest](404-hunting.md) - Error handling fundamentals
 2. Combine with Level 1010 automation
-3. Build comprehensive test suites
+3. Build test suites that cover edge cases and error paths
 
 ### For Full-Stack Developers
 1. [404 Hunting Quest](404-hunting.md)

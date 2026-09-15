@@ -1,10 +1,8 @@
 ---
-title: Setting up Django and Git
+title: 'Conjure a Django Project into a GitHub Vault'
 author: Cloud Quest Guide
 description: Learn how to efficiently set up Django with Git for seamless version control and project management in your web development journey.
-excerpt: null
-snippet: null
-preview: /images/git-django.png
+preview: /images/git-django.webp
 date: '2025-03-13T14:00:43.000Z'
 lastmod: '2025-03-12T15:24:58.000Z'
 level: '0010'
@@ -38,15 +36,14 @@ keywords:
   - tutorial
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Setting Up a GitHub Repository for Your Django Project**
 
 **A Magical Adventure with VS Code**
 
-🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than the powerful IDE known as **VS Code**?
+🎩✨ Welcome, young sorcerer, to the mystical art of **Django Deployment**! Before your project can roam the digital realm freely, it must be contained in the enchanted vaults of **GitHub**. And who better to assist you than **VS Code**, with its built-in terminal and Source Control panel?
 
 So, grab your wand (*ahem*, keyboard) and let's begin this magical journey! 🧙‍♂️🐍
 
@@ -291,9 +288,7 @@ echo "🛠️ Happy coding, sorcerer! 🧙‍♂️"
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

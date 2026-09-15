@@ -2,19 +2,14 @@
 applyTo: "pages/**/*.md"
 description: "Guide GitHub Copilot when resolving AI Content Review issues — per-collection scope, frontmatter rules, fix patterns, validation, and PR conventions"
 date: 2026-05-22T14:55:00.000Z
-lastmod: 2026-05-22T14:55:00.000Z
+lastmod: 2026-06-25T00:00:00.000Z
 ---
 
 # AI Content Review — Resolution Instructions
 
-This file governs **how Copilot (or any contributor) resolves issues opened by the
-[`ai-content-review.yml`](../workflows/ai-content-review.yml) workflow**.
+This file governs **how Copilot (or any contributor) resolves issues opened by the [`ai-content-review.yml`](../workflows/ai-content-review.yml) workflow**.
 
-Each AI-review issue is **scoped to a single Jekyll collection** (e.g. `_posts`,
-`_quests`, `_docs`, `_about`, `_notes`, `_notebooks`, `_quickstart`, `_hobbies`)
-and lists the files in that collection that need improvement. **Stay inside the
-collection named in the issue title — do not edit files in other collections in
-the same PR.**
+Each AI-review issue is **scoped to a single Jekyll collection** (`_quests`, `_docs`, `_notes`, `_quickstart`, `_about`) and lists the files in that collection that need improvement. **Stay inside the collection named in the issue title — do not edit files in other collections in the same PR.**
 
 ---
 
@@ -28,15 +23,13 @@ Work through the issue in this order. Skip steps that don't apply.
 4. **Technical accuracy** (code blocks, commands, links)
 5. **Accessibility** (alt text, heading hierarchy)
 
-If a single file has many issues, fix it fully before moving on — partial fixes
-across many files are harder to review than complete fixes on fewer files.
+If a single file has many issues, fix it fully before moving on — partial fixes across many files are harder to review than complete fixes on fewer files.
 
 ---
 
 ## 2. Frontmatter Rules (Hard Requirements)
 
-CI enforces these via `.github/workflows/frontmatter-validation.yml` and
-`scripts/validation/content-reviewer.py`:
+CI enforces these via `.github/workflows/frontmatter-validation.yml` and `scripts/validation/content-reviewer.py`:
 
 | Field | Required | Constraint |
 |-------|----------|------------|
@@ -60,9 +53,9 @@ CI enforces these via `.github/workflows/frontmatter-validation.yml` and
 
 ### Collection-Specific Required Fields
 - **Quests** (`pages/_quests/**`): add `learning_objectives`, `target_audience`,
-  `hierarchy`, `level`, `quest_id`, `difficulty`, `estimated_time`,
-  `prerequisites`. See [`quest.instructions.md`](quest.instructions.md).
-- **Posts** (`pages/_posts/**`): see [`posts.instructions.md`](posts.instructions.md).
+`hierarchy`, `level`, `quest_id`, `difficulty`, `estimated_time`, `prerequisites`. See [`quest.instructions.md`](quest.instructions.md).
+- **Docs** (`pages/_docs/**`): see [`docs.instructions.md`](docs.instructions.md).
+- **Notes** (`pages/_notes/**`): see [`notes.instructions.md`](notes.instructions.md).
 
 ---
 
@@ -90,8 +83,7 @@ Old `level-XXXX-slug` and flat `side-quest-slug` patterns are invalid.
 - **Nested fenced code blocks** need a longer outer fence (4 backticks if inner
   uses 3).
 - **No literal secrets**: never paste strings starting with `ghp_`, `gho_`,
-  `ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`. Use placeholders like
-  `${env:GITHUB_TOKEN}` or `${input:openai-key}`.
+`ghu_`, `ghs_`, `ghr_`, `sk-`, `AKIA`, `xoxb-`. Use placeholders like `${env:GITHUB_TOKEN}` or `${input:openai-key}`.
 
 ---
 
@@ -155,8 +147,7 @@ bundle exec jekyll build
 - ❌ Touching `.github/instructions/*.md` — open a separate PR
 - ❌ Bulk dependency upgrades
 
-If the review flags something out of scope, leave a comment on the issue noting
-it and open a follow-up issue.
+If the review flags something out of scope, leave a comment on the issue noting it and open a follow-up issue.
 
 ---
 
@@ -176,7 +167,7 @@ Then proceed with the rest. Don't block the entire issue on one ambiguous item.
 
 - [`copilot-instructions.md`](../copilot-instructions.md) — core principles
 - [`README.instructions.md`](README.instructions.md) — README-First / README-Last
-- [`posts.instructions.md`](posts.instructions.md) — blog-post-specific rules
+- [`docs.instructions.md`](docs.instructions.md) — doc-specific rules
 - [`quest.instructions.md`](quest.instructions.md) — quest-specific rules
 - [`.github/content-review-config.yml`](../content-review-config.yml) — thresholds and tag keywords
 - [`scripts/validation/content-reviewer.py`](../../scripts/validation/content-reviewer.py) — review engine

@@ -1,6 +1,6 @@
 ---
 title: 'Trial of the Agentic Codex: The Grand Capstone'
-description: The ultimate challenge — a six-domain scenario that tests every GH-600 skill. Deploy a complete agentic AI system on GitHub, evaluate it, defend your architectural decisions, and earn the title of Agentic Codex Master.
+description: 'Face the six-domain grand trial: build a complete agentic AI system on GitHub, prove competency across all GH-600 domains, and earn Codex Master.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-codex-capstone-exam-trial.png
 level: '1100'
@@ -40,7 +40,7 @@ keywords:
   - GitHub Copilot certification
   - agentic codex master
   - all domains review
-lastmod: '2026-05-17T00:00:00.000Z'
+lastmod: '2026-09-13T04:55:00.000Z'
 permalink: /quests/1100/agentic-codex-capstone-exam-trial/
 quest_dependencies:
   required_quests:
@@ -64,19 +64,7 @@ quest_dependencies:
   - /quests/1100/agentic-autonomy-levels-matrix/
   - /quests/1100/agentic-guardrails-and-human-in-the-loop/
   unlocks_quests: []
-quest_relationships:
-  parent_quests:
-  - /docs/certifications/gh-600/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏛️ Architect
-  - 🛡️ Security Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI (Complete)
+  recommended_quests: []
 rewards:
   badges:
   - 🏆 Agentic Codex Master
@@ -88,7 +76,7 @@ rewards:
 prerequisites:
   knowledge_requirements:
   - ALL 19 prerequisite quests completed (see required_quests above)
-  - Review the skills-measured page at /docs/certifications/gh-600/skills-measured/
+  - Review the skills-measured page at /notes/gh-600/skills-measured/
   system_requirements:
   - GitHub repository with Copilot, Actions, and Environments fully configured
   - All tools and workflows from prior quests present and operational
@@ -98,11 +86,6 @@ validation_criteria:
   - Domain coverage rubric scored >= 80% for each domain
   - Grand reflection document published to repository
   - All validation scripts pass
-quest_mapping:
-  coordinates: '[6, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Hall of Mastery
 comments: true
 draft: false
 redirect_from:
@@ -134,14 +117,19 @@ graph TD
     style D6 fill:#4CAF50,stroke:#2E7D32,color:#fff
 ```
 
-## 🎯 Capstone Objectives
+## 🎯 Quest Objectives
 
-- [ ] **Seal 1 (Domain 1 — 18%)**: Implement agent-in-SDLC and define boundaries
-- [ ] **Seal 2 (Domain 2 — 18%)**: Configure tools, permissions, MCP, environment integration
-- [ ] **Seal 3 (Domain 3 — 19%)**: Implement memory strategy and context continuity
-- [ ] **Seal 4 (Domain 4 — 19%)**: Evaluate agent performance and iterate on instructions
-- [ ] **Seal 5 (Domain 5 — 17%)**: Build and manage a multi-agent system
-- [ ] **Seal 6 (Domain 6 — 9%)**: Implement responsible autonomy, guardrails, and HITL
+> **Workbench status (verified):** **Needs GitHub + Copilot** for the full trial — especially the MCP seal and hosted agent runs. There is no honest local-only claim for the Grand Capstone; use the chapter mini-labs to rehearse patterns, then assemble in a real repository.
+
+
+*Six seals, six domains — break them all to claim the trial:*
+
+- [ ] **Seal 1 (Domain 1 — Learn 15–20%)**: Implement agent-in-SDLC and define boundaries
+- [ ] **Seal 2 (Domain 2 — Learn 20–25%)**: Configure tools, permissions, MCP, environment integration
+- [ ] **Seal 3 (Domain 3 — Learn 10–15%)**: Implement memory strategy and context continuity
+- [ ] **Seal 4 (Domain 4 — Learn 15–20%)**: Evaluate agent performance and iterate on instructions
+- [ ] **Seal 5 (Domain 5 — Learn 15–20%)**: Build and manage a multi-agent system
+- [ ] **Seal 6 (Domain 6 — Learn 10–15%)**: Implement responsible autonomy, guardrails, and HITL
 
 ---
 
@@ -153,9 +141,11 @@ graph TD
 
 The following 6 chapters map directly to the GH-600 exam domains.
 
+> 🏰 **A worked answer key exists.** The IT-Journey repository itself implements every seal below — its AI fleet, kill switches, autonomy matrix, drift guard, and audit trails are mapped file-by-file in [GH-600 in the Wild](/notes/gh-600/implemented-in-it-journey/). Consult it when you are stuck, the way you would check a solved example — but the trial wants *your* build, in *your* repository.
+
 ---
 
-## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — 18%)
+## ⚔️ Seal 1: The Agentic SDLC (Domain 1 — Learn 15–20%)
 
 *Related quests: Q1 (SDLC Integration), Q2 (Plan vs Action), Q3 (Observability)*
 
@@ -166,16 +156,6 @@ The following 6 chapters map directly to the GH-600 exam domains.
 ```markdown
 <!-- work/gh-600/capstone/sdlc-diagram.md -->
 # Our Agentic SDLC
-
-## 🎯 Quest Objectives
-
-By the end of this quest, you will be able to:
-
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
-
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
 
 ## Agent Integration Points
 
@@ -193,8 +173,9 @@ By the end of this quest, you will be able to:
 
 ### Challenge 1.2: Demonstrate planning vs. action separation
 
-> **Task:** Show a GitHub Actions workflow that separates the plan step from the execute step with a mandatory break between them.
+> **Task:** Show a GitHub Actions workflow that separates the plan step from the execute step with a mandatory break between them. (The `raw`/`endraw` tags below are this site's Liquid escapes — drop them when you copy the YAML into your own `.github/workflows/`.)
 
+{% raw %}
 ```yaml
 # .github/workflows/plan-then-execute.yml
 name: Plan-Then-Execute (Sealed Capstone)
@@ -236,6 +217,7 @@ jobs:
       - name: Execute approved plan
         run: echo "Executing plan after human approval..."
 ```
+{% endraw %}
 
 ### Challenge 1.3: Configure an observability workflow
 
@@ -245,7 +227,7 @@ jobs:
 
 ---
 
-## ⚔️ Seal 2: Tools, Permissions, and Environment (Domain 2 — 18%)
+## ⚔️ Seal 2: Tools, Permissions, and Environment (Domain 2 — Learn 20–25%)
 
 *Related quests: Q4 (Tool Selection), Q5 (MCP), Q6 (Dev Env), Q7 (Safe Execution)*
 
@@ -291,7 +273,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 3: Memory and Context (Domain 3 — 19%)
+## ⚔️ Seal 3: Memory and Context (Domain 3 — Learn 10–15%)
 
 *Related quests: Q8 (Memory Strategies), Q9 (State Persistence), Q10 (Cross-tool Continuity)*
 
@@ -321,7 +303,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 4: Evaluation and Performance (Domain 4 — 19%)
+## ⚔️ Seal 4: Evaluation and Performance (Domain 4 — Learn 15–20%)
 
 *Related quests: Q11 (Success Criteria), Q12 (Root Cause Analysis), Q13 (Behavior Tuning)*
 
@@ -370,7 +352,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 5: Multi-Agent Systems (Domain 5 — 17%)
+## ⚔️ Seal 5: Multi-Agent Systems (Domain 5 — Learn 15–20%)
 
 *Related quests: Q14 (Orchestration), Q15 (Observability), Q16 (Recovery), Q17 (Lifecycle)*
 
@@ -400,7 +382,7 @@ permissions:
 
 ---
 
-## ⚔️ Seal 6: Responsible Agentic AI (Domain 6 — 9%)
+## ⚔️ Seal 6: Responsible Agentic AI (Domain 6 — Learn 10–15%)
 
 *Related quests: Q18 (Autonomy Levels), Q19 (Guardrails & HITL)*
 
@@ -418,17 +400,19 @@ permissions:
 
 ---
 
-## 📋 Domain Coverage Rubric (GH-600 Exam Alignment)
+## 📋 Domain Coverage Rubric
 
-| Domain | Weight | Your Score | Pass Threshold |
+Official exam weights are **ranges** from Microsoft Learn ([GH-600 study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600) — Skills at a glance). The campaign score columns are **IT-Journey pedagogy only** — not Microsoft point values. Official pass rule: a score of **700 or greater**.
+
+| Domain | Learn weight (official) | Campaign seal (IT-Journey) | Notes |
 |---|---|---|---|
-| D1: Agentic SDLC | 18% | /18 | ≥ 14 |
-| D2: Tools & Environment | 18% | /18 | ≥ 14 |
-| D3: Memory & Context | 19% | /19 | ≥ 15 |
-| D4: Evaluation | 19% | /19 | ≥ 15 |
-| D5: Multi-Agent | 17% | /17 | ≥ 13 |
-| D6: Governance | 9% | /9 | ≥ 7 |
-| **Total** | **100%** | **/100** | **≥ 70** |
+| D1: Agentic SDLC | 15–20% | Pass / Fail | Integrate agents; plan vs execute; observability |
+| D2: Tools & Environment | 20–25% | Pass / Fail | Tools, permissions, MCP, safe execution |
+| D3: Memory & Context | 10–15% | Pass / Fail | Memory strategy, persistence, drift |
+| D4: Evaluation | 15–20% | Pass / Fail | Signals, RCA, tune from evidence |
+| D5: Multi-Agent | 15–20% | Pass / Fail | Orchestration, observability, recovery |
+| D6: Governance | 10–15% | Pass / Fail | Autonomy levels, guardrails, HITL |
+| **Exam pass (official)** | — | — | **≥ 700** on the GH-600 (not a 70/100 campaign total) |
 
 ---
 
@@ -463,19 +447,50 @@ After completing all 6 seals, publish your reflection:
 
 ## ✅ Capstone Validation
 
+The trial ends the way every domain taught you to end: with a **machine-verifiable verdict**, not a feeling. Create this script in your capstone repository and make it pass — it checks that every seal left its artifact behind:
+
 ```bash
-# Validate all 20 quests in the arc
-python3 test/quest-validator/quest_validator.py -d pages/_quests/
+cat > validate-capstone.sh <<'EOF'
+#!/usr/bin/env bash
+# validate-capstone.sh — each seal must have left its artifact behind
+set -uo pipefail
+fails=0
+seal() {  # description, test-command...
+  local desc="$1"; shift
+  if "$@" >/dev/null 2>&1; then echo "✅ $desc"
+  else echo "❌ $desc"; fails=$((fails + 1)); fi
+}
 
-# Check all 6 seals are present
-python3 work/gh-600/scripts/validate_capstone.py \
-  --registry _data/agents.yml \
-  --matrix _data/autonomy-matrix.yml \
-  --reflection work/gh-600/capstone/grand-reflection.md
+# Seal 1 — SDLC design + plan/act separation
+seal "S1: SDLC diagram exists"            test -s work/gh-600/capstone/sdlc-diagram.md
+seal "S1: plan-then-execute workflow"     grep -ql "environment:" .github/workflows/plan-then-execute.yml
+# Seal 2 — tools, permissions, MCP
+seal "S2: least-privilege permissions"    grep -ql "pull-requests: write" .github/workflows/plan-then-execute.yml
+seal "S2: MCP server configured"          test -s .vscode/mcp.json
+# Seal 3 — memory + drift
+seal "S3: persistent memory committed"    sh -c 'git log --oneline -- .agent/memory/ | grep -q .'
+seal "S3: drift guard present"            test -x scripts/drift-guard.sh
+# Seal 4 — evaluation
+seal "S4: acceptance criteria schema"     jq -e '.criteria | length >= 3' work/gh-600/capstone/acceptance-criteria.json
+seal "S4: RCA document written"           grep -qil "5-why" forensics/*.md
+# Seal 5 — multi-agent
+seal "S5: agent registry (>= 3 agents)"   test "$(grep -c '^- name:' _data/agents.yml)" -ge 3
+seal "S5: orchestration workflow"         grep -ql "needs:" .github/workflows/council-fanout.yml
+# Seal 6 — governance
+seal "S6: autonomy matrix"                test -s _data/autonomy-matrix.yml
+seal "S6: CODEOWNERS boundary"            test -s .github/CODEOWNERS
+seal "S6: forbidden actions in AGENTS.md" grep -qi "forbidden" AGENTS.md
+# The reflection
+seal "🪞 Grand reflection published"      test -s work/gh-600/capstone/grand-reflection.md
 
-# Build site
-docker-compose exec jekyll bundle exec jekyll build
+echo
+[ "$fails" -eq 0 ] && echo "🏆 All seals hold — the trial is complete." \
+                   || { echo "⚔️  $fails seal(s) unbroken — return to the domain and finish the work."; exit 1; }
+EOF
+chmod +x validate-capstone.sh && ./validate-capstone.sh
 ```
+
+Adjust paths to match where your trial actually put each artifact — the script encodes the *contract* (every seal leaves evidence), not a sacred directory layout. A capstone whose validator passes on the first try was written after the artifacts; one that fails a few times first was written honestly.
 
 ---
 
@@ -517,11 +532,7 @@ docker-compose exec jekyll bundle exec jekyll build
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Skills Checklist]]
-**Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]] · [[The Three Sigils: Plan, Reason, Act]] · [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] · [[Forging the Agent's Arsenal: Tool Selection & Permissions]] · [[The MCP Conclave: Mastering Model Context Protocol Servers]] · [[Bind the Agent to the Realm: Dev Environment Integration]] · [[The Shield of Retries: Safe Execution and Error Handling]] · [[Vaults of Recollection: Agent Memory Strategies]] · [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] · [[Crossing the Tool Planes: State Continuity Across Tools]] · [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]] · [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] · [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]] · [[The Council of Many: Multi-Agent Orchestration Patterns]] · [[The Scribe's Codex: Observability in Multi-Agent Systems]] · [[When Familiars Fall: Multi-Agent Failure Recovery]] · [[The Agent Pantheon: Multi-Agent Lifecycle Management]] · [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Skills Checklist]] **Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]] · [[The Three Sigils: Plan, Reason, Act]] · [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] · [[Forging the Agent's Arsenal: Tool Selection & Permissions]] · [[The MCP Conclave: Mastering Model Context Protocol Servers]] · [[Bind the Agent to the Realm: Dev Environment Integration]] · [[The Shield of Retries: Safe Execution and Error Handling]] · [[Vaults of Recollection: Agent Memory Strategies]] · [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] · [[Crossing the Tool Planes: State Continuity Across Tools]] · [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]] · [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] · [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]] · [[The Council of Many: Multi-Agent Orchestration Patterns]] · [[The Scribe's Codex: Observability in Multi-Agent Systems]] · [[When Familiars Fall: Multi-Agent Failure Recovery]] · [[The Agent Pantheon: Multi-Agent Lifecycle Management]] · [[The Autonomy Scales: Mapping Agent Autonomy Levels]] · [[The Warden's Pact: Guardrails and Human-in-the-Loop Patterns]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

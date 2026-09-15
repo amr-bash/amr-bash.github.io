@@ -1,10 +1,9 @@
 ---
 title: 'Forging the Prompt Crystal: VS Code Copilot Mastery Quest'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of prompt engineering to unlock the full power of VS Code Copilot. Learn systematic prompt design, iterative refinement, and structured patterns that transform AI assistance from hit-or-miss to precision tools.
+description: 'Master prompt engineering for VS Code Copilot: structured RCTF patterns, few-shot and Chain-of-Thought prompting, and PDCA-driven refinement.'
 excerpt: Transform from a casual Copilot user into a Prompt Crystal Forger—wielding precision-crafted prompts that unlock consistent, high-quality AI assistance in your development workflow
-snippet: Your prompts are code—version them, test them, perfect them
-preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.png
+preview: images/previews/forging-the-prompt-crystal-vs-code-copilot-mastery.webp
 date: '2025-11-26T22:17:42.000Z'
 lastmod: '2025-11-27T05:11:44.000Z'
 level: '0011'
@@ -16,27 +15,10 @@ quest_series: AI Development Mastery
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0010/prompt-engineering-mastery/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0010/prompt-engineering-mastery/
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - AI Development
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🤖 AI Engineer
-  - 🏗️ System Engineer
-  skill_trees:
-  - AI Development
-  - Prompt Engineering
-  - VS Code Mastery
-  - Developer Productivity
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -69,11 +51,6 @@ validation_criteria:
   - Describe the difference between zero-shot and few-shot prompting
   - Identify when Chain-of-Thought prompting improves results
   - Apply PDCA cycle principles to prompt quality improvement
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Foundation
-  realm: AI-Enhanced
-  biome: Development Tools
 permalink: /quests/0011/prompt-crystal-vscode-copilot/
 categories:
 - Quests
@@ -101,7 +78,6 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 0011 (3) Quest: Main Quest - VS Code Copilot Prompt Mastery'
 rewards:
   badges:
@@ -121,10 +97,21 @@ rewards:
 redirect_from:
 - /quests/0011/prompt-crystal-mastery-vscode-copilot/
 layout: quest
+mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *In the crystalline halls of the Digital Nexus, where streams of code flow like rivers of starlight and AI spirits await human guidance, there exists a legendary discipline known to master developers as **Prompt Crystal Forging**. This ancient art transforms casual conversations with AI into precision instruments of creation—unlocking capabilities that casual users never dream possible.*
 
-*You, brave Code Alchemist, stand at the threshold of VS Code's most powerful enchantment: **GitHub Copilot**. But like any great artifact, its power lies dormant without the proper incantations. Your quest: to master the art of prompt engineering within VS Code, learning to craft instructions that consistently unlock Copilot's full potential.*
+*You, brave Code Alchemist, stand at the threshold of VS Code's AI pair-programmer enchantment: **GitHub Copilot**. But like any great artifact, its power lies dormant without the proper incantations. Your quest: to master the art of prompt engineering within VS Code, learning to craft instructions that consistently unlock Copilot's full potential.*
 
 *Whether you've been frustrated by inconsistent suggestions, struggled to get Copilot to understand your project's patterns, or simply want to 10x your AI-assisted productivity, this quest will transform your relationship with your AI pair programmer forever.*
 
@@ -232,7 +219,7 @@ mkdir -p .github/prompts
 touch .github/copilot-instructions.md
 ```
 
-*macOS adventurers enjoy native terminal integration. Use iTerm2 or Terminal.app for the most seamless experience.*
+*macOS adventurers enjoy native terminal integration. Use iTerm2 or Terminal.app to run these commands without extra setup.*
 
 ### 🪟 Windows Empire Path
 
@@ -369,20 +356,20 @@ The codebase uses Python 3.10+ with type hints throughout.
 **Complete RCTF Template**:
 ```markdown
 [ROLE]
-You are a [specific expert with relevant experience].
+You are a senior TypeScript developer experienced in REST APIs.
 
 [CONTEXT]
-The user is working on [situation/project].
-Current state: [what exists now]
-Goal: [what we're trying to achieve]
+The user is working on a user-registration service.
+Current state: A basic Express route exists with no validation
+Goal: Add robust, well-tested email validation
 
 [TASK]
-Your task is to [specific, actionable request].
+Your task is to write an email-validation function with unit tests.
 
 Requirements:
-1. [Requirement 1]
-2. [Requirement 2]
-3. [Requirement 3]
+1. Validate format with a regex and reject empty strings
+2. Return a typed result of { isValid: boolean; error?: string }
+3. Include a JSDoc comment with at least two usage examples
 
 [CONSTRAINTS]
 - [Technical constraint]
@@ -497,7 +484,7 @@ Input: [example input]
 Output: [desired output]
 
 Now apply to:
-Input: [your input]
+Input: processPaymentQueue
 Output:
 ```
 
@@ -542,21 +529,22 @@ Output:
 
 **Zero-Shot CoT (Simplest)**:
 ```markdown
-Problem: [Your complex problem]
+Problem: This recursive function causes a stack overflow on large inputs.
+         How should I refactor it?
 
 Let's solve this step-by-step:
 ```
 
 **Few-Shot CoT (More Accurate)**:
 ```markdown
-Problem: [Example problem]
+Problem: A loop runs 1000 times and each iteration opens a DB connection.
 Let's think step by step:
-Step 1: [reasoning]
-Step 2: [reasoning]
-Step 3: [reasoning]
-Answer: [result]
+Step 1: Identify the repeated work (a new connection per iteration)
+Step 2: Note the cost (connection setup dominates runtime)
+Step 3: Choose a fix (open one connection outside the loop)
+Answer: Hoist the connection out of the loop and reuse it
 
-Problem: [Your problem]
+Problem: An API endpoint times out when fetching related records.
 Let's think step by step:
 ```
 
@@ -599,7 +587,7 @@ Step 2: Analyze join efficiency → Found: Cartesian product risk
 Step 3: Review aggregation → Found: Unnecessary DISTINCT
 Solution: Add index, reorder joins, remove DISTINCT
 
-Problem: [Your slow query]
+Problem: SELECT * FROM orders WHERE status = 'open' ORDER BY created_at
 Let's debug step-by-step:
 ```
 
@@ -680,7 +668,7 @@ Create `.github/copilot-instructions.md` to give Copilot persistent, project-wid
 
 ### 🧙‍♂️ Workspace Agents and References
 
-VS Code Copilot provides powerful context-gathering tools:
+VS Code Copilot provides context-gathering tools that pull your codebase, open files, and terminal output into a prompt:
 
 **Using `@workspace` for Codebase Context**:
 ```text
@@ -813,16 +801,16 @@ inputs:
   - severity_threshold
 ---
 
-# Code Review: {{ inputs.focus_area }}
+# Code Review: {% raw %}{{ inputs.focus_area }}{% endraw %}
 
 [ROLE] You are a senior software engineer conducting code review.
 
 [CONTEXT] 
-Reviewing code with focus on {{ inputs.focus_area }}.
+Reviewing code with focus on {% raw %}{{ inputs.focus_area }}{% endraw %}.
 This is for a production application requiring enterprise-level quality.
 
 [TASK]
-Review the provided code focusing on {{ inputs.focus_area }}.
+Review the provided code focusing on {% raw %}{{ inputs.focus_area }}{% endraw %}.
 
 ## Review Criteria
 
@@ -848,7 +836,7 @@ For each issue found:
 - **Issue**: Description of the problem
 - **Fix**: Recommended solution with code example
 
-Only report issues at {{ inputs.severity_threshold }} level or higher.
+Only report issues at {% raw %}{{ inputs.severity_threshold }}{% endraw %} level or higher.
 ```
 
 ### 📚 Template Library Structure
@@ -880,12 +868,12 @@ inputs:
   - error_type
 ---
 
-# Debug Assistant: {{ inputs.language }} {{ inputs.error_type }}
+# Debug Assistant: {% raw %}{{ inputs.language }}{% endraw %} {% raw %}{{ inputs.error_type }}{% endraw %}
 
-[ROLE] You are an expert {{ inputs.language }} debugger specializing in {{ inputs.error_type }} issues.
+[ROLE] You are an expert {% raw %}{{ inputs.language }}{% endraw %} debugger specializing in {% raw %}{{ inputs.error_type }}{% endraw %} issues.
 
 [CONTEXT]
-The user is experiencing a {{ inputs.error_type }} in their {{ inputs.language }} code.
+The user is experiencing a {% raw %}{{ inputs.error_type }}{% endraw %} in their {% raw %}{{ inputs.language }}{% endraw %} code.
 They need systematic debugging assistance.
 
 [TASK]
@@ -900,10 +888,10 @@ Analyze the provided code and error, then:
 [Step-by-step breakdown of the issue]
 
 ## 🐛 Root Cause
-[Specific cause of the error]
+The exact line and condition that triggers the failure
 
 ## ✅ Solution
-\`\`\`{{ inputs.language }}
+\`\`\`{% raw %}{{ inputs.language }}{% endraw %}
 [Fixed code with comments]
 \`\`\`
 
@@ -922,9 +910,9 @@ inputs:
   - framework
 ---
 
-# Test Generator: {{ inputs.language }} with {{ inputs.framework }}
+# Test Generator: {% raw %}{{ inputs.language }}{% endraw %} with {% raw %}{{ inputs.framework }}{% endraw %}
 
-[ROLE] You are a QA engineer specializing in {{ inputs.language }} testing with {{ inputs.framework }}.
+[ROLE] You are a QA engineer specializing in {% raw %}{{ inputs.language }}{% endraw %} testing with {% raw %}{{ inputs.framework }}{% endraw %}.
 
 [CONTEXT]
 Creating comprehensive test coverage for production code.
@@ -937,8 +925,8 @@ Generate unit tests for the provided function covering:
 3. Error cases (invalid inputs, exceptions)
 
 [FORMAT]
-\`\`\`{{ inputs.language }}
-// Test file with {{ inputs.framework }} syntax
+\`\`\`{% raw %}{{ inputs.language }}{% endraw %}
+// Test file with {% raw %}{{ inputs.framework }}{% endraw %} syntax
 // Include test descriptions explaining intent
 
 describe('[Function Name]', () => {
@@ -1201,17 +1189,13 @@ Before completing this quest, verify you can:
 
 ### 🎮 Quest Completion Challenges
 
-**Novice Challenge** (Required):
-Transform 3 vague prompts into RCTF format with scores of 7+
+**Novice Challenge** (Required): Transform 3 vague prompts into RCTF format with scores of 7+
 
-**Journeyman Challenge** (Required):
-Create a complete `.github/copilot-instructions.md` for your project
+**Journeyman Challenge** (Required): Create a complete `.github/copilot-instructions.md` for your project
 
-**Master Challenge** (Required):
-Build a prompt template library with at least 3 templates and a README
+**Master Challenge** (Required): Build a prompt template library with at least 3 templates and a README
 
-**Epic Challenge** (Bonus):
-Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
+**Epic Challenge** (Bonus): Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 
 ---
 
@@ -1295,16 +1279,16 @@ Complete a full PDCA cycle documented in an iteration log, achieving 9+ score
 ### 🎯 Recommended Follow-Up Quests
 
 **Immediate Next Steps**:
-- 🤖 **AI Agent Development** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 📊 **Prompt Performance Monitoring** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤖 **AI Agent Development** - Planned quest (see Quest Build Plan)
+- ⚙️ **MCP Server Prompt Patterns** - Planned quest (see Quest Build Plan)
+- 📊 **Prompt Performance Monitoring** - Planned quest (see Quest Build Plan)
 
 **Advanced Specializations**:
-- 🔬 **Advanced RAG Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
-- 🏗️ **Multi-Agent Systems** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🔬 **Advanced RAG Systems** - Planned quest (see Quest Build Plan)
+- 🏗️ **Multi-Agent Systems** - Planned quest (see Quest Build Plan)
 
 **Team & Community**:
-- 🤝 **Team Prompt Library Setup** - Planned quest (see [Quest Build Plan](../QUEST_BUILD_PLAN.md))
+- 🤝 **Team Prompt Library Setup** - Planned quest (see Quest Build Plan)
 
 ---
 
@@ -1443,9 +1427,7 @@ After completing this quest, update:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

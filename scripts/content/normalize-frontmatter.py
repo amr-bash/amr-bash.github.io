@@ -102,8 +102,6 @@ def detect_content_type(path: Path) -> str:
             return "quest-docs"
         return "quests"
     if "_docs" in parts:
-        if "wargames" in parts:
-            return "docs-wargame"
         return "docs"
     if "_notes" in parts:
         return "notes"
@@ -338,6 +336,12 @@ def process_file(
     fm, body, err = parse_frontmatter(text)
     if err or fm is None:
         return FileChange(rel, content_type, skipped_reason=f"frontmatter: {err}")
+
+    # Never rewrite vendored / read-only content. Files imported from upstream
+    # carry source_repo/source_url; rewriting their frontmatter would clobber
+    # attribution. This mirrors the read_only boundary in .cms/config.yml.
+    if "source_repo" in fm or "source_url" in fm:
+        return FileChange(rel, content_type, skipped_reason="read-only/vendored (source_repo/source_url)")
 
     new_fm, changes = normalize_frontmatter(fm, body, content_type, touch_lastmod)
     if not changes:

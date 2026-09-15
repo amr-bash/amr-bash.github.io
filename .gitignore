@@ -29,7 +29,8 @@ venv/
 .AppleDouble
 .LSOverride
 
-.vscode/
+.vscode/*
+!.vscode/README.md
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -59,11 +60,13 @@ test-results/
 ##############################
 # Link Check Results (runtime outputs)
 ##############################
+# Run outputs are regenerated every run and uploaded as workflow artifacts,
+# never committed. Only the baselines (delta-comparison inputs) stay tracked.
 link-check-results/*.json
+!link-check-results/broken_links_baseline.json
 link-check-results/*.env
-link-check-results/ai_analysis.md
-link-check-results/summary.md
-link-check-results/detailed_analysis.md
+link-check-results/*.md
+!link-check-results/posts-external-baseline.md
 
 ##############################
 # Work Directory Pattern (disposable)
@@ -74,3 +77,23 @@ work/
 # Local databases / AI tooling
 ##############################
 .crush/
+
+# Generated quest validation reports (regenerate via make quest-audit)
+test/quest-validator/*-report.json
+test/quest-validator/full-audit-report.json
+pages/_quests/NETWORK_REPORT.md
+.playwright-mcp/
+landing-full.png
+
+# Quest walkthrough routine — local session artifacts (uploaded as CI artifacts, never committed)
+/walk-plan.json
+/walk-evidence.json
+/walk-evidence.md
+# quest_steps.py step plan + stack_capture.mjs output (per-run working state)
+/steps.json
+/captures/
+/.sandbox/
+/screenshots/
+
+# Node deps (installed --no-save for the walkthrough screenshot script + frontend crawler)
+/node_modules/

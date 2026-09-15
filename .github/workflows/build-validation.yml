@@ -49,23 +49,99 @@ on:
 
 permissions:
   contents: read
-  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   RUBY_VERSION: '3.2'
   NODE_VERSION: '20'
 
 jobs:
+  # Cheap gate so the expensive jobs (Docker build, 3-OS cross-platform matrix)
+  # only run when their inputs actually changed. A content-only push to main no
+  # longer spins up Windows + macOS runners or a ~6-minute Docker build just to
+  # re-confirm dependency compatibility that didn't change.
+  detect-changes:
+    name: 🔎 Detect Changed Inputs
+    runs-on: ubuntu-latest
+    outputs:
+      deps: ${{ steps.filter.outputs.deps }}
+      docker: ${{ steps.filter.outputs.docker }}
+    steps:
+      - name: 🏰 Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Compute changed file groups
+        id: filter
+        run: |
+          # Manual runs always exercise everything.
+          if [ "${{ github.event_name }}" != "push" ]; then
+            echo "deps=true" >> "$GITHUB_OUTPUT"
+            echo "docker=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          BASE="${{ github.event.before }}"
+          HEAD="${{ github.sha }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
+            CHANGED=$(git diff --name-only "${HEAD}~1" "${HEAD}" 2>/dev/null || echo "")
+          else
+            CHANGED=$(git diff --name-only "$BASE" "$HEAD" 2>/dev/null || echo "")
+          fi
+          echo "Changed files:"; echo "$CHANGED"
+
+          if echo "$CHANGED" | grep -qE '^(Gemfile|Gemfile\.lock)$'; then
+            echo "deps=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "deps=false" >> "$GITHUB_OUTPUT"
+          fi
+          if echo "$CHANGED" | grep -qE '^(Dockerfile|docker-compose\.yml|Gemfile|Gemfile\.lock)$'; then
+            echo "docker=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "docker=false" >> "$GITHUB_OUTPUT"
+          fi
+
   jekyll-build-test:
     name: 🏗️ Jekyll Build Test
     runs-on: ubuntu-latest
     if: github.event.inputs.test_jekyll != 'false'
+    # Bound the job: bundle install (cached) + a build already capped at 300s.
+    # Without this, a wedged bundle/network step rides the 6h runner default.
+    timeout-minutes: 15
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         fetch-depth: 1
+
+    # Fail FAST (before the slow Ruby build) on Liquid raw-guard bugs — an
+    # orphan/nested {% raw %}/{% endraw %} or an unguarded GitHub Actions ${{ }}.
+    # These are fatal to every Jekyll build, production Pages included, and take
+    # the deploy down. Scoped to CHANGED pages on a PR (so pre-existing debt
+    # never blocks an unrelated change); full sweep on push/dispatch.
+    # pipefail: `checker | tee` must fail on the CHECKER's exit code, not tee's —
+    # without it this gate can never fail in PR mode (the PR #445 escape).
+    - name: 🧪 Liquid raw-guard gate
+      env:
+        BASE: ${{ github.event.pull_request.base.sha }}
+      run: |
+        set -o pipefail
+        python3 scripts/validation/check_liquid_raw.py --selftest
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          git fetch --no-tags --depth=1 origin "$BASE" 2>/dev/null || true
+          mapfile -t files < <(git diff --name-only "$BASE" HEAD -- 'pages/**/*.md' 'pages/**/*.markdown' 2>/dev/null || true)
+          if [ "${#files[@]}" -eq 0 ]; then echo "no changed content pages — skipping." | tee -a "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          echo "checking ${#files[@]} changed page(s)…" >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/validation/check_liquid_raw.py "${files[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+        else
+          python3 scripts/validation/check_liquid_raw.py pages | tee -a "$GITHUB_STEP_SUMMARY"
+        fi
 
     - name: 🔧 Setup Ruby Environment
       uses: ruby/setup-ruby@v1
@@ -89,6 +165,8 @@ jobs:
 
     - name: 🔍 Check Configuration Validity
       run: |
+        # pipefail: `if cmd | tee` must test cmd's exit code, not tee's.
+        set -o pipefail
         echo "## ⚙️ Configuration Validation" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -104,6 +182,11 @@ jobs:
     - name: 🏗️ Test Jekyll Build Process
       id: jekyll_build
       run: |
+        # pipefail is load-bearing: GH Actions' default shell (`bash -e {0}`)
+        # does NOT set it, so `if jekyll build | tee log` tests tee's exit code
+        # (always 0) and a failed build reports ✅. That masking let the PR #445
+        # Liquid crash merge and break the production Pages deploy.
+        set -o pipefail
         echo "## 🏗️ Jekyll Build Test" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -153,7 +236,7 @@ jobs:
 
     - name: 📤 Upload Build Logs
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: jekyll-build-logs
         path: |
@@ -165,19 +248,26 @@ jobs:
   docker-build-test:
     name: 🐳 Docker Build Test
     runs-on: ubuntu-latest
+    needs: detect-changes
+    # Docker build is capped at 600s below; bound the whole job too.
+    timeout-minutes: 20
+    # Only build the image on manual runs or when Docker/dependency inputs change.
     if: |
       github.event.inputs.test_docker != 'false' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'push' && needs.detect-changes.outputs.docker == 'true'))
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         fetch-depth: 1
 
     - name: 🐳 Test Docker Build
       id: docker_build
       run: |
+        # pipefail: `if cmd | tee` must test cmd's exit code, not tee's.
+        set -o pipefail
         echo "## 🐳 Docker Build Test" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -226,7 +316,7 @@ jobs:
 
     - name: 📤 Upload Docker Build Logs
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: docker-build-logs
         path: docker-build.log
@@ -234,21 +324,25 @@ jobs:
 
   cross-platform-validation:
     name: 🌐 Cross-Platform Validation
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: detect-changes
+    # Windows + macOS runners are costly; only verify cross-platform Ruby/Jekyll
+    # compatibility when the Gemfile changes or on a manual run.
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && needs.detect-changes.outputs.deps == 'true')
     runs-on: ${{ matrix.os }}
+    # Windows bundle installs are the slow leg; bound each matrix job so a
+    # wedged install can't hold a costly runner for the 6h default.
+    timeout-minutes: 20
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        ruby-version: ['3.1', '3.2']
-        exclude:
-          - os: windows-latest
-            ruby-version: '3.1'
-          - os: macos-latest
-            ruby-version: '3.1'
+        # zer0-mistakes theme >= 1.21 requires Ruby >= 3.2
+        ruby-version: ['3.2']
 
     steps:
     - name: 🏰 Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: 🔧 Setup Ruby Environment
       uses: ruby/setup-ruby@v1

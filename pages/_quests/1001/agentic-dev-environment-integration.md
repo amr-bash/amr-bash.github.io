@@ -1,6 +1,6 @@
 ---
 title: 'Bind the Agent to the Realm: Dev Environment Integration'
-description: Integrate GitHub Copilot agents with the development environment — configure Codespaces, repositories, AGENTS.md, and environment variables so the agent operates predictably across all machines.
+description: 'Configure AGENTS.md, a dev container, and secrets so a GitHub Copilot agent runs predictably and identically in Codespaces and on your machine.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-dev-environment-integration.png
 level: '1001'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1000/agentic-mcp-server-mastery/
   unlocks_quests:
   - /quests/1001/agentic-safe-execution-and-error-handling/
-quest_relationships:
-  sequel_quests:
-  - /quests/1001/agentic-safe-execution-and-error-handling/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏗️ Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Codespaces
+  recommended_quests: []
 rewards:
   badges:
   - 🏠 Realm Binder
@@ -80,16 +69,16 @@ validation_criteria:
   skill_demonstrations:
   - Can write an AGENTS.md that a new agent could follow without prior context
   - Can configure a devcontainer for consistent agent execution
-quest_mapping:
-  coordinates: '[2, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Barracks District
 comments: true
 draft: false
 redirect_from:
 - /quests/gh-600/agentic-dev-environment-integration/
 layout: quest
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 *Before a soldier enters battle, their weapons are sharpened, their armor fitted, their orders memorised. An agent entering a repository without an `AGENTS.md` is a soldier sent to an unknown castle with a broken sword. The Barracks Masters spend their days writing the binding documents that turn a strange repository into a familiar home for any agent that enters.*
 
@@ -133,7 +122,7 @@ Key sections an `AGENTS.md` must include:
 
 > **Exercise 6.1:** Create `AGENTS.md` in the root of your sandbox repository.
 
-```markdown
+````markdown
 # AGENTS.md — Agent Operating Guide
 
 This file provides operating instructions for AI agents (GitHub Copilot
@@ -184,7 +173,7 @@ npm test -- --coverage
 
 # Lint
 npm run lint
-```markdown
+```
 
 ## Build Commands
 
@@ -194,7 +183,7 @@ npm run build
 
 # Start development server
 npm run dev
-```bash
+```
 
 ## Commit Message Format
 
@@ -209,7 +198,7 @@ The following environment variables are set in the devcontainer:
 
 Do NOT use any other secrets. If your task requires a secret not listed
 here, STOP and report what you need.
-```
+````
 
 ---
 
@@ -255,7 +244,28 @@ here, STOP and report what you need.
 
 ### Chapter 4 — Validating Environment Parity
 
-> **Exercise 6.3:** Run this parity check script to confirm the environment is correctly configured.
+> **Exercise 6.3:** First create the agent instruction file the check requires, then run the parity check to confirm the environment is correctly configured.
+
+The check below verifies `.github/copilot-instructions.md` — the repo-scoped guide GitHub Copilot loads automatically. Create it before running the check, or the check will always report a failure:
+
+```bash
+mkdir -p .github
+cat > .github/copilot-instructions.md << 'EOF'
+# Copilot Instructions
+
+Read `AGENTS.md` before taking any action, and operate only within the
+allowed/forbidden operation lists it defines. Prefer small, reviewable
+changes and never touch restricted areas.
+EOF
+```
+
+The check also requires `GITHUB_TOKEN` to be set — export a real token first (see Chapter 5) so the token check passes:
+
+```bash
+export GITHUB_TOKEN=your_real_token   # a valid PAT, not a placeholder
+```
+
+Now run the parity check script:
 
 ```bash
 #!/usr/bin/env bash
@@ -272,10 +282,10 @@ check() {
     local cmd="$2"
     if eval "$cmd" &>/dev/null; then
         echo "✅ $name"
-        ((PASS++))
+        PASS=$((PASS+1))
     else
         echo "❌ $name"
-        ((FAIL++))
+        FAIL=$((FAIL+1))
     fi
 }
 
@@ -350,13 +360,7 @@ python3 scripts/validate_quest.py --quest q6
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The MCP Conclave: Mastering Model Context Protocol Servers]]
-**Unlocks:** [[The Shield of Retries: Safe Execution and Error Handling]]
-**Sequel quests:** [[The Shield of Retries: Safe Execution and Error Handling]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The MCP Conclave: Mastering Model Context Protocol Servers]] **Unlocks:** [[The Shield of Retries: Safe Execution and Error Handling]] **Sequel quests:** [[The Shield of Retries: Safe Execution and Error Handling]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

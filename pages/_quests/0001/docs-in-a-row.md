@@ -3,8 +3,7 @@ title: 'The Knowledge Vault: Building an Automated Documentation Hub'
 author: Quest Master IT-Journey Team
 description: Build a centralized documentation system that aggregates and organizes knowledge from multiple GitHub repositories using automation
 excerpt: Build a powerful automation system that collects, organizes, and maintains documentation from multiple GitHub repositories using GitHub Actions, Bash, and Python
-snippet: Transform scattered docs into organized knowledge with automation magic
-preview: images/previews/the-knowledge-vault-building-an-automated-document.png
+preview: images/previews/the-knowledge-vault-building-an-automated-document.webp
 date: '2025-10-04T15:52:00.000Z'
 lastmod: '2025-10-03T21:57:41.000Z'
 level: '0001'
@@ -60,16 +59,6 @@ rewards:
   skill: CI/CD Pipeline Development
   tool: Automated Documentation System
   capability: Multi-Repository Management
-related_quests:
-  prerequisites:
-  - hello-noob
-  - bash-scripting
-  followups:
-  - github-pages-deployment
-  - advanced-ci-cd
-  parallel:
-  - action-triggers
-  - change-logs
 layout: quest
 ---
 # 📚 The Knowledge Vault: Building an Automated Documentation Hub
@@ -78,17 +67,16 @@ layout: quest
 
 By the end of this quest, you will be able to:
 
-- [ ] Understand the core concepts introduced in this quest
-- [ ] Complete the hands-on exercises and verify the results
-- [ ] Apply what you learned to a follow-up scenario of your own design
+- [ ] Write a GitHub Actions workflow that runs the aggregation on a schedule and on-demand via manual trigger
+- [ ] Write a Bash script that clones and collects documentation files from at least 2 repositories
+- [ ] Write a Python script that organizes collected files into a logical, non-colliding directory structure
+- [ ] Generate correct YAML front matter for every processed document
 
-> *Note: objectives auto-seeded during framework alignment — authors should refine these to reflect this quest's specific skills.*
-
-## � Quest Overview
+## 📖 Quest Overview
 
 **Level**: Journeyman (Lvl 001) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
-In the realm of software development, documentation is your most powerful spell—but only if you can find it when you need it! As projects multiply across GitHub repositories, valuable knowledge becomes scattered across dozens of README files, wiki pages, and doc folders. This quest will teach you to build an **automated documentation aggregation system** that collects, organizes, and maintains a centralized knowledge hub.
+In the realm of software development, documentation is your most valuable spell—but only if you can find it when you need it! As projects multiply across GitHub repositories, valuable knowledge becomes scattered across dozens of README files, wiki pages, and doc folders. This quest will teach you to build an **automated documentation aggregation system** that collects, organizes, and maintains a centralized knowledge hub.
 
 ### What You'll Build
 
@@ -241,7 +229,7 @@ By completing this quest, you will:
 **Checkpoint**: You now have a structured repository ready for automation!
 
 ### Step 2: Weave the Automation Spell (GitHub Workflow)
-Harness the power of GitHub Actions to automate your doc-harvesting ritual. Create `.github/workflows/aggregate-docs.yaml` with this incantation:
+Harness the power of GitHub Actions to automate your doc-harvesting ritual. Open the `.github/workflows/aggregate-docs.yml` file you created in Step 1 and add this incantation:
 
 ```yaml
 name: Aggregate Documentation
@@ -376,7 +364,8 @@ while IFS= read -r repo || [ -n "$repo" ]; do
         
         # Create target directory and copy file
         mkdir -p "$target_dir"
-        cp "$file" "$target_dir/" && ((file_count++))
+        cp "$file" "$target_dir/"
+        file_count=$((file_count + 1))
     done < <(find "$temp_dir" -type f \( -name "*.md" -o -name "README*" \) -not -path "*/.git/*" -not -path "*/node_modules/*" -not -path "*/vendor/*")
     
     log_info "Collected $file_count documentation files from $repo_name"
@@ -451,7 +440,9 @@ def generate_front_matter(content):
 # Process files
 for root, dirs, files in os.walk(RAW_DIR):
     for file in files:
-        if file.endswith('.md'):
+        # aggregate.sh collects both *.md and extension-less README* files,
+        # so process.py must handle both or it silently loses the READMEs.
+        if file.endswith('.md') or file.startswith('README'):
             src_path = Path(root) / file
             with open(src_path, 'r') as f:
                 content = f.read()
@@ -470,7 +461,10 @@ for root, dirs, files in os.walk(RAW_DIR):
 
             # Organize
             category = categorize_content(body)
-            dest_dir = Path(ORGANIZED_DIR) / category / Path(root).relative_to(RAW_DIR).parent
+            # Note: no trailing .parent here — keep the per-repo subpath so
+            # same-named files from different repos (e.g. every README.md)
+            # never collide and overwrite each other under docs/.
+            dest_dir = Path(ORGANIZED_DIR) / category / Path(root).relative_to(RAW_DIR)
             dest_dir.mkdir(parents=True, exist_ok=True)
             dest_path = dest_dir / file
 
@@ -489,8 +483,6 @@ for root, dirs, files in os.walk(RAW_DIR, topdown=False):
         os.rmdir(Path(root) / dir)
 os.rmdir(RAW_DIR)
 ```
-
-**Script creates proper Python implementation** - Full implementation provided above replaces this placeholder.
 
 ---
 
@@ -551,16 +543,16 @@ head -n 20 docs/api/README.md
 ```text
 docs/
 ├── api/
-│   ├── README.md
-│   └── endpoints.md
-├── guides/
-│   ├── getting-started.md
-│   └── tutorial.md
-├── architecture/
-│   └── design-decisions.md
-└── general/
-    └── misc-docs.md
+│   ├── my-repo/README.md
+│   └── my-repo/endpoints.md
+├── user-guides/
+│   ├── other-repo/getting-started.md
+│   └── other-repo/tutorial.md
+└── misc/
+    └── my-repo/notes.md
 ```
+
+`categorize_content()` only sorts into three buckets — `api` (content mentioning "api"), `user-guides` (content mentioning "guide" or "tutorial"), and `misc` (everything else) — and `process.py` keeps each file's per-repo subpath under its category, so expand the function first if you want the `guides`/`architecture`/`general` split shown in earlier drafts of this quest.
 
 **Checkpoint**: Your documentation hub is live and automatically updating!
 
@@ -574,7 +566,7 @@ Congratulations, Documentation Architect! You've successfully:
 
 ✅ **Built a Multi-Repository Documentation System** that automatically aggregates knowledge  
 ✅ **Mastered GitHub Actions** with scheduled and manual workflow triggers  
-✅ **Combined Bash and Python** for powerful automation workflows  
+✅ **Combined Bash and Python** for scheduled, multi-step automation workflows  
 ✅ **Implemented Intelligent Organization** with category-based file structure  
 ✅ **Enhanced Documents** with rich YAML front matter metadata  
 ✅ **Created a Scalable Solution** that grows with your project ecosystem  
@@ -600,7 +592,7 @@ Deploy your documentation hub as a searchable website:
 - name: Deploy to GitHub Pages
   uses: peaceiris/actions-gh-pages@v3
   with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
+    github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
     publish_dir: ./docs
 ```
 
@@ -731,9 +723,7 @@ May your documentation always be current, your automation reliable, and your kno
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

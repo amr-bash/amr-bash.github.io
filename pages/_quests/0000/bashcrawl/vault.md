@@ -38,13 +38,11 @@ keywords:
   - bash scripting variables
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Set a variable and access it with $VAR
 - Export a variable and verify with env
@@ -53,17 +51,23 @@ validation_criteria:
 - Collect the vault key fragment
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Vault Key Fragment
 - Environment variables mastery
 excerpt: Set, export, and inspect environment variables to solve the vault goblet puzzle, survive the ghost, and claim the key fragment.
 draft: false
-permalink: /quests/0000/side-quests/vault/
+permalink: /quests/0000/vault/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/vault/
 ---
-*Behind a heavy iron door, the Vault holds the dungeon's most powerful secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
+*Behind a heavy iron door, the Vault holds the dungeon's most closely guarded secrets — not gold and jewels, but the invisible variables that shape every shell. Set them correctly, or the ghost devours you.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Vault" %}
 
 ## 🎯 Quest Objectives
 
@@ -74,7 +78,7 @@ layout: quest
 - [ ] Survive the ghost encounter in the lab
 - [ ] Collect the vault key fragment
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Emerald amulet in inventory
@@ -220,6 +224,8 @@ inventory
 
 ---
 
+{% include bashcrawl-play-local.html %}
+
 ## 📚 External Resources
 
 Continue your terminal adventure with these resources:
@@ -236,12 +242,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

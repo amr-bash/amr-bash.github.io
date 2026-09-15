@@ -1,6 +1,6 @@
 ---
 title: 'The Shield of Retries: Safe Execution and Error Handling'
-description: Design agent workflows that survive tool failures, API errors, and unexpected outputs — implement retry logic, timeouts, fallback strategies, and graceful error reporting for GitHub Copilot agents.
+description: 'Build resilient GitHub Copilot agents with retry logic, timeouts, fallback strategies, and graceful error reporting that survive tool failures and API errors.'
 date: '2026-05-17T00:00:00.000Z'
 preview: /assets/images/previews/agentic-safe-execution-and-error-handling.png
 level: '1001'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1001/agentic-dev-environment-integration/
   unlocks_quests:
   - /quests/1001/agentic-memory-strategies/
-quest_relationships:
-  sequel_quests:
-  - /quests/1001/agentic-memory-strategies/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🛡️ SRE
-  skill_trees:
-  - Agentic AI
-  - Resilience Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🛡️ Resilience Keeper
@@ -79,11 +68,6 @@ validation_criteria:
   skill_demonstrations:
   - Can design a retry strategy that avoids infinite retry loops
   - Can configure GitHub Actions to notify humans on agent failure
-quest_mapping:
-  coordinates: '[2, 4]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Forge of Resilience
 comments: true
 draft: false
 redirect_from:
@@ -131,6 +115,7 @@ Not all failures are equal. Before building retry logic, classify what can and c
 
 > **Exercise 7.1:** Add retry configuration to your agent workflow.
 
+{% raw %}
 ```yaml
 # .github/workflows/agent-with-retries.yml
 name: Agent with Resilient Execution
@@ -206,6 +191,7 @@ jobs:
                 `with an updated body.`
             });
 ```
+{% endraw %}
 
 ---
 
@@ -255,8 +241,8 @@ Level 4 — Timeout:              Hard stop + comment + disable agent label
 > **Exercise 7.3:** Create a test that deliberately causes each failure type and verify the escalation path.
 
 ```bash
-# work/gh-600/scripts/test_failure_scenarios.sh
 #!/usr/bin/env bash
+# work/gh-600/scripts/test_failure_scenarios.sh
 set -euo pipefail
 
 echo "=== Testing Agent Failure Scenarios ==="
@@ -301,14 +287,16 @@ Every failed agent run should produce a machine-readable error report:
 
 ## ✅ Quest Validation
 
+Run this self-contained check (no external script needed) from your sandbox repo root:
+
 ```bash
-python3 scripts/validate_quest.py --quest q7
-# ✅ Workflow: agent-with-retries.yml present
-# ✅ Retry config: exponential backoff implemented
-# ✅ Timeout: job-level and step-level timeouts set
-# ✅ Escalation: PR comment + label on failure
-# ✅ Error report schema: present
-# 🏆 Quest Q7 complete!
+WF=.github/workflows/agent-with-retries.yml
+test -f "$WF"                 && echo "✅ Workflow: agent-with-retries.yml present" || echo "❌ Workflow missing"
+grep -q 'RETRY_MAX'      "$WF" && echo "✅ Retry config: exponential backoff implemented" || echo "❌ No retry config"
+grep -q 'timeout-minutes' "$WF" && echo "✅ Timeout: job-level and step-level timeouts set" || echo "❌ No timeouts"
+grep -q 'createComment'  "$WF" && echo "✅ Escalation: PR comment + label on failure" || echo "❌ No escalation"
+grep -q 'error_report_version' work/gh-600/scripts/*.json 2>/dev/null && echo "✅ Error report schema: present" || echo "ℹ️  Error report schema: sample only (see Chapter 5)"
+# 🏆 All green → Quest Q7 complete!
 ```
 
 ## 🏆 Quest Rewards
@@ -322,13 +310,7 @@ python3 scripts/validate_quest.py --quest q7
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]]
-**Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Bind the Agent to the Realm: Dev Environment Integration]] **Unlocks:** [[Vaults of Recollection: Agent Memory Strategies]] **Sequel quests:** [[Vaults of Recollection: Agent Memory Strategies]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

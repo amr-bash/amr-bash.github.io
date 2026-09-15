@@ -1,9 +1,7 @@
 ---
 title: 'Mastering Version Control Workflows: The Grand Merge Ritual'
 author: IT-Journey Team
-description: Master advanced Git workflows including semantic versioning, branch strategies, CI/CD automation, and pull request orchestration using real-world examples from an active open-source project.
-excerpt: null
-snippet: null
+description: 'Master advanced Git workflows: semantic versioning, branch strategies, CI/CD automation, and pull request orchestration with real open-source examples.'
 preview: images/previews/mastering-version-control-workflows.png
 date: '2026-03-21T00:00:00.000Z'
 lastmod: '2026-03-21T00:00:00.000Z'
@@ -44,8 +42,6 @@ keywords:
 layout: quest
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: 'Level 1100 (12) Quest: Main Quest - Advanced Git Mastery'
 quest_line: Development Mastery
 quest_arc: Version Control Mastery
 quest_dependencies:
@@ -55,33 +51,15 @@ quest_dependencies:
   recommended_quests:
   - /quests/0010/change-logs/
   - /quests/0010/action-triggers/
-  unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests:
+  unlocks_quests:
   - /quests/1100/data-warehousing/
   - /quests/1100/stream-processing/
   - /quests/1100/data-quality/
-  - /quests/1100/sec-edgar-siege/
   - /quests/1100/apache-spark/
   - /quests/1100/conquer-king-edgar/
   - /quests/1100/etl-pipeline-design/
   - /quests/1100/temple-of-templates/
-  parallel_quests:
-  - /quests/0010/action-triggers/
-  sequel_quests:
   - /quests/1101/ml-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - DevOps Engineering
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Version Control
-  - Release Management
-  - CI/CD Automation
 prerequisites:
   knowledge_requirements:
   - Solid understanding of branches and pull requests
@@ -116,11 +94,9 @@ validation_criteria:
   knowledge_checks:
   - Explain when to use feature, bugfix, hotfix, and refactor branches
   - Describe the SemVer implications of each commit type
-quest_mapping:
-  coordinates: '[6, 4]'
-  region: Intermediate
-  realm: Development
-  biome: Version Control
+sub_title: 'Level 1100 (12) Quest: Main Quest - Advanced Git Mastery'
+draft: false
+mermaid: true
 ---
 *Greetings, battle-hardened code warrior! You have survived the introductory enchantments of branching and the clean-commit oath. But the realm of version control runs far deeper than a single `git push`. Today you face the Grand Merge Ritual — a trial reserved for those who would command entire release kingdoms, orchestrate fleets of pull requests, and bend the timeline of code to their will.*
 
@@ -461,7 +437,7 @@ You've just finished a feature that adds dark mode to the site. Write a complete
 
 ## 🧙‍♂️ Chapter 4: Release Orchestration — The Grand Ritual
 
-*The most powerful spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
+*The final spell in the version control codex is the **release**. It transforms a stream of commits into a versioned artifact that the world can depend on.*
 
 ### ⚔️ The Release Lifecycle
 
@@ -893,14 +869,7 @@ Apply everything you've learned to the actual IT-Journey repository:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Mastering Branches and Pull Requests for Developers]] · [[Commitments to clean commits]]
-**Recommended:** [[Change Logs]] · [[Understanding Action Triggers in Depth]]
-**Sequel quests:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]]
-**Parallel quests:** [[Understanding Action Triggers in Depth]]
-**Related quests:** [[Data Warehousing: Design Star Schema & Build Modern Analytics Architecture]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] · [[The Siege of King EDGAR: Storming the SEC Data Castle]] · [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle]] · [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] · [[The Temple of Templates: Binary Abstractions and Reusable Realms]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Mastering Branches and Pull Requests for Developers]] · [[Commitments to clean commits]] **Recommended:** [[Change Logs]] · [[Understanding Action Triggers in Depth]] **Sequel quests:** [[Machine Learning Fundamentals: Supervised & Unsupervised Learning with Scikit-Learn]] **Parallel quests:** [[Understanding Action Triggers in Depth]] **Related quests:** [[Data Warehousing: Design Star Schema & Build Modern Analytics Architecture]] · [[Stream Processing: Real-Time Data with Apache Kafka & Flink]] · [[Data Quality Engineering: Testing, Validation & Monitoring Frameworks]] · [[The Siege of King EDGAR: Storming the SEC Data Castle]] · [[Apache Spark Mastery: Big Data Processing with PySpark & Scala]] · [[Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle]] · [[ETL Pipeline Design: Build Scalable Data Pipelines with Python]] · [[The Temple of Templates: Binary Abstractions and Reusable Realms]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

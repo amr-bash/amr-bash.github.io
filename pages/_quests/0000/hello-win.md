@@ -1,7 +1,7 @@
 ---
 title: 'Hello Windows: Mastering the Windows Development Environment'
 description: Set up a complete Windows development environment with WSL, PowerShell mastery, and essential development tools for the modern Windows developer
-preview: /images/previews/hello-windows-mastering-the-windows-development-en.png
+preview: /images/previews/hello-windows-mastering-the-windows-development-en.webp
 author: IT-Journey Team
 permalink: /quests/0000/hello-windows/
 keywords:
@@ -69,36 +69,12 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/hello-noob/
   - /quests/0000/os-selection/
+  - /quests/0000/hello-macos/
+  - /quests/0000/linux-fundamentals/
   unlocks_quests:
   - /quests/0000/vscode-mastery/
   - /quests/0000/terminal-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/vscode-mastery/
-  parallel_quests:
-  - /quests/0000/hello-macos/
-  - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - DevOps
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  skill_trees:
-  - Windows Development
-  - PowerShell Mastery
-  - Cross-Platform Workflow
-related_quests:
-- hello-noob.md - Beginner's First Steps
-- 2023-11-24-os-selection.md - Operating System Selection Guide
-- ../../tools/README.md - Essential Development Tools
-sub-title: 'Level 001 Quest: Windows Development Environment Mastery'
 excerpt: Transform your Windows machine into a powerful development environment with WSL, modern PowerShell, and professional-grade tools
-snippet: Windows + Linux + Developer Tools = Ultimate Development Power
 lastmod: '2023-12-03T08:47:22.000Z'
 primary_technology: windows
 skill_focus: fullstack
@@ -108,6 +84,15 @@ draft: false
 redirect_from:
 - /quests/0000/hello-win/
 layout: quest
+sub_title: 'Level 001 Quest: Windows Development Environment Mastery'
+environment:
+  os:
+  - windows
+  - linux
+  - cloud
+  shell:
+  - bash
+  - powershell
 ---
 *Welcome, Windows warrior, to the realm where Microsoft's power meets open-source flexibility! This quest will transform your Windows machine into a development powerhouse that rivals any Unix system while retaining all the advantages of the Windows ecosystem.*
 
@@ -115,7 +100,7 @@ layout: quest
 
 ## 🎯 Quest Objectives
 
-This comprehensive setup quest will equip you with:
+This setup quest covers PowerShell, WSL2, package management, and a cross-platform workflow. You'll come away with:
 
 ### Primary Objectives (Required for Quest Completion)
 - [ ] **PowerShell Mastery** - Master advanced PowerShell commands and automation
@@ -314,7 +299,7 @@ winget install Hashicorp.Terraform
 
 ## 🧙‍♂️ Chapter 4: Cross-Platform Development Workflow
 
-*Configure seamless interaction between Windows and Linux environments.*
+*Configure Windows and Linux to share files and tools directly, with no copy step between them.*
 
 ### 🔗 WSL-Windows Integration
 
@@ -426,7 +411,7 @@ Set up important environment variables:
 
 ### 🔴 Expert Challenge: Cross-Platform Mastery
 - [ ] Build a project that uses both Windows and Linux tools
-- [ ] Create a comprehensive development environment setup script
+- [ ] Create a setup script that installs tools, enables WSL, and configures your environment
 - [ ] Optimize system performance for development workloads
 - [ ] Contribute to or maintain an open-source project using your setup
 
@@ -440,7 +425,7 @@ Set up important environment variables:
 
 ### Skills Demonstrated
 - [ ] **PowerShell Proficiency**: Advanced command usage and scripting
-- [ ] **WSL Mastery**: Seamless Windows-Linux integration
+- [ ] **WSL Mastery**: Run Linux tools and access shared files from Windows
 - [ ] **Package Management**: Efficient tool installation and maintenance
 - [ ] **Environment Optimization**: Performance-tuned development setup
 
@@ -455,13 +440,13 @@ Set up important environment variables:
 **Quest Series**: Init World - Platform Mastery
 
 **Prerequisite Quests**:
-- [Hello n00b](../hello-noob.md) - GitHub and community basics
-- [OS Selection](../os-selection.md) - Platform decision making
+- [Hello n00b](hello-noob.md) - GitHub and community basics
+- [OS Selection](os-selection.md) - Platform decision making
 
 **Follow-Up Quests**:
-- [VS Code Mastery Quest](../vscode-mastery.md) - IDE optimization
-- [Bash Scripting Adventures](../bash-run.md) - Linux automation
-- [Development Tools Mastery](../../tools/README.md) - Advanced tooling
+- [VS Code Mastery Quest](vscode-mastery.md) - IDE optimization
+- [Bash Scripting Adventures](bash-run.md) - Linux automation
+- [Development Tools Mastery](../tools/README.md) - Advanced tooling
 
 **Parallel Quests** (can be completed in any order):
 - Platform-specific setup quests for macOS and Linux
@@ -473,7 +458,7 @@ Set up important environment variables:
 
 ### 🌟 What You've Achieved
 
-- **Dual-Environment Mastery**: Seamless operation across Windows and Linux
+- **Dual-Environment Mastery**: Run Windows and Linux tools side by side, sharing the same files with no copy step
 - **Professional Toolchain**: Industry-standard development tools and workflows  
 - **Automation Skills**: PowerShell scripting and process optimization abilities
 - **Cloud Readiness**: Modern cloud development tool integration
@@ -481,7 +466,7 @@ Set up important environment variables:
 
 ### 🔮 Your Next Adventures
 
-With your powerful Windows development environment, you're ready to:
+With your Windows + WSL development environment, you're ready to:
 
 - **Tackle Complex Projects**: Build applications that span multiple platforms
 - **Contribute to Open Source**: Participate in projects using professional-grade tools
@@ -497,19 +482,13 @@ With your powerful Windows development environment, you're ready to:
 
 ---
 
-*Your Windows development fortress is now complete! You've mastered the art of blending Microsoft's innovation with open-source power. Continue your journey with confidence, knowing you have one of the most versatile and powerful development environments available.*
+*Your Windows development fortress is now complete! You've mastered the art of blending Microsoft's innovation with open-source power. Continue your journey with confidence, knowing you can run both Windows and Linux toolchains from a single machine.*
 
 **Ready to build something amazing? Your enhanced Windows environment awaits your creativity!** ⚔️✨
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]]
-**Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]]
-**Parallel quests:** [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]] **Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]] **Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] **Parallel quests:** [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

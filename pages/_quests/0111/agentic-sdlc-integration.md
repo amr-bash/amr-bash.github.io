@@ -1,6 +1,6 @@
 ---
 title: 'Initiation Rites: Embedding Agents in the SDLC'
-description: Learn to integrate AI agents into the software development lifecycle — define agent inputs, outputs, and success criteria, and identify the anti-patterns that sink autonomous workflows before they ship.
+description: 'Integrate AI agents into the SDLC: define their inputs, outputs, and success criteria, and learn the anti-patterns that sink autonomous workflows.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-sdlc-integration.png
 level: '0111'
@@ -48,20 +48,6 @@ quest_dependencies:
   - /quests/0111/rest-principles/
   unlocks_quests:
   - /quests/0111/agentic-plan-vs-action-boundaries/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/0111/agentic-plan-vs-action-boundaries/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏗️ Platform Engineer
-  skill_trees:
-  - Agentic AI
-  - GitHub Copilot
 rewards:
   badges:
   - 🤖 Agent Initiate
@@ -90,11 +76,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why success criteria must be defined before deploying an agent
   - Can describe inputs and outputs for at least two different agent types
-quest_mapping:
-  coordinates: '[1, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:
@@ -169,13 +150,18 @@ This **🟡 Medium** quest expects:
 
 ## 🌍 Choose Your Adventure Platform
 
-<details>
+<details markdown="1">
 <summary>🍎 macOS / Linux</summary>
 
 ```bash
 # Clone the starter sandbox
 git clone https://github.com/bamr87/it-journey.git
-cd it-journey/work/gh-600
+cd it-journey
+
+# work/gh-600 is your own local workspace for this quest line — it is not
+# tracked in the repo, so create it before moving in
+mkdir -p work/gh-600/{notes,task-cards,diagrams,scripts}
+cd work/gh-600
 
 # Install Python deps for the agent task card generator
 python3 -m pip install --quiet pyyaml
@@ -186,12 +172,17 @@ gh --version
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>🪟 Windows (PowerShell)</summary>
 
 ```powershell
 git clone https://github.com/bamr87/it-journey.git
-Set-Location it-journey/work/gh-600
+Set-Location it-journey
+
+# work/gh-600 is your own local workspace for this quest line — it is not
+# tracked in the repo, so create it before moving in
+New-Item -ItemType Directory -Force -Path work/gh-600/notes, work/gh-600/task-cards, work/gh-600/diagrams, work/gh-600/scripts | Out-Null
+Set-Location work/gh-600
 
 python -m pip install --quiet pyyaml
 
@@ -204,7 +195,7 @@ gh --version
 <summary>☁️ GitHub Codespaces</summary>
 
 1. Open `https://github.com/bamr87/it-journey` and click **Code → Codespaces → New codespace**.
-2. All prerequisites are pre-installed. Navigate to `work/gh-600/` in the terminal.
+2. `work/gh-600` is your own local workspace for this quest line — it is not tracked in the repo. Create it and move in: `mkdir -p work/gh-600/{notes,task-cards,diagrams,scripts} && cd work/gh-600`.
 
 </details>
 
@@ -355,21 +346,16 @@ sequenceDiagram
 
 ## ✅ Quest Validation
 
-Run the quest self-check to confirm completion:
+`work/gh-600` is your own local workspace, not a tracked part of the repo, so confirm completion with this self-check checklist instead of a script:
 
-```bash
-# From work/gh-600/
-python3 scripts/validate_quest.py --quest q1
+- [ ] `work/gh-600/task-cards/dependency-updater.yml` exists (Exercise 1.3)
+- [ ] The task card defines at least 2 `inputs` and 2 `outputs`
+- [ ] The task card's `success_criteria` has at least 4 entries
+- [ ] The task card has a `mitigations:` section addressing ≥3 anti-patterns (Exercise 1.4)
+- [ ] `work/gh-600/diagrams/q1-sdlc-agent-map.md` exists with your customised sequence diagram (Exercise 1.5)
+- [ ] `work/gh-600/notes/q1-sdlc-map.md` lists 5 PR-workflow steps classified agent-appropriate vs. human-required (Exercise 1.2)
 
-# Expected output:
-# ✅ Task card: dependency-updater.yml present
-# ✅ Inputs defined: 2
-# ✅ Outputs defined: 2
-# ✅ Success criteria: 4
-# ✅ Mitigations: ≥3 anti-patterns addressed
-# ✅ SDLC diagram: q1-sdlc-agent-map.md present
-# 🏆 Quest Q1 complete!
-```
+When every box is checked, you've completed Q1. 🏆
 
 ---
 
@@ -387,19 +373,13 @@ python3 scripts/validate_quest.py --quest q1
 ## 🔗 Continue Your Journey
 
 - **Next quest:** [Q2: The Three Sigils — Plan, Reason, Act](/quests/0111/agentic-plan-vs-action-boundaries/)
-- **Domain hub:** [Domain 1 in the GH-600 Skills Measured breakdown](/docs/certifications/gh-600/skills-measured/#domain-1)
-- **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
+- **Domain hub:** [Domain 1 in the GH-600 Skills Measured breakdown](/notes/gh-600/skills-measured/#domain-1)
+- **Codex chapter:** [Initiation Rites: Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/)
 - **Official docs:** [GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/about-copilot-coding-agent)
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Exam Overview]]
-**Recommended:** [[REST Principles: RESTful API Design Best Practices]]
-**Unlocks:** [[The Three Sigils: Plan, Reason, Act]]
-**Sequel quests:** [[The Three Sigils: Plan, Reason, Act]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 (7) - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] · [[GH-600 Exam Overview]] **Recommended:** [[REST Principles: RESTful API Design Best Practices]] **Unlocks:** [[The Three Sigils: Plan, Reason, Act]] **Sequel quests:** [[The Three Sigils: Plan, Reason, Act]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

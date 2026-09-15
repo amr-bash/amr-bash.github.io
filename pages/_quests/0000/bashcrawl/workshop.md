@@ -37,13 +37,11 @@ keywords:
   - shell scripting basics
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/entrance/
+  - /quests/0000/entrance/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/cellar/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  recommended_quests: []
 validation_criteria:
 - Create a directory and verify with ls
 - Create a file with touch and write to it with echo
@@ -51,17 +49,23 @@ validation_criteria:
 - Copy and move files between directories
 prerequisites:
 - Complete the Entrance side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Bashcrawl Workbench Tool
 - File management proficiency
 excerpt: Practice mkdir, touch, echo redirection, cp, mv, and rm to construct workshop artifacts and advance deeper into Bashcrawl.
 draft: false
-permalink: /quests/0000/side-quests/workshop/
+permalink: /quests/0000/workshop/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/workshop/
 ---
 *The Workshop smells of sawdust and old iron. Workbenches line the walls, covered in unfinished projects. Here, heroes learn the art of building — and destroying — the very fabric of the file system.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Workshop" %}
 
 ## 🎯 Quest Objectives
 
@@ -74,7 +78,7 @@ layout: quest
 - [ ] Remove an item with `rm`
 - [ ] Clean the workshop and advance to the cellar
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - Complete the [Entrance side-quest](/quests/0000/side-quests/entrance/) first
 - Comfortable with `ls`, `cd`, and `cat`
@@ -188,6 +192,8 @@ Before advancing:
 
 ---
 
+{% include bashcrawl-play-local.html %}
+
 ## 📚 External Resources
 
 Continue your terminal adventure with these resources:
@@ -204,12 +210,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Entrance: Your First Terminal Commands]]
-**Unlocks:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Sequel quests:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Entrance: Your First Terminal Commands]] **Unlocks:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Sequel quests:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

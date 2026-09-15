@@ -1,172 +1,168 @@
 ---
-title: Quest Scripts
-description: Automation tools for quest generation, validation, and maintenance.
+title: Quest Framework & Tooling
+description: The single source of truth, schema, data pipeline, and tooling for IT-Journey quests.
 permalink: /scripts/quest/readme/
-lastmod: 2026-01-16T00:00:00.000Z
+lastmod: 2026-08-29T00:00:00.000Z
 date: 2026-01-14T22:23:32.000Z
-
 ---
 
-# Quest Scripts
+# Quest Framework & Tooling
 
-Tools for quest generation, validation, and network maintenance.
+Everything about the quest taxonomy and schema is defined exactly once, in [`quest_registry.py`](quest_registry.py). Every data file, validator, template, and generator derives from it, so the framework cannot drift.
 
-## Recommended runbook
+## The quest system as an MCP server
 
-Run before opening a quest-related PR (CI enforces these checks):
+`mcp_server.py` serves this framework over the Model Context Protocol, so an agent asked to *execute* a campaign can fetch the method instead of being told it in a prompt. It is stdlib-only (no SDK, no install), speaks newline-delimited JSON-RPC 2.0 on stdio, and is backed by `quest_lib.py` — so it can never disagree with the validators about what a quest is.
 
-```bash
-make quest-audit          # build-network → validator → network-validator --strict
-```
-
-When you need to refresh derived files individually:
-
-```bash
-make quest-build-network  # rebuild assets/data/quest-network.json + _data/quests/network.yml
-make quest-nav            # regenerate _data/navigation/quests.yml from the quest collection
-make quest-levels-data    # regenerate _data/quests/levels.yml from quest_registry.py
-```
-
-When migrating permalinks:
+| Tool | What it answers |
+|---|---|
+| `list_campaigns` | Every epic campaign, with chapter counts. The entry point. |
+| `get_campaign` | One campaign: objectives, then every chapter in order with its own objectives and section headings. |
+| `get_quest` | One chapter in full, or a single named section of it. |
+| `get_method` | The campaign distilled to what an agent must DO: per chapter, the objectives and every runnable snippet, prose stripped. |
+| `search_quests` | Ranked full-text search across quests and codex pages, with context. |
+| `get_glossary` | The canonical fantasy-to-technical lexicon, whole or filtered by term. |
 
 ```bash
-python3 scripts/quest/migrate-permalinks.py --dry-run  # preview
-python3 scripts/quest/migrate-permalinks.py            # apply (adds redirect_from automatically)
-make quest-build-network                                # re-emit network artifacts
+make quest-mcp-check      # self-test (protocol, tools, resolution, errors, auditing)
+make quest-mcp-tools      # print the tool catalogue
+
+# Wire it into an agent. The allow-list lives at the call site — omission is denial.
+claude --mcp-config scripts/quest/mcp.json --strict-mcp-config \
+       --allowedTools "mcp__it-journey-quests__get_quest,mcp__it-journey-quests__get_campaign" \
+       -p "Execute chapter 1 of the relic-raisers campaign."
 ```
 
-## Scripts
+`mcp.json` uses a repo-relative command path so it stays portable; an agent whose working directory is elsewhere needs a config with the absolute path to `mcp_server.py`.
 
-### update-quest-links.py
+### Proving an agent actually consulted the quest
 
-**Purpose**: Update quest links across documentation files (level READMEs and main quest README).
+Set `QUEST_MCP_LOG` to a file path and the server appends one JSON line per served call — timestamp, tool name, and truncated arguments. It is off unless the variable is set, and a failure to write never breaks the server.
 
-**Usage**:
 ```bash
-python3 scripts/quest/update-quest-links.py --dry-run
-python3 scripts/quest/update-quest-links.py
+QUEST_MCP_LOG=/tmp/quest-calls.jsonl claude --mcp-config scripts/quest/mcp.json ...
 ```
 
-### update-quest-home.py
+This exists because of a specific failure. A server pointed at a checkout that lacks the campaign still starts, still answers, and answers `no campaign matches` — so an agent runs the chapter without the method, produces plausible work, and any gate that only inspects output passes it. Nothing is visibly wrong.
 
-**Purpose**: Generate and inject an auto-updated quest index into pages/_quests/home.md.
+A harness should therefore do two things: call `get_campaign` before the run and refuse to start if the campaign does not resolve, and fail any chapter whose audit log is empty. That turns "the agent had the method" from an assumption into a recorded fact.
 
-**Usage**:
+## Single source of truth
+
+`quest_registry.py` owns:
+
+- **Taxonomy** — 4 tiers (Apprentice 🌱 / Adventurer ⚔️ / Warrior 🔥 / Master ⚡;
+there is **no** "Legend" tier — level 1111 is Master), the 16 binary levels (`0000`–`1111`), their themes, XP ranges, and Bootstrap icons.
+- **Controlled vocabularies** — `QUEST_TYPES` (`main_quest`, `side_quest`,
+`epic_quest`, `bonus_quest`), `FM_CONTENT_TYPES` (`quest`, `documentation`, `template`, `codex`), `DIFFICULTIES` (🟢 Easy / 🟡 Medium / 🔴 Hard / ⚔️ Epic), `SKILL_FOCUS`, `LEARNING_STYLE`.
+- **Frontmatter schema** — `REQUIRED_FIELDS`, `OPTIONAL_FIELDS`, and the nested
+  contracts for `prerequisites`, `rewards`, `quest_dependencies`.
+- **Collection rules** — `SKIP_SUBDIRS`, `SKIP_STEMS`, `is_quest()`, `is_draft()`.
+- **Routing** — canonical permalink helpers + slug rules + regexes.
+
+`👑` is the `epic_quest` icon, never a tier emoji.
+
+## Quest type vs content type
+
+- `quest_type` (a playable quest's kind) is one of `QUEST_TYPES`.
+- `fmContentType` decides whether a page **is** a quest. Only `fmContentType: quest`
+enters quest collections, scoring, and the dependency graph. Support pages use `documentation` / `template` / `codex` and are excluded.
+
+## Canonical permalinks
+
+| kind | pattern |
+|---|---|
+| main / side / epic quest | `/quests/{level}/{slug}/` |
+| bonus quest / codex | `/quests/codex/{slug}/` |
+| documentation | `/quests/docs/{slug}/` |
+| template | `/quests/templates/{slug}/` |
+
+The filename slug must equal the permalink slug. Side quests are **flattened** (no `/side-quests/` segment).
+
+## Quest lifecycle
+
+`placeholder → draft → published`
+
+A quest containing placeholder scaffolding (`[technology]` tokens or the "🔮 Placeholder" footer) **fails validation** unless it declares `draft: true`. Drafts are allowed through CI; remove `draft` only when the quest is real and passes the validator at ≥ 70%.
+
+## Generated data (never hand-edit)
+
+All four are regenerated from the registry + quest files by `make quest-data`:
+
+| file | accessor | generator |
+|---|---|---|
+| `_data/quests/levels.yml` | `site.data.quests.levels[code]` | `generate-quest-levels-data.py` |
+| `_data/quests/tiers.yml` | `site.data.quests.tiers[name]` | `generate-quest-levels-data.py` |
+| `_data/quests/order.yml` | `site.data.quests.order` | `generate-quest-levels-data.py` |
+| `_data/navigation/quests.yml` | sidebar nav | `generate-quest-navigation.py` |
+| `_data/quests/network.yml` + `assets/data/quest-network.json` | dependency graph | `build-quest-network.py` |
+
+> Jekyll keys data files by path, so the three files above split what used to be
+> one nested file — that's why the accessors are shallow (`site.data.quests.tiers`,
+> not `site.data.quests.levels.tiers`). The network output is deterministic so CI
+> can detect stale data.
+
+## The toolset
+
+| script | purpose |
+|---|---|
+| `quest_registry.py` | the single source of truth (imported by everything) |
+| `quest_lib.py` | the ONE frontmatter parser + quest-file iterator + `QuestDoc` + code-snippet extractor (`extract_code_blocks`); every validator imports it so parsing/discovery can't drift |
+| `quest_audit.py` | **the unified validation system** — runs content + network + data-freshness (+ optional Claude tier-2) in one report and exit code |
+| `generate-quest-levels-data.py` | emit `levels.yml` / `tiers.yml` / `order.yml` |
+| `generate-quest-navigation.py` | emit `_data/navigation/quests.yml` |
+| `build-quest-network.py` | emit the dependency graph (JSON + YAML) |
+| `validate-quest-network.py` | graph integrity: required-cycle, broken-dep, duplicate-permalink, dangling-edge, orphan, retired-field checks (registry-driven) |
+| `normalize-quest-frontmatter.py` | the ONE idempotent frontmatter normalizer |
+| `generate-placeholder-quest.sh` | scaffold a new placeholder quest |
+| `docker-entrypoint.sh` | runs `quest_audit.py` inside the `quest-audit` Docker service |
+| `walkthrough_plan.py` | deterministic walkthrough planner: one (character, level) slice → dependency-ordered quest list (`walk-plan.json`) |
+| `character_skills.py` | generator + drift check for the per-character skills (`.claude/skills/quest-character-*/SKILL.md`): regenerates each sheet's roadmap block from `paths.yml` + the registry, verifies path↔skill coverage and per-level exercise headings (see `docs/quests/CHARACTER_SKILLS.md`) |
+| `walkthrough_screenshots.mjs` | session screenshots: rendered quest pages (mobile + desktop) + a terminal render of the recorded transcript |
+| `walkthrough_video.mjs` | side-by-side walkthrough VIDEO: rendered quest page ⇄ animated terminal replay of the sealed evidence transcript, recorded with Playwright (the quest-video lane's renderer) |
+| `video_manifest.py` | deterministic quest-video arm: `build` composes the YouTube upload plan (title/description/chapters/tags); `apply` writes `walkthrough_video:` frontmatter + the `.quests/videos.yml` catalog (tests: `test_video_manifest.py`) |
+| `youtube_upload.py` | stdlib-only YouTube Data API v3 resumable uploader (catalog-idempotent; `--verify-only` checks credentials) |
+| `ledger.py` | the quest-perfection loop's deterministic ledger (`.quests/ledger.json` + dashboard) |
+
+Quest **content quality** is validated by [`test/quest-validator/quest_validator.py`](../../test/quest-validator/quest_validator.py), which imports its schema from the registry. An **optional Claude Code tier-2** (`test/quest-validator/agentic_validate.py`) reads/plays quests for a deeper quality verdict; it's advisory and opt-in (see that directory's README).
+
+## Runbook
+
 ```bash
-python3 scripts/quest/update-quest-home.py --dry-run
-python3 scripts/quest/update-quest-home.py
+make quest-data        # regenerate all derived data from the registry + files
+make quest-normalize   # idempotently normalize quest frontmatter
+make quest-validate    # content-quality validation (quest_validator.py)
+make quest-network     # dependency-graph validation
+make quest-audit       # UNIFIED audit: content + network + data-freshness (one report)
+make quest-skills      # regenerate the character-skill roadmap blocks (.claude/skills/quest-character-*)
+make quest-skills-check  # verify the character skills match paths.yml + the registry
+make docker-validate   # the same unified audit, in Docker (CI-parity, no host Python)
+make docker-audit-tier2 MODE=review   # + Claude tier-2 in a container (needs token)
+make quest-execute QUEST=pages/_quests/0001/terminal-mastery.md  # Claude RUNS the quest's snippets, isolated
 ```
 
-### remove-placeholder-deps.py
+### Running a quest's code snippets (execute mode)
 
-**Purpose**: Remove placeholder dependency references from quest frontmatter.
+`make quest-execute` has a Claude Code agent **walk a quest and actually run its runnable code snippets** (`bash`/`python`/`node`/…) in a disposable Docker container, then report which worked. The container is the isolation boundary — the agent's commands never touch the host. `quest_lib.extract_code_blocks()` deterministically inventories the runnable snippets, and the report shows `ran N/M` coverage with per-snippet `passed`/`failed`/`skipped`/`reasoned` status. It is **opt-in and advisory** (it costs money and needs `CLAUDE_CODE_OAUTH_TOKEN`); without a token it falls back to a no-cost mock. Pass `SAMPLE=N` instead of `QUEST=` to run a spread across levels, or `make quest-execute-host` to run on the host sandbox (no container — riskier).
 
-**Usage**:
-```bash
-python3 scripts/quest/remove-placeholder-deps.py --dry-run
-python3 scripts/quest/remove-placeholder-deps.py
-```
+`make quest-audit` only **validates** (it never writes files); if its freshness layer reports stale data, run `make quest-data` to regenerate, then commit.
 
-### fix-quest-types.py
+Scaffold a new quest, then fill and validate it:
 
-**Purpose**: Standardize quest_type values in quest frontmatter.
-
-**Usage**:
-```bash
-python3 scripts/quest/fix-quest-types.py --dry-run
-python3 scripts/quest/fix-quest-types.py
-```
-
-### validate-quest-network.py
-
-**Purpose**: Validate quest dependencies, detect cycles, and report orphaned quests.
-
-**Usage**:
-```bash
-python3 scripts/quest/validate-quest-network.py
-```
-
-### fix-quest-frontmatter.py
-
-**Purpose**: Normalize quest frontmatter fields and validate required keys.
-
-**Usage**:
-```bash
-python3 scripts/quest/fix-quest-frontmatter.py
-```
-
-### add-obsidian-wiki-references.py
-
-**Purpose**: Add or refresh the `## 🕸️ Knowledge Graph` section with Obsidian-style `[[wiki links]]` on every playable quest (level hubs, dependencies, GH-600 study track, overworld).
-
-**Usage**:
-```bash
-python3 scripts/quest/add-obsidian-wiki-references.py --dry-run
-python3 scripts/quest/add-obsidian-wiki-references.py
-```
-
-### generate-network-report.sh
-
-**Purpose**: Generate a quest network validation report.
-
-**Usage**:
-```bash
-./scripts/quest/generate-network-report.sh
-```
-
-### generate-quest-navigation.py
-
-**Purpose**: Regenerate `_data/navigation/quests.yml` from the quest collection.
-Sidebar nav is fully derived from quest frontmatter — do not edit the YAML by hand.
-
-**Usage**:
-```bash
-python3 scripts/quest/generate-quest-navigation.py --dry-run
-python3 scripts/quest/generate-quest-navigation.py
-# or
-make quest-nav
-```
-
-### generate-quest-levels-data.py
-
-**Purpose**: Emit `_data/quests/levels.yml` from `scripts/quest/quest_registry.py` so quest layouts/includes can render tier names and XP ranges without hardcoded strings.
-
-**Usage**:
-```bash
-python3 scripts/quest/generate-quest-levels-data.py --dry-run
-python3 scripts/quest/generate-quest-levels-data.py
-# or
-make quest-levels-data
-```
-
-### cleanup-placeholder-deps.sh
-
-**Purpose**: Bash alternative to remove placeholder dependencies.
-
-**Usage**:
-```bash
-./scripts/quest/cleanup-placeholder-deps.sh --dry-run
-./scripts/quest/cleanup-placeholder-deps.sh
-```
-
-### generate-placeholder-quest.sh
-
-**Purpose**: Generate a placeholder quest file from templates.
-
-**Usage**:
 ```bash
 ./scripts/quest/generate-placeholder-quest.sh 0110 sql-sorcery "SQL Sorcery"
+# write real content, then:
+python3 test/quest-validator/quest_validator.py pages/_quests/0110/sql-sorcery.md --fail-threshold 70
 ```
 
-### quest-tools.sh
+## CI gate
 
-**Purpose**: Convenience wrapper for quest-related tooling.
+`.github/workflows/quest-validation.yml` enforces, on every quest PR:
 
-**Usage**:
-```bash
-./scripts/quest/quest-tools.sh --help
-```
+- **content quality** — `quest_validator.py` on changed files (`--fail-threshold 70`);
+  placeholders fail unless `draft: true`.
+- **graph integrity** — `validate-quest-network.py` (errors fail the job).
+- **non-stale data** — regenerates all derived data and fails if the committed
+  copies differ (so a registry change must ship with regenerated data).
 
-## Compatibility
-
-Wrapper scripts remain at the original paths (e.g., `scripts/update-quest-links.py`) and will continue to work, but new development should use the `scripts/quest/` paths.
+These should be marked **required** in branch protection (see [`.github/workflows/README.md`](../../.github/workflows/README.md)).

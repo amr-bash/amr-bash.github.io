@@ -3,8 +3,7 @@ title: 'The GitHub Pages Portal: Forging Your Digital Realm'
 author: IT-Journey Team
 description: Master the art of deploying static websites using GitHub Pages, transforming your code into live web experiences with no server required.
 excerpt: Transform your code into a live website using GitHub Pages - the free hosting solution for developers.
-snippet: 'From repository to website: Deploy with GitHub Pages!'
-preview: images/previews/the-github-pages-portal-forging-your-digital-realm.png
+preview: images/previews/the-github-pages-portal-forging-your-digital-realm.webp
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T04:27:16.000Z'
 level: '0001'
@@ -16,17 +15,9 @@ quest_series: Web Development Fundamentals
 quest_line: Web Development
 quest_arc: Deployment
 quest_dependencies:
-  required: []
-  recommended:
-  - Basic Git knowledge
-  - GitHub account
-quest_relationships:
-  unlocks:
-  - 'Level 010: Jekyll Mastery'
-  - 'Level 011: Static Site Generators'
-  related:
-  - 'Level 001: HTML Basics'
-  - 'Level 001: CSS Fundamentals'
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
@@ -38,10 +29,6 @@ validation_criteria:
 - Custom domain configuration (optional bonus)
 - Repository properly configured for Pages
 - Site accessible via GitHub Pages URL
-quest_mapping:
-  binary_level: '001'
-  decimal_level: 1
-  skill_tree: Web Development
 permalink: /quests/0001/github-pages-portal/
 categories:
 - Quests
@@ -66,18 +53,24 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
 sub_title: 'Level 001 (1) Quest: Main - GitHub Pages'
 rewards:
 - GitHub Pages deployment badge
 - Live website portfolio piece
 - Understanding of static site hosting
 - Foundation for Jekyll and other SSGs
-related_quests:
-- 'Level 001: HTML Basics'
-- 'Level 001: CSS Fundamentals'
-- 'Level 010: Jekyll Mastery'
 layout: quest
+mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Greetings, brave adventurer! Welcome to **The GitHub Pages Portal: Forging Your Digital Realm** - an epic journey that will transform your code into live web experiences. This quest will guide you through deploying your first website using GitHub Pages, the free hosting solution that turns your GitHub repositories into beautiful, accessible websites.*
 
@@ -361,7 +354,7 @@ git push origin main
 
 ## 🧙‍♂️ Chapter 3: Realm Enhancement - Adding Jekyll Magic
 
-*To truly master the portal, learn to wield Jekyll - the powerful static site generator that transforms markdown into magnificent websites!*
+*To truly master the portal, learn to wield Jekyll - the static site generator that transforms Markdown into magnificent websites!*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Jekyll installation and setup
@@ -379,14 +372,25 @@ git push origin main
    # Windows: Download from rubyinstaller.org
    
    # Install Jekyll and Bundler
-   gem install jekyll bundler
+   # On a standard Linux install, a bare `gem install` hits
+   # Gem::FilePermissionError (no write access to the system gem dir).
+   # Install into your user gem path instead:
+   gem install --user-install jekyll bundler
    ```
+
+   > If you manage Ruby with `rbenv`/`rvm`, or prefer per-project gems (`bundle config set path vendor/bundle`), you can drop the `--user-install` flag — those setups already write to a user-owned location.
 
 2. **Create Jekyll Site**
    ```bash
    # In your repository directory
    jekyll new . --force  # Force to avoid conflicts
    ```
+
+   > ⚠️ `jekyll new --force` will NOT overwrite the `index.html` you created in
+   > Chapter 1 — it generates `index.markdown` alongside it instead. If both files
+   > remain, `jekyll build` silently keeps the OLD static `index.html` and discards
+   > your new Jekyll content (only a "Conflict: shared destination" warning, easy to
+   > miss). Delete or rename the Chapter 1 `index.html` now: `rm index.html`.
 
 3. **Configure for GitHub Pages**
    Create `Gemfile`:
@@ -411,7 +415,6 @@ git push origin main
    
    # Build settings
    markdown: kramdown
-   highlander: true
    plugins:
      - jekyll-feed
      - jekyll-sitemap
@@ -419,7 +422,7 @@ git push origin main
    ```
 
 5. **Create Content**
-   Update `index.md`:
+   Update `index.markdown` (the file `jekyll new` generates — not `index.md`):
    ```markdown
    ---
    layout: default
@@ -443,7 +446,7 @@ git push origin main
    ### Project 1: GitHub Pages Mastery
    - **Status**: ✅ Completed
    - **Technologies**: HTML, CSS, Jekyll
-   - **Live Demo**: [View Site]({{ site.url }})
+   - **Live Demo**: [View Site](https://yourusername.github.io/)
    
    ### Project 2: Portfolio Foundation
    - **Status**: 🚧 In Progress
@@ -453,6 +456,11 @@ git push origin main
 
 6. **Build and Test Locally**
    ```bash
+   # On a stock Linux Ruby install, a plain `bundle install` can fail with
+   # Bundler::PermissionError (no write access to the system gem cache) even
+   # after installing Jekyll/Bundler with --user-install. Scope bundler to a
+   # project-local folder first to avoid it:
+   bundle config set --local path vendor/bundle
    bundle install
    bundle exec jekyll serve
    # Visit http://localhost:4000
@@ -473,34 +481,26 @@ git push origin main
 ## 🎮 Implementation Challenges
 
 ### 🟢 Novice Challenge: Basic Portal
-**Goal**: Deploy a simple single-page website
-**Time**: 30 minutes
-**Success Criteria**:
+**Goal**: Deploy a simple single-page website **Time**: 30 minutes **Success Criteria**:
 - [ ] GitHub Pages enabled and accessible
 - [ ] Basic HTML structure with title and content
 - [ ] Proper meta tags for SEO
 
 ### 🟡 Apprentice Challenge: Styled Realm
-**Goal**: Add CSS styling and multiple sections
-**Time**: 1 hour
-**Success Criteria**:
+**Goal**: Add CSS styling and multiple sections **Time**: 1 hour **Success Criteria**:
 - [ ] Custom CSS with responsive design
 - [ ] Multiple content sections (About, Projects, Contact)
 - [ ] Professional appearance and navigation
 
 ### 🔴 Expert Challenge: Jekyll Mastery
-**Goal**: Implement full Jekyll site with themes
-**Time**: 2 hours
-**Success Criteria**:
+**Goal**: Implement full Jekyll site with themes **Time**: 2 hours **Success Criteria**:
 - [ ] Jekyll site with custom theme
 - [ ] Multiple pages with navigation
 - [ ] Blog functionality with posts
 - [ ] SEO optimization and performance
 
 ### ⚔️ Master Challenge: Custom Domain & CI/CD
-**Goal**: Add custom domain and automated deployment
-**Time**: 3 hours
-**Success Criteria**:
+**Goal**: Add custom domain and automated deployment **Time**: 3 hours **Success Criteria**:
 - [ ] Custom domain configured
 - [ ] GitHub Actions for automated deployment
 - [ ] HTTPS enabled with custom domain
@@ -661,7 +661,7 @@ Based on your performance in this quest:
 
 ## 📓 AI Collaboration Log
 
-*This quest was developed with AI assistance to ensure comprehensive coverage of GitHub Pages deployment, multi-platform compatibility, and educational best practices. AI helped generate code examples, validate technical accuracy, and enhance the fantasy narrative while maintaining educational integrity.*
+*This quest was developed with AI assistance to cover GitHub Pages deployment, multi-platform compatibility, and educational best practices. AI helped generate code examples, validate technical accuracy, and enhance the fantasy narrative while maintaining educational integrity.*
 
 *Human oversight ensured:*
 - Technical accuracy of GitHub Pages workflows
@@ -674,9 +674,9 @@ Based on your performance in this quest:
 
 ### Key Takeaways from This Quest
 - **GitHub Pages democratizes web hosting** - No server management or hosting costs
-- **Static sites are powerful** - Fast, secure, and SEO-friendly by default
+- **Static sites are fast, secure, and SEO-friendly by default** - No server-side processing to slow them down or expose attack surface
 - **Git workflow integration** - Deployment becomes part of your development process
-- **Jekyll enhances productivity** - Markdown content with powerful templating
+- **Jekyll enhances productivity** - Write content in Markdown with reusable layouts and Liquid templating
 - **Custom domains add professionalism** - Transform GitHub URLs into branded sites
 
 ### Modern Web Development Context
@@ -740,14 +740,12 @@ GitHub Pages represents the evolution of web hosting from complex server managem
 ---
 
 **Quest Completed**: Level 001 - The GitHub Pages Portal  
-**Date Completed**: {{ "now" | date: "%Y-%m-%d" }}  
+**Date Completed**: {% raw %}{{ "now" | date: "%Y-%m-%d" }}{% endraw %}  
 **Next Recommended Quest**: Level 010: Jekyll Mastery
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

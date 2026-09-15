@@ -1,14 +1,25 @@
 ---
 title: Level 0000 - Foundation & Init World
 description: Your starting point in the IT-Journey. Character creation, OS selection, terminal basics, and first steps into the digital realm
-preview: images/previews/level-0000-foundation-init-world.png
+preview: images/previews/level-0000-foundation-init-world.webp
 permalink: /quests/0000/
 layout: quest-collection
+local_graph: false
 level: '0000'
 categories:
 - quests
 lastmod: '2026-05-20T20:57:50.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '0000'
+- apprentice
+- foundation
+- init
+- world
+mermaid: true
 ---
 # Level 0000: Foundation & Init World
 
@@ -201,7 +212,7 @@ Ascend to the Cloud Heavens with cloud platform basics and infrastructure fundam
 #### [Terminal Fundamentals](terminal-fundamentals.md)
 **Quest Type**: Main 🏰 | **Difficulty**: 🟢 Easy | **Estimated Time**: 45-60 minutes
 
-Master the command line — the most powerful interface in any IT hero's arsenal. Learn to navigate the file system, manage files, and chain commands with pipes and redirection.
+Master the command line — the scriptable, chainable interface at the heart of every IT hero's arsenal. Learn to navigate the file system, manage files, and chain commands with pipes and redirection.
 
 **Skills You'll Master:**
 - File system navigation (cd, ls, pwd)

@@ -2,9 +2,7 @@
 title: Understanding Action Triggers in Depth
 author: IT-Journey Team
 description: Unlock the power of automation with GitHub Actions! Streamline your workflows and enhance your CI/CD processes effortlessly.
-excerpt: null
-snippet: null
-preview: images/previews/understanding-action-triggers-in-depth.png
+preview: images/previews/understanding-action-triggers-in-depth.webp
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2026-03-20T22:23:36.000Z'
 level: '0010'
@@ -38,9 +36,8 @@ keywords:
   - YAML
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Ah yes, the winds of automation are calling!** You've chronicled your changelogs and blessed your docs, but now it's time to awaken the ancient machinery of your kingdom: **GitHub Actions.** This, dear dev-sorcerer, is where the magic truly begins to automate itself.
 
@@ -110,7 +107,7 @@ jobs:
       with:
         config-name: release-drafter.yml
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
 ```
 
 🧪 **Translation**: Every PR to main triggers tests. If those pass and you're on main, the release process begins. All while you sip coffee or battle CSS dragons.
@@ -124,11 +121,11 @@ Here are some handy enchantments to add to your arsenal:
 
 | **Spell Type** | **GitHub Action** |
 | --- |  --- |
-| 🧼 Linting | github/super-linter |
+| 🧼 Linting | GitHub/super-linter |
 | --- |  --- |
 | 🧪 Python Tests | actions/setup-python + pytest |
 | 🐍 Auto-Releases | release-drafter/release-drafter |
-| 🧪 Security | github/codeql-action |
+| 🧪 Security | GitHub/codeql-action |
 | 🧙‍♂️ AI Assist | Custom scripts using OpenAI API |
 
 * * * *
@@ -167,9 +164,7 @@ Shall we proceed to the final mystical chapter: **AI-Assisted Automation**? Beca
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

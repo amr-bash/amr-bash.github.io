@@ -11,14 +11,18 @@ source "https://rubygems.org"
 # Github Pages Gems - Use latest compatible version:
 gem 'github-pages'
 
-# Jekyll Theme: use local gem for dev (avoids remote_theme network download)
-gem 'jekyll-theme-zer0'
-
-# Jekyll Theme is loaded via `remote_theme` in `_config.yml` and `_config_dev.yml`.
+# Jekyll Theme — served via the unpinned `remote_theme` in _config.yml, which
+# always tracks the latest zer0-mistakes main (works with the legacy GitHub Pages
+# gh-pages build). jekyll-remote-theme ships with the github-pages gem, so no
+# theme gem is needed here.
 
 # If you have plugins enabled in the _config.yml, add them here too:
 group :jekyll_plugins do
   gem 'jekyll-include-cache'
+  # AI preview/social banner generation — adds the `jekyll preview-images`
+  # command. Not a build-time hook (`preview_images.auto_generate: false`), so
+  # it stays inert during the Pages build and only runs when invoked directly.
+  gem 'zer0-image-generator'
   # these are all part of the github-pages gem - updated versions
   # gem 'jekyll-remote-theme', "~> 0.4.3"
   # gem 'jekyll-feed', "~> 0.17"
@@ -30,6 +34,9 @@ end
 # Docker support and system dependencies - updated versions
 gem "ffi"
 gem 'webrick'
+
+# PostHog analytics
+gem 'posthog-ruby'
 
 # TODO: build a bootstrap plugin for jekyll
 

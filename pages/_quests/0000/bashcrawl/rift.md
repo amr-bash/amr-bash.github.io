@@ -38,14 +38,12 @@ keywords:
   - linux pipes tutorial
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
+  - /quests/0000/chamber/
+  - /quests/0000/hidden-chapel/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/agent-mode/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/agent-mode/
+  - /quests/0000/agent-mode/
+  recommended_quests: []
 validation_criteria:
 - Use | to pipe output between commands
 - Chain commands with && and ||
@@ -56,17 +54,23 @@ validation_criteria:
 - Complete the dungeon
 prerequisites:
 - Complete Chamber plus at least one of Chapel/Vault/Scrap
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Rift Conquest Badge
 - Pipes and redirection mastery
 excerpt: Conquer the final Rift by chaining commands, piping output, and redirecting streams to defeat both bosses and finish Bashcrawl.
 draft: false
-permalink: /quests/0000/side-quests/rift/
+permalink: /quests/0000/rift/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/rift/
 ---
 *You stand at the edge of the Rift — a swirling chasm where data streams collide. The rules here are different: commands don't just run, they flow into each other. Master the pipe and you master the dungeon.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="The Rift" height="660" %}
 
 ## 🎯 Quest Objectives
 
@@ -79,7 +83,7 @@ layout: quest
 - [ ] Defeat the pit boss and the satellite boss
 - [ ] Complete the Bashcrawl dungeon
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 All of these should be in your inventory before entering the Rift:
 
@@ -114,6 +118,7 @@ ls -F
 
 inventory
 # stone key fragment, tome fragment, vault key fragment, portal crystal ✓
+# (inventory is a Bashcrawl game command, not a standard shell command — it lists what you carry)
 
 ./key_assembler
 # All fragments combined → Rift Key obtained.
@@ -157,23 +162,31 @@ cat instructions
 ### Step 4 — Spire — Redirection
 
 ```bash
-cd ../../spire
+cd ../spire
 cat spire_challenge
 # "Capture all output from the oracle — both wisdom and errors — into oracle.log"
 
 ./oracle > oracle.log 2>&1
 cat oracle.log
 
-# Also capture with tee so you still see it:
+# Run again and APPEND to the same log instead of overwriting:
+echo '--- additional run ---' >> oracle.log
+./oracle >> oracle.log 2>&1
+
+# Capture ONLY the errors (stderr) and leave wisdom on screen:
+./oracle 2> errors_only.log
+
+# Also capture everything with tee so you still see it:
 ./oracle 2>&1 | tee oracle.log
 ```
 
 ### Step 5 — Mezzanine — Advanced chaining
 
 ```bash
-cd mezzanine
+cd ../mezzanine     # mezzanine is a sibling of spire under the Rift root (like arena → pit → spire)
 # Combine all techniques:
 ls -la | sort -k5 -rn | head -10 > biggest_files.txt
+# -k5 sorts by column 5 (file size); -rn is reverse numeric (largest first)
 cat biggest_files.txt
 ```
 
@@ -196,6 +209,10 @@ cat signal_logs | grep "ERROR" | tee error_report.txt
 cat error_report.txt
 
 ./satellite_boss
+
+# Confirm the dungeon registers as finished:
+map
+# All chambers should now read as complete.
 ```
 
 The satellite boss is the final encounter. It uses all skills: pipe a command through grep, redirect errors, chain with `&&`. Complete it to finish the dungeon.
@@ -204,7 +221,7 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 
 | Problem | Cause | Fix |
 |---------|-------|-----|
-| `|` not working | Wrong pipe character | Use `\|` in tables; actual `\|` is just `|` in shell |
+| `|` not working | Confused table escaping with shell syntax | In Markdown tables you write `\\|` to *display* a literal `\|`, but in the shell you always type a plain `\|` — never type `\\|` as a pipeline |
 | `2>&1` must come AFTER `>` | Order matters | Always: `> file 2>&1` not `2>&1 > file` |
 | `&&` chain stops early | A command failed | Add `\|\|` fallback or check exit codes |
 | Hidden dirs not found | Forgot `ls -a` | Always use `ls -a` in unfamiliar directories |
@@ -226,6 +243,8 @@ The satellite boss is the final encounter. It uses all skills: pipe a command th
 
 ---
 
+{% include bashcrawl-play-local.html %}
+
 ## 📚 External Resources
 
 Continue your terminal adventure with these resources:
@@ -242,12 +261,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]]
-**Unlocks:** [[Bashcrawl Agent Mode: AI Automation and Contribution]]
-**Sequel quests:** [[Bashcrawl Agent Mode: AI Automation and Contribution]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Chamber: Bash Arithmetic and the Statue Boss]] · [[Bashcrawl Hidden Chapel: Hidden Files and Man Pages]] **Unlocks:** [[Bashcrawl Agent Mode: AI Automation and Contribution]] **Sequel quests:** [[Bashcrawl Agent Mode: AI Automation and Contribution]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

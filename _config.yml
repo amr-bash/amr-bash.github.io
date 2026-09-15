@@ -27,8 +27,13 @@
 # Site Settings ###################################################################
 
 founder                  : "Amr Abdel-Motaleb"
+# Theme: unpinned `remote_theme` ref — always tracks the latest zer0-mistakes
+# default-branch (main) commit, so every build picks up upstream theme changes
+# automatically. Production deploys via legacy GitHub Pages building Jekyll from
+# the gh-pages branch, which can't use a gem theme (it never runs `bundle
+# install`) — so the theme is sourced here; CI/dev use the same ref (see
+# _config_dev.yml). To freeze a version, append a tag: `bamr87/zer0-mistakes@vX.Y.Z`.
 remote_theme             : "bamr87/zer0-mistakes"
-# theme                    : "jekyll-theme-zer0"
 
 ## Github Information
 github_user              : &github_user "bamr87"
@@ -49,24 +54,23 @@ subtitle_url             : "localhost"
 subtitle_icon            : ""
 title_separator          : "|" # Appears in the web browser tab name
 domain                   : &domain "it-journey"
-domain_ext               : ".dev"
+domain_ext               : &domain_ext ".dev"
 sub_domain               : &sub_domain ""
-baseurl                  : "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
+baseurl                  : &baseurl "" # the subpath of your site, e.g. /blog - Use this if you want this whole repo to be a domain branch
 url_dev                  : ['https://', *sub_domain, '.', *domain, *domain_ext ]
 url                      : &url 'https://it-journey.dev' # the base hostname & protocol for your site, e.g. http://example.com
 public_folder            : "assets"
 port                     : 4002 # Jekyll Serve Dev port
 dg_port                  : 4001 # TODO: Doppelganger site. Use this if you want to switch between parallel deployments
-og_image                 : '/images/wizard-on-journey.png'
+og_image                 : '/assets/images/wizard-on-journey.webp'
 
 ### Owner Information -------------------------------------------------------------
 
 name                     : &name "Amr"
 email                    : "amr@it-journey.dev"
 description              : >- # this means to ignore newlines until the next variable
-  Collection of articles, notes, and tutorials to build a website
-  or headless CMS using Jekyll and Github Pages.
-  This is my journey from zer0 to her0.
+  A gamified, open-source platform for learning IT and software development
+  through quests — progressive, hands-on adventures that take you from zer0 to her0.
 level                    : 'her0'
 
 
@@ -75,19 +79,23 @@ level                    : 'her0'
 maintainers:
   - name: *name
     profile: ["https://github.com", "/", *github_user]
-  - name: "Vacant"
-    profile: "/github.com"
 
 ## Personalization ----------------------------------------------------------------
 
 locale                   : "en-US"
 home_dir                 : &home '/Users/bamr87/'
 local_git                : [ *home, 'github' ]
-logo                     : /assets/images/gravatar-small.png  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : /assets/images/gravatar-small.webp  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 logo_link                : [ *url, *baseurl ] # URL to link the logo to, e.g. "/"
 
-teaser                   : /images/favicon_gpt_computer_retro.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-info_banner              : /images/info-banner-mountain-wizard.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /assets/images/favicon_gpt_computer_retro.webp # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+info_banner              : /assets/images/info-banner-mountain-wizard.webp # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+
+# Favicon / browser identity — rendered by the theme's core/favicon.html
+# (explicit tags replace the browser's implicit /favicon.ico probe).
+favicon:
+  ico                    : /favicon.ico
+  apple_touch            : /assets/images/favicon_gpt_computer_retro.webp
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 _posts_file_structure    : "year-month-day-title.md"
@@ -96,8 +104,8 @@ _posts_file_structure    : "year-month-day-title.md"
 
 author:
   name                   : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar                 : "/assets/images/gravatar-small.png"
-  email_hash             : '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
+  avatar                 : "/assets/images/gravatar-small.webp"
+  email_hash             : &email_hash '71d7a4fc9712df49e13d606e620f89c7' # https://en.gravatar.com/site/check/{ site.email }
   gravatar               : [ 'https://s.gravatar.com/avatar/', *email_hash, '?s=80' ]
   bio                    : "IT nerd trying to be an IT hero"
   location               : "Denver, CO"
@@ -108,6 +116,33 @@ author:
 ## Site Analytics #############################################################
 
 google_analytics         : 'G-ZBDKNMC168'
+
+# PostHog product analytics (client-side). Rendered by the theme's
+# _includes/analytics/posthog.html, which loads ONLY in production
+# (jekyll.environment == "production") and respects Do Not Track.
+# api_key is a public project key (phc_…), safe to commit — like google_analytics above.
+posthog:
+  enabled                : true
+  api_key                : 'phc_m67mGNKMoTphbLFXDN3Kxrv6RZaCQz2wiFwZ9CGeLVg7'
+  api_host               : 'https://us.i.posthog.com'
+  person_profiles        : 'identified_only'  # 'always' | 'identified_only' | 'never'
+  autocapture            : true
+  capture_pageview       : true
+  capture_pageleave      : true
+  session_recording      : false   # keep off unless we intend to record sessions
+  disable_cookie         : false
+  respect_dnt            : true     # honor the visitor's Do Not Track setting
+  secure_cookie          : true
+  persistence            : 'localStorage+cookie'
+  custom_events:
+    track_downloads      : true
+    track_external_links : true
+    track_search         : true
+    track_scroll_depth   : true
+  privacy:
+    mask_all_text        : false
+    mask_all_inputs      : true
+    ip_anonymization     : false
 
 ## Site verification #############################################################
 
@@ -124,7 +159,7 @@ default_icon: "bi" ## Bootstrap Icons https://icons.getbootstrap.com/
 
 links:
   - label: "BASH Consulting"
-    url: "https://bashconsultants.com"
+    url: "https://bash-365.com"
     icon: "bi-link"
   - label: "Twitter"
     icon: "bi-twitter"
@@ -194,13 +229,23 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
   - jekyll-relative-links
   - jekyll-redirect-from
 
-## Gisgus Plugin #################################################################
+# Convert in-content [text](file.md) links to their built URLs.
+# collections:true is required so _quests/_notes/_docs/_posts links are rewritten too
+# (default only processes pages, which is why .md links in collections 404'd).
+relative_links:
+  enabled: true
+  collections: true
 
-gisgus:
+## Giscus (GitHub Discussions comments) ##########################################
+# The zer0-mistakes theme reads `site.giscus.*` (see _includes/content/giscus.html).
+# The key MUST be spelled `giscus` — a `nil` key reads as a disabled feature and
+# the widget silently never renders. See the tutorial:
+#   pages/_posts/tools-environment/2026-06-23-embedding-giscus-comments-zer0-mistakes.md
+
+giscus:
   enabled: true
   data-repo-id: "MDEwOlJlcG9zaXRvcnkyODM4MjI1NzM"
   data-category-id: "DIC_kwDOEOrJ7c4CAn8D"
@@ -248,43 +293,31 @@ kramdown: # https://kramdown.gettalong.org/options.html
   # Permalinks: https://jekyllrb.com/docs/permalinks/
 
 collections_dir: &collections_dir pages
-local_repo_path: [ *collections_dir, '/', *local_repo ]
+local_repo_path: [ *collections_dir, '/', *github_repository ]
 
 collections:
   pages:
     output: true
     permalink: /:collection/:name/
-  posts:
-    output: true
-    permalink: /:collection/:year/:month/:day/:slug/
-  docs:
-    output: true
-    permalink: /:collection/:categories/:name/
   quests:
     output: true
     permalink: /:collection/:categories/:name/
-  hobbies:
-    output: true
-    permalink: /:collection/:categories/:name/
-  notebooks:
-    output: true
-    permalink: /:collection/:path/:name/
   notes:
     output: true
-    permalink: /:collection/:path/:name/
-  quickstart:
-    output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:path/
   about:
     output: true
     permalink: /:collection/:categories/:name/
+  # quest-reports — the quest-perfection loop's output, surfaced for the site
+  # (dashboard + one page per walkthrough), generated by
+  # scripts/quest/build_reports_site.py from test/…/walkthroughs/ + .quests/ledger.json.
+  # NOTE: the dir is `_quest-reports` (singular) so the frontmatter validator
+  # classifies it as `other` (title-only), NOT the strict `quests` schema.
+  quest-reports:
+    output: true
+    permalink: /quest-reports/:name/
 
 permalink: pretty
-
-#  pagination https://jekyllrb.com/docs/pagination/
-
-paginate: 10
-paginate_path: "/pages/:num/"
 
 # Defaults https://jekyllrb.com/docs/configuration/front-matter-defaults/
 
@@ -317,7 +350,7 @@ defaults:
       related: true
       toc_sticky: true
       sidebar:
-        nav: searchCats
+        nav: auto
     permalink: /:path/:name/
 
   # pages/_about
@@ -332,48 +365,6 @@ defaults:
       sidebar:
         nav: about
 
-  # pages/_quickstart
-  - 
-    scope:
-      path: pages/_quickstart
-    values:
-      layout: default
-      collection: quickstart
-      share: true
-      related: true
-      sidebar:
-        nav: quickstart
-
-  # pages/_posts
-  - 
-    scope:
-      path: pages/_posts
-    values:
-      layout: article
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: dynamic
-      # permalink: /:collection/:name/
-
-  # pages/_docs
-  - 
-    scope:
-      path: pages/_docs
-    values:
-      layout: *pages
-      # category: docs
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: auto
-    # permalink: /docs/:category/:name/
 
   # pages/_quests collection — quest.md files use the local quest layout.
   # Level READMEs (/quests/XXXX/) keep `layout: quest-collection` set in their
@@ -393,41 +384,45 @@ defaults:
         nav: quests
       permalink: /:categories/:slug
 
-  # pages/_hobbies
-  - 
+  # pages/_quest-reports collection — the quest-perfection dashboard + walkthroughs.
+  # render_with_liquid:false so quoted quest code containing {% %}/{{ }} can NEVER
+  # break the Jekyll build (the #449 failure mode). These docs are generated by
+  # scripts/quest/build_reports_site.py; edit that, not the pages.
+  -
     scope:
-      path: pages/_hobbies
-      type: hobbies
+      path: pages/_quest-reports
+      type: quest-reports
     values:
       layout: *pages
-      share: false
+      collection: quest-reports
       author_profile: false
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc_sticky: true
+      render_with_liquid: false
       sidebar:
-        nav: hobbies
+        nav: main
 
   # pages/_notes
-  - 
+  # nav: auto -> the theme auto-generates the left sidebar from the collection's
+  # files (see _includes/navigation/sidebar-folders.html), so every note is listed
+  # dynamically. No hand-maintained _data/navigation/notes.yml to drift.
+  #
+  # layout: note -> the theme's note layout, which adds the metadata header, tag
+  # badges, related notes, and prev/next links. /notes/ itself overrides this
+  # with layout: notes-workbench in its own front matter.
+  -
     scope:
       path: pages/_notes
       type: notes
     values:
-      layout: *pages
+      layout: note
       share: false
       author_profile: false
       sidebar:
-        nav: notebooks
-
-  # pages/_notebooks
-  - 
-    scope:
-      path: pages/_notebooks
-      type: notebooks
-    values:
-      layout: *pages
-      share: false
-      author_profile: false
-      sidebar:
-        nav: notebooks
+        nav: auto
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -493,6 +488,14 @@ exclude:
   
   # Configuration and metadata files
   - frontmatter.json
+  - CLAUDE.md            # Claude Code guide — agent-facing, not site content
+  # AGENTS.md is the same kind of file and must be excluded for the same reason.
+  # It also *had* to be: Jekyll parses Liquid on the RAW file before Markdown, so
+  # the literal `{% %}` written in AGENTS.md:180 (prose documenting the oneline
+  # gate) is read as an unterminated tag and hard-failed the Pages build —
+  # backticks do not protect it. Excluding it fixes the break at its source and
+  # stops agent docs that discuss Liquid from breaking the site again.
+  - AGENTS.md
   - "*.md.backup"
   - "*.tmp"
   - ".seed.md"
@@ -515,30 +518,34 @@ sass:
 
 ## Style Settings -------------------------------------------------------------
 
-# theme                  : "zer0-mistakes-jekyll"
-# remote_theme           : "bamr87/zer0-mistakes"
 theme_skin               : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Opt in to the theme's fork-override hooks: loads /assets/css/user-overrides.css
+# and /assets/js/user-overrides.js LAST, so the site's "cosmic quest" theme wins
+# over compiled defaults. Required for the site-wide styling to apply.
+user_overrides           : true
 
 # style                  : "default" # "default", "dark", "light", "solarized-dark", "solarized-light"
-# remote_style           : "bamr87/zer0-mistakes"
 
+# NOTE: hex values MUST be quoted — unquoted `main: #007bff` is parsed by YAML as
+# a comment (null), so the token never reaches core/tokens-inline.html. The
+# site-wide "cosmic quest" palette (mirrors assets/css/user-overrides.css).
 theme_color:
-  main: #007bff
-  secondary: #6c757d
-  red: #a11111
-  yellow: #ffe900
-  teal: #376986
-  blue: #007bff
-  green: #28a745
-  purple: #6f42c1
-  pink: #e83e8c
-  orange: #fd7e14
-  brown: #795548
-  cyan: #17a2b8
-  indigo: #6610f2
-  lime: #cddc39
-  amber: #ffc107
-  deep_orange: #ff5722
+  main: "#a855f7"      # → --zer0-color-primary (cosmic purple)
+  secondary: "#7c8099"
+  red: "#fb7185"
+  yellow: "#fbbf24"
+  teal: "#22d3ee"
+  blue: "#38bdf8"      # → --zer0-color-link
+  green: "#34d399"
+  purple: "#a855f7"    # → --zer0-color-accent (re-themed to cyan in user-overrides.css)
+  pink: "#f472b6"
+  orange: "#fb923c"
+  brown: "#795548"
+  cyan: "#22d3ee"
+  indigo: "#6610f2"
+  lime: "#cddc39"
+  amber: "#ffc107"
+  deep_orange: "#ff5722"
   deep_purple: #673ab7
   light_blue: #03a9f4
   light_green: #8bc34a
@@ -575,8 +582,12 @@ preview_images:
   style_modifiers: "pixelated, retro gaming style, CRT screen glow effect, limited color palette"
   output_dir: assets/images/previews     # Where to save generated images
   auto_generate: false                   # Generate during build (slow, use script instead)
-  collections:                           # Collections to scan for missing previews
-    - posts
-    - docs
-    - quickstart
+  collections_dir: pages                 # Collections live under pages/_<name>
+  collections:                           # Collections to scan for missing previews.
+                                         # `posts` was dropped here: _posts moved to
+                                         # lifehacker.dev, so every run scanned a
+                                         # non-existent dir. Kept as an explicit list —
+                                         # _plugins/preview_image_generator.rb iterates it.
     - quests
+    - notes
+    - about

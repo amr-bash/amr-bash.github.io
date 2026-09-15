@@ -1,10 +1,9 @@
 ---
 title: 'Hello n00b: Your First Steps into the IT Journey'
 author: IT-Journey Team
-description: The perfect starting quest for absolute beginners. Learn to create a GitHub account, fork repositories, and take your first steps into the world of collaborative development
+description: 'Begin your IT adventure: create a GitHub account, fork the IT-Journey repository, and confidently navigate GitHub as an absolute beginner.'
 excerpt: Begin your epic adventure in the world of IT with your very first quest - setting up GitHub and joining the community
-snippet: Every expert was once a beginner - every hero was once a n00b
-preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.png
+preview: images/previews/hello-n00b-your-first-steps-into-the-it-journey.webp
 date: '2022-06-05T13:48:57.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
@@ -19,27 +18,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  child_quests: []
-  sequel_quests: []
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Digital Literacy
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - 🎨 Digital Artist
-  - 🎮 Game Developer
-  skill_trees:
-  - Version Control Fundamentals
-  - Community Participation
-  - Open Source Contribution
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -66,13 +44,6 @@ validation_criteria:
   knowledge_checks:
   - Explain what GitHub is and why it's important
   - Describe the concept of forking and open source collaboration
-quest_mapping:
-  coordinates:
-  - 0
-  - 0
-  region: Entry
-  realm: Community
-  biome: GitHub
 permalink: /quests/0000/hello-noob/
 categories:
 - Quests
@@ -96,7 +67,6 @@ keywords:
   - community-entry
 fmContentType: quest
 draft: false
-sub-title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
 rewards:
   badges:
   - 🏆 GitHub Account Creation Badge - Entry into developer community
@@ -110,12 +80,14 @@ rewards:
   - Ability to participate in community discussions
   - Foundation for version control learning
 layout: quest
+sub_title: 'Level 0000 (0) Main Quest: First Steps in Digital Collaboration'
+mermaid: true
 ---
 *Welcome, brave n00b, to the beginning of your legendary IT journey! You stand at the threshold of an incredible adventure where code becomes magic, problems transform into puzzles, and you'll develop superpowers that would seem impossible to your past self.*
 
 *This quest is specifically designed for absolute beginners - those who might not even know what GitHub is yet. That's perfectly okay! Every expert started exactly where you are now.*
 
-### 🗺️ Quest Network Position
+### 🗺️ Quest Network Map
 
 ```mermaid
 graph TB
@@ -173,9 +145,9 @@ By completing this foundational quest, you will achieve:
 
 ### Primary Objectives (Required for Quest Completion)
 - [ ] **Create Your GitHub Account** - Establish your identity in the developer universe
-- [ ] **Fork the IT-Journey Repository** - Make your first contribution to open source
+- [ ] **Fork the IT-Journey Repository** - Create your own copy to learn and experiment in
 - [ ] **Navigate GitHub Interface** - Understand the basic layout and features
-- [ ] **Join the Community** - Connect with fellow adventurers on their learning journeys
+- [ ] **Find the Community** - Locate the IT-Journey Discussions tab where adventurers gather
 
 ### Secondary Objectives (Bonus Achievements)
 - [ ] **Customize Your Profile** - Add a bio, avatar, and personal information
@@ -220,8 +192,7 @@ Think of GitHub as:
 
 ### 🔗 What is "Forking"?
 
-When you "fork" a repository (project), you're essentially saying:
-*"I like this project, and I want my own copy that I can experiment with!"*
+When you "fork" a repository (project), you're essentially saying: *"I like this project, and I want my own copy that I can experiment with!"*
 
 It's like photocopying a recipe so you can try your own variations without affecting the original.
 
@@ -246,7 +217,7 @@ You'll see two options:
 - Click **[Sign up](https://github.com/signup)**
 - Continue with the account creation process below
 
-![GitHub Login Interface](/assets/images/github-login.png)
+![GitHub Login Interface](/assets/images/github-login.webp)
 
 ### ⚔️ Step 3: Create Your Account (New Users Only)
 
@@ -255,7 +226,7 @@ Fill out the registration form with:
 1. **Username**: Choose wisely! This becomes part of your developer identity
    - Make it professional (you might use this for job applications someday)
    - Keep it memorable and relatively short
-   - Examples: `sarah_codes`, `mike_developer`, `alex_learns_tech`
+   - Examples: `sarah-codes`, `mike-developer`, `alex-learns-tech` (GitHub usernames allow only letters, numbers, and single hyphens — no underscores or spaces)
 
 2. **Email**: Use an email you check regularly
    - GitHub will send you important notifications
@@ -273,7 +244,7 @@ Check your email for a verification message from GitHub and click the confirmati
 
 ## 🎮 Chapter 3: Your First Fork - Join the IT Journey
 
-*Now for the exciting part - making your first contribution to an open source project!*
+*Now for the exciting part - claiming your very own copy of an open source project so you can explore and experiment freely!*
 
 ### 🏗️ Step 1: Navigate to IT-Journey Repository
 
@@ -285,7 +256,7 @@ Or manually navigate:
 
 ### 🍴 Step 2: Create Your Fork
 
-![Fork Button Screenshot](/assets/images/github-fork-it-journey.png)
+![Fork Button Screenshot](/assets/images/github-fork-it-journey.webp)
 
 1. Click the **"Fork"** button
 2. Choose where to create the fork (usually your own account)
@@ -296,8 +267,20 @@ Or manually navigate:
 
 Congratulations! You've just:
 - ✅ Created a GitHub account
-- ✅ Made your first open source contribution
-- ✅ Joined the IT-Journey community
+- ✅ Forked an open source project, giving you your own copy to learn in
+- ✅ Taken your first step into the IT-Journey community
+
+> 💡 **A quick clarification:** Forking gives you your *own* copy of the project to experiment with. It is *not* yet a contribution back to the original — that happens when you send a **pull request** to propose your changes. You'll learn how to do exactly that in a later quest. For now, having your own fork is the perfect place to start.
+
+### 🤝 Step 4: Find the Community
+
+You're not adventuring alone! IT-Journey has a gathering place where learners ask questions, share progress, and help one another.
+
+1. Visit the **[IT-Journey Discussions](https://github.com/bamr87/it-journey/discussions)** tab
+2. Browse the categories to see what fellow adventurers are talking about
+3. Notice the **Issues** tab too — that's where bugs and improvement ideas are reported
+
+No need to post anything yet. Just knowing where the community lives is your goal for now.
 
 ## 🧭 Chapter 4: Exploring Your New Environment
 
@@ -323,6 +306,19 @@ Familiarize yourself with these important buttons and sections:
 - **Settings**: Configure your repository options
 - **Star**: Show appreciation for projects you like
 - **Watch**: Get notifications about project updates
+
+### ✨ Bonus: Customize Your Profile
+
+*Make your corner of GitHub feel like yours. This is a secondary objective — optional, but a great touch for your developer identity.*
+
+1. Click your **avatar** in the top-right corner, then choose **Settings**
+2. Under the **Public profile** section, add:
+   - **Name**: How you'd like to be known
+   - **Bio**: A short line about yourself (e.g. "Aspiring developer on the IT-Journey")
+   - **Profile picture (avatar)**: Upload an image so you're not just the default icon
+3. Click **Update profile** to save
+
+That's it — your profile now tells the world a little about the adventurer behind the account.
 
 ## 🏆 Quest Completion Validation
 
@@ -363,8 +359,8 @@ Familiarize yourself with these important buttons and sections:
 
 ### 🌟 What You've Accomplished
 
-- **Joined the Developer Community**: You're now part of the massive global community of developers
-- **Made Your First Open Source Contribution**: By forking IT-Journey, you've participated in open source
+- **Joined the Developer Community**: You're now part of the massive global community of developers, and you know where IT-Journey's Discussions live
+- **Forked Your First Open Source Project**: By forking IT-Journey, you've claimed your own copy to learn in — contributing changes back via a pull request is an adventure for a later quest
 - **Established Your Online Presence**: Your GitHub profile is the beginning of your developer portfolio
 - **Overcome the First Hurdle**: The hardest part of any journey is taking the first step - and you've done it!
 
@@ -391,9 +387,7 @@ Your GitHub account opens up incredible possibilities:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

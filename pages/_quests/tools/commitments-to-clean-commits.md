@@ -1,10 +1,8 @@
 ---
-title: Commitments to clean commits
+title: 'Commit Hygiene: Crafting Clean, Atomic Commits'
 author: IT-Journey Team
-description: Learn how to maintain clean commits in your projects for better collaboration and version control efficiency.
-excerpt: null
-snippet: null
-preview: images/previews/commitments-to-clean-commits.png
+description: 'Master commit hygiene the wizardly way: write atomic commits, craft clear conventional messages, dodge cursed habits, and tidy history with rebase.'
+preview: images/previews/commitments-to-clean-commits.webp
 date: '2025-04-18T13:43:43.000Z'
 lastmod: '2025-04-18T19:27:42.000Z'
 level: '0010'
@@ -38,9 +36,8 @@ keywords:
   - version control
 fmContentType: quest
 comments: false
-attachments: ''
-sub-title: null
 layout: quest
+draft: false
 ---
 **Ah, brave adventurer!** You've mastered the sacred art of branching and the scroll-writing ritual known as the Pull Request. Now, prepare thyself for the next enchanted trial:
 
@@ -148,9 +145,7 @@ Ready to open the next dusty tome? We'll be diving into **Changelogs & Documenta
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

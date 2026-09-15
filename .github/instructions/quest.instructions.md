@@ -2,7 +2,7 @@
 applyTo: "pages/_quests/**/*.md"
 description: "Create gamified IT-Journey quests: frontmatter schema, fantasy theme, learning objectives, and validation rules"
 date: 2025-07-21T23:30:21.000Z
-lastmod: 2026-05-23T00:00:00.000Z
+lastmod: 2026-08-19T00:00:00.000Z
 ---
 
 # Quest Creation Instructions
@@ -112,6 +112,19 @@ rewards:
   badges: ["🏆 Container Captain"]
   progression_points: 100
 ---
+```
+
+### Machine-written optional fields (do not author by hand)
+
+`walkthrough_video` references the quest's published, CI-recorded walkthrough video and is **written only by the quest-video lane** (`scripts/quest/video_manifest.py apply`, driven by `quest-video.yml`) after a verified run is uploaded to YouTube — never authored or edited by hand (the id must correspond to a real upload). The quest layout renders it via `_includes/quest/quest-video.html`; leave the block alone when editing a quest, and keep it intact when migrating frontmatter:
+
+```yaml
+walkthrough_video:
+  provider: youtube
+  id: <YouTube video id>
+  url: https://www.youtube.com/watch?v=<id>
+  recorded: 'YYYY-MM-DD'
+  run_url: <the CI run whose sealed evidence the video replays>
 ```
 
 ### Level README frontmatter (not playable quests)
@@ -325,6 +338,13 @@ Use this mapping consistently for narrative cohesion:
 
 Keep technical accuracy intact — fantasy is a wrapper, never a substitute.
 
+This table is only the authoring quick-reference. The **complete canonical lexicon** (~120 entries: geography, classes, spellcraft, chronomancy, bestiary, artifacts, great works, law, words of power) lives at `pages/_quests/codex/glossary.md` (rendered at `/quests/codex/glossary/`) and is the single source of naming truth for quest narrative:
+
+- **Don't mint synonyms** for anything the glossary already names — one realm,
+  one dragon.
+- **New coinages land in the glossary first**: add the entry there in the same
+  PR, then use it in your quest.
+
 ## 9. Validation Workflow
 
 Run before every commit:
@@ -401,6 +421,10 @@ When you add a quest, also:
 - [ ] Network artifacts committed if graph changed
 - [ ] `lastmod` updated
 
+## Voice & brand
+
+Quests use the `quest-fantasy` voice profile — gamified, encouraging, emoji-rich. **Structure** stays governed by this file; **voice/tone** and the discouraged-terms list live in the brand store: [`_data/brand/sections/quest.md`](../../_data/brand/sections/quest.md) and [`brand.instructions.md`](brand.instructions.md). The CMS engine flags brand drift advisorily (`make cms-all`); emoji density is **not** policed for quests, and `powerful` is relaxed as fantasy flavor.
+
 ---
 
-**Related:** [`features.instructions.md`](features.instructions.md) · [`posts.instructions.md`](posts.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).
+**Related:** [`features.instructions.md`](features.instructions.md) · [`docs.instructions.md`](docs.instructions.md) · [`brand.instructions.md`](brand.instructions.md) · [`../prompts/write-quest.prompt.md`](../prompts/write-quest.prompt.md) · canonical frontmatter schema in [`../FRONTMATTER.md`](../FRONTMATTER.md) · script runbook in [`../../scripts/quest/README.md`](../../scripts/quest/README.md).

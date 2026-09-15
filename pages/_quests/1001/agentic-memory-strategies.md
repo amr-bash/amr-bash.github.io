@@ -1,6 +1,6 @@
 ---
 title: 'Vaults of Recollection: Agent Memory Strategies'
-description: Implement memory for GitHub Copilot agents — design ephemeral, session, and persistent memory using GitHub-native artifacts, issues, and repository files to maintain context across interactions.
+description: 'Design ephemeral, session, and persistent memory for GitHub Copilot agents using artifacts, issues, and repo files to keep context across interactions.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-memory-strategies.png
 level: '1001'
@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1001/agentic-safe-execution-and-error-handling/
   unlocks_quests:
   - /quests/1010/agentic-state-persistence-and-drift/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-state-persistence-and-drift/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - Context Management
+  recommended_quests: []
 rewards:
   badges:
   - 🗄️ Vault Keeper
@@ -76,11 +66,6 @@ validation_criteria:
   skill_demonstrations:
   - Can explain the trade-offs between memory tiers for agent use cases
   - Can implement persistent agent memory using GitHub repository files
-quest_mapping:
-  coordinates: '[3, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Memory Vaults
 comments: true
 draft: false
 redirect_from:
@@ -147,6 +132,7 @@ Only then proceed to plan.
 
 > **Exercise 8.1:** Implement session memory using GitHub Actions artifacts.
 
+{% raw %}
 ```yaml
 # .github/workflows/agent-with-session-memory.yml
 name: Agent with Session Memory
@@ -174,7 +160,7 @@ jobs:
         run: |
           mkdir -p .agent-memory
           if [ ! -f .agent-memory/session.json ]; then
-            cat > .agent-memory/session.json << 'EOF'
+            cat > .agent-memory/session.json << EOF
             {
               "session_id": "${{ github.run_id }}",
               "issue_number": ${{ github.event.issue.number }},
@@ -183,7 +169,7 @@ jobs:
               "decisions": [],
               "files_modified": []
             }
-            EOF
+          EOF
           fi
 
       - name: Run agent task (reads and updates session memory)
@@ -218,6 +204,7 @@ jobs:
           path: .agent-memory/session.json
           retention-days: 1
 ```
+{% endraw %}
 
 > **Why upload-artifact instead of `actions/cache/save`?** GitHub Actions caches are **immutable** — once a key is written, later writes for the same key are silently ignored, so the agent can restore stale session memory. For *mutable* same-run handoff, use upload/download artifacts (per-run). For *cross-run* mutable state, write to a repo file in a PR, or post the JSON as an issue comment and re-read it.
 
@@ -291,12 +278,14 @@ from previous agent runs that should inform future decisions.
 
 ## ✅ Quest Validation
 
+Run this self-contained check (no external script needed) from your sandbox repo root:
+
 ```bash
-python3 scripts/validate_quest.py --quest q8
-# ✅ Session memory: agent-with-session-memory.yml present
-# ✅ Persistent memory: docs/agent-memory/ directory with .md files
-# ✅ Context injection: copilot-instructions.md has memory loading protocol
-# 🏆 Quest Q8 complete!
+WF=.github/workflows/agent-with-session-memory.yml
+test -f "$WF"                    && echo "✅ Session memory: agent-with-session-memory.yml present" || echo "❌ Workflow missing"
+test -d docs/agent-memory        && echo "✅ Persistent memory: docs/agent-memory/ directory with .md files" || echo "❌ No persistent memory dir"
+grep -q 'Memory Loading Protocol' .github/copilot-instructions.md 2>/dev/null && echo "✅ Context injection: copilot-instructions.md has memory loading protocol" || echo "ℹ️  Context injection: add the protocol from Chapter 5 to .github/copilot-instructions.md"
+# 🏆 All green → Quest Q8 complete!
 ```
 
 ## 🏆 Quest Rewards
@@ -311,18 +300,12 @@ python3 scripts/validate_quest.py --quest q8
 ## 🔗 Continue Your Journey
 
 - **Next:** [Q9: Anchoring the Drifting Agent](/quests/1010/agentic-state-persistence-and-drift/)
-- **Chronicle post:** [Taming Agent Memory and Context Drift](/posts/taming-agent-memory-and-context-drift/)
+- **Codex chapter:** [Vaults of Recollection: Memory & State](/quests/1001/agentic-codex-03-memory-state-and-execution/)
 - **Related note:** [Evaluation Signals Table](/notes/gh-600/evaluation-signals-table/)
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Shield of Retries: Safe Execution and Error Handling]]
-**Unlocks:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
-**Sequel quests:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1001 (9) - Kubernetes Orchestration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Shield of Retries: Safe Execution and Error Handling]] **Unlocks:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] **Sequel quests:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

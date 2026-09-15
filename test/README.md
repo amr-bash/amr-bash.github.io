@@ -123,16 +123,17 @@ The testing framework integrates seamlessly with GitHub Actions:
 
 ### Test Results Structure
 
-Link check results are stored in `link-check-results/` (gitignored runtime outputs):
+Link check results are stored in `link-check-results/`. Run outputs are gitignored (regenerated every run, uploaded as workflow artifacts); only the baselines and `.gitkeep` are tracked:
 
 ```
 link-check-results/
-├── .gitkeep                  # Preserves directory in git
+├── .gitkeep                  # Preserves directory in git (tracked)
+├── broken_links_baseline.json # Delta comparison baseline (tracked)
+├── posts-external-baseline.md # Curated external link-rot catalog (tracked)
 ├── lychee_results.json       # Raw lychee output
 ├── statistics.env            # Machine-readable stats
 ├── summary.md                # Human-readable summary
 ├── detailed_analysis.md      # Failure categorization report
-├── broken_links_baseline.json # Delta comparison baseline
 ├── ai_analysis.md            # AI-generated insights
 └── ai_analysis_summary.env   # AI summary metrics
 ```
@@ -162,8 +163,7 @@ The v3.0 tool at `scripts/validation/link-checker.py` is designed for extensibil
 
 **Custom Engines**: Add new link checking engines beyond lychee/curl
 **Enhanced AI Analysis**: Extend OpenAI/Anthropic prompts and analysis categories  
-**Additional Outputs**: Create new report formats and destinations
-**Integration Points**: Connect with external monitoring systems
+**Additional Outputs**: Create new report formats and destinations **Integration Points**: Connect with external monitoring systems
 
 ### Local Development
 
@@ -236,10 +236,7 @@ See [`.lychee.toml`](../.lychee.toml) for complete configuration.
 
 ### Common Issues
 
-**No Links Found**: Check `.lychee.toml` exclude patterns and path settings
-**AI Analysis Fails**: Verify OPENAI_API_KEY or ANTHROPIC_API_KEY is set
-**Timeout Errors**: Increase timeout in `.lychee.toml`
-**Lychee Not Found**: Install via `brew install lychee` or `cargo install lychee`
+**No Links Found**: Check `.lychee.toml` exclude patterns and path settings **AI Analysis Fails**: Verify OPENAI_API_KEY or ANTHROPIC_API_KEY is set **Timeout Errors**: Increase timeout in `.lychee.toml` **Lychee Not Found**: Install via `brew install lychee` or `cargo install lychee`
 
 ### Debug Mode
 

@@ -1,10 +1,5 @@
 <!--
-@file scripts/core/README.md
-@description Documentation for core utility scripts
-@author IT-Journey Team <team@it-journey.org>
-@created 2025-07-07
-@lastModified 2025-07-07
-@version 1.0.0
+@file scripts/core/README.md @description Documentation for core utility scripts @author IT-Journey Team <team@it-journey.org> @created 2025-07-07 @lastModified 2025-07-07 @version 1.0.0
 
 @relatedIssues 
   - Script consolidation: Document core utilities
@@ -19,9 +14,7 @@
 @changelog
   - 2025-07-07: Initial creation - ITJ
 
-@usage Reference documentation for core scripts
-@notes Core utilities that provide foundational functionality
--->
+@usage Reference documentation for core scripts @notes Core utilities that provide foundational functionality -->
 
 # Core Utility Scripts
 
@@ -129,7 +122,7 @@ Core scripts are designed to be used by other scripts in the IT-Journey ecosyste
 ./scripts/development/build/build-site.sh
 
 # Deployment scripts can verify environment
-./scripts/deployment/update-settings.sh
+./scripts/deployment/azure-jekyll-deploy.sh
 ```
 
 ## Error Handling

@@ -38,13 +38,11 @@ keywords:
   - terminal documentation
 quest_dependencies:
   required_quests:
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/cellar/
+  - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/rift/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/rift/
+  - /quests/0000/rift/
+  recommended_quests: []
 validation_criteria:
 - Use ls -a to find hidden directories
 - Successfully navigate to .CHAPEL
@@ -53,17 +51,23 @@ validation_criteria:
 - Collect the ancient tome
 prerequisites:
 - Complete the Cellar side-quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Ancient Tome Fragment
 - Man page and hidden file mastery
 excerpt: Reveal hidden dot-directories, consult man pages, and use command help systems to defeat the chapel monster and claim the tome.
 draft: false
-permalink: /quests/0000/side-quests/hidden-chapel/
+permalink: /quests/0000/hidden-chapel/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/hidden-chapel/
 ---
-*The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas, guarded by a monster who fears knowledge.*
+*The wine cellar wall flickers. A hidden door appears — but only `ls -a` can see it. Beyond the false stone lies a chapel with five secret areas — the courtyard, the aviary nested within it, the hall, the library, and the graveyard — guarded by a monster who fears knowledge.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Hidden Chapel" %}
 
 ## 🎯 Quest Objectives
 
@@ -75,7 +79,7 @@ layout: quest
 - [ ] Enter the library and collect the ancient tome
 - [ ] Explore the graveyard — optional but rewarding
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - [Cellar side-quest](/quests/0000/side-quests/cellar/) complete
 - Comfortable with `ls`, `cd`, and basic file reading
@@ -154,14 +158,14 @@ man grep
 # Press q to quit
 ```
 
-> Tip: `man grep | grep "\-n"` pipes the manual through grep to find the `-n` flag quickly.
+> Tip: `man grep | grep -- '-n'` pipes the manual through grep to find the `-n` flag quickly. The `--` tells grep to treat `-n` as a search pattern, not a flag.
 
 The relevant knowledge: `grep -n` prints line numbers. The hall monster demands you specify which line contains the incantation.
 
 ### Step 5 — Navigate to the hall and fight
 
 ```bash
-cd ../hall
+cd ../../hall   # from .CHAPEL/courtyard/aviary back up to .CHAPEL, then into hall
 ls -F
 # inscription  monster*  locked_door
 
@@ -170,7 +174,8 @@ cat inscription
 
 ./monster
 # The monster demands: "Which grep flag shows line numbers?"
-# Your answer: -n
+# Type your answer at the prompt and press Enter:
+# -n
 # The monster falls!
 ```
 
@@ -185,6 +190,8 @@ cat tome
 # The Ancient Tome of Shell Knowledge — tome fragment obtained.
 inventory
 ```
+
+> Note: `inventory` is a bashcrawl game command (it lists items you've collected), not a standard Unix command.
 
 ### Step 7 (Optional) — Explore the graveyard
 
@@ -224,6 +231,8 @@ The mausoleum is another hidden directory. Explore it for bonus lore and a secre
 
 ---
 
+{% include bashcrawl-play-local.html %}
+
 ## 📚 External Resources
 
 Continue your terminal adventure with these resources:
@@ -240,12 +249,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Unlocks:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Sequel quests:** [[Bashcrawl Rift: Pipes, Redirection, and the Final Boss]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

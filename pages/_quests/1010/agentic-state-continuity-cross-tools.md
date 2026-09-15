@@ -1,6 +1,6 @@
 ---
 title: 'Crossing the Tool Planes: State Continuity Across Tools'
-description: Maintain agent state and context continuity when tasks span multiple tools, sessions, and GitHub surfaces — issues, PRs, Actions runs, and Codespaces all hold fragments that the agent must weave together.
+description: 'Keep an agent''s state and context intact when tasks cross GitHub surfaces — issues, PRs, Actions runs, and Codespaces each hold fragments to weave together.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-state-continuity-cross-tools.png
 level: '1010'
@@ -45,16 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-state-persistence-and-drift/
   unlocks_quests:
   - /quests/1010/agentic-success-criteria-and-signals/
-quest_relationships:
-  sequel_quests:
-  - /quests/1010/agentic-success-criteria-and-signals/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
+  recommended_quests: []
 rewards:
   badges:
   - 🌀 Plane Walker
@@ -72,11 +63,6 @@ validation_criteria:
   - State handoff schema defined for issue → branch → PR → Actions pipeline
   - Agent correctly reads state from prior surface when starting on a new surface
   - End-to-end cross-tool scenario tested and documented
-quest_mapping:
-  coordinates: '[3, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: Plane Crossing
 comments: true
 draft: false
 redirect_from:
@@ -326,13 +312,7 @@ python3 scripts/validate_quest.py --quest q10
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1010 - Automation & Testing]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]]
-**Unlocks:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]]
-**Sequel quests:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1010 - Automation & Testing]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Anchoring the Drifting Agent: State Persistence and Drift Prevention]] **Unlocks:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]] **Sequel quests:** [[The Oracle's Rubric: Defining Agent Success Criteria and Signals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

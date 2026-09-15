@@ -1,10 +1,9 @@
 ---
-title: 'The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms'
+title: 'Hidden Gem Quest: Publish AI Chats on GitHub Pages'
 author: IT-Journey Team
-description: Embark on an epic journey to master GitHub Pages, the hidden gem of web publishing, and learn to capture and immortalize AI conversations using Jekyll and VS Code
+description: 'Wield GitHub Pages and Jekyll to forge repositories into live websites, then capture and immortalize AI conversations as published posts with VS Code.'
 excerpt: Transform your GitHub repositories into powerful websites and learn to preserve AI conversations forever
-snippet: Unleash the hidden gem of GitHub Pages to conquer web publishing and AI realms!
-preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.png
+preview: images/previews/the-epic-quest-for-the-hidden-gem-unleashing-githu.webp
 date: '2025-11-15T16:34:42.000Z'
 lastmod: '2025-11-15T03:52:35.000Z'
 level: '0011'
@@ -16,26 +15,10 @@ quest_series: Web Publishing Mastery
 quest_line: Foundation Path
 quest_arc: Digital Creation Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0000/hello-noob/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0000/hello-noob/
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - Content Creation
-  character_classes:
-  - 💻 Software Developer
-  - 🎨 Content Creator
-  - 🤖 AI Enthusiast
-  skill_trees:
-  - Web Publishing
-  - Version Control
-  - Static Site Generation
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -63,11 +46,6 @@ validation_criteria:
   - Explain how GitHub Pages differs from traditional web hosting
   - Describe the role of Jekyll in static site generation
   - Understand the benefits of version-controlled content publishing
-quest_mapping:
-  coordinates: '[3, 2]'
-  region: Foundation
-  realm: Development
-  biome: Web
 permalink: /quests/0011/github-pages-hidden-gem/
 categories:
 - Quests
@@ -95,8 +73,6 @@ keywords:
   - markdown
 fmContentType: quest
 comments: true
-attachments: ''
-sub-title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
 rewards:
   badges:
   - 🏆 GitHub Pages Master
@@ -111,6 +87,18 @@ rewards:
   - Access to advanced Jekyll customization quests
   - Eligibility for web development learning paths
 layout: quest
+sub_title: 'Level 0011 (3) Quest: Web Publishing and AI Capture Mastery'
+draft: false
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 # The Epic Quest for the Hidden Gem: Unleashing GitHub Pages to Capture and Conquer AI Realms
 
@@ -193,15 +181,13 @@ But why this gem for AI conquests? In an age where chats with Grok, ChatGPT, or 
 
 ### 🏗️ Building Your Knowledge Foundation
 
-**What is GitHub Pages?**
-GitHub Pages is a static site hosting service that takes files from your GitHub repository and publishes them as a website. It's free for public repositories and provides:
+**What is GitHub Pages?** GitHub Pages is a static site hosting service that takes files from your GitHub repository and publishes them as a website. It's free for public repositories and provides:
 - Automatic HTTPS encryption
 - Global CDN distribution
 - Custom domain support
 - Integration with Jekyll for enhanced functionality
 
-**Why Jekyll?**
-Jekyll is a static site generator that converts Markdown files into HTML websites. It provides:
+**Why Jekyll?** Jekyll is a static site generator that converts Markdown files into HTML websites. It provides:
 - Blog functionality with posts and pages
 - Theme support for professional appearance
 - Plugin system for extended features
@@ -216,7 +202,7 @@ Jekyll is a static site generator that converts Markdown files into HTML website
 
 Before delving into the gem's depths, sharpen your blade: Install VS Code, the ultimate forge for coders and chroniclers alike. Download it from the official scrolls (code.visualstudio.com) and summon these essential extensions to amplify your powers:
 
-1. **GitHub Pull Requests and Issues** – Your portal to GitHub's heart, for seamless pushing and pulling.
+1. **GitHub Pull Requests and Issues** – Your portal to GitHub's heart, for pushing and pulling without leaving the editor.
 2. **Markdown All in One** – Enhances Markdown editing, previews, and exports—perfect for AI chat logs.
 3. **GitLens** – Reveals commit histories like ancient runes, tracking every change in your quest log.
 4. **Live Server** – Launches local previews of your site, simulating the web realm before deployment.
@@ -232,7 +218,7 @@ With VS Code ready, create a new GitHub account if you lack one (github.com/sign
 ### 🏗️ Building Your Knowledge Foundation
 
 **VS Code Extensions for This Quest:**
-- **GitHub Pull Requests and Issues**: Enables seamless GitHub integration
+- **GitHub Pull Requests and Issues**: Review PRs and issues directly in VS Code
 - **Markdown All in One**: Provides enhanced Markdown editing capabilities
 - **GitLens**: Offers advanced Git history and blame features
 - **Live Server**: Allows local preview of HTML/Markdown files
@@ -368,7 +354,7 @@ Test the waters: Update a chat log, commit/push—watch it refresh live. Collabo
 
 **Common Jekyll Enhancements:**
 - **Themes**: Change theme in _config.yml for different appearances
-- **Plugins**: Add jekyll-feed for RSS, jekyll-sitemap for SEO
+- **Plugins**: Add Jekyll-feed for RSS, Jekyll-sitemap for SEO
 - **Custom Pages**: Create about.md, contact.md for additional content
 - **Collections**: Organize content beyond posts (e.g., projects, tutorials)
 
@@ -408,7 +394,7 @@ Test the waters: Update a chat log, commit/push—watch it refresh live. Collabo
 - [ ] Plugins are working (verify RSS feed, sitemap, etc.)
 
 ### 🏆 Master Challenge: Multi-Post AI Chronicles (🕐 60 minutes)
-**Objective**: Create a comprehensive collection of AI conversations
+**Objective**: Create a multi-post collection of AI conversations
 
 **Requirements**:
 - [ ] Capture and publish at least 3 different AI conversations
@@ -504,9 +490,7 @@ This quest advances you from basic GitHub usage to web publishing proficiency, o
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0011 - Development Tools & AI Integration]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0011 - Development Tools & AI Integration]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -1,61 +1,50 @@
-- title: Quick-Start
-  url: /quickstart/
-  icon: bi-rocket-takeoff
+# Top masthead menu — read by the theme's _includes/navigation/navbar.html
+# (site.data.navigation.main). This is the single source of the header nav.
+# Focus: main quests, side quests, epic quests; notes/cheatsheets for reference.
+- title: Quests
+  url: /quests/home/
+  icon: bi-controller
   children:
-    - title: Machine Setup
-      url: /quickstart/machine-setup
-    - title: GitHub Setup
-      url: /quickstart/github
-    - title: Jekyll Setup
-      url: /quickstart/jekyll
-    - title: Charm Tools
-      url: /quickstart/charm-setup/
-- title: News
-  url: /news/
+    - title: Quest Home
+      url: /quests/home/
+    - title: Start Here (n00b)
+      url: /quests/0000/hello-noob/
+    - title: All Quests
+      url: /quests/
+    - title: Perfection Dashboard
+      url: /quest-reports/
+    - title: Walkthrough Reports
+      url: /quest-reports/#walkthrough-reports
+- title: Epic
+  url: /quests/codex/
+  icon: bi-trophy
+  children:
+    - title: All Epic Quests
+      url: /quests/codex/
+    - title: The Self-Operating Website
+      url: /quests/codex/self-operating-website/
+    - title: The Agentic Codex (GH-600)
+      url: /quests/codex/agentic-codex/
+    - title: Zer0-to-Her0 CMStyle
+      url: /quests/codex/zer0-to-her0-cmstyle/
+- title: Blog
+  url: https://lifehacker.dev
   icon: bi-newspaper
-  children:
-    - title: All News
-      url: /news/
-    - title: AI & ML
-      url: /news/ai-machine-learning/
-    - title: DevOps
-      url: /news/devops/
-    - title: Web Development
-      url: /news/web-development/
-    - title: Technology
-      url: /news/technology/
-- title: Library
-  url: /docs/
-  icon: bi-journal-bookmark
-  children:
-    - title: Jekyll
-      url: /docs/jekyll/
-    - title: Terminal
-      url: /docs/terminal/
-    - title: Obsidian Graph
-      url: /docs/obsidian/graph/
-- title: Notebook
+- title: Notes
   url: /notes/
   icon: bi-journal-code
   children:
-    - title: Notes Index
-      url: /notes/
-    - title: Jupyter
-      url: /notes/jupyter/
     - title: Cheatsheets
-      url: /notes/cheetsheets/
+      url: /notes/cheatsheets/
+    - title: GH-600 Reference
+      url: /notes/gh-600/
 - title: About
   url: /about/
   icon: bi-info-circle
   children:
     - title: Features
       url: /about/features/
-    - title: Config
-      url: /about/config/
     - title: Contributing
       url: /about/contributing/
-    - title: Sitemap
-      url: /about/sitemap/
     - title: Stats
       url: /stats/
-

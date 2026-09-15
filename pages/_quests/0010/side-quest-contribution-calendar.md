@@ -8,9 +8,8 @@ keywords:
   secondary:
   - CSS grid
   - data visualization
-description: Build a GitHub-style contribution heatmap for your character profile using the 52-week calendar data
+description: 'Build a GitHub-style contribution heatmap for your character profile, rendering 52 weeks of activity data with CSS Grid and Jekyll Liquid templates.'
 excerpt: The Timekeeper reveals your patterns — a heatmap of dedication etched in light.
-snippet: Time is the truest measure of an adventurer's resolve
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0010'
@@ -26,7 +25,7 @@ quest_arc: 'Act II: Mastering the Craft'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0010/side-quests/contribution-calendar/
+permalink: /quests/0010/contribution-calendar/
 categories:
 - Quests
 - Community
@@ -52,18 +51,8 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0010/side-quests/stats-dashboard/
+  - /quests/0010/stats-dashboard/
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Frontend Developer
-  - Community Contributor
-  character_classes:
-  - 🧙 Wizard
-  - 🏹 Ranger
-  skill_trees:
-  - Frontend Development
-  - CSS Layout
 rewards:
   badges:
   - 📆 Timekeeper — Contribution calendar displayed on character sheet
@@ -75,6 +64,8 @@ validation_criteria:
   - Color intensity reflects commit count
   - Calendar is responsive
 layout: quest
+redirect_from:
+- /quests/0010/side-quests/contribution-calendar/
 ---
 # 📆 Contribution Calendar: Mapping Your Journey Through Time
 
@@ -112,11 +103,14 @@ This quest turns that data into a visual heatmap — similar to GitHub's contrib
 
 Create `_includes/contributor/contribution_calendar.html`:
 
+> The opening and closing Liquid `raw` / `endraw` guard lines inside the code block below are display-only — they stop Jekyll from executing the example so this page can show the Liquid literally. Copy only the markup *between* those two guard lines into the file.
+
 ```html
 {% raw %}
 {% assign calendar = include.calendar %}
 {% if calendar and calendar.size > 0 %}
-<div class="contributor-calendar">
+<div class="contributor-calendar" role="img"
+     aria-label="Contribution calendar heatmap: weekly commit activity over the past year">
   <h4>📆 Contribution History</h4>
   <div class="calendar-grid">
     {% for week in calendar %}
@@ -180,10 +174,10 @@ Add to `assets/css/contributor-profile.css`:
 .calendar-max    { background: var(--cal-max, #216e39); }
 
 /* Class-themed calendar colors */
-.contributor-card--wizard ~ .contributor-calendar .calendar-low    { background: #c4b5fd; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-medium { background: #8b5cf6; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-high   { background: #6d28d9; }
-.contributor-card--wizard ~ .contributor-calendar .calendar-max    { background: #4c1d95; }
+.contributor-card--wizard .contributor-calendar .calendar-low    { background: #c4b5fd; }
+.contributor-card--wizard .contributor-calendar .calendar-medium { background: #8b5cf6; }
+.contributor-card--wizard .contributor-calendar .calendar-high   { background: #6d28d9; }
+.contributor-card--wizard .contributor-calendar .calendar-max    { background: #4c1d95; }
 
 .calendar-legend {
   display: flex;
@@ -220,6 +214,8 @@ Edit `_includes/contributor/character_sheet.html` and add after the stats panel 
 
 ### Step 4: Verify
 
+> **Prerequisite:** This step needs the working Jekyll project and `Gemfile` you set up in the [Forge Your Character](/quests/0001/forge-your-character/) quest. Run this from that project's root — without it, `bundle exec jekyll serve` will fail with a missing bundler/Gemfile error.
+
 ```bash
 bundle exec jekyll serve
 ```
@@ -246,11 +242,7 @@ Once your contribution calendar renders on your profile, you've earned the **Tim
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
-**Recommended:** [[Stats Dashboard: Enhancing Your Data Visualization]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]] **Recommended:** [[Stats Dashboard: Enhancing Your Data Visualization]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

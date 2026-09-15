@@ -1,7 +1,7 @@
 ---
 title: README - it-journey
-description: IT-Journey - Your comprehensive learning platform with QuickStart tutorials, gamified quests, documentation library, and personal notebooks.
-excerpt: IT-Journey combines quick tutorials, epic quests, comprehensive documentation, and personal notebooks in an interconnected learning ecosystem
+description: IT-Journey is a gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
+excerpt: A gamified, open-source platform for learning IT and software development through quests — progressive, hands-on adventures from zer0 to her0.
 version: 0.0.1
 date-released: 2022-03-01
 repo: https://github.com/bamr87/it-journey
@@ -10,10 +10,10 @@ tags:
     - jekyll
     - gamified-learning
     - learning-path
-    - tutorials
+    - quests
     - documentation
 license: MIT
-lastmod: 2026-05-24T19:04:08.575Z
+lastmod: 2026-06-25T00:00:00.000Z
 created: 2022-03-01T12:00:00.000Z
 draft: false
 slug: readme
@@ -21,10 +21,9 @@ keywords:
     - readme
     - it-journey
     - learning-platform
-    - tutorials
     - quests
+    - gamified-learning
     - documentation
-    - jupyter-notebooks
 permalink: /readme/
 layout: home
 date: 2020-07-30T10:19:45.000Z
@@ -33,9 +32,11 @@ date: 2020-07-30T10:19:45.000Z
 
 # IT-Journey
 
-Welcome to **IT-Journey**, an open-source learning platform for building practical IT skills through guided quests, reference documentation, automation scripts, notebooks, and reflective development posts. The repository is both a learning site and a working example of a Jekyll-based documentation platform, with GitHub Actions, Docker, validation tooling, and AI-assisted workflows woven into the project.
+Welcome to **IT-Journey**, a gamified, open-source platform for learning IT and software development through **quests** — progressive, hands-on adventures that take you from **zer0 to her0**. The site is built around a single gamified learning path, supported by reference docs, quick-start guides, and curated notes. The repository is both a learning site and a working example of a Jekyll-based platform, with GitHub Actions, Docker, validation tooling, and AI-assisted workflows woven into the project.
 
-The project is organized around hands-on learning: start with beginner-friendly quests, use the docs as a reference library, inspect the scripts that keep the site healthy, and contribute improvements as you grow.
+The project is organized around hands-on learning: start with the beginner-friendly Level 0000 quests, follow the binary-leveled path upward, use the docs and notes as a reference library, and contribute improvements as you grow.
+
+> Looking for the blog? Articles, reflections, and devops news now live at **[lifehacker.dev](https://lifehacker.dev)**.
 
 ---
 
@@ -82,12 +83,11 @@ This provides a beautiful TUI (Text User Interface) to browse quests, docs, and 
 
 ### For Beginners
 
-**Q: Where should I start if I have zero coding experience?**
-A: Start with our Zero to Hero guide, which was designed specifically for absolute beginners:
+**Q: Where should I start if I have zero coding experience?** A: Start with our Zero to Hero guide, which was designed specifically for absolute beginners:
 
 1. **Begin Your Journey**: Follow [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md)
 2. **Basic Quests**: Complete foundational [learning quests](pages/_quests/)
-3. **Hands-on Practice**: Work through [practical tutorials](pages/_posts/)
+3. **Hands-on Practice**: Work through the Level 0000–0011 [quest path](pages/_quests/)
 
 > **Q: How long until I can build real projects?**
 > A: Based on feedback from over 200 IT-Journey learners since March 2022, most beginners complete their first meaningful project within 6-8 weeks of consistent practice.
@@ -95,7 +95,7 @@ A: Start with our Zero to Hero guide, which was designed specifically for absolu
 ### For Intermediate Learners
 
 1. **Advanced Quests**: Tackle complex [automation projects](pages/_quests/)
-2. **Real Projects**: Build [practical applications](pages/_notebooks/)
+2. **Real Projects**: Build portfolio-ready applications through the higher-level [quests](pages/_quests/)
 3. **DevOps Skills**: Learn [automation and monitoring](scripts/)
 
 ### For Advanced Users
@@ -114,19 +114,18 @@ A: Start with our Zero to Hero guide, which was designed specifically for absolu
 
 | Content Type | Location | Best For | Format | Interactivity |
 |--------------|----------|----------|--------|---------------|
-| **Learning Quests** | `pages/_quests/` | Hands-on skills | Markdown + supporting assets | ⭐⭐⭐⭐⭐ |
-| **Educational Posts** | `pages/_posts/` | Tutorials and reflections | Markdown | ⭐⭐⭐ |
-| **Notebooks** | `pages/_notebooks/` | Data exploration and experiments | Jupyter + Markdown | ⭐⭐⭐⭐ |
+| **Learning Quests** | `pages/_quests/` | Hands-on, gamified skill-building | Markdown + supporting assets | ⭐⭐⭐⭐⭐ |
+| **Quickstart Guides** | `pages/_quickstart/` | Fast-track setup and onboarding | Markdown | ⭐⭐⭐ |
+| **Curated Notes** | `pages/_notes/` | Cheatsheets and quick reference | Markdown | ⭐⭐ |
+| **Learner Docs** | `pages/_docs/` | Tool and terminal references | Markdown | ⭐⭐ |
 | **Automation Scripts** | `scripts/` | Production-style tooling | Bash, Python, Ruby | ⭐⭐⭐⭐⭐ |
 | **Developer Docs** | `docs/` | Contributor reference | Markdown | ⭐⭐ |
-| **Learner Docs** | `pages/_docs/` | Tool and terminal references | Markdown | ⭐⭐ |
 
 ### Learning Quests (`pages/_quests/`)
 
 Gamified learning experiences that transform technical tutorials into engaging adventures. According to a 2024 study by the American Educational Research Association, gamified learning increases knowledge retention by 40% compared to traditional instruction.
 
-**Q: What makes quests different from regular tutorials?**
-A: Quests combine narrative elements with practical exercises:
+**Q: What makes quests different from regular tutorials?** A: Quests combine narrative elements with practical exercises:
 
 - **Binary Level System**: Progressive skill development from Level 0000 (beginner) to Level 1111 (expert)
 - **Fantasy Themes**: RPG-style narratives make learning memorable
@@ -136,22 +135,21 @@ A: Quests combine narrative elements with practical exercises:
 > **Q: Why use a "binary" level system?**
 > A: The binary system (0000, 0001, 0010, etc.) teaches learners to think in computational terms from day one. It's a subtle introduction to how computers represent information, reinforcing core CS concepts through everyday use.
 
-### Educational Posts (`pages/_posts/`)
+### Quickstart Guides (`pages/_quickstart/`)
 
-In-depth articles, tutorials, chronicles, and technical explorations:
+Fast-track guides that get you set up and oriented before diving into quests:
 
-- **Step-by-step Guides**: Detailed implementation instructions
-- **Case Studies**: Real-world problem-solving examples
-- **Technology Reviews**: Analysis of tools and platforms
-- **Learning Reflections**: Insights from the development journey
+- **Environment Setup**: Get your machine ready for the learning path
+- **Onboarding**: Understand how the quest system and binary levels work
+- **Tool Primers**: Short, focused introductions to core tools
 
-### Interactive Notebooks (`pages/_notebooks/`)
+### Curated Notes (`pages/_notes/`)
 
-Jupyter-compatible notebooks and notebook writeups for hands-on experimentation:
+A slim, quest-relevant reference core kept close to the learning path:
 
-- **Code Examples**: Runnable demonstrations
-- **Data Analysis**: Practical data science and exploration examples
-- **Automation Scripts**: System administration examples
+- **Cheatsheets**: Quick reference for the shell, command line, and common tools
+- **Curriculum & Onboarding**: Maps and reference material for the journey
+- **Reference Set**: Supporting notes that back specific quests
 
 ### Automation Scripts (`scripts/`)
 
@@ -216,8 +214,7 @@ Research by Carnegie Mellon University's Human-Computer Interaction Institute sh
 | AI Integration | OpenAI or Anthropic, optional | Environment secrets |
 | Container | Docker Compose | `Dockerfile`, `docker-compose.yml` |
 
-**Q: Why Jekyll instead of newer alternatives like Astro or Next.js?**
-A: Jekyll offers native GitHub Pages integration with zero build configuration. For educational content that prioritizes accessibility over cutting-edge features, Jekyll's simplicity reduces maintenance overhead by approximately 60% compared to JavaScript-based alternatives.
+**Q: Why Jekyll instead of newer alternatives like Astro or Next.js?** A: Jekyll offers native GitHub Pages integration with zero build configuration. For educational content that prioritizes accessibility over cutting-edge features, Jekyll's simplicity reduces maintenance overhead by approximately 60% compared to JavaScript-based alternatives.
 
 ### Local Development Commands
 
@@ -266,8 +263,7 @@ The current workflow combines [Lychee](https://github.com/lycheeverse/lychee), a
 | AI Assistance | OpenAI or Anthropic, optional | Error grouping and recommendations | Disabled by default in CI |
 | Reporting | GitHub Actions | PR checks, scheduled scans, artifacts | Weekly full scan + manual dispatch |
 
-**Q: Why does link health matter?**
-A: According to Ahrefs' 2024 SEO study, websites with broken links experience 23% lower search rankings. For educational platforms, dead links directly impact learning outcomes.
+**Q: Why does link health matter?** A: According to Ahrefs' 2024 SEO study, websites with broken links experience 23% lower search rankings. For educational platforms, dead links directly impact learning outcomes.
 
 > **Q: But isn't link checking simple?**
 > A: Basic link checking is simple, but useful maintenance needs context. Link Health Guardian v3.0 compares failures against a baseline, summarizes what changed, and can generate AI-assisted repair guidance when keys are available.
@@ -314,38 +310,32 @@ After engaging with the IT-Journey platform, learners will have:
 
 ### Getting Started
 
-**Q: What are the system requirements to use IT-Journey?**
-A: You need a computer running macOS, Windows, or Linux. For local development, install:
+**Q: What are the system requirements to use IT-Journey?** A: You need a computer running macOS, Windows, or Linux. For local development, install:
 - 4GB RAM minimum (8GB recommended)
 - 10GB free disk space
 - Git 2.30+ installed
 - Ruby and Bundler for direct Jekyll work, or Docker for containerized work
 - Internet connection for downloading dependencies
 
-**Q: How much time should I dedicate to learning?**
-A: A steady rhythm matters more than marathon sessions:
+**Q: How much time should I dedicate to learning?** A: A steady rhythm matters more than marathon sessions:
 - **Beginners**: 3-5 focused sessions per week
 - **Intermediate**: 2-4 sessions per week for project work and review
 - **Advanced**: 1-3 sessions per week for contribution, mentoring, or deeper builds
 
-**Q: Is this suitable for complete beginners with no coding experience?**
-A: Yes. Start with [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md), then move through the Level 0000 quests at your own pace.
+**Q: Is this suitable for complete beginners with no coding experience?** A: Yes. Start with [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md), then move through the Level 0000 quests at your own pace.
 
 ### Technical Questions
 
-**Q: Which programming languages will I learn?**
-A: IT-Journey covers:
+**Q: Which programming languages will I learn?** A: IT-Journey covers:
 - **Bash/Shell**: System automation and scripting
 - **Python 3.10+**: General purpose programming, automation, data analysis
 - **JavaScript ES2023**: Web development and interactivity
 - **Ruby 3.2+**: Jekyll customization and plugins
 - **YAML**: Configuration and data serialization
 
-**Q: Can I use IT-Journey offline?**
-A: Yes, after initial setup. Clone the repository, install dependencies, and run the Jekyll site locally. External links, dependency downloads, GitHub Actions, and AI analysis require connectivity.
+**Q: Can I use IT-Journey offline?** A: Yes, after initial setup. Clone the repository, install dependencies, and run the Jekyll site locally. External links, dependency downloads, GitHub Actions, and AI analysis require connectivity.
 
-**Q: How do I troubleshoot build errors?**
-A: Common solutions:
+**Q: How do I troubleshoot build errors?** A: Common solutions:
 1. Run `bundle update` to update dependencies
 2. Check Ruby version: `ruby --version` (need 3.2.0+)
 3. Clear cache: `bundle exec jekyll clean`
@@ -353,18 +343,15 @@ A: Common solutions:
 
 ### Community & Contributing
 
-**Q: How can I contribute if I'm still learning?**
-A: Start with these beginner-friendly contributions:
+**Q: How can I contribute if I'm still learning?** A: Start with these beginner-friendly contributions:
 - Fix typos or improve documentation clarity
 - Add comments to code examples
 - Report issues you encounter
 - Answer questions in GitHub Discussions
 
-**Q: Are there any live sessions or meetups?**
-A: Currently, IT-Journey is primarily asynchronous. However, we host quarterly virtual office hours announced via GitHub Discussions. Join the community to stay informed!
+**Q: Are there any live sessions or meetups?** A: Currently, IT-Journey is primarily asynchronous. However, we host quarterly virtual office hours announced via GitHub Discussions. Join the community to stay informed!
 
-**Q: How do I get my contributions recognized?**
-A: All contributors are acknowledged in our [CHANGELOG.md](CHANGELOG.md). Significant contributions may be featured in our monthly newsletter and social media.
+**Q: How do I get my contributions recognized?** A: All contributors are acknowledged in our [CHANGELOG.md](CHANGELOG.md). Significant contributions may be featured in our monthly newsletter and social media.
 
 ---
 
@@ -432,8 +419,7 @@ We welcome contributions from learners and experts alike:
 
 ### Getting Help
 
-**Q: Where should I ask questions?**
-A: Use these channels based on your needs:
+**Q: Where should I ask questions?** A: Use these channels based on your needs:
 
 | Question Type | Best Channel | Response Time |
 |--------------|--------------|---------------|
@@ -490,8 +476,7 @@ The IT-Journey is built on fundamental principles that guide all development and
 - Automated monitoring and proactive issue detection
 - Clear recovery procedures and rollback capabilities
 
-**Q: Why "design for failure" instead of "prevent failures"?**
-A: Because systems will eventually fail. As documented by Google's Site Reliability Engineering team, accepting failure as inevitable leads to more resilient systems than attempting to prevent all failures.
+**Q: Why "design for failure" instead of "prevent failures"?** A: Because systems will eventually fail. As documented by Google's Site Reliability Engineering team, accepting failure as inevitable leads to more resilient systems than attempting to prevent all failures.
 
 ### Don't Repeat Yourself (DRY)
 - Reusable components and automated generation
@@ -519,17 +504,30 @@ A: Because systems will eventually fail. As documented by Google's Site Reliabil
 
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| **Quest Markdown Files** | 194 | April 25, 2026 |
-| **Post Markdown Files** | 88 | April 25, 2026 |
-| **Jupyter Notebooks** | 6 notebooks + 5 notebook writeups | April 25, 2026 |
-| **Developer Docs** | 24 markdown files | April 25, 2026 |
-| **Learner Docs** | 12 markdown files | April 25, 2026 |
-| **Automation Scripts** | 73 files | April 25, 2026 |
-| **GitHub Workflows** | 16 workflows | April 25, 2026 |
+| **Quest Markdown Files** | 204 | June 25, 2026 |
+| **Quest Levels** | 16 binary levels (0000–1111) | June 25, 2026 |
+| **Quickstart Guides** | 15 markdown files | June 25, 2026 |
+| **Curated Notes** | 16 markdown files | June 25, 2026 |
+| **Learner Docs** | 27 markdown files | June 25, 2026 |
+| **Developer Docs** | 27 markdown files | June 25, 2026 |
+| **Automation Scripts** | 72 files | June 25, 2026 |
+| **GitHub Workflows** | 16 workflows | June 25, 2026 |
 | **Active Since** | March 1, 2022 | - |
+
+---
+
+## 🔗 Related Projects
+
+IT-Journey is the quest-focused core of a small family of open-source projects:
+
+| Project | Where | What |
+|---------|-------|------|
+| **Blog** | [lifehacker.dev](https://lifehacker.dev) | Articles, tutorials, reflections, and devops news that used to live here |
+| **Wargames** | [github.com/bamr87/wargames](https://github.com/bamr87/wargames) | The OverTheWire-style security wargame walkthroughs, extracted into their own repo |
+| **Zer0-Mistakes Theme** | [github.com/bamr87/zer0-mistakes](https://github.com/bamr87/zer0-mistakes) | The Jekyll remote theme that powers this site |
 
 ---
 
 *Ready to begin your journey? Start with [Begin your IT Journey](pages/_quests/0000/begin-your-it-journey.md) or explore the full [learning quest index](pages/_quests/) to dive into hands-on IT education!*
 
-**Last Updated:** April 25, 2026 | **Version:** 0.0.1 | **License:** MIT | **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)
+**Last Updated:** June 25, 2026 | **Version:** 0.0.1 | **License:** MIT | **Repository:** [github.com/bamr87/it-journey](https://github.com/bamr87/it-journey)

@@ -1,13 +1,15 @@
 ---
-title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest'
+title: 'The Diagrammatic Enchantment: Jekyll-Mermaid Integration'
 author: Quest Master IT-Journey Team
-description: Master the ancient art of diagrammatic magic by integrating Mermaid.js into any Jekyll static site, creating beautiful, interactive diagrams that bring your documentation to life.
+description: 'Master diagrammatic magic by integrating Mermaid.js into any Jekyll site, with conditional loading, dark mode, and responsive interactive diagrams.'
 excerpt: Transform any Jekyll site into a powerful diagramming platform with Mermaid.js integration, conditional loading, and comprehensive documentation
-snippet: Master the art of diagrammatic magic and bring your Jekyll documentation to life
-preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.png
+preview: images/previews/the-diagrammatic-enchantment-jekyll-mermaid-integr.webp
 date: '2025-10-04T15:25:33.000Z'
-lastmod: '2025-01-27T15:00:00.000Z'
+lastmod: '2026-06-30T00:00:00.000Z'
 level: '0010'
+redirect_from:
+- /docs/jekyll/jekyll-diagram-with-mermaid/
+- /docs/jekyll/mermaid-migration/
 difficulty: 🟡 Medium
 estimated_time: 2-3 hours
 primary_technology: Jekyll
@@ -63,17 +65,8 @@ rewards:
   skill: Jekyll Integration Mastery
   tool: Mermaid Diagram System
   capability: Interactive Documentation Creation
-related_quests:
-  prerequisites:
-  - hello-noob
-  - bash-scripting
-  followups:
-  - github-pages-deployment
-  - advanced-jekyll-theming
-  parallel:
-  - action-triggers
-  - change-logs
 layout: quest
+mermaid: true
 ---
 # 🧙‍♂️ The Diagrammatic Enchantment: Jekyll-Mermaid Integration Quest
 
@@ -91,7 +84,7 @@ By the end of this quest, you will be able to:
 
 **Level**: Journeyman (Lvl 0010) | **Difficulty**: 🟡 Medium | **Time**: 2-3 hours
 
-*In the mystical realm of static site generation, there exists a powerful art known as diagrammatic magic. The ability to weave complex visualizations directly into your documentation, creating living diagrams that explain, illustrate, and enchant your readers. This quest will teach you to master the ancient integration of Mermaid.js with Jekyll, transforming any static site into a dynamic diagramming platform.*
+*In the mystical realm of static site generation, there exists an art known as diagrammatic magic. The ability to weave complex visualizations directly into your documentation, creating living diagrams that explain, illustrate, and enchant your readers. This quest will teach you to master the ancient integration of Mermaid.js with Jekyll, transforming any static site into a dynamic diagramming platform.*
 
 ### What You'll Master
 
@@ -100,7 +93,7 @@ This epic quest will guide you through:
 - **All Major Diagram Types** - Flowcharts, sequence diagrams, class diagrams, state diagrams, ER diagrams, Gantt charts, pie charts, git graphs, journey diagrams, and mindmaps
 - **GitHub Pages Compatibility** - Works seamlessly with both local development and GitHub Pages deployment
 - **Performance Optimization** - Conditional loading, responsive design, and dark mode support
-- **Comprehensive Documentation** - Complete user guide with live examples and troubleshooting
+- **User Guide & Examples** - User guide with live examples and a troubleshooting section
 
 ### Real-World Applications
 
@@ -114,7 +107,7 @@ This epic quest will guide you through:
 
 ## 🌟 The Legend Behind This Quest
 
-*Long ago, in the early days of web development, creating diagrams required complex tools, expensive software, and manual image generation. Then came Mermaid.js - a powerful JavaScript library that could render diagrams from simple text descriptions. But integrating it with Jekyll, the beloved static site generator, required arcane knowledge and careful incantations.*
+*Long ago, in the early days of web development, creating diagrams required complex tools, expensive software, and manual image generation. Then came Mermaid.js - a JavaScript library that renders diagrams from plain-text descriptions. But integrating it with Jekyll, the beloved static site generator, required arcane knowledge and careful incantations.*
 
 *This quest is based on a real implementation that successfully integrated Mermaid v10 into the Zer0-Mistakes Jekyll theme, achieving 100% GitHub Pages compatibility while maintaining optimal performance. You'll learn from battle-tested code that powers production documentation sites.*
 
@@ -152,7 +145,7 @@ By completing this quest, you will:
 3. **Ensure Compatibility**: Achieve 100% GitHub Pages compatibility
 4. **Create Responsive Design**: Build diagrams that work across all devices
 5. **Implement Dark Mode**: Support both light and dark themes
-6. **Build Documentation**: Create comprehensive user guides and examples
+6. **Build Documentation**: Create user guides, live examples, and a troubleshooting section
 7. **Test Thoroughly**: Implement automated testing and validation
 
 ---
@@ -174,7 +167,7 @@ By completing this quest, you will:
 ### Phase 3: Advanced Features (30 minutes)
 - Add FontAwesome icon support
 - Implement dark mode compatibility
-- Create comprehensive documentation
+- Create the user guide documentation
 - Add troubleshooting guides
 
 ### Phase 4: Testing & Optimization (30 minutes)
@@ -345,15 +338,15 @@ Add the following code to your head section:
 ```
 
 **Important**: Add the following Liquid code to your head.html file:
-- `{% if page.mermaid %}` - Check if page has mermaid enabled
-- `{% include components/mermaid.html %}` - Include the Mermaid component
-- `{% endif %}` - Close the conditional block
+- `{% raw %}{% if page.mermaid %}{% endraw %}` - Check if page has mermaid enabled
+- `{% raw %}{% include components/mermaid.html %}{% endraw %}` - Include the Mermaid component
+- `{% raw %}{% endif %}{% endraw %}` - Close the conditional block
 
 **Checkpoint**: Your Mermaid component is ready for conditional loading!
 
 ### Step 3: Create Your First Diagram Page
 
-**Objective**: Test the integration with a comprehensive example page.
+**Objective**: Test the integration with an example page covering every diagram type.
 
 #### Create a Test Page
 
@@ -478,7 +471,7 @@ Visit `http://localhost:4000/mermaid-test/` to see your diagrams in action!
 
 **Checkpoint**: Your Mermaid integration is working with all diagram types!
 
-### Step 4: Create Comprehensive Documentation
+### Step 4: Create the User Guide and Examples
 
 **Objective**: Build documentation that helps users understand and use the Mermaid integration.
 
@@ -856,6 +849,68 @@ Create a comprehensive test page with all diagram types and verify:
 
 ---
 
+## ✨ Bonus Incantation: Zero-Config Auto-Detection
+
+*You've forged the integration by hand — now learn the shortcut the masters use.* The
+[zer0-mistakes theme](https://bamr87.github.io/zer0-mistakes/) (v0.5.0+) ships an
+**auto-detection** spell so you no longer need the `mermaid: true` flag at all. Drop a
+standard fenced ` ```mermaid ` block into any page and the theme renders it — no front
+matter, no manual configuration.
+
+````markdown
+```mermaid
+graph TD;
+    A[Start] --> B{Is it working?};
+    B -->|Yes| C[Great!];
+    B -->|No| D[Check console];
+```
+````
+
+### 🔮 How the Auto-Detection Works
+
+The theme scans rendered HTML **client-side** (after Jekyll/Kramdown builds the page), so
+it stays fully GitHub Pages compatible — no server-side plugin required. It triggers on any of:
+
+- ` ```mermaid ` fenced code blocks in markdown
+- `<div class="mermaid">` HTML elements
+- `mermaid: true` front matter (kept for backwards compatibility)
+
+When a diagram is found, Mermaid.js (~200KB) loads on-demand from the CDN; pages without
+diagrams pay **zero** cost. The wiring lives in `_includes/components/mermaid-auto.html`
+and `_includes/core/head.html`.
+
+### 🧹 Migrating from the Manual Flag
+
+Already have pages using the manual `mermaid: true` approach you built above? Migration is
+**optional and backwards-compatible** — old pages keep working. To clean them up, find the
+flagged files and drop the now-redundant flag:
+
+```bash
+# Find every page still carrying the manual flag
+grep -r "mermaid: true" pages/
+```
+
+````diff
+---
+title: My Post
+- mermaid: true
+---
+````
+
+Benefits of switching: impossible to forget the flag, fewer front matter fields to maintain,
+and the library loads only where it's actually needed.
+
+> **🐛 Rendering nothing?** Validate your syntax at [mermaid.live](https://mermaid.live/),
+> confirm the fence reads exactly ` ```mermaid ` (not `mermade`/`mermaud`), check the browser
+> console for a "Mermaid diagrams detected" message, and verify the theme is v0.5.0+.
+
+### 🔙 Rollback Plan
+
+If you ever need the old behavior, pin the theme to `zer0-mistakes` v0.4.0 and re-add
+`mermaid: true` to every page with diagrams.
+
+---
+
 ## 🎉 Quest Complete: Diagrammatic Mastery
 
 ### What You've Accomplished
@@ -1043,7 +1098,7 @@ May your diagrams be clear, your documentation be comprehensive, and your Jekyll
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
 **Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
 **Overworld:** [[🏰 Overworld - Master Quest Map]]

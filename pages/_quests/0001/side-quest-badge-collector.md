@@ -8,9 +8,8 @@ keywords:
   secondary:
   - gamification
   - contributor profile
-description: Learn how badges are earned and pin your proudest achievements to your character profile
+description: 'Discover how achievement badges are auto-earned from your contributions, then pin your proudest three to the Featured section of your profile.'
 excerpt: The Trophy Hall awaits — curate your collection of hard-won badges.
-snippet: Every achievement tells a story. Pin the ones that matter most.
 date: '2026-03-20T00:00:00.000Z'
 lastmod: '2026-03-21T15:12:32.000Z'
 level: '0001'
@@ -26,7 +25,7 @@ quest_arc: 'Act I: Arrival at the Guild'
 fmContentType: quest
 draft: false
 comments: true
-permalink: /quests/0001/side-quests/badge-collector/
+permalink: /quests/0001/badge-collector/
 categories:
 - Quests
 - Community
@@ -50,16 +49,8 @@ quest_dependencies:
   required_quests:
   - /quests/0001/forge-your-character/
   recommended_quests:
-  - /quests/0001/side-quests/avatar-forge/
+  - /quests/0001/avatar-forge/
   unlocks_quests: []
-learning_paths:
-  primary_paths:
-  - Community Contributor
-  character_classes:
-  - ⚔️ Warrior
-  - 🛡️ Paladin
-  skill_trees:
-  - Community & Collaboration
 rewards:
   badges:
   - 🏅 Badge Collector — Curated a pinned badge showcase
@@ -70,6 +61,8 @@ validation_criteria:
   - Pinned badges display in the Featured section
   - Understand how achievement thresholds work
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/badge-collector/
 ---
 # 🏅 Badge Collector: Showcasing Your Achievements
 
@@ -128,11 +121,23 @@ Badges include an `earned_on` date that's preserved across regeneration — your
 
 ### Step 1: Check Your Current Badges
 
-Run the stats generator (or check your data file after it's been auto-updated):
+`_data/contributors/YOUR_USERNAME.yml` is created by the **[Forge Your Character](/quests/0001/forge-your-character/)** prerequisite quest and kept up to date by the stats generator — you don't create it here; run the generator (or check your data file after it's been auto-updated):
 
 ```bash
 make contributor-stats USERNAME=YOUR_USERNAME
 cat _data/contributors/YOUR_USERNAME.yml
+```
+
+(`YOUR_USERNAME` is your GitHub handle, e.g. `octocat`.)
+
+Your file should already contain an `achievements` array like this — that's your ground truth for what you've earned so far:
+
+```yaml
+achievements:
+  - id: first_blood
+    earned_on: '2026-01-05'
+  - id: quest_forger
+    earned_on: '2026-02-14'
 ```
 
 Look at the `achievements` section to see what badges you've earned.
@@ -191,11 +196,7 @@ Once you've pinned at least one badge to your Featured section, you've earned th
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]]
-**Recommended:** [[Avatar Forge: Crafting Your Digital Portrait]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Forge Your Character: Crafting Your Contributor Identity]] **Recommended:** [[Avatar Forge: Crafting Your Digital Portrait]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

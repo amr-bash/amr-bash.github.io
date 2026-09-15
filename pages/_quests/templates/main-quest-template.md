@@ -1,8 +1,8 @@
 ---
 title: '[Quest Title]: [Descriptive Subtitle]'
-description: Complete description of what the quest teaches and accomplishes (150-300 characters for SEO)
+description: 'The master scaffold for authoring IT-Journey main quests: copy this template, fill the frontmatter and gamified sections, and ship a complete adventure.'
 date: '2025-11-29T22:51:57.000Z'
-preview: /images/previews/quest-title-descriptive-subtitle.png
+preview: /images/previews/quest-title-descriptive-subtitle.webp
 level: XXXX
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
@@ -39,14 +39,11 @@ permalink: /quests/XXXX/quest-slug/
 quest_line: '[Campaign/storyline name]'
 quest_arc: '[Story arc or thematic grouping]'
 quest_dependencies:
-  required_quests:
-  - /quests/XXXX/prerequisite-quest/
-  recommended_quests:
-  - /quests/XXXX/helpful-quest/
-  unlocks_quests:
-  - /quests/XXXX/next-quest/
+  required_quests: []
+  recommended_quests: []
+  unlocks_quests: []
 quest_relationships:
-  parent_quest: null
+  parent_quest:
   child_quests:
   - /quests/XXXX/side-quests/side-quest-1/
   - /quests/XXXX/side-quests/side-quest-2/
@@ -97,6 +94,7 @@ quest_mapping:
   biome: Terminal
 comments: true
 draft: true
+mermaid: true
 ---
 *Greetings, brave adventurer! Welcome to **[Quest Name]** - an epic journey that will transform you into a master of [technology/skill]. This quest will guide you through [brief overview of what they'll accomplish], preparing you for [next steps in their IT journey].*
 
@@ -487,8 +485,7 @@ After completing this quest, validate your work using the **Quest Solutions Fram
 zsh test/quest-solutions/<LEVEL>/<quest-slug>/scripts/validate-*.sh
 ```
 
-**Solution materials** (answer keys, validation scripts, reference reports) are in:
-`test/quest-solutions/<LEVEL>/<quest-slug>/`
+**Solution materials** (answer keys, validation scripts, reference reports) are in: `test/quest-solutions/<LEVEL>/<quest-slug>/`
 
 > Complete the quest before consulting solutions. The learning is in the journey!
 
@@ -507,13 +504,9 @@ Before marking this quest as complete, ensure you've:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level {{fm.level}} - ...]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Prerequisite Quest Title]]
-**Unlocks:** [[Follow-up Quest Title]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level {% raw %}{{fm.level}}{% endraw %} - ...]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Prerequisite Quest Title]] **Unlocks:** [[Follow-up Quest Title]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 
 > Run `python3 scripts/quest/add-obsidian-wiki-references.py` to regenerate wiki links from `quest_dependencies` after editing frontmatter.
 

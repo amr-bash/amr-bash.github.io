@@ -1,6 +1,6 @@
 ---
 title: 'The Scribe''s Codex: Observability in Multi-Agent Systems'
-description: Build observability into multi-agent GitHub workflows — correlate traces across agents, aggregate sub-agent outputs, detect inter-agent failures, and produce a unified audit log.
+description: 'Add observability to multi-agent GitHub workflows by correlating traces across agents, detecting inter-agent failures, and building a unified audit log.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-observability.png
 level: '1011'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1011/agentic-multi-agent-orchestration-patterns/
   unlocks_quests:
   - /quests/1011/agentic-multi-agent-failure-recovery/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-multi-agent-failure-recovery/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🔍 Reliability Engineer
-  skill_trees:
-  - Agentic AI
-  - Observability
+  recommended_quests: []
 rewards:
   badges:
   - 📜 The Scribe
@@ -75,11 +64,6 @@ validation_criteria:
   - Correlation ID propagated across all agents in a workflow
   - Unified audit log generated from sub-agent traces
   - At least one inter-agent failure detected using the audit log
-quest_mapping:
-  coordinates: '[5, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Scriptorium
 comments: true
 draft: false
 redirect_from:
@@ -111,6 +95,7 @@ graph LR
 
 Every multi-agent operation needs a single identifier that travels through every agent:
 
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-with-tracing.yml
 name: Multi-Agent with Observability
@@ -146,13 +131,22 @@ jobs:
           python3 work/gh-600/scripts/traced_subtask.py \
             --correlation-id "$CORRELATION_ID" \
             --subtask "analysis" \
-            --output "trace-analysis-$CORRELATION_ID.json"
+            --output "trace-analysis-$CORRELATION_ID.jsonl"
 
       - uses: actions/upload-artifact@v4
         with:
           name: trace-${{ env.CORRELATION_ID }}-analysis
-          path: "trace-analysis-${{ env.CORRELATION_ID }}.json"
+          path: "trace-analysis-${{ env.CORRELATION_ID }}.jsonl"
 ```
+{% endraw %}
+
+> **`traced_subtask.py` is a thin CLI wrapper around `trace_writer.py`.**
+> The workflow above calls `work/gh-600/scripts/traced_subtask.py`, which is not a
+> separate tool — it runs your sub-task and emits trace entries using the
+> `trace_writer.py` module defined in Chapter 2. Its full code is given at the end of
+> Chapter 2 so the workflow's `run:` step produces the exact `--output` file that the
+> `upload-artifact` step then uploads. Both scripts must exist under
+> `work/gh-600/scripts/` before the workflow runs.
 
 ---
 
@@ -210,6 +204,38 @@ if __name__ == "__main__":
     write_trace(cid, "analysis-agent", "write-report", "completed",
                 {"report_path": "analysis-report.json"},
                 f"trace-{cid}.jsonl")
+```
+
+The workflow in Chapter 1 invokes the wrapper below, which accepts the exact `--correlation-id`, `--subtask`, and `--output` flags the `run:` step passes and writes to that `--output` path:
+
+```python
+# work/gh-600/scripts/traced_subtask.py
+"""Thin CLI wrapper: runs a sub-task and emits trace entries via trace_writer."""
+
+import argparse
+
+from trace_writer import write_trace
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--correlation-id", required=True)
+    parser.add_argument("--subtask", required=True)
+    parser.add_argument("--output", required=True)
+    args = parser.parse_args()
+
+    agent_id = f"{args.subtask}-agent"
+    write_trace(args.correlation_id, agent_id, args.subtask, "started",
+                output_file=args.output)
+
+    # ... your real sub-task work happens here ...
+
+    write_trace(args.correlation_id, agent_id, args.subtask, "completed",
+                {"subtask": args.subtask}, args.output)
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ---
@@ -324,13 +350,7 @@ python3 scripts/validate_quest.py --quest q15
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
-**Unlocks:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
-**Sequel quests:** [[When Familiars Fall: Multi-Agent Failure Recovery]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Council of Many: Multi-Agent Orchestration Patterns]] **Unlocks:** [[When Familiars Fall: Multi-Agent Failure Recovery]] **Sequel quests:** [[When Familiars Fall: Multi-Agent Failure Recovery]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

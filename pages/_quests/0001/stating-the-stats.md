@@ -1,16 +1,15 @@
 ---
 title: 'Forging the Stats Portal: Data Analytics Quest'
 author: Quest Master IT-Journey Team
-description: Build a comprehensive statistics page that reveals the hidden metrics of your Jekyll site, displaying real-time content analytics with Bootstrap-powered visualizations
+description: 'Build a Jekyll stats portal that auto-generates site metrics and displays posts, words, categories, and tags with Bootstrap-powered visualizations.'
 excerpt: Master the art of Jekyll data generation and Bootstrap visualization to create a dynamic statistics portal
-snippet: Transform raw site data into compelling visual insights
-preview: images/previews/forging-the-stats-portal-data-analytics-quest.png
+preview: images/previews/forging-the-stats-portal-data-analytics-quest.webp
 date: '2025-10-09T18:25:11.000Z'
 lastmod: '2025-10-08T18:10:29.000Z'
 level: '0001'
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-primary_technology: 1
+primary_technology: jekyll
 quest_type: main_quest
 quest_series: Jekyll Site Building
 quest_line: Development Mastery
@@ -19,20 +18,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Web Development
-  - Data Analytics
-  character_classes:
-  - 💻 Software Developer
-  - 📊 Data Analyst
-  skill_trees:
-  - Jekyll Development
-  - Data Visualization
-  - Frontend Design
 skill_focus: data-engineering
 learning_style: hands-on
 prerequisites:
@@ -63,11 +48,6 @@ validation_criteria:
   - Explain Jekyll build-time vs. runtime data generation
   - Describe YAML data file structure and usage
   - Understand Liquid template filters and tags
-quest_mapping:
-  coordinates: '[3, 4]'
-  region: Foundation
-  realm: Development
-  biome: Web
 permalink: /quests/0001/stating-the-stats/
 categories:
 - Quests
@@ -95,7 +75,6 @@ keywords:
   - yaml-data-files
 fmContentType: quest
 comments: true
-attachments: ''
 sub_title: 'Level 0001 (1) Quest: Jekyll Data Analytics and Visualization Mastery'
 rewards:
   badges:
@@ -110,8 +89,10 @@ rewards:
   - Access to advanced analytics quest line
   - Data-driven site optimization capabilities
 layout: quest
+draft: false
+mermaid: true
 ---
-*In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a powerful Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
+*In the vast digital archives of IT-Journey (https://it-journey.dev), data flows like rivers of information through the site's structure. Yet this valuable knowledge remains hidden, scattered across posts, pages, and collections. Your quest: forge a build-time Stats Portal that transforms raw site data into compelling visual insights, revealing the true scope and depth of the IT-Journey knowledge base.*
 
 *By mastering the ancient arts of Jekyll data generation and Liquid templating, you'll create a living dashboard that automatically tracks content metrics, analyzes patterns, and presents statistics with Bootstrap-powered elegance. This portal will serve as a beacon for adventurers, showcasing the collective wisdom accumulated on their journey.*
 
@@ -199,7 +180,7 @@ You'll know you've truly mastered this quest when you can:
 
 ### 🏗️ Building Your Knowledge Foundation
 
-Jekyll provides powerful data management capabilities through YAML files stored in the `_data` directory. During the build process, Jekyll reads these files and makes them available to your templates via the `site.data` object.
+Jekyll loads YAML files stored in the `_data` directory and exposes them to your templates. During the build process, Jekyll reads these files and makes them available to your templates via the `site.data` object.
 
 **Why Use YAML Data Files?**
 - **Separation of Concerns**: Keep data separate from presentation
@@ -274,13 +255,14 @@ Create a Ruby script to analyze your Jekyll site and generate statistics:
 
 require 'yaml'
 require 'date'
+require 'time'
 
 # This script generates comprehensive site statistics
 # Run during Jekyll build or manually: ruby scripts/generation/generate_statistics.rb
 
 class StatisticsGenerator
   def initialize
-    @site_root = File.expand_path('../..', __FILE__)
+    @site_root = File.expand_path('../../..', __FILE__)
     @posts_dir = File.join(@site_root, 'pages/_posts')
     @output_file = File.join(@site_root, '_data/content_statistics.yml')
   end
@@ -345,7 +327,7 @@ class StatisticsGenerator
     # Simple frontmatter parser
     if content =~ /^---\s*\n(.*?)\n---\s*\n(.*)$/m
       begin
-        frontmatter = YAML.safe_load($1)
+        frontmatter = YAML.safe_load($1, permitted_classes: [Date, Time])
         body = $2
         [frontmatter, body]
       rescue => e
@@ -555,7 +537,7 @@ permalink: /stats/
         <div class="card-body text-center">
           <i class="bi bi-fonts display-4 text-success"></i>
           <h2 class="card-title mt-3 mb-0">
-            {{ site.data.content_statistics.total_words | number_with_delimiter }}
+            {{ site.data.content_statistics.total_words }}
           </h2>
           <p class="card-text text-muted">Total Words</p>
         </div>
@@ -937,7 +919,7 @@ Your completed Stats Portal must demonstrate:
 ## 🎁 Quest Rewards and Achievements
 
 ### 🏆 Achievement Badges Earned
-- **Data Portal Architect** - Successfully built a comprehensive statistics portal
+- **Data Portal Architect** - Successfully built a statistics portal covering posts, words, categories, and tags
 - **Jekyll Analytics Master** - Mastered Jekyll data files and Liquid templating
 - **Bootstrap Visualizer** - Created responsive, styled data presentations
 
@@ -1053,6 +1035,7 @@ Shows 0 posts but I have posts
 - Verify posts are in `pages/_posts/` directory
 - Check frontmatter is valid YAML
 - Ensure posts have proper date format
+- If every post is skipped, confirm `parse_post` calls `YAML.safe_load($1, permitted_classes: [Date, Time])` — without `permitted_classes` it raises `Psych::DisallowedClass` on the standard unquoted `date:` field and silently skips every post
 - Run script with debugging: `ruby -d scripts/generation/generate_statistics.rb`
 
 **Issue: Page styling broken**
@@ -1077,7 +1060,7 @@ Liquid Exception: undefined method
 
 ---
 
-*Congratulations, Data Portal Architect! You've successfully mastered the art of Jekyll data analytics and visualization. Your Stats Portal now serves as a powerful window into the IT-Journey knowledge base, revealing insights and celebrating the community's collective wisdom. May your metrics always be accurate, your visualizations compelling, and your dashboards ever-informative!*
+*Congratulations, Data Portal Architect! You've successfully mastered the art of Jekyll data analytics and visualization. Your Stats Portal now serves as a live window into the IT-Journey knowledge base, revealing insights and celebrating the community's collective wisdom. May your metrics always be accurate, your visualizations compelling, and your dashboards ever-informative!*
 
 **Quest Status**: ✅ **COMPLETE**
 
@@ -1085,9 +1068,7 @@ Liquid Exception: undefined method
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

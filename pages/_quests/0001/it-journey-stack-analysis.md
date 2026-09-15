@@ -1,7 +1,7 @@
 ---
 title: 'Stack Attack Analysis: IT-Journey'
-description: Comprehensive technology stack analysis and documentation for the IT-Journey educational platform
-preview: images/previews/stack-attack-analysis-it-journey.png
+description: 'Dissect the IT-Journey platform stack: Jekyll and Ruby frontend, Python automation, Docker, GitHub Actions CI/CD, and AI-powered content analysis.'
+preview: images/previews/stack-attack-analysis-it-journey.webp
 date: '2025-11-02T14:45:16.000Z'
 repository: https://github.com/bamr87/it-journey
 repository_name: it-journey
@@ -28,7 +28,7 @@ level: '0001'
 quest_type: side_quest
 difficulty: 🟢 Easy
 estimated_time: 60-90 minutes
-permalink: /quests/0001/side-quests/it-journey-stack-analysis/
+permalink: /quests/0001/it-journey-stack-analysis/
 primary_technology: stack-analysis
 skill_focus: fullstack
 learning_style: hands-on
@@ -57,14 +57,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -73,6 +65,15 @@ validation_criteria:
   completion_requirements: []
   skill_demonstrations: []
 layout: quest
+redirect_from:
+- /quests/0001/side-quests/it-journey-stack-analysis/
+draft: false
+mermaid: true
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 # Stack Attack Analysis: IT-Journey
 
@@ -88,15 +89,15 @@ By the end of this quest, you will be able to:
 
 ## 📋 Executive Summary
 
-**IT-Journey** is a comprehensive educational platform built on a modern **Jekyll static site architecture** with extensive **automation, AI integration, and quality assurance** systems. The project demonstrates sophisticated DevOps practices while maintaining educational value through gamified learning experiences (quests), blog posts, interactive notebooks, and comprehensive documentation.
+**IT-Journey** is an educational platform built on a **Jekyll static site architecture** with **automation, AI integration, and quality assurance** systems. The project demonstrates DevOps practices while maintaining educational value through gamified learning experiences (quests), blog posts, interactive notebooks, and step-by-step documentation.
 
 ### Key Highlights
 
-- **Primary Stack**: Jekyll 3.9.5 + Ruby 3.2.3 + Bootstrap 5.2.0
+- **Primary Stack**: Jekyll 3.10.0 + Ruby 3.2.3 + Bootstrap 5.2.0
 - **Deployment**: GitHub Pages with automated CI/CD pipelines
 - **Innovation**: AI-powered content analysis and link monitoring (Guardian 2.0)
 - **Architecture**: Container-first development with Docker
-- **Quality Focus**: Comprehensive testing framework with automated validation
+- **Quality Focus**: Testing framework with automated validation (build, frontmatter, quest, link checks)
 - **Educational Design**: Quest-based learning with RPG-style gamification
 
 ### Critical Insights
@@ -113,7 +114,7 @@ By the end of this quest, you will be able to:
 
 ### Purpose and Mission
 
-IT-Journey serves as a comprehensive learning platform that democratizes IT education through:
+IT-Journey serves as a learning platform that democratizes IT education through:
 - **Gamified Learning**: Quest-based skill progression system
 - **Multi-Modal Content**: Text, code, visualizations, and interactive elements
 - **Progressive Complexity**: Structured learning paths from beginner to expert
@@ -145,7 +146,7 @@ graph TB
     end
     
     subgraph "Build Layer"
-        JK[Jekyll 3.9.5]
+        JK[Jekyll 3.10.0]
         RB[Ruby 3.2.3]
         BS[Bootstrap 5.2.0]
         SASS[Sass/SCSS]
@@ -218,7 +219,7 @@ graph TB
 
 ### 1. Frontend Stack
 
-#### Core Framework: Jekyll 3.9.5
+#### Core Framework: Jekyll 3.10.0
 ```yaml
 # _config.yml - Jekyll Configuration
 markdown: kramdown
@@ -245,15 +246,15 @@ collections:
 - Liquid templating for complex logic
 - Collection-based content organization
 
-**Version Justification**: Jekyll 3.9.5 is the latest GitHub Pages-compatible version, ensuring deployment reliability.
+**Version Justification**: Jekyll 3.10.0 is the version this repo's Gemfile.lock currently resolves via the `github-pages` gem, ensuring deployment reliability.
 
 #### UI Framework: Bootstrap 5.2.0
 
 ```ruby
 # Gemfile - Frontend Dependencies
-gem 'github-pages', '~> 231'
+gem 'github-pages', '~> 232'
 gem 'jekyll-theme-zer0'
-gem 'webrick', '~> 1.8'
+gem 'webrick', '~> 1.9'
 ```
 
 **Component Library**: Bootstrap 5.2.0 via CDN
@@ -278,10 +279,10 @@ gem 'webrick', '~> 1.8'
 ```ruby
 # Gemfile
 source "https://rubygems.org"
-gem 'github-pages', '~> 231'
+gem 'github-pages', '~> 232'
 gem 'jekyll-theme-zer0'
-gem 'ffi', "~> 1.17.0"
-gem 'webrick', '~> 1.8'
+gem 'ffi', "~> 1.17.4"
+gem 'webrick', '~> 1.9'
 
 # Jekyll Plugins (included in github-pages)
 group :jekyll_plugins do
@@ -295,8 +296,8 @@ end
 
 **Version Details**:
 - **Ruby**: 3.2.3 (stable, secure, performant)
-- **Jekyll**: 3.9.5 (GitHub Pages compatible)
-- **GitHub Pages Gem**: 231 (ensures version compatibility)
+- **Jekyll**: 3.10.0 (GitHub Pages compatible)
+- **GitHub Pages Gem**: 232 (ensures version compatibility)
 
 #### Build Pipeline
 
@@ -344,7 +345,7 @@ services:
 - **Content Processing**: Various utility scripts
 
 **Key Dependencies**:
-```python
+```text
 # requirements.txt (inferred from usage)
 requests>=2.31.0      # HTTP library for link checking
 openai>=1.0.0         # OpenAI API integration
@@ -390,7 +391,6 @@ class LinkHealthGuardian:
 
 **Additional Scripts**:
 - `zer0-to-hero-complete.sh` - Complete learning journey automation
-- `jupyter-to-markdown.sh` - Notebook conversion
 - Various utility and test scripts
 
 ### 4. Database/Storage Layer
@@ -402,13 +402,11 @@ class LinkHealthGuardian:
 ```text
 Content Structure:
 pages/
-├── _posts/          # Blog articles (Jekyll posts collection)
 ├── _quests/         # Gamified learning content
 │   ├── lvl_000/    # Beginner level
 │   ├── lvl_001/    # Intermediate level
 │   └── ...
 ├── _docs/           # Documentation
-├── _notebooks/      # Jupyter notebooks
 └── _notes/          # Personal notes
 ```
 
@@ -456,7 +454,7 @@ domain_ext: ".dev"
 
 1. **Link Health Guardian** (`link-checker.yml`)
    - Scheduled: Monday 6 AM, Friday 6 PM UTC
-   - Comprehensive link validation
+   - Site-wide link validation
    - AI-powered failure analysis
    - Automated issue creation
 
@@ -547,15 +545,20 @@ CMD ["python3", "/app/test/quest-validator/quest_validator.py"]
 #### Local Development
 
 ```bash
+# Clone the repo first — every command below runs from its root
+git clone https://github.com/bamr87/it-journey && cd it-journey
+
 # Quick Start with Docker
-docker-compose up
+# Use `docker compose` (v2 plugin). `docker-compose` (v1, hyphenated) is EOL and
+# may not exist on newer installs.
+docker compose up
 
 # Manual Jekyll Development
 bundle install
 bundle exec jekyll serve --config "_config.yml,_config_dev.yml"
 
-# Quest Validator
-python3 test/quest-validator/quest_validator.py
+# Quest Validator — requires a quest_file or --directory, e.g. validate the whole collection:
+python3 test/quest-validator/quest_validator.py -d pages/_quests/ --summary
 ```
 
 #### Code Quality Tools
@@ -564,10 +567,10 @@ python3 test/quest-validator/quest_validator.py
 - **Markdown**: Markdownlint for consistency
 - **YAML**: yamllint for configuration files
 - **Python**: flake8, black for code quality
-- **Link Checking**: Lychee for comprehensive link validation
+- **Link Checking**: Lychee for site-wide link validation
 
 **Pre-commit Hooks** (recommended):
-```bash
+```yaml
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -586,14 +589,14 @@ repos:
 
 ### Ruby Dependencies
 
-```ruby
+```text
 # Core Dependencies (from Gemfile.lock)
-jekyll (3.9.5)
+jekyll (3.10.0)
   - Safe HTML rendering
   - Liquid templating
   - Plugin system
   
-github-pages (231)
+github-pages (232)
   - Pins all Jekyll dependencies to GitHub Pages versions
   - Ensures deployment compatibility
   - Includes all default plugins
@@ -603,11 +606,11 @@ jekyll-theme-zer0 (custom theme)
   - Custom layouts and includes
   - Dark/light theme support
 
-ffi (1.17.0)
+ffi (1.17.4)
   - Foreign function interface
   - Required for Jekyll on M1 Macs
 
-webrick (1.8)
+webrick (1.9.2)
   - Ruby web server
   - Required for Jekyll 3.x on Ruby 3.x
 ```
@@ -620,7 +623,7 @@ webrick (1.8)
 
 ### Python Dependencies
 
-```python
+```text
 # Inferred from script usage
 requests (>=2.31.0)
   - HTTP library for API calls
@@ -873,7 +876,7 @@ The IT-Journey stack provides exceptional educational value:
 ### Best Practices Demonstrated
 
 - **Infrastructure as Code**: Docker Compose and GitHub Actions as code
-- **Automated Testing**: Comprehensive test suite with multiple validation levels
+- **Automated Testing**: Test suite spanning build, frontmatter, quest, and link validation
 - **Security by Default**: Static site architecture reduces attack surface
 - **Documentation**: Extensive README files and inline documentation
 - **Community Collaboration**: Open source contribution workflows
@@ -893,8 +896,8 @@ This stack directly translates to professional skills:
 
 ### Current Maturity: ✅ **Modern (2024-2025 Standards)**
 
-The IT-Journey stack is already highly modern with cutting-edge features:
-- Jekyll 3.9.5 (latest GitHub Pages-compatible version)
+The IT-Journey stack runs current versions across the board:
+- Jekyll 3.10.0 (current GitHub Pages-compatible version, per this repo's Gemfile.lock)
 - Ruby 3.2.3 (current stable)
 - Bootstrap 5.2.0 (modern UI framework)
 - Docker-first development
@@ -1033,7 +1036,7 @@ The IT-Journey stack is already highly modern with cutting-edge features:
 
 1. **OpenAI GPT-4**: AI-powered failure analysis and content review
 2. **GitHub API**: Issue creation, repository management
-3. **Lychee**: Comprehensive link validation
+3. **Lychee**: Site-wide link validation
 4. **Bootstrap CDN**: UI component delivery
 5. **GitHub Pages**: Automatic deployment and hosting
 
@@ -1130,7 +1133,7 @@ The IT-Journey stack is already highly modern with cutting-edge features:
 ### IT-Journey Design Philosophy
 
 1. **Design for Failure (DFF)**:
-   - Comprehensive error handling in automation
+   - Error handling and retries throughout the automation scripts
    - Guardian 2.0 proactive monitoring
    - Graceful degradation (AI optional)
 
@@ -1156,7 +1159,7 @@ The IT-Journey stack is already highly modern with cutting-edge features:
 
 6. **Collaboration (COLAB)**:
    - Open source development
-   - Comprehensive documentation
+   - README files and inline documentation across the repo
    - Community contribution workflows
 
 7. **AI-Powered Development (AIPD)**:
@@ -1248,7 +1251,7 @@ The IT-Journey stack is already highly modern with cutting-edge features:
 |----------|--------|---------------|
 | **Technology Currency** | ⭐⭐⭐⭐⭐ | Latest versions of all core technologies |
 | **Security Posture** | ⭐⭐⭐⭐⭐ | Static site, automated scanning, secrets management |
-| **DevOps Maturity** | ⭐⭐⭐⭐⭐ | Comprehensive CI/CD, automated testing, monitoring |
+| **DevOps Maturity** | ⭐⭐⭐⭐⭐ | 12+ CI/CD workflows, automated testing, monitoring |
 | **Documentation** | ⭐⭐⭐⭐☆ | Excellent coverage, could add ADRs and videos |
 | **Scalability** | ⭐⭐⭐⭐☆ | GitHub Pages limits, but static sites scale well |
 | **Maintainability** | ⭐⭐⭐⭐⭐ | Clear structure, automated updates, test coverage |
@@ -1270,11 +1273,11 @@ The IT-Journey stack represents a mature, well-architected solution that balance
 ### Summary
 
 IT-Journey is a **modern, production-ready educational platform** built on a solid foundation of:
-- **Jekyll 3.9.5** for static site generation
+- **Jekyll 3.10.0** for static site generation
 - **Ruby 3.2.3** for build tooling
 - **Python 3.11+** for automation and AI integration
 - **Docker** for consistent development environments
-- **GitHub Actions** for comprehensive CI/CD
+- **GitHub Actions** for CI/CD across 12+ workflows
 - **OpenAI GPT-4** for intelligent automation
 
 The stack excels in:
@@ -1295,8 +1298,7 @@ The IT-Journey stack is well-suited for its purpose and should continue evolving
 3. **Community feature additions** without major architectural changes
 4. **AI capability enhancements** as GPT models improve
 
-**Do NOT**: Attempt major stack rewrites or framework migrations
-**Do INSTEAD**: Focus on content quality, community building, and automation refinement
+**Do NOT**: Attempt major stack rewrites or framework migrations **Do INSTEAD**: Focus on content quality, community building, and automation refinement
 
 ---
 
@@ -1329,9 +1331,7 @@ The IT-Journey stack is well-suited for its purpose and should continue evolving
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

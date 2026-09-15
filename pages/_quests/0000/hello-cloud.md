@@ -1,6 +1,6 @@
 ---
 title: 'Hello Cloud: First Steps into the Sky Realm'
-description: Create your first cloud account, install a cloud CLI, and deploy a simple resource safely.
+description: 'Claim your first foothold in the Sky Realm: create a secured cloud account with MFA, wield a cloud CLI, provision a resource, then banish it to avoid costs.'
 author: IT-Journey Team
 date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14
@@ -17,26 +17,10 @@ quest_dependencies:
   - /quests/0000/it-fundamentals/
   recommended_quests:
   - /quests/0000/os-selection/
-  unlocks_quests: []
-quest_relationships:
-  child_quests: []
-  sequel_quests: []
-  parallel_quests:
   - /quests/0000/hello-windows/
   - /quests/0000/hello-macos/
   - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Cloud Computing
-  - DevOps
-  - System Administration
-  character_classes:
-  - ☁️ Cloud Engineer
-  - 🏗️ System Engineer
-  - 💻 Software Developer
-  skill_trees:
-  - Cloud Fundamentals
-  - CLI Mastery
+  unlocks_quests: []
 skill_focus: security
 learning_style: hands-on
 permalink: /quests/0000/hello-cloud/
@@ -97,6 +81,13 @@ rewards:
   - Foundation for infrastructure-as-code learning
 draft: false
 layout: quest
+environment:
+  os:
+  - macos
+  - cloud
+  shell:
+  - zsh
+  - bash
 ---
 *Welcome, skybound adventurer! You stand at the edge of the mortal realm, gazing up at the shimmering **Sky Realm** — a vast kingdom of infinite compute power, boundless storage vaults, and magical services that can scale from a whisper to a thunderclap. Today, you claim your first foothold in the clouds.*
 
@@ -132,7 +123,7 @@ Each Sky Kingdom offers unique powers. Pick one for your first expedition — yo
 |---------|-----------|----------|
 | **AWS** | Vast army of services, battle-tested | General-purpose cloud mastery |
 | **Azure** | Strong Microsoft alliance, enterprise fortifications | Windows-integrated workflows |
-| **GCP** | Elegant developer tools, powerful data magic | Data science and clean APIs |
+| **GCP** | Elegant developer tools, BigQuery analytics | Data science and clean APIs |
 
 This quest includes GCP helper scrolls (scripts) for a low-friction first adventure.
 
@@ -202,20 +193,15 @@ If you conjured other artifacts (storage buckets, networks), banish them now to 
 
 ## 🔗 Related Quests
 
-- [Hello n00b](../hello-noob.md)
-- [OS Selection](../os-selection.md)
+- [Hello n00b](hello-noob.md)
+- [OS Selection](os-selection.md)
 - [Hello Windows](hello-win.md)
 - [Hello macOS](hello-mac.md)
 - [Hello Linux](linux-fundamentals.md)
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[IT Fundamentals]]
-**Recommended:** [[OS Selection]]
-**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[IT Fundamentals]] **Recommended:** [[OS Selection]] **Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Hello macOS: Setting Up the Apple Kingdom]] · [[Linux Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

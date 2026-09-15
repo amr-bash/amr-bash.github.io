@@ -2,6 +2,10 @@ name: Validate Quest Solutions
 
 on:
   push:
+    # Guard to the source branches. Without this, the branchless `push` trigger
+    # would also fire when `deploy-gh-pages.yml` syncs `main` → `gh-pages`, so a
+    # gh-pages update would run more than just the Pages deploy.
+    branches: [ main, master ]
     paths:
       - 'test/quest-solutions/**'
   pull_request:
@@ -14,6 +18,13 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-solutions:
     name: Structural Validation
@@ -21,7 +32,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Discover quest solutions
         id: discover
@@ -42,6 +53,8 @@ jobs:
           echo "Total solutions found: $total"
 
       - name: Validate solution structure
+        env:
+          INPUT_LEVEL: ${{ github.event.inputs.level }}
         run: |
           echo "=== Structural Validation ==="
           errors=0
@@ -51,7 +64,7 @@ jobs:
             level=$(basename "$level_dir")
 
             # Apply level filter from workflow_dispatch
-            if [ -n "${{ github.event.inputs.level }}" ] && [ "$level" != "${{ github.event.inputs.level }}" ]; then
+            if [ -n "$INPUT_LEVEL" ] && [ "$level" != "$INPUT_LEVEL" ]; then
               continue
             fi
 

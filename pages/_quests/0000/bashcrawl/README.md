@@ -1,7 +1,7 @@
 ---
 title: 'Bashcrawl Quest: Terminal Adventure RPG'
 description: Explore nine Bashcrawl chambers to master navigation, permissions, environment variables, symlinks, and pipes in a gamified terminal RPG adventure.
-preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.png
+preview: images/previews/bashcrawl-quest-terminal-adventure-rpg.webp
 date: '2025-07-05T12:12:17.000Z'
 lastmod: '2026-05-23T02:30:23.000Z'
 categories:
@@ -54,52 +54,35 @@ rewards:
   progression_points: 200
 quest_dependencies:
   unlocks_quests:
-  - /quests/0000/side-quests/entrance/
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
-  - /quests/0000/side-quests/rift/
-  - /quests/0000/side-quests/agent-mode/
-quest_relationships:
-  child_quests:
-  - /quests/0000/side-quests/entrance/
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-  - /quests/0000/side-quests/armoury/
-  - /quests/0000/side-quests/chamber/
-  - /quests/0000/side-quests/hidden-chapel/
-  - /quests/0000/side-quests/vault/
-  - /quests/0000/side-quests/scrap/
-  - /quests/0000/side-quests/rift/
-  - /quests/0000/side-quests/agent-mode/
-  sequel_quests:
-  - /quests/0000/side-quests/bash-run/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - System Administration
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Mastery
+  - /quests/0000/entrance/
+  - /quests/0000/workshop/
+  - /quests/0000/cellar/
+  - /quests/0000/armoury/
+  - /quests/0000/chamber/
+  - /quests/0000/hidden-chapel/
+  - /quests/0000/vault/
+  - /quests/0000/scrap/
+  - /quests/0000/rift/
+  - /quests/0000/agent-mode/
 validation_criteria:
 - Navigate through the entrance and read the first scroll
 - Navigate through at least five chambers
 - Defeat at least one combat encounter
 - Complete the Rift final boss
-sub-title: 'Level 0000 Quest: Terminal Dungeon Adventure'
 excerpt: Embark on an epic terminal adventure that teaches Bash commands through nine interconnected dungeon chambers, each a dedicated walkthrough side-quest
-snippet: Every command is a spell, every directory a new realm to explore
 draft: false
 permalink: /quests/0000/bashcrawl/
+mermaid: true
 ---
 *Welcome to the Bashcrawl Catacombs — an interactive terminal dungeon where every command is a spell and every directory a new realm to explore. Nine interconnected chambers await, each a side-quest that teaches a core set of Bash skills through gameplay.*
+
+This hub is your **walkthrough and strategy guide** to the game. Play instantly in the browser below, use the nine chamber walkthroughs as your field manual, then graduate to the **advanced version** — [installing Bashcrawl](#play-locally) and playing it in a real shell.
+
+## 🕹️ Play in Your Browser
+
+The full game runs right here — no install required. Keep this guide open alongside it.
+
+{% include bashcrawl-terminal.html %}
 
 ## 🗺️ Catacombs Map
 
@@ -146,29 +129,7 @@ flowchart TD
 | 9 | 🌀 The Rift | 🔴 Hard | pipes `\|` `&&` redirection | [Rift](/quests/0000/side-quests/rift/) |
 | ★ | 🤖 Agent Mode | 🔴 Hard | `--agent` `--batch` `--screenshot-dir` | [Agent](/quests/0000/side-quests/agent-mode/) |
 
-## ⚡ Quick Start
-
-```bash
-# From this directory — choose your mode:
-./bash_crawl.sh            # Interactive menu
-./bash_crawl.sh online     # Open web browser version (no install)
-./bash_crawl.sh local      # Clone repo + launch Textual TUI
-./bash_crawl.sh classic    # Clone repo + classic Bash emulator
-./bash_crawl.sh tutorial   # Tutorial mode (step-by-step)
-./bash_crawl.sh agent      # Agent mode (AI playtesting)
-./bash_crawl.sh --quest entrance   # Print walkthrough URL then launch
-```
-
-## 🎮 Play Modes
-
-| Mode | How to Launch | Best For |
-|------|--------------|----------|
-| **Web TUI** | [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/) | First playthrough, classrooms, no-install |
-| **Textual TUI** | `./main.sh --interactive` | Beginners wanting a rich local interface |
-| **Classic Bash** | `./main.sh --classic` | Systems without Python/Textual |
-| **Native Terminal** | `./main.sh --native` | Full real-filesystem experience |
-| **Tutorial Mode** | `./main.sh --tutorial` | Guided step-by-step learning |
-| **Agent Mode** | `./main.sh --agent` | AI automation and screenshots |
+{% include bashcrawl-play-local.html %}
 
 ## 🧙 In-Game Commands
 
@@ -214,7 +175,7 @@ flowchart TD
 
 - [Bashcrawl — Play Online](https://bamr87.github.io/bashcrawl/)
 - [Bashcrawl GitHub Repository](https://github.com/bamr87/bashcrawl/)
-- [The Spellbook: Bash Cheatsheet](/shell/)
+- [The Spellbook: Bash Cheatsheet](/notes/cheatsheets/bash-cheatsheet/)
 - [The Grand Grimoire: Complete Bash Reference](/docs/bash-complete-reference/)
 - [Original Upstream — GitLab slackermedia/bashcrawl](https://gitlab.com/slackermedia/bashcrawl)
 

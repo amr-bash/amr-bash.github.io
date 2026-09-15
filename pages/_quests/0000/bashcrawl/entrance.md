@@ -39,13 +39,9 @@ quest_dependencies:
   required_quests:
   - /quests/0000/bashcrawl/
   unlocks_quests:
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
-quest_relationships:
-  parent_quest: /quests/0000/bashcrawl/
-  sequel_quests:
-  - /quests/0000/side-quests/workshop/
-  - /quests/0000/side-quests/cellar/
+  - /quests/0000/workshop/
+  - /quests/0000/cellar/
+  recommended_quests: []
 validation_criteria:
 - Run pwd and explain the output
 - List the entrance contents with ls and ls -F
@@ -53,17 +49,23 @@ validation_criteria:
 - Navigate to the cellar directory
 prerequisites:
 - Complete the Bashcrawl Hub quest
-learning_paths:
-- Terminal Mastery Path
 rewards:
 - Bashcrawl Brass Key
 - Terminal navigation proficiency
 excerpt: Start Bashcrawl by using pwd, ls, cd, and cat to read the first scroll, collect the brass key, and enter the dungeon.
 draft: false
-permalink: /quests/0000/side-quests/entrance/
+permalink: /quests/0000/entrance/
 layout: quest
+redirect_from:
+- /quests/0000/side-quests/entrance/
 ---
 *The dungeon gate groans open. Cool air pours out carrying the scent of ancient scrolls. This is where every hero begins — four commands, a brass key, and the courage to type.*
+
+## 🕹️ Play This Chamber
+
+This page is your **walkthrough and strategy guide** — play right here in the browser, then follow the steps below.
+
+{% include bashcrawl-terminal.html room="Entrance" %}
 
 ## 🎯 Quest Objectives
 
@@ -71,12 +73,20 @@ layout: quest
 - [ ] List the dungeon entrance contents with `ls` and `ls -F`
 - [ ] Read the entrance scroll with `cat`
 - [ ] Ask Merlin for a hint with the `merlin` command
-- [ ] Collect the brass key and move to the cellar
+- [ ] Find the brass key clue in the scroll and move to the cellar
 
-## �️ Quest Prerequisites
+## 🗺️ Quest Prerequisites
 
 - A terminal with Bash (macOS, Linux, or WSL)
 - Bashcrawl installed or running at [bamr87.github.io/bashcrawl](https://bamr87.github.io/bashcrawl/)
+
+To play locally (and unlock the `merlin` and `quest` commands), clone the dungeon and enter the game shell:
+
+```bash
+git clone https://github.com/bamr87/bashcrawl
+cd bashcrawl
+./main.sh --interactive
+```
 
 ## ⚡ Command Cheatsheet
 
@@ -124,6 +134,8 @@ cat scroll
 
 The scroll contains the first piece of the dungeon's story and a clue about the brass key. Read it carefully — items and hints mentioned here matter later.
 
+The **brass key** is part of the story you uncover by reading the scroll — there is no separate `take key` command to run. Simply reading the scroll and following its clue arms you for the next chamber; the key travels with you as you descend into the cellar.
+
 ### Step 4 — Ask Merlin
 
 ```bash
@@ -155,6 +167,7 @@ Congratulations — you have left the entrance. Continue to the [Cellar walkthro
 | Problem | Cause | Fix |
 |---------|-------|-----|
 | `command not found: merlin` | Not in the game shell | Run `./main.sh --interactive` first |
+| `command not found: quest` | Not in the game shell | Run `./main.sh --interactive` first |
 | `No such file: scroll` | Wrong directory | Run `pwd`; navigate to ENTRANCE with `cd` |
 | `ls` shows nothing | Empty directory | Make sure you are in ENTRANCE, not `/` |
 | Path has spaces | Rare edge case | Wrap in quotes: `cd "my dir"` |
@@ -166,6 +179,7 @@ Before marking this side-quest complete, verify:
 - [ ] You can explain what `pwd` returns without running it
 - [ ] You know the difference between `ls` and `ls -F`
 - [ ] You read the scroll and understand its clue
+- [ ] You found the brass key clue in the scroll (it travels with you — no `take` command needed)
 - [ ] You successfully navigated into cellar
 
 ## ➡️ Next Steps
@@ -177,6 +191,8 @@ You are now ready to explore deeper. Choose your path:
 - **Back to hub** → [Bashcrawl Hub](/quests/0000/bashcrawl/)
 
 ---
+
+{% include bashcrawl-play-local.html %}
 
 ## 📚 External Resources
 
@@ -194,11 +210,7 @@ Continue your terminal adventure with these resources:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Sequel quests:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Sequel quests:** [[Bashcrawl Workshop: File Management Fundamentals]] · [[Bashcrawl Cellar: File Types, Aliases, and Emerald Amulet]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

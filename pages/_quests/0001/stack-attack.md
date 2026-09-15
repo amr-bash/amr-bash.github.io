@@ -1,10 +1,9 @@
 ---
-title: 'Stack Attack: Building an Enterprise Django + React ERP with AI Agents'
+title: 'Stack Attack: AI-Built Django + React Enterprise ERP'
 author: Quest Master IT-Journey Team
-description: Use AI agents to research, design, and build a production-grade open-source ERP stack with Django REST Framework on the backend and React TypeScript on the frontend — the modern enterprise way.
+description: 'Use AI agents to research, design, and scaffold a production-grade open-source ERP with a Django REST backend and a React TypeScript frontend.'
 excerpt: Harness AI agents to architect, analyze, and assemble an enterprise-grade ERP application using Django, React, PostgreSQL, Celery, and the best open-source tooling available today.
-snippet: The stack you choose defines the ceiling of what you can build — choose wisely, build boldly.
-preview: images/previews/stack-attack-deciphering-the-technology-matrix.png
+preview: images/previews/stack-attack-deciphering-the-technology-matrix.webp
 date: '2025-11-02T14:45:16.000Z'
 lastmod: '2026-04-13T00:00:00.000Z'
 level: '0001'
@@ -20,23 +19,6 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/terminal-fundamentals/
   unlocks_quests: []
-quest_relationships:
-  child_quests: null
-  sequel_quests: null
-learning_paths:
-  primary_paths:
-  - Full-Stack Development
-  - Enterprise Application Architecture
-  - AI-Assisted Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🧙‍♂️ AI Architect
-  skill_trees:
-  - Django & Python Backend
-  - React & TypeScript Frontend
-  - Enterprise Architecture
-  - AI-Assisted Tooling
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -70,11 +52,6 @@ validation_criteria:
   - Describe the role of each service in the stack
   - Identify tradeoffs between technology alternatives
   - Outline how Celery handles async ERP operations
-quest_mapping:
-  coordinates: '[2, 2]'
-  region: Foundation
-  realm: Development
-  biome: AI-Enhanced
 permalink: /quests/0001/stack-attack/
 categories:
 - Quests
@@ -128,20 +105,18 @@ rewards:
   - Access to advanced Django ERP module quests
   - AI agent prompt engineering techniques
   - Enterprise architecture pattern library
-related_quests:
-  prerequisites:
-  - /quests/0000/hello-noob/
-  - /quests/terminal-fundamentals/
-  followups:
-  - /quests/django-api-design/
-  - /quests/react-enterprise-ui/
-  - /quests/erp-module-development/
-  parallel:
-  - /quests/docker-fundamentals/
-  - /quests/postgresql-mastery/
 layout: quest
+mermaid: true
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
+  - powershell
+  variables:
+    project_dir: Library
 ---
-*In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into a seamless flow of operational power. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
+*In the age of digital empires, every great corporation requires a command center — a system that orchestrates inventory, orders, finances, human resources, and logistics into one connected flow of operational data. This system is called an **ERP**: an Enterprise Resource Planning application. And today, brave architecht, you are tasked with constructing the most formidable enterprise fortress the open-source world has ever seen.*
 
 *Your weapons? **Django 5**, the battle-hardened Python framework trusted by the world's largest platforms. **React 18 with TypeScript**, the reactive UI engine powering the most demanding frontends. And your most potent asset — **AI agents**, your tireless companions who research technologies at machine speed, analyze repositories in seconds, and help you design systems that would take a team of architects weeks to plan.*
 
@@ -158,7 +133,7 @@ Building an ERP from scratch is one of the highest-order challenges in software 
 - **Async processing** — order fulfillment, email dispatch, report generation running in the background
 - **Rich interactive UI** — data tables, dashboards, forms with complex conditional logic
 
-The open-source world offers a powerful arsenal to tackle all of these. But choosing the wrong tool at the wrong layer is catastrophic — it becomes technical debt that compounds into system failure at scale.
+The open-source world offers a deep arsenal of mature libraries to tackle all of these. But choosing the wrong tool at the wrong layer is catastrophic — it becomes technical debt that compounds into system failure at scale.
 
 This quest teaches you to **harness AI agents as your research department**, rapidly evaluating the open-source ERP landscape, stress-testing technology choices against enterprise requirements, and ultimately assembling a stack that is both battle-tested and maintainable.
 
@@ -234,7 +209,7 @@ graph TB
 
 ## 🧙‍♂️ Chapter 1: Deploying the Stack Attack AI Agent
 
-*Before constructing your enterprise fortress, you must summon your most powerful ally — the `/stackattack` AI agent. This is not a simple chatbot. It is a purpose-built research and architecture agent that knows the open-source ERP landscape, understands Django and React deeply, and can investigate any repository or technology in minutes.*
+*Before constructing your enterprise fortress, you must summon your research-and-architecture ally — the `/stackattack` AI agent. This is not a simple chatbot. It is a purpose-built research and architecture agent that knows the open-source ERP landscape, understands Django and React deeply, and can investigate any repository or technology in minutes.*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Crafting VS Code custom agent prompts with specialized personas
@@ -352,7 +327,7 @@ erp_stack:
     ci_cd: "GitHub Actions"
     monitoring: "Prometheus + Grafana"
     log_aggregation: "Loki + Promtail"
-```markdown
+```
 
 ### Phase 4 — Architecture Diagrams
 Generate Mermaid diagrams showing:
@@ -438,9 +413,7 @@ The agent will surface key findings like:
 
 **Agent Recommendation Pattern:**
 
-For a React SPA frontend that needs a clean REST API, a decoupled custom Django
-application gives the most control. ERPNext and Odoo are designed for their own
-frontends — bolting a React app onto them means fighting their abstraction layers.
+For a React SPA frontend that needs a clean REST API, a decoupled custom Django application gives the most control. ERPNext and Odoo are designed for their own frontends — bolting a React app onto them means fighting their abstraction layers.
 
 ### 🏗️ Research Session 2: Validating the Backend Library Stack
 
@@ -842,7 +815,9 @@ pip install \
   psycopg[binary]==3.2.* \
   django-storages[s3]==1.14.* \
   sentry-sdk[django]==2.* \
-  django-health-check==3.18.*
+  django-health-check==3.18.* \
+  python-decouple==3.8.* \
+  django-celery-beat==2.7.*
 
 # Freeze dependencies
 pip freeze > requirements.txt
@@ -892,6 +867,7 @@ Include configuration for:
 
 ```python
 # config/settings/base.py
+from datetime import timedelta
 from decouple import Csv, config
 from pathlib import Path
 
@@ -923,6 +899,7 @@ THIRD_PARTY_APPS = [
     "health_check.db",
     "health_check.cache",
     "health_check.contrib.celery_ping",
+    "django_celery_beat",
 ]
 
 LOCAL_APPS = [
@@ -957,7 +934,11 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.CursorPagination",
+    # PageNumberPagination — matches the numeric `page`/`page_size` params and
+    # the `count`-based pageCount math the SalesOrdersPage.tsx example below
+    # uses. (CursorPagination uses opaque tokens instead and does not support
+    # jumping to an arbitrary page, so it would break that frontend code.)
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 50,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
@@ -1148,8 +1129,10 @@ npm install \
   tailwind-merge
 
 # Install shadcn/ui prerequisites
+# Pinned to the Tailwind v3 CLI workflow below — the current npm `latest`
+# tag (Tailwind v4) removed the `init` subcommand this quest relies on.
 npm install -D \
-  tailwindcss \
+  tailwindcss@^3 \
   postcss \
   autoprefixer \
   @types/node
@@ -1157,7 +1140,19 @@ npm install -D \
 # Initialize Tailwind CSS
 npx tailwindcss init -p
 
+# shadcn/ui needs a "@/*" path alias before it will initialize — add it to
+# tsconfig.json ("compilerOptions.paths": { "@/*": ["./src/*"] }, plus
+# "baseUrl": ".") and to vite.config.ts (resolve.alias["@"] = path.resolve(
+# __dirname, "./src")). Skipping this step is why `shadcn init` fails with
+# "Could not find valid path aliases".
+
 # Initialize shadcn/ui
+# The current CLI first prompts for a "preset" (Nova/Vega/Maia/Lyra/Mira/
+# Luma/Sera/Rhea) that this quest does not otherwise use — pick any preset
+# (e.g. `--preset nova` for a non-interactive run), then it may also prompt
+# "Select a component library" (Base UI / React Aria / Radix UI) before it
+# reaches the --yes-covered prompts — this quest's generated components
+# assume Radix UI, so answer that prompt with Radix UI.
 npx shadcn@latest init
 
 # Add core shadcn/ui components used in ERP
@@ -1167,13 +1162,17 @@ npx shadcn@latest add dropdown-menu navigation-menu sidebar
 npx shadcn@latest add data-table skeleton toast
 
 # Install API client generator
-npm install -D openapi-typescript orval
+# The Vite react-ts template now ships TypeScript 6.x, but openapi-typescript
+# currently peer-requires TypeScript ^5.x — plain `npm install` fails with an
+# ERESOLVE conflict. Install with --legacy-peer-deps and expect npm to report
+# a handful of vulnerabilities in the resulting tree (review `npm audit`
+# before shipping this to production).
+npm install -D openapi-typescript orval --legacy-peer-deps
 ```
 
 ### 🏗️ Auto-Generating the API Client
 
-With drf-spectacular running on the backend, the OpenAPI schema is available at
-`http://localhost:8000/api/schema/`. Use your agent to configure the generator:
+With drf-spectacular running on the backend, the OpenAPI schema is available at `http://localhost:8000/api/schema/`. Use your agent to configure the generator:
 
 ```sql
 /stackattack
@@ -1294,7 +1293,7 @@ Output: A generic <DataTable> component in src/components/ui/data-table.tsx
 
 **Sample Agent Output — ERP Sales Orders Page:**
 
-{% raw %}
+
 ```tsx
 // src/pages/sales/orders/index.tsx
 import { useGetSalesOrdersList } from "@/api/generated/sales";
@@ -1320,11 +1319,14 @@ const columns: ColumnDef<SalesOrder>[] = [
   {
     accessorKey: "customer.name",
     header: "Customer",
-    cell: ({ row }) => (
-      <Link to="/contacts/$id" params={{ id: row.original.customer.id }}>
-        {row.original.customer.name}
-      </Link>
-    ),
+    cell: ({ row }) => {
+      const customerParams = { id: row.original.customer.id };
+      return (
+        <Link to="/contacts/$id" params={customerParams}>
+          {row.original.customer.name}
+        </Link>
+      );
+    },
   },
   {
     accessorKey: "order_date",
@@ -1380,7 +1382,7 @@ export function SalesOrdersPage() {
   );
 }
 ```
-{% endraw %}
+
 
 ### 🎮 Challenge 3: First Full-Stack Feature
 
@@ -1442,6 +1444,8 @@ Requirements:
 ```
 
 **Sample Agent Output — `docker-compose.yml`:**
+
+> ⚠️ **Before you run `docker compose up -d`:** the `django`, `celery-worker`, and `celery-beat` services below build from `erp-backend/Dockerfile.dev`, and the `prometheus`/`grafana` services bind-mount `docker/prometheus/prometheus.yml` and `docker/grafana/provisioning/`. None of these three files are provided by this quest — they are left as an exercise. Ask your `/stackattack` agent to generate a minimal `Dockerfile.dev` (Python 3.12 base image, `pip install -r requirements.txt`, `CMD` matching the service's command) and a starter `prometheus.yml` (`scrape_configs` targeting `django:8000` and `redis-exporter`) before Challenge 4, or Compose will fail with a "mount a directory onto a file" / build-context error.
 
 ```yaml
 # docker-compose.yml
@@ -1851,10 +1855,7 @@ The open-source ERP landscape is vast — ERPNext, Odoo, and dozens of specializ
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 001 - Journeyman Challenges]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 001 - Journeyman Challenges]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Terminal Fundamentals: Command Line Navigation Quest]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -1,9 +1,15 @@
 ---
 title: Dockering Jekyll with Bootstrap 5
 author: GPT and bamr87
-description: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
+tags:
+- docker
+- jekyll
+- bootstrap
+- frontend
+- containers
+description: 'Journey into the Frontend Forests to run a Jekyll site in Docker on macOS, no Ruby install required, then style it with Bootstrap 5 from the CDN.'
 excerpt: Embark on a quest to build a Jekyll site using Bootstrap 5 for CSS and JavaScript in the Frontend Forests. This guide will navigate you through the enchanted woods, ensuring you leverage the magical powers of Jekyll and Bootstrap to create an enchanting website.
-preview: images/previews/dockering-jekyll-with-bootstrap-5.png
+preview: images/previews/dockering-jekyll-with-bootstrap-5.webp
 date: '2024-05-28T15:23:32.000Z'
 lastmod: '2024-05-28T04:11:52.000Z'
 level: '0100'
@@ -34,14 +40,6 @@ quest_dependencies:
   required_quests: []
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths: []
-  character_classes: []
 rewards:
   badges: []
   progression_points: 0
@@ -54,6 +52,11 @@ categories:
 - Quests
 - Fullstack
 - Medium
+environment:
+  os:
+  - cloud
+  shell:
+  - bash
 ---
 ## 🎯 Quest Objectives
 
@@ -141,9 +144,9 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
    <head>
      <meta charset="UTF-8">
      <title>My Jekyll Site</title>
-    {% raw %}
-    {% include head.html %}
-    {% endraw %}
+    
+    {% raw %}{% include head.html %}{% endraw %}
+    
    </head>
    <body>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -177,9 +180,9 @@ Replace the `xxx` with the appropriate integrity values from the Bootstrap CDN s
          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
        </div>
      </div>
-     {% raw %}
-     {% include footer.html %}
-     {% endraw %}
+     
+     {% raw %}{% include footer.html %}{% endraw %}
+     
    </body>
    </html>
    ```
@@ -215,9 +218,7 @@ And there you have it! Your Docker-powered Jekyll site with Bootstrap 5 is up an
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0100 - Frontend Development & Docker]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0100 - Frontend Development & Docker]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

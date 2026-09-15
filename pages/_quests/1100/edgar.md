@@ -1,16 +1,15 @@
 ---
-title: 'Quest to Conquer King EDGAR: The Epic Siege of the SEC Data Castle'
+title: 'Conquer King EDGAR: Siege of the SEC Data Castle'
 author: Quest Master IT-Journey Team
-description: Breach the SEC’s EDGAR fortress using public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into usable insights with Python and AI assistance.
+description: 'Breach the SEC EDGAR fortress with its public APIs, wrangle XBRL facts, respect rate limits, and turn raw filings into insights using Python.'
 excerpt: Raid King EDGAR’s data castle and transform SEC filings into structured, analyzable datasets.
-snippet: Breach the SEC Data Castle and turn EDGAR’s scrolls into insight.
-preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.png
+preview: images/previews/quest-to-conquer-king-edgar-the-epic-siege-of-the-.webp
 date: '2025-08-21T22:00:59.000Z'
 lastmod: '2025-08-20T04:37:39.000Z'
 level: '1100'
 difficulty: 🟡 Medium
 estimated_time: 60-180 minutes
-primary_technology: 1100
+primary_technology: python
 quest_type: main_quest
 quest_series: Data Realm Conquests
 skill_focus: fullstack
@@ -54,40 +53,37 @@ keywords:
 fmContentType: quest
 draft: false
 comments: true
-attachments: ''
-sub-title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
 rewards:
 - 🏆 EDGAR Slayer Badge
 - ⚡ Stronger API + data wrangling skills
 - 🛠️ SEC XBRL and Frames API familiarity
 - 🎯 Reusable EDGAR data pipeline artifacts
-related_quests:
-- 'Level 1010: JSON Alchemy – From Chaos to Tables'
-- 'Level 1110: Testing Rituals – Resilience for Data Pipelines'
-- 'Level 10001: Data Vis – Charts and Dashboards'
 redirect_from:
 - /quests/1100/edgar/
+- /quests/1100/edgar/
 layout: quest
+sub_title: 'Level 1100 (12) Quest: Epic API Data Extraction and Analysis'
+mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 🌟 Welcome, Brave Data Sorcerer! 🌟
 
-In the fog-shrouded realms of Financea, where gold flows like enchanted rivers and secrets are hoarded in
-towering vaults, stands the impregnable Data Castle ruled by the tyrannical King EDGAR. This ancient monarch,
-Sovereign of Electronic Data Gathering, Analysis, and Retrieval, guards the sacred scrolls of corporate
-filings—balance sheets that shimmer like dragon scales, income statements pulsing with the lifeblood of profits,
-and trends that whisper prophecies of market booms and busts.
+In the fog-shrouded realms of Financea, where gold flows like enchanted rivers and secrets are hoarded in towering vaults, stands the impregnable Data Castle ruled by the tyrannical King EDGAR. This ancient monarch, Sovereign of Electronic Data Gathering, Analysis, and Retrieval, guards the sacred scrolls of corporate filings—balance sheets that shimmer like dragon scales, income statements pulsing with the lifeblood of profits, and trends that whisper prophecies of market booms and busts.
 
-But lo! King EDGAR hoards this knowledge for the elite wizards of Wall Street, leaving humble investors, analysts,
-and scholars to grovel in ignorance. You must embark on the Mystical Quest to Conquer King EDGAR! Rally a legion
-of AI Soldiers—ethereal beings forged from code and logic—to breach the castle walls, extract the forbidden
-financial lore, and distribute it to the masses. APIs are your spells, rate limits your traps, and JSON responses
-the glittering treasures you seek.
+But lo! King EDGAR hoards this knowledge for the elite wizards of Wall Street, leaving humble investors, analysts, and scholars to grovel in ignorance. You must embark on the Mystical Quest to Conquer King EDGAR! Rally a legion of AI Soldiers—ethereal beings forged from code and logic—to breach the castle walls, extract the forbidden financial lore, and distribute it to the masses. APIs are your spells, rate limits your traps, and JSON responses the glittering treasures you seek.
 
 ### 🌟 The Legend Behind This Quest
 
-Democratizing financial data empowers research, education, and fairness. EDGAR exposes public, no-key endpoints at
-`https://data.sec.gov` that—when used respectfully—unlock filings, concepts, and cross-company frames suitable for
-analysis, dashboards, and learning.
+Democratizing financial data empowers research, education, and fairness. EDGAR exposes public, no-key endpoints at `https://data.sec.gov` that—when used respectfully—unlock filings, concepts, and cross-company frames suitable for analysis, dashboards, and learning.
 
 ## 🎯 Quest Objectives
 
@@ -167,8 +163,7 @@ Use a codespace or any notebook runtime; install `requests` and `pandas`. Contai
 
 ## Level 000: The Awakening – Forge Your AI Legion
 
-Narrative: In the misty village of Queryton, the Oracle whispers of `https://data.sec.gov`. No key needed—but
-beware the Rate Limit Goblins (target ≤10 req/s) and the 429 curse.
+Narrative: In the misty village of Queryton, the Oracle whispers of `https://data.sec.gov`. No key needed—but beware the Rate Limit Goblins (target ≤10 req/s) and the 429 curse.
 
 Challenge – Summon the Soldiers:
 
@@ -211,8 +206,7 @@ data = get_submissions('320193')  # Apple without leading zeros
 print(data['name'], len(data['filings']['recent']['form']))
 ```
 
-Pitfall: Malformed CIKs (pad to 10 digits) → 400 errors. Nightly bulk zip for scale:
-`https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip`.
+Pitfall: Malformed CIKs (pad to 10 digits) → 400 errors. Nightly bulk zip for scale: `https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip`.
 
 Badge Unlock: Scout Supreme – Extracted first filing date.
 
@@ -414,14 +408,11 @@ graph TD
 
 ---
 
-🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically,
-comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
+🎉 Congratulations, Hero! You’ve humbled King EDGAR—not by theft, but by wisdom. Use these powers ethically, comply with SEC edicts, and share knowledge widely. Onward—may your APIs never 429! ⚔️📜✨
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1100 - Data & Templates]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1100 - Data & Templates]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

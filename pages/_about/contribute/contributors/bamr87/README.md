@@ -7,6 +7,7 @@ username: bamr87
 contributor_data: bamr87
 permalink: /contributors/bamr87/
 lastmod: '2026-03-21T15:12:32.000Z'
+mermaid: true
 ---
 <link rel="stylesheet" href="{{ '/assets/css/contributor-profile.css' | relative_url }}">
 
@@ -29,9 +30,7 @@ Here's some of my progress:
 [![roadmap.sh](https://api.roadmap.sh/v1-badge/wide/6553d32668ca6026132e78a8?variant=dark)](https://roadmap.sh/u/bamr87)
 
 <!---
-bamr87/bamr87 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+bamr87/bamr87 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile. You can click the Preview link to take a look at your changes. --->
 
 <summary>Add this repo as a sub-tree</summary>
 <details>

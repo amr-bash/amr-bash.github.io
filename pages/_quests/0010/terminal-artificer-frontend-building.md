@@ -3,35 +3,22 @@ title: 'Terminal Artificer: Forging the Glass Interface'
 author: Quest Master Copilot
 description: Master the art of crafting beautiful, interactive frontends for your shell scripts using Gum, transforming raw command-line magic into elegant tools.
 excerpt: Transform your raw shell scripts into interactive, user-friendly tools with menus, inputs, and beautiful styling.
-snippet: Forge the glass interface between wizard and machine.
-preview: images/previews/terminal-artificer-forging-the-glass-interface.png
+preview: images/previews/terminal-artificer-forging-the-glass-interface.webp
 date: '2025-11-19T22:47:27.000Z'
 lastmod: '2025-11-29T01:07:17.000Z'
 level: '0010'
 difficulty: 🟢 Easy
 estimated_time: 30-45 minutes
-primary_technology: 8
+primary_technology: bash
 quest_type: side_quest
 quest_series: Terminal Mastery Path
 quest_line: Foundation Path
 quest_arc: Tool Mastery Arc
 quest_dependencies:
-  required_quests: []
+  required_quests:
+  - /quests/0001/terminal-mastery/
   recommended_quests: []
   unlocks_quests: []
-quest_relationships:
-  parent_quest: /quests/0001/terminal-mastery/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Mastery
-  - DevOps Automation
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -54,12 +41,7 @@ validation_criteria:
   knowledge_checks:
   - Explain the difference between arguments and interactive input
   - Understand exit codes in selection menus
-quest_mapping:
-  coordinates: '[1, 2]'
-  region: Foundation
-  realm: Development
-  biome: Terminal
-permalink: /quests/0010/side-quests/terminal-artificer-frontend-building/
+permalink: /quests/0010/terminal-artificer-frontend-building/
 categories:
 - Quests
 - Development
@@ -84,8 +66,6 @@ keywords:
   - hands-on
 fmContentType: quest
 comments: true
-attachments: ''
-sub-title: 'Level 0010 (2) Quest: Terminal Frontend Building'
 rewards:
   badges:
   - 🏆 Glass Interface Artificer
@@ -98,13 +78,26 @@ rewards:
   - Ability to create user-friendly CLI tools
 redirect_from:
 - /quests/0010/side-quests/terminal-artificer/
+- /quests/0010/side-quests/terminal-artificer-frontend-building/
 layout: quest
+sub_title: 'Level 0010 (2) Quest: Terminal Frontend Building'
+draft: false
+mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
-*In the raw chaotic energy of the command line, powerful spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that power without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield powerful magic safely.*
+*In the raw chaotic energy of the command line, far-reaching spells (scripts) are often cast with cryptic runes (arguments) and dangerous incantations. A single typo can spell disaster. As a Terminal Artificer, you have learned that reach without control is chaos. You seek to forge a "Glass Interface"—a layer of elegance and order that allows even the uninitiated to wield destructive magic safely.*
 
 *Today, you will learn to craft these interfaces using **Gum**, a mystical artifact from the Charm realm that brings glamour and interactivity to your shell scripts.*
 
-![Quest Preview: Terminal Artificer: Forging the Glass Interface](/assets/images/previews/terminal-artificer-forging-the-glass-interface.png)
+![Quest Preview: Terminal Artificer: Forging the Glass Interface](/assets/images/previews/terminal-artificer-forging-the-glass-interface.webp)
 
 ### 🌟 The Legend Behind This Quest
 For decades, wizards of the terminal have relied on `read` and arcane flags to gather intelligence from users. But the modern era demands more. We crave the tactile feedback of a menu, the safety of a confirmation dialog, and the clarity of a well-formatted prompt. Gum is the modern artificer's hammer, allowing you to build beautiful, composable CLIs with simple shell commands.
@@ -240,7 +233,7 @@ echo "Welcome, $NAME. Your secret is safe with me."
 
 ## 🧙‍♂️ Chapter 3: The Seal of Binding (Confirmation)
 
-*Powerful spells require safeguards. Before deleting a kingdom (or a file), an Artificer must ask: "Are you sure?"*
+*Destructive spells require safeguards. Before deleting a kingdom (or a file), an Artificer must ask: "Are you sure?"*
 
 ### ⚔️ Skills You'll Forge in This Chapter
 - Creating confirmation dialogs.
@@ -370,9 +363,7 @@ Now that you can build interfaces, consider:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0010 - Terminal Enhancement & Shell Mastery]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

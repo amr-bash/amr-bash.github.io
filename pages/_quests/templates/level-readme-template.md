@@ -1,8 +1,8 @@
 ---
 title: Level [BINARY] ([DECIMAL]) - [Level Name]
 layout: quest-collection
-description: 'Reference: Level [BINARY] ([DECIMAL]) - [Level Name].'
-preview: /images/previews/level-binary-decimal-level-name.png - Concise description of what this level covers and its role in the learning journey
+description: 'Reusable template for an IT-Journey level README, indexing main, side, and bonus quests with learning objectives, prerequisites, and progression.'
+preview: /images/previews/level-binary-decimal-level-name.webp - Concise description of what this level covers and its role in the learning journey
 permalink: /quests/[LEVEL]/
 categories:
 - Quests
@@ -34,6 +34,7 @@ skill_focus:
 learning_style: reading
 quest_type: template
 fmContentType: template
+mermaid: true
 ---
 # Level [BINARY] ([DECIMAL]) - [Level Name]
 
@@ -370,7 +371,7 @@ Rate your confidence (1-5) in each area:
 
 **If you want more practice**:
 - Revisit quests with **higher difficulty** implementations
-- Complete all **side quests** for comprehensive mastery
+- Complete all **side quests** to cover every skill area in this level
 - Take on **bonus quests** for advanced challenges
 - Create your own **variant quests** to solidify learning
 

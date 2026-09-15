@@ -1,6 +1,6 @@
 ---
 title: 'The Three Sigils: Plan, Reason, Act'
-description: Master the boundary between agent planning and agent execution. Configure Copilot agents to output structured plans, validate them, and prevent action until approved — eliminating the most dangerous source of agent runaway.
+description: 'Configure a GitHub Copilot coding agent to produce a structured plan, define its JSON schema, and gate every action behind human approval.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-plan-vs-action-boundaries.png
 level: '0111'
@@ -46,18 +46,6 @@ quest_dependencies:
   recommended_quests: []
   unlocks_quests:
   - /quests/1000/agentic-observability-and-control/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  sequel_quests:
-  - /quests/1000/agentic-observability-and-control/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
 rewards:
   badges:
   - 📜 Plan-First Architect
@@ -83,11 +71,6 @@ validation_criteria:
   knowledge_checks:
   - Understands why separating plan from action reduces agent risk
   - Can describe what a valid structured agent plan looks like
-quest_mapping:
-  coordinates: '[1, 2]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: SDLC Forest
 comments: true
 draft: false
 redirect_from:
@@ -164,7 +147,7 @@ GitHub Copilot's coding agent reads a `.github/copilot-instructions.md` file to 
 
 > **Exercise 2.1:** Create `.github/copilot-instructions.md` in your sandbox with the following content, then customise it for a repo you own.
 
-```markdown
+````markdown
 # GitHub Copilot Agent Instructions
 
 ## Mandatory Operating Protocol
@@ -192,7 +175,7 @@ Output a JSON plan in this exact schema before writing any code:
   "risk_level": "low|medium|high",
   "requires_human_approval": true
 }
-```markdown
+```
 
 ### Step 2 — Wait for Explicit Approval
 
@@ -213,8 +196,7 @@ If you discover you need additional steps, STOP and re-plan.
 - Commit or push code
 - Open, close, or merge pull requests
 - Modify any file outside the stated scope
-```
-```bash
+````
 
 ---
 
@@ -249,7 +231,7 @@ A parseable plan is a testable plan. Save the schema to `work/gh-600/schemas/age
     "requires_human_approval": { "type": "boolean" }
   }
 }
-```text
+```
 
 Validate a plan with:
 
@@ -263,7 +245,7 @@ plan   = json.load(open('work/gh-600/sample-plan.json'))
 jsonschema.validate(plan, schema)
 print('✅ Plan is valid')
 "
-```bash
+```
 
 ---
 
@@ -330,7 +312,7 @@ jobs:
               issue_number: context.issue.number,
               body
             });
-```bash
+```
 
 ---
 
@@ -361,7 +343,7 @@ python3 scripts/validate_quest.py --quest q2
 # ✅ GitHub Actions gate: agent-plan-gate.yml present
 # ✅ Sample plan: real-plan.json present
 # 🏆 Quest Q2 complete!
-```markdown
+```
 
 ---
 
@@ -380,17 +362,11 @@ python3 scripts/validate_quest.py --quest q2
 
 - **Next quest:** [Q3: The All-Seeing Eye — Observability & Control](/quests/1000/agentic-observability-and-control/)
 - **Prerequisite for:** All Domain 2+ quests
-- **Chronicle post:** [Embedding Agents in the SDLC](/posts/embedding-agents-in-the-sdlc/)
+- **Codex chapter:** [Initiation Rites: Agents in the SDLC](/quests/0111/agentic-codex-01-agents-in-the-sdlc/)
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0111 (7) - API Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]]
-**Unlocks:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
-**Sequel quests:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0111 (7) - API Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Initiation Rites: Embedding Agents in the SDLC]] **Unlocks:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] **Sequel quests:** [[The All-Seeing Eye: Observability & Control for Autonomous Agents]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

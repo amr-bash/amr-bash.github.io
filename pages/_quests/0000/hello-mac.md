@@ -1,6 +1,6 @@
 ---
 title: 'Hello macOS: Setting Up the Apple Kingdom'
-description: Set up a macOS development environment with Homebrew, Xcode Command Line Tools, and a modern terminal workflow.
+description: 'Transform your Mac into a professional dev workstation: install Xcode Command Line Tools and Homebrew, configure iTerm2, and verify Git and SSH.'
 author: IT-Journey Team
 date: '2026-01-14T22:23:32.000Z'
 lastmod: 2026-01-14
@@ -17,28 +17,11 @@ quest_dependencies:
   recommended_quests:
   - /quests/0000/hello-noob/
   - /quests/0000/os-selection/
+  - /quests/0000/hello-windows/
+  - /quests/0000/linux-fundamentals/
   unlocks_quests:
   - /quests/0000/vscode-mastery/
   - /quests/0000/terminal-fundamentals/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/vscode-mastery/
-  parallel_quests:
-  - /quests/0000/hello-windows/
-  - /quests/0000/linux-fundamentals/
-learning_paths:
-  primary_paths:
-  - Software Development
-  - iOS Development
-  - Full-Stack Development
-  character_classes:
-  - 💻 Software Developer
-  - 🎨 Digital Artist
-  - 🏗️ System Engineer
-  skill_trees:
-  - macOS Administration
-  - Package Management
 skill_focus: fullstack
 learning_style: hands-on
 permalink: /quests/0000/hello-macos/
@@ -99,6 +82,12 @@ draft: false
 redirect_from:
 - /quests/0000/hello-mac/
 layout: quest
+environment:
+  os:
+  - macos
+  shell:
+  - zsh
+  - bash
 ---
 *Welcome, macOS adventurer! This quest transforms your Mac into a professional-grade development workstation. You'll install core tooling, tune your terminal, and validate a clean, repeatable setup.*
 
@@ -207,9 +196,9 @@ You should see valid versions for each command.
 
 ## 🔗 Related Quests
 
-- [Hello n00b](../hello-noob.md)
-- [OS Selection](../os-selection.md)
-- [VS Code Mastery Quest](../vscode-mastery.md)
+- [Hello n00b](hello-noob.md)
+- [OS Selection](os-selection.md)
+- [VS Code Mastery Quest](vscode-mastery.md)
 
 ## 📚 References & Resources
 
@@ -223,13 +212,7 @@ You should see valid versions for each command.
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]]
-**Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]]
-**Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]]
-**Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Linux Fundamentals]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Recommended:** [[Hello n00b: Your First Steps into the IT Journey]] · [[OS Selection]] **Unlocks:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] · [[Terminal Fundamentals: Command Line Navigation Quest]] **Sequel quests:** [[VS Code Mastery Quest: Forge Your Ultimate Development Weapon]] **Parallel quests:** [[Hello Windows: Mastering the Windows Development Environment]] · [[Linux Fundamentals]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

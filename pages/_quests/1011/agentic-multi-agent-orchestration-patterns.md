@@ -1,6 +1,6 @@
 ---
 title: 'The Council of Many: Multi-Agent Orchestration Patterns'
-description: Design and implement multi-agent systems using GitHub — orchestrator agents, sub-agent fan-out, sequential chains, and event-driven coordination using GitHub Actions and GitHub Models API.
+description: 'Build multi-agent systems on GitHub: design fan-out, sequential chain, and event-driven orchestrators that dispatch sub-agent jobs and aggregate their results.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-multi-agent-orchestration-patterns.png
 level: '1011'
@@ -45,18 +45,7 @@ quest_dependencies:
   - /quests/1011/agentic-behavior-tuning/
   unlocks_quests:
   - /quests/1011/agentic-multi-agent-observability/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-multi-agent-observability/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  - 🏛️ Architect
-  skill_trees:
-  - Agentic AI
-  - System Design
+  recommended_quests: []
 rewards:
   badges:
   - 👑 Council Commander
@@ -76,11 +65,6 @@ validation_criteria:
   - At least 2 orchestration patterns implemented (fan-out and chain)
   - Orchestrator workflow routes tasks to appropriate sub-agents
   - Sub-agent results aggregated by orchestrator
-quest_mapping:
-  coordinates: '[5, 1]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Council Chambers
 comments: true
 draft: false
 redirect_from:
@@ -214,12 +198,22 @@ jobs:
 ```
 {% endraw %}
 
+> **Helper scripts are learner-authored placeholders.** This workflow invokes
+> `work/gh-600/scripts/partition_task.py`, `run_subtask.py`, and
+> `aggregate_results.py`. These are **not provided by the quest** — they are stubs
+> you author for your own task domain. Until you create them the workflow will fail
+> on first run with `No such file or directory`. Start with a minimal
+> `partition_task.py` that reads the issue and writes a `partition.json` containing a
+> `subtasks` array, then flesh out `run_subtask.py` and `aggregate_results.py` the
+> same way.
+
 ---
 
 ### Chapter 3 — Sequential Chain Pattern
 
 > **Exercise 14.2:** Create a sequential chain where research feeds into implementation.
 
+{% raw %}
 ```yaml
 # .github/workflows/orchestrator-chain.yml
 name: Multi-Agent Chain (Research → Plan → Implement)
@@ -274,15 +268,15 @@ jobs:
           echo "Implementation agent executing plan: $PLAN"
           # Agent modifies the specified files
 ```
+{% endraw %}
 
 ---
 
 ### Chapter 4 — Sub-Agent Contracts
 
-Every sub-agent in a multi-agent system needs a well-defined contract — standard inputs and outputs:
+Every sub-agent in a multi-agent system needs a well-defined contract — standard inputs and outputs. Save this as `work/gh-600/schemas/sub-agent-contract.json` (plain `.json` files can't contain `//` comments, so the path lives here in prose rather than inside the block):
 
 ```json
-// work/gh-600/schemas/sub-agent-contract.json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "SubAgentContract",
@@ -321,12 +315,18 @@ Every sub-agent in a multi-agent system needs a well-defined contract — standa
 
 ## ✅ Quest Validation
 
+Run this manual self-check from your repo root — it verifies your Q14 deliverables directly, so you don't need any external validator script:
+
 ```bash
-python3 scripts/validate_quest.py --quest q14
-# ✅ Fan-out workflow: orchestrator-fan-out.yml present
-# ✅ Chain workflow: orchestrator-chain.yml present
-# ✅ Sub-agent contract: sub-agent-contract.json present
-# 🏆 Quest Q14 complete!
+# Manual self-check — confirm your Q14 deliverables exist
+test -f .github/workflows/orchestrator-fan-out.yml \
+  && echo "✅ Fan-out workflow: orchestrator-fan-out.yml present"
+test -f .github/workflows/orchestrator-chain.yml \
+  && echo "✅ Chain workflow: orchestrator-chain.yml present"
+test -f work/gh-600/schemas/sub-agent-contract.json \
+  && python3 -m json.tool work/gh-600/schemas/sub-agent-contract.json >/dev/null \
+  && echo "✅ Sub-agent contract: sub-agent-contract.json present and valid JSON"
+# 🏆 Quest Q14 complete when all three checks print ✅
 ```
 
 ## 🏆 Quest Rewards
@@ -340,13 +340,7 @@ python3 scripts/validate_quest.py --quest q14
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]]
-**Unlocks:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
-**Sequel quests:** [[The Scribe's Codex: Observability in Multi-Agent Systems]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[Reforging the Agent's Mind: Behavior Tuning Through Instructions]] **Unlocks:** [[The Scribe's Codex: Observability in Multi-Agent Systems]] **Sequel quests:** [[The Scribe's Codex: Observability in Multi-Agent Systems]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

@@ -1,6 +1,6 @@
 ---
-title: 'Reforging the Agent''s Mind: Behavior Tuning Through Instructions'
-description: Systematically improve GitHub Copilot agent performance by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring the impact of each change.
+title: 'Reforging the Agent''s Mind: Tuning Behavior by Instruction'
+description: 'Tune your GitHub Copilot agent by analysing failure patterns, iterating on copilot-instructions.md and AGENTS.md, and measuring each change''s impact.'
 date: '2026-05-17T00:00:00.000Z'
 preview: images/previews/agentic-behavior-tuning.png
 level: '1011'
@@ -45,17 +45,7 @@ quest_dependencies:
   - /quests/1010/agentic-failure-root-cause-analysis/
   unlocks_quests:
   - /quests/1011/agentic-multi-agent-orchestration-patterns/
-quest_relationships:
-  sequel_quests:
-  - /quests/1011/agentic-multi-agent-orchestration-patterns/
-learning_paths:
-  primary_paths:
-  - Agentic AI Systems
-  character_classes:
-  - 🤖 AI Engineer
-  skill_trees:
-  - Agentic AI
-  - Instruction Engineering
+  recommended_quests: []
 rewards:
   badges:
   - 🔨 Forge Master
@@ -74,11 +64,6 @@ validation_criteria:
   - Behaviour improvement cycle documented (baseline → change → measure → iterate)
   - At least 2 instruction changes made with measurable outcome
   - Instruction changelog maintained
-quest_mapping:
-  coordinates: '[4, 3]'
-  region: Agentic Codex
-  realm: GitHub Citadel
-  biome: The Forge
 comments: true
 draft: false
 redirect_from:
@@ -112,6 +97,12 @@ Before tuning, you need a benchmark. Run three representative tasks and record o
 
 > **Exercise 13.1:** Create the baseline measurement script.
 
+**Prerequisites** (the script reads real workflow history, so it needs a repo with agent activity):
+>
+> - `gh auth login` completed, or `GH_TOKEN` exported, so the GitHub CLI is authenticated
+> - an `agent-task.yml` workflow already committed to the repo
+> - at least one prior agent run/PR for tasks 1–3 to measure
+
 ```bash
 # work/gh-600/scripts/measure_agent_baseline.sh
 #!/usr/bin/env bash
@@ -119,8 +110,26 @@ set -euo pipefail
 
 RESULTS_FILE="work/gh-600/baseline-results.jsonl"
 RUN_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+mkdir -p "$(dirname "$RESULTS_FILE")"
 
 echo "=== Agent Behaviour Baseline Measurement ==="
+
+# No agent-task.yml history yet? Pass --seed to write three synthetic sample
+# records so you can complete the iteration cycle and pass Quest Validation now,
+# then re-run WITHOUT --seed once real agent runs exist to capture live data.
+if [ "${1:-}" = "--seed" ]; then
+    : > "$RESULTS_FILE"
+    for TASK_NUM in 1 2 3; do
+        cat >> "$RESULTS_FILE" << EOF
+{"date":"$RUN_DATE","task":$TASK_NUM,"run_id":"seed","pr_opened":false,"tests_passed":false,"seed":true}
+EOF
+    done
+    echo "✅ Seed baseline written to $RESULTS_FILE (3 synthetic records)."
+    echo "   Re-run without --seed once real agent-task.yml runs exist."
+    exit 0
+fi
+
+RECORDED=0
 
 # For each test task, record:
 # - Did the agent open a PR? (success signal 1)
@@ -132,8 +141,15 @@ echo "=== Agent Behaviour Baseline Measurement ==="
 for TASK_NUM in 1 2 3; do
     echo "Measuring task $TASK_NUM..."
     
-    # Get the latest agent run for this task
-    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=1 --json databaseId -q '.[0].databaseId')
+    # Get the latest agent run for THIS task by matching its branch
+    # (copilot/issue-{N}-{slug}); a bare --limit=1 would return the same
+    # newest run for every task. Degrade gracefully if none exists yet.
+    RUN_ID=$(gh run list --workflow=agent-task.yml --limit=50 --json databaseId,headBranch \
+        -q "[.[] | select(.headBranch | startswith(\"copilot/issue-$TASK_NUM-\"))][0].databaseId" 2>/dev/null || true)
+    if [ -z "$RUN_ID" ]; then
+        echo "⚠️  No agent-task.yml run found for task $TASK_NUM — run the agent workflow at least once, then re-run this script."
+        continue
+    fi
     
     PR_OPENED=$(gh pr list --state all --search "is:pr in:title issue-$TASK_NUM" --json number -q 'length')
     TESTS_PASSED=$(gh run view "$RUN_ID" --json conclusion -q '.conclusion')
@@ -141,10 +157,19 @@ for TASK_NUM in 1 2 3; do
     cat >> "$RESULTS_FILE" << EOF
 {"date":"$RUN_DATE","task":$TASK_NUM,"run_id":"$RUN_ID","pr_opened":$([ "$PR_OPENED" -gt 0 ] && echo true || echo false),"tests_passed":$([ "$TESTS_PASSED" = "success" ] && echo true || echo false)}
 EOF
+    RECORDED=$((RECORDED + 1))
 done
 
-echo "✅ Baseline recorded in $RESULTS_FILE"
+if [ "$RECORDED" -eq 0 ]; then
+    echo "❌ No tasks were recorded — no agent-task.yml runs exist yet, so $RESULTS_FILE was not created."
+    echo "   Trigger at least one agent run for tasks 1–3, then re-run this script."
+    exit 1
+fi
+
+echo "✅ Baseline recorded ($RECORDED task(s)) in $RESULTS_FILE"
 ```
+
+> **No agent history yet?** If you haven't yet run an `agent-task.yml` workflow (or you completed [Q12](/quests/1010/agentic-failure-root-cause-analysis/) on a different repo), run `bash work/gh-600/scripts/measure_agent_baseline.sh --seed` to write three synthetic sample records. This lets you finish the iteration cycle and pass Quest Validation now; re-run without `--seed` once real agent runs exist to replace the seed data with live measurements.
 
 ---
 
@@ -159,6 +184,26 @@ Based on common agent failure patterns, here are the most impactful instruction 
 | Agent creates vague commit messages | Specify commit message format exactly | Improves traceability |
 | Agent opens PR too early | Define PR readiness criteria | Reduces draft PR churn |
 | Agent re-reads files it's already read | Add "mark as read" memory convention | Reduces redundant actions |
+
+> **Exercise 13.1b:** Actually apply an instruction change. Pick one row from the table above and edit the real files — this is the hands-on core of Objective 3, not just a log entry. Example, enforcing the mandatory planning step and traceable branches:
+
+**`copilot-instructions.md`** — add the planning rule:
+
+```markdown
+## Workflow
+- **PLAN FIRST:** post a short plan (files to touch, ordered steps) before editing any file.
+- Implement the fix only after the plan is posted.
+```
+
+**`AGENTS.md`** — add the branch-naming rule:
+
+```markdown
+## Branch naming
+Branch name MUST follow: `copilot/issue-{N}-{3-5-word-slug}`
+Example: `copilot/issue-42-add-input-validation`
+```
+
+Commit both edits before you continue — Chapter 3 measures their impact and Quest Validation confirms the files changed.
 
 ---
 
@@ -228,12 +273,21 @@ Format: Date | File | Change | Reason | Outcome
 
 ## ✅ Quest Validation
 
+Run this manual self-check from your repo root — it verifies your Q13 deliverables directly, so you don't need any external validator script:
+
 ```bash
-python3 scripts/validate_quest.py --quest q13
-# ✅ Baseline measurement: baseline-results.jsonl present
-# ✅ Iteration log: iteration records in docs/agent-instructions/
-# ✅ Instruction changelog: CHANGELOG.md present
-# 🏆 Quest Q13 complete!
+# Manual self-check — confirm your Q13 deliverables exist
+test -f work/gh-600/baseline-results.jsonl \
+  && echo "✅ Baseline measurement: baseline-results.jsonl present"
+ls docs/agent-instructions/*.md >/dev/null 2>&1 \
+  && echo "✅ Iteration log: iteration records in docs/agent-instructions/"
+test -f docs/agent-instructions/CHANGELOG.md \
+  && echo "✅ Instruction changelog: CHANGELOG.md present"
+grep -q "copilot/issue-" AGENTS.md 2>/dev/null \
+  && echo "✅ Instruction change: AGENTS.md carries the new branch-naming rule"
+grep -qi "plan first" copilot-instructions.md 2>/dev/null \
+  && echo "✅ Instruction change: copilot-instructions.md carries the new planning rule"
+# 🏆 Quest Q13 complete when all checks print ✅
 ```
 
 ## 🏆 Quest Rewards
@@ -247,13 +301,7 @@ python3 scripts/validate_quest.py --quest q13
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1011 - Feature Development]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]]
-**Prerequisites:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]]
-**Unlocks:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
-**Sequel quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1011 - Feature Development]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Study track:** [[The Agentic Codex: GH-600 Study Hub]] · [[GH-600 Agentic AI Quick-Reference Notes]] **Prerequisites:** [[The Necromancer's Inquest: Agent Failure Root Cause Analysis]] **Unlocks:** [[The Council of Many: Multi-Agent Orchestration Patterns]] **Sequel quests:** [[The Council of Many: Multi-Agent Orchestration Patterns]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

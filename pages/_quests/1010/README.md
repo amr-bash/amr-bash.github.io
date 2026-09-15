@@ -1,14 +1,24 @@
 ---
 title: Level 1010 - Automation & Testing
-description: Build automated testing pipelines, link validation systems, and CI/CD workflows
-preview: images/previews/level-1010-automation-testing.png
+description: 'Build automated test pipelines, link validators, and CI/CD workflows, then add monitoring, alerting, and observability to ship code with confidence.'
+preview: images/previews/level-1010-automation-testing.webp
 permalink: /quests/1010/
 layout: quest-collection
+local_graph: false
 level: '1010'
 categories:
 - quests
 lastmod: '2025-11-29T23:41:31.000Z'
 date: '2025-11-29T16:46:02.000Z'
+draft: false
+author: IT-Journey Team
+tags:
+- quests
+- '1010'
+- warrior
+- monitoring
+- observability
+mermaid: true
 ---
 # Level 1010: Automation & Testing
 
@@ -19,7 +29,7 @@ date: '2025-11-29T16:46:02.000Z'
 Level 1010 quests focus on:
 - **Automated Testing** - Build reliable test pipelines
 - **Link Validation** - Automated hyperlink checking systems
-- **Error Reporting** - Comprehensive monitoring and alerting
+- **Error Reporting** - Monitoring, logging, and alerting
 - **CI/CD Integration** - GitHub Actions and automation workflows
 
 ## Available Quests
@@ -54,7 +64,7 @@ Build an automated hyperlink validation system. Learn to create GitHub Actions w
 ### For Quality Assurance
 1. [Link to the Future](link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)
 2. Progress to Level 1011 for feature development
-3. Combine with Level 1110 for comprehensive QA
+3. Combine with Level 1110 for end-to-end QA
 
 ### For Documentation Teams
 1. [Link to the Future](link-to-the-future-automated-hyperlink-checking-and-error-reporting.md)

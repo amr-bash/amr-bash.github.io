@@ -3,14 +3,13 @@ title: '404 Hunting: Binary Wards for Unbreakable Links'
 author: Quest Master IT-Journey
 description: Banish 404s in Jekyll with permalink magic, redirect runes, CI link guardians, and living resource endpoints powered by GitHub.
 excerpt: Hunt the 404 Specter with Jekyll permalink magic, redirect runes, CI hyperlink guardians, and organic resource endpoints.
-snippet: May your links never stray and your redirects never loop.
-preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.png
+preview: images/previews/404-hunting-binary-wards-for-unbreakable-links.webp
 date: '2025-08-31T18:32:58.000Z'
 lastmod: '2025-08-31T23:16:16.000Z'
 level: '1110'
 difficulty: 🟡 Medium
 estimated_time: 60-90 minutes
-primary_technology: 1110
+primary_technology: jekyll
 quest_type: main_quest
 quest_series: Site Reliability for Static Sites
 skill_focus: fullstack
@@ -44,20 +43,26 @@ keywords:
   - devops
 fmContentType: quest
 comments: true
-attachments: ''
-sub-title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
 rewards:
 - 🏆 Resource Guardian Badge
 - ⚡ Link Integrity +5
 - 🛠️ Jekyll Redirect Mastery
 - 🎯 CI Link Guardian Setup
-related_quests:
-- 'Permalink Lore: Stable Slugs and Trails (Level 1100)'
-- 'CI Scribes: Automating Quality Trials (Level 1111)'
-- 'Content Gardens: Jekyll Collections (Level 10100)'
 redirect_from:
 - /quests/1110/404-hunting/
 layout: quest
+sub_title: 'Level 1110 (14) Quest: Integration Spells for Link Integrity'
+draft: false
+mermaid: true
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *[In the digital matrix where URLs thread through luminous forests, a wraith prowls—the 404 Specter. Its hunger is broken paths; its lair, forgotten slugs. Today you rise as a Link Warden, weaving binary incantations to bind the 404 and light every trail.]*
 
@@ -144,6 +149,7 @@ plugins:
 
 Create an inviting `404.html`:
 
+{% raw %}
 ```html
 ---
 permalink: /404.html
@@ -165,6 +171,7 @@ permalink: /404.html
   <style>.not-found{max-width:720px;margin:3rem auto;padding:0 1rem}</style>
 </main>
 ```
+{% endraw %}
 
 ### 🔍 Knowledge Check: Paths
 
@@ -225,6 +232,7 @@ permalink: /legacy-path/
 
 Lychee (quick, generous):
 
+{% raw %}
 ```yaml
 name: Hyperlink Guardian
 on:
@@ -250,6 +258,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+{% endraw %}
 
 HTMLProofer (strict, post-build):
 
@@ -267,18 +276,19 @@ jobs:
           bundler-cache: true
       - name: Build Jekyll
         run: |
-          bundle install --path vendor/bundle
+          bundle config set --local path vendor/bundle
+          bundle install
           bundle exec jekyll build --trace
       - name: HTMLProofer
         run: |
-          gem install html-proofer
+          gem install html-proofer -v 5.2.1
           htmlproofer ./_site \
             --assume-extension \
             --check-external-hash \
             --enforce-https \
-            --typhoeus-config 'timeout:20' \
-            --url-ignore "^https://localhost,https://127.0.0.1" \
-            --http-status-ignore '0,429'
+            --typhoeus '{"timeout":20}' \
+            --ignore-urls "^https://localhost,https://127.0.0.1" \
+            --ignore-status-codes '0,429'
 ```
 
 ### 🔍 Knowledge Check: Guardians
@@ -323,9 +333,9 @@ Data-driven links via `_data/quests.yml`:
 Template snippet:
 
 ```liquid
-{% for quest in site.data.quests %}
-  <a href="/quests/{{ quest.name | slugify }}">{{ quest.name }}</a>
-{% endfor %}
+{% raw %}{% for quest in site.data.quests %}{% endraw %}
+  <a href="/quests/{% raw %}{{ quest.name | slugify }}{% endraw %}">{% raw %}{{ quest.name }}{% endraw %}</a>
+{% raw %}{% endfor %}{% endraw %}
 ```
 
 ### 🔍 Knowledge Check: Growth
@@ -380,10 +390,10 @@ Objective: Use guardian logs to create a minimal viable resource (MVR) or redire
 
 ## 📚 Quest Resource Codex
 
-- Companion Article: </posts/404-hunting-quest/>
+- Companion Article: [Kill dead links in Jekyll: stable permalinks, redirect_from, and a CI link checker](https://lifehacker.dev/hacks/kill-dead-links-jekyll-permalinks/)
 - Jekyll Permalinks: <https://jekyllrb.com/docs/permalinks/>
-- jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
-- jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
+- Jekyll-redirect-from: <https://github.com/jekyll/jekyll-redirect-from>
+- Jekyll-sitemap: <https://github.com/jekyll/jekyll-sitemap>
 - HTMLProofer: <https://github.com/gjtorikian/html-proofer>
 - Lychee Action: <https://github.com/lycheeverse/lychee-action>
 - GitHub Pages 404s: <https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site>
@@ -428,9 +438,7 @@ Validation Recap:
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 1110 - Quality Assurance]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 1110 - Quality Assurance]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

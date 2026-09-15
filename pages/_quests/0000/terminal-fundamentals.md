@@ -3,7 +3,7 @@ title: 'Terminal Fundamentals: Command Line Navigation Quest'
 author: IT-Journey Team
 description: Master essential command line skills including navigation, file management, and basic shell commands across macOS, Linux, and Windows terminals.
 excerpt: Learn essential command line skills for navigating and managing files in any operating system.
-preview: images/previews/terminal-fundamentals-command-line-navigation-ques.png
+preview: images/previews/terminal-fundamentals-command-line-navigation-ques.webp
 date: '2025-11-29T22:51:57.000Z'
 lastmod: '2026-04-25T19:27:00.000Z'
 level: '0000'
@@ -20,21 +20,6 @@ quest_dependencies:
   unlocks_quests:
   - /quests/0000/bashcrawl/
   - /quests/0010/bash-scripting/
-quest_relationships:
-  parent_quest: null
-  child_quests: []
-  parallel_quests: []
-  sequel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  skill_trees:
-  - Terminal Navigation
-  - File Management
-  - Shell Basics
 skill_focus: devops
 learning_style: hands-on
 prerequisites:
@@ -57,13 +42,6 @@ validation_criteria:
   knowledge_checks:
   - Understands the difference between absolute and relative paths
   - Can explain what standard input, output, and error are
-quest_mapping:
-  coordinates:
-  - 2
-  - 1
-  region: Foundation
-  realm: Development
-  biome: Terminal
 permalink: /quests/0000/terminal-fundamentals/
 categories:
 - Quests
@@ -101,8 +79,17 @@ rewards:
   - Foundation for all scripting and development quests
   - Confident terminal usage across platforms
 layout: quest
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
-*Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, the most powerful interface in any IT hero's arsenal. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
+*Greetings, brave adventurer! Welcome to the Terminal Fundamentals quest — your gateway to the command line, where you type one instruction and get one result, then chain those instructions into scripts you can repeat and automate. While graphical interfaces are comfortable, the terminal is where real power lives. This quest will transform you from a GUI-bound novice into a confident command-line navigator.*
 
 ## 🎯 Quest Objectives
 
@@ -292,7 +279,7 @@ less long-file.txt
 
 ## 🧙‍♂️ Chapter 3: Command Mastery — Flags, Pipes, and Redirection
 
-*Now you'll learn the advanced incantations that chain simple commands into powerful spells.*
+*Now you'll learn the advanced incantations that pipe and redirect simple commands so the output of one feeds the next.*
 
 ### 🏳️ Understanding Command Structure
 
@@ -425,10 +412,7 @@ After your first online run, continue with the [Bashcrawl Terminal Adventure Que
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Unlocks:** [[Mastering the Bash Incantations: Binary Level 0010 (2) Command Line Sorcery Quest]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 

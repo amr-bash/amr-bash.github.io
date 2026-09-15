@@ -1,10 +1,9 @@
 ---
-title: 'Character Building: Forge Your IT Identity and Development Environment'
+title: 'Character Building: Forge Your IT Hero Identity'
 author: IT-Journey Team
 description: Shape your digital persona and choose the tools, technologies, and specializations that will define your IT journey from novice to hero
 excerpt: Begin your transformation from IT novice to digital hero by building your character profile, choosing your specialization path, and configuring your ideal development environment
-snippet: Every hero needs an origin story - craft yours with intention and purpose
-preview: images/previews/character-building-forge-your-it-identity-and-deve.png
+preview: images/previews/character-building-forge-your-it-identity-and-deve.webp
 date: '2023-11-25T14:12:43.000Z'
 lastmod: '2025-11-30T05:46:59.000Z'
 level: '0000'
@@ -23,28 +22,6 @@ quest_dependencies:
   unlocks_quests:
   - /quests/0000/character-selection/
   - /quests/0000/os-selection/
-quest_relationships:
-  child_quests: []
-  sequel_quests:
-  - /quests/0000/character-selection/
-  - /quests/0000/os-selection/
-  parallel_quests: []
-learning_paths:
-  primary_paths:
-  - Software Development
-  - System Administration
-  - Data Science
-  - Cybersecurity
-  character_classes:
-  - 💻 Software Developer
-  - 🏗️ System Engineer
-  - 🛡️ Security Specialist
-  - 📊 Data Scientist
-  - 🤝 DevOps Facilitator
-  skill_trees:
-  - Career Planning
-  - Development Environment
-  - Self-Assessment
 skill_focus: fullstack
 learning_style: hands-on
 prerequisites:
@@ -107,16 +84,22 @@ keywords:
   - 1
 fmContentType: quest
 draft: false
-sub-title: 'Level 001 Quest: Defining Your Digital Identity'
 meta:
   quest_type: character_development
   skill_focus: career_planning
-related_quests:
-- hello-noob.md - First Steps into IT
-- character-selection.md - Choose Your IT Specialization
-- os-selection.md - Operating System Selection Guide
 slug: character-building
 layout: quest
+sub_title: 'Level 001 Quest: Defining Your Digital Identity'
+environment:
+  os:
+  - macos
+  - windows
+  - linux
+  - cloud
+  shell:
+  - zsh
+  - bash
+  - powershell
 ---
 *Welcome, aspiring IT hero! You stand at a crucial crossroads where your journey from novice to expert begins. Character building in the IT realm isn't just about choosing tools—it's about discovering who you want to become in the vast digital landscape.*
 
@@ -127,7 +110,7 @@ layout: quest
 Through this character-building adventure, you will:
 
 ### Primary Objectives (Required for Quest Completion)
-- [ ] **Define Your IT Persona** - Create a comprehensive character profile including strengths, interests, and goals
+- [ ] **Define Your IT Persona** - Create a character profile documenting your strengths, interests, and goals
 - [ ] **Choose Your Specialization Path** - Select primary and secondary areas of focus for your IT journey
 - [ ] **Design Your Development Environment** - Configure the tools and platforms that will support your growth
 - [ ] **Set Learning Milestones** - Establish clear, measurable goals for your advancement
@@ -234,7 +217,7 @@ Based on your responses, identify your primary IT archetype:
 **Strengths**:
 - Preferred in server and development environments
 - Open-source ecosystem with incredible customization
-- Powerful command-line tools and scripting capabilities
+- Scriptable command-line tools (bash, grep, sed, cron) for automation
 - Strong security and stability reputation
 
 **Best For**: Server administration, open-source development, DevOps, cybersecurity
@@ -246,7 +229,7 @@ Based on your responses, identify your primary IT archetype:
 - Unix-based environment with polished interface
 - Excellent for iOS and macOS development
 - Popular among creative professionals and developers
-- Seamless integration with Apple ecosystem
+- Handoff, AirDrop, and iCloud sync with other Apple devices
 
 **Best For**: Mobile app development, design work, content creation, full-stack development
 
@@ -321,7 +304,7 @@ Choose ONE secondary area to complement your primary focus:
 Choose your primary development environment:
 
 - **Visual Studio Code**: Versatile, extensible, great for web development
-- **IntelliJ IDEA**: Powerful for Java and enterprise development  
+- **IntelliJ IDEA**: Deep refactoring and debugging support for Java and enterprise development  
 - **PyCharm**: Specialized for Python development
 - **Sublime Text**: Lightweight and fast for various languages
 
@@ -401,7 +384,7 @@ Set up systems to monitor your advancement:
 ## 🏆 Quest Completion Validation
 
 ### Portfolio Artifacts Created
-- [ ] **Character Profile Document**: Comprehensive overview of your IT identity
+- [ ] **Character Profile Document**: A written overview of your IT identity covering strengths, interests, and goals
 - [ ] **Specialization Plan**: Detailed learning path with timelines and milestones
 - [ ] **Development Environment**: Fully configured and personalized workspace
 - [ ] **Goal Tracking System**: Framework for monitoring progress and achievements
@@ -465,8 +448,7 @@ With your character fully defined, you're ready to:
 
 *Your character is built, your quest log is ready, and your adventure awaits! Remember: every expert was once a beginner, but the difference between those who succeed and those who don't is the clarity of vision and consistency of action. You now have both.*
 
-**Ready to begin your specialization training? Your character awaits their first real challenge!** ⚔️✨
-A wise approach indeed! Building your character in the IT realm means equipping yourself with the right tools and environment. Let's shape your initial loadout:
+**Ready to begin your specialization training? Your character awaits their first real challenge!** ⚔️✨ A wise approach indeed! Building your character in the IT realm means equipping yourself with the right tools and environment. Let's shape your initial loadout:
 
 ### 1. **Choosing Your Operating System**
 
@@ -530,13 +512,7 @@ By preparing your environment and tools, you're setting the stage for a successf
 
 ## 🕸️ Knowledge Graph
 
-*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/docs/obsidian/graph/) to explore connections.*
+*Structured wiki-links connect this quest to the IT-Journey knowledge graph. Open the [Obsidian Graph View](/notes/obsidian/graph/) to explore connections.*
 
-**Level hub:** [[Level 0000 - Foundation & Init World]]
-**Overworld:** [[🏰 Overworld - Master Quest Map]]
-**Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]]
-**Recommended:** [[Begin your IT Journey]]
-**Unlocks:** [[Character Selection]] · [[OS Selection]]
-**Sequel quests:** [[Character Selection]] · [[OS Selection]]
-**Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
+**Level hub:** [[Level 0000 - Foundation & Init World]] **Overworld:** [[🏰 Overworld - Master Quest Map]] **Prerequisites:** [[Hello n00b: Your First Steps into the IT Journey]] **Recommended:** [[Begin your IT Journey]] **Unlocks:** [[Character Selection]] · [[OS Selection]] **Sequel quests:** [[Character Selection]] · [[OS Selection]] **Obsidian docs:** [[Obsidian Knowledge Graph and Wiki Links]]
 
